@@ -11,6 +11,8 @@ var ip_address = ""
 func _ready() -> void:
 	if OS.get_name() == "Windows":
 		ip_address = IP.get_local_addresses()[3]
+	elif OS.get_name() == "Android":
+		ip_address = IP.get_local_addresses()[0]
 	else:
 		ip_address = IP.get_local_addresses()[3]
 	

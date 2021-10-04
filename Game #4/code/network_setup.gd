@@ -1,10 +1,11 @@
 extends Control
 
+var player = load("res://scenes/player.tscn")
+
 onready var multiplayer_config_ui = $multiplayer_configure
 onready var server_ip_address = $multiplayer_configure/server_ip_address
 onready var device_ip_address = $CanvasLayer/device_ip_address
 
-var player = load("res://scenes/player.tscn")
 
 func _ready():
 	get_tree().connect("network_peer_connected", self, "_player_connected")
@@ -24,15 +25,15 @@ func _player_disconnected(id) -> void:
 		Players.get_node(str(id)).queue_free()
 
 
-func _on_host_button_pressed():
+func _on_create_server_pressed():
 	multiplayer_config_ui.hide()
 	Network.create_server()
 	instance_player(get_tree().get_network_unique_id())
 
 
-func _on_join_button_pressed():
+func _on_join_server_pressed():
 	if server_ip_address.text != "":
-		hide()
+		multiplayer_config_ui.hide()
 		Network.ip_address = server_ip_address.text
 		Network.join_server()
 

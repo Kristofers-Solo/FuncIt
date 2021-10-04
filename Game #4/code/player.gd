@@ -9,29 +9,15 @@ var velocity = Vector2()
 var fly = false
 
 puppet var puppet_position = Vector2(0, 0) setget puppet_position_set
-
-onready var tween = get_node("player")
-
-func _ready():
-	pass
-
+puppet var puppet_velocity = Vector2()
+puppet var puppet_rotaion = 0
+onready var tween = $Tween
 
 
 func _physics_process(delta):
 	if is_network_master():
 		mode_switch(delta)
 		screen_wrap()
-
-func puppet_position_set(new_value) -> void:
-	puppet_position = new_value
-	
-	tween.inturpolate_polarity(self, "global_position", global_position, puppet_position, 0.1)
-	tween.start()
-
-
-func _on_network_tick_rate_timeout():
-	if is_network_master():
-		rset_unreliable("puppet_position", global_position)
 
 
 func mode_switch(delta):
@@ -67,7 +53,7 @@ func movement(delta):
 
 
 func flying():
-	speed = 500
+	speed = 1000
 	var velocity = Vector2()
 	if Input.is_action_pressed("move_right"):
 		velocity.x += 1
@@ -80,12 +66,23 @@ func flying():
 	velocity = velocity.normalized() * speed
 	
 	velocity = move_and_slide(velocity)
+	print(velocity)
 
 
 func screen_wrap():
-	if position.x <= 0:
+	if position.x <= -10:
 		position.x = get_viewport_rect().size.x
-	if position.x >= get_viewport_rect().size.x:
+	if position.x >= get_viewport_rect().size.x + 10:
 		position.x = 0
 
 
+func puppet_position_set(new_value) -> void:
+	puppet_position = new_value
+	tween.inturpolate_polarity(self, "global_position", global_position, puppet_position, 0.1)
+	tween.start()
+
+
+func _on_network_tick_rate_timeout():
+	if is_network_master():
+		rset_unreliable("puppet_position", global_position)
+		rset_unreliable("puppet_velocity", velocity)
