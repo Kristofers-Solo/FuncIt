@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 const JUMP_FORCE = 500
-const GRAVITY = 700
+const GRAVITY = 500
 const MAX_SPEED = 10000
 
 var speed = 15
@@ -12,7 +12,6 @@ puppet var puppet_position = Vector2(0, 0) setget puppet_position_set
 puppet var puppet_velocity = Vector2()
 puppet var puppet_rotaion = 0
 onready var tween = $Tween
-
 
 func _physics_process(delta):
 	if is_network_master():
@@ -64,9 +63,9 @@ func flying():
 	if Input.is_action_pressed("move_up"):
 		velocity.y -= 1
 	velocity = velocity.normalized() * speed
+	print(velocity)
 	
 	velocity = move_and_slide(velocity)
-	print(velocity)
 
 
 func screen_wrap():
@@ -75,10 +74,9 @@ func screen_wrap():
 	if position.x >= get_viewport_rect().size.x + 10:
 		position.x = 0
 
-
 func puppet_position_set(new_value) -> void:
 	puppet_position = new_value
-	tween.inturpolate_polarity(self, "global_position", global_position, puppet_position, 0.1)
+	tween.interpolate_property(self, "global_position", global_position, puppet_position, 0.1)
 	tween.start()
 
 
@@ -86,3 +84,4 @@ func _on_network_tick_rate_timeout():
 	if is_network_master():
 		rset_unreliable("puppet_position", global_position)
 		rset_unreliable("puppet_velocity", velocity)
+		rset_unreliable("puppet_rotation", rotation_degrees)
