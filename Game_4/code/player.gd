@@ -2,9 +2,10 @@ extends KinematicBody2D
 
 const JUMP_FORCE = 500
 const GRAVITY = 500
-const MAX_SPEED = 10000
+const MAX_SPEED = 5000
+const ACCELERATION = 10
 
-var speed = 15
+var speed = 50
 var velocity = Vector2()
 var fly = false
 
@@ -42,17 +43,18 @@ func movement(delta):
 		if velocity.x < MAX_SPEED:
 			velocity.x += speed
 	
-	if !Input.is_action_pressed("move_left") and !Input.is_action_pressed("move_right") and is_on_floor():
-		velocity.x = 0
+	#if !Input.is_action_pressed("move_left") and !Input.is_action_pressed("move_right") and is_on_floor():
+	#	velocity.x = 0
 
 	velocity.y += GRAVITY * delta
 	if Input.is_action_pressed("jump") and is_on_floor():
 		velocity.y -= JUMP_FORCE
 	velocity = move_and_slide(velocity, Vector2.UP)
+	print(velocity)
 
 
 func flying():
-	speed = 1000
+	var fly_speed = 1000
 	var velocity = Vector2()
 	if Input.is_action_pressed("move_right"):
 		velocity.x += 1
@@ -62,7 +64,7 @@ func flying():
 		velocity.y += 1
 	if Input.is_action_pressed("move_up"):
 		velocity.y -= 1
-	velocity = velocity.normalized() * speed
+	velocity = velocity.normalized() * fly_speed
 	print(velocity)
 	
 	velocity = move_and_slide(velocity)

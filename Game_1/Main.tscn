@@ -1,54 +1,60 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Floor.tscn" type="PackedScene" id=2]
+[ext_resource path="res://floor.tscn" type="PackedScene" id=3]
 
 [node name="Main" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 52.0742, 458.515 )
+position = Vector2( 559.976, 757.874 )
 
 [node name="Floor" parent="." instance=ExtResource( 2 )]
-position = Vector2( 32, 544 )
+position = Vector2( 539.901, 843.359 )
 
 [node name="Floor2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 80, 544 )
+position = Vector2( 587.901, 843.359 )
 
 [node name="Floor3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 128, 544 )
+position = Vector2( 635.901, 843.359 )
 
 [node name="Floor4" parent="." instance=ExtResource( 2 )]
-position = Vector2( 248, 488 )
+position = Vector2( 755.901, 787.359 )
 
 [node name="Floor5" parent="." instance=ExtResource( 2 )]
-position = Vector2( 296, 472 )
+position = Vector2( 803.901, 771.359 )
 
 [node name="Floor8" parent="." instance=ExtResource( 2 )]
-position = Vector2( 520, 368 )
+position = Vector2( 1027.9, 667.359 )
 
 [node name="Floor11" parent="." instance=ExtResource( 2 )]
-position = Vector2( 128, 248 )
+position = Vector2( 635.901, 547.359 )
 
 [node name="Floor12" parent="." instance=ExtResource( 2 )]
-position = Vector2( 176, 248 )
+position = Vector2( 683.901, 547.359 )
 
 [node name="Floor14" parent="." instance=ExtResource( 2 )]
-position = Vector2( 272, 248 )
+position = Vector2( 779.901, 547.359 )
 
 [node name="Floor15" parent="." instance=ExtResource( 2 )]
-position = Vector2( 320, 248 )
+position = Vector2( 827.901, 547.359 )
 
 [node name="Floor13" parent="." instance=ExtResource( 2 )]
-position = Vector2( 224, 248 )
+position = Vector2( 731.901, 547.359 )
 
 [node name="Floor9" parent="." instance=ExtResource( 2 )]
-position = Vector2( 640, 296 )
+position = Vector2( 1147.9, 595.359 )
 
 [node name="Floor10" parent="." instance=ExtResource( 2 )]
-position = Vector2( 760, 240 )
+position = Vector2( 1267.9, 539.359 )
 
 [node name="Floor6" parent="." instance=ExtResource( 2 )]
-position = Vector2( 344, 488 )
+position = Vector2( 851.901, 787.359 )
 
-[node name="Floor7" parent="." instance=ExtResource( 2 )]
-position = Vector2( 392, 464 )
+[node name="floor" parent="." instance=ExtResource( 3 )]
+position = Vector2( 962.745, 26.6196 )
+scale = Vector2( 2, 1 )
+
+[node name="floor2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1003.11, 1052.51 )
+scale = Vector2( 2, 1 )

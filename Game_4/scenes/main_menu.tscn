@@ -46,7 +46,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="server_ip_address" type="LineEdit" parent="multiplayer_configure"]
+[node name="username_text_edit" type="LineEdit" parent="multiplayer_configure"]
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -422.5
@@ -55,7 +55,7 @@ margin_right = 422.5
 margin_bottom = 221.0
 custom_fonts/font = ExtResource( 1 )
 align = 1
-placeholder_text = "Enter IP address"
+placeholder_text = "Enter username"
 __meta__ = {
 "_edit_use_anchors_": false
 }

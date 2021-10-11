@@ -7,6 +7,8 @@ var server = null
 var client = null
 
 var ip_address = ""
+var current_player_username = ""
+
 
 func _ready() -> void:
 	if OS.get_name() == "Windows":
@@ -23,15 +25,19 @@ func _ready() -> void:
 	get_tree().connect("connected_to_server", self, "_connected_to_server")
 	get_tree().connect("server_disconnected", self, "_server_disconnected")
 
+
 func create_server() -> void:
 	server = NetworkedMultiplayerENet.new()
 	server.create_server(DEFAULT_PORT, MAX_CLIENTS)
 	get_tree().set_network_peer(server)
+	Global.instance_node(load("res://scenes/server_advertiser.tscn"), get_tree().current_scene)
+
 
 func join_server() -> void:
 	client = NetworkedMultiplayerENet.new()
 	client.create_client(ip_address, DEFAULT_PORT)
 	get_tree().set_network_peer(client)
+
 
 func _connected_to_server() -> void:
 	print("Successfully connected to the server")
