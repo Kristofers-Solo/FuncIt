@@ -9,7 +9,3 @@ script = ExtResource( 2 )
 [node name="floor" parent="." instance=ExtResource( 1 )]
 position = Vector2( 960, 1056 )
 scale = Vector2( 2, 1 )
-
-[node name="floor2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 960, -24 )
-scale = Vector2( 2, 1 )
