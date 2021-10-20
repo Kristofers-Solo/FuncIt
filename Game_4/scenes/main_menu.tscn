@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://font/roboto.tres" type="DynamicFont" id=1]
 [ext_resource path="res://code/network_setup.gd" type="Script" id=2]
-[ext_resource path="res://scenes/floor.tscn" type="PackedScene" id=3]
 
 [node name="network_setup" type="Control"]
 anchor_right = 1.0
@@ -62,6 +61,17 @@ __meta__ = {
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="start_game" type="Button" parent="CanvasLayer"]
+margin_left = 27.0
+margin_top = 27.0
+margin_right = 391.0
+margin_bottom = 158.0
+custom_fonts/font = ExtResource( 1 )
+text = "Start game"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="device_ip_address" type="Label" parent="CanvasLayer"]
 anchor_top = 1.0
 anchor_right = 1.0
@@ -74,9 +84,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="floor" parent="." instance=ExtResource( 3 )]
-position = Vector2( 960, 1056 )
-scale = Vector2( 2, 1 )
-
 [connection signal="pressed" from="multiplayer_configure/create_server" to="." method="_on_create_server_pressed"]
 [connection signal="pressed" from="multiplayer_configure/join_server" to="." method="_on_join_server_pressed"]
+[connection signal="pressed" from="CanvasLayer/start_game" to="." method="_on_start_game_pressed"]

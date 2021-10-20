@@ -5,6 +5,7 @@ var player = load("res://scenes/player.tscn")
 onready var multiplayer_config_ui = $multiplayer_configure
 onready var username_text_edit = $multiplayer_configure/username_text_edit
 onready var device_ip_address = $CanvasLayer/device_ip_address
+onready var start_game = $CanvasLayer/start_game
 
 
 func _ready():
@@ -13,6 +14,20 @@ func _ready():
 	get_tree().connect("connected_to_server", self, "_connected_to_server")
 	
 	device_ip_address.text = Network.ip_address
+	
+	if get_tree().network_peer != null:
+		pass
+	else:
+		start_game.hide()
+
+
+func _process(delta: float) -> void:
+	if get_tree().network_peer != null:
+		if get_tree().get_network_connected_peers().size() >= 0 and get_tree().is_network_server():
+			start_game.show()
+		else:
+			start_game.hide()
+
 
 func _player_connected(id) -> void:
 	print("Player " + str(id) + " has connected")
@@ -22,6 +37,7 @@ func _player_connected(id) -> void:
 func _player_disconnected(id) -> void:
 	print("Player " + str(id) + " has disconnected")
 	if Players.has_node(str(id)):
+		Players.get_node(str(id)).username_text_instance.queue_free()
 		Players.get_node(str(id)).queue_free()
 
 
@@ -49,3 +65,12 @@ func instance_player(id) -> void:
 	var player_instance = Global.instance_node_at_location(player, Players, Vector2(rand_range(0, 1920), rand_range(0, 1080)))
 	player_instance.name = str(id)
 	player_instance.set_network_master(id)
+	player_instance.username = username_text_edit.text
+
+
+func _on_start_game_pressed():
+	rpc("switch_to_game")
+
+
+sync func switch_to_game() -> void:
+	get_tree().change_scene("res://scenes/game.tscn") 

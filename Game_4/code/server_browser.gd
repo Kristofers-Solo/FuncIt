@@ -25,9 +25,9 @@ func _on_server_listener_remove_server(serverIp):
 
 
 func _on_manual_setup_pressed():
-	if manual_setup_button.text != "exit setup":
+	if manual_setup_button.text != "Exit setup":
 		server_ip_text_edit.show()
-		manual_setup_button.text = "exit setup"
+		manual_setup_button.text = "Exit setup"
 		server_container.hide()
 		server_ip_text_edit.call_deferred("grab_focus")
 	else:
@@ -37,7 +37,8 @@ func _on_manual_setup_pressed():
 
 
 func _on_join_server_pressed():
-	Network.ip_address = server_ip_text_edit.text
+	if server_ip_text_edit.text != "":
+		Network.ip_address = server_ip_text_edit.text
 	hide()
 	Network.join_server()
 

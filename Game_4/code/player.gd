@@ -9,10 +9,28 @@ var speed = 50
 var velocity = Vector2()
 var fly = false
 
+var username_text = load("res://scenes/username_text.tscn")
+var username setget username_set
+var username_text_instance = null
+
 puppet var puppet_position = Vector2(0, 0) setget puppet_position_set
 puppet var puppet_velocity = Vector2()
 puppet var puppet_rotaion = 0
+puppet var puppet_username = "" setget puppet_username_set
+
 onready var tween = $Tween
+
+
+func _ready():
+	get_tree().connect("network_peer_connected", self, "_network_peer_connected")
+	username_text_instance = Global.instance_node_at_location(username_text, Players, global_position)
+	username_text_instance.player_following = self
+
+
+func _process(delta: float) -> void:
+	if username_text_instance != null:
+		username_text_instance.name = "username" + name
+
 
 func _physics_process(delta):
 	if is_network_master():
@@ -50,7 +68,6 @@ func movement(delta):
 	if Input.is_action_pressed("jump") and is_on_floor():
 		velocity.y -= JUMP_FORCE
 	velocity = move_and_slide(velocity, Vector2.UP)
-	print(velocity)
 
 
 func flying():
@@ -65,7 +82,6 @@ func flying():
 	if Input.is_action_pressed("move_up"):
 		velocity.y -= 1
 	velocity = velocity.normalized() * fly_speed
-	print(velocity)
 	
 	velocity = move_and_slide(velocity)
 
@@ -76,10 +92,28 @@ func screen_wrap():
 	if position.x >= get_viewport_rect().size.x + 10:
 		position.x = 0
 
+
 func puppet_position_set(new_value) -> void:
 	puppet_position = new_value
 	tween.interpolate_property(self, "global_position", global_position, puppet_position, 0.1)
 	tween.start()
+
+
+func username_set(new_value) -> void:
+	username = new_value
+	if is_network_master() and username_text_instance != null:
+		username_text_instance.text = username
+		rset("puppet_username", username)
+
+
+func puppet_username_set(new_value) -> void:
+	puppet_username = new_value
+	if not is_network_master() and username_text_instance != null:
+		username_text_instance.text = puppet_username
+
+
+func _network_peer_connected(id) -> void:
+	rset_id(id, "puppet_username", username)
 
 
 func _on_network_tick_rate_timeout():
