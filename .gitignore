@@ -2,5 +2,6 @@
 *.pck
 *.x86_64
 *.log
+/Godot-Multiplayer-Shooter
 /.import
 /test
