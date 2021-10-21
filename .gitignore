@@ -3,4 +3,4 @@
 *.x86_64
 *.log
 /.import
-/test
+test/
