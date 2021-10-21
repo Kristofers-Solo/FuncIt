@@ -4,8 +4,8 @@ var player = load("res://scenes/player.tscn")
 
 onready var multiplayer_config_ui = $multiplayer_configure
 onready var username_text_edit = $multiplayer_configure/username_text_edit
-onready var device_ip_address = $CanvasLayer/device_ip_address
-onready var start_game = $CanvasLayer/start_game
+onready var device_ip_address = $UI/device_ip_address
+onready var start_game = $UI/start_game
 
 
 func _ready():

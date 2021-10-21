@@ -39,9 +39,24 @@ func join_server() -> void:
 	get_tree().set_network_peer(client)
 
 
+func reset_network_connections():
+	if get_tree().has_network_peer():
+		get_tree().network_peer = null
+
+
 func _connected_to_server() -> void:
 	print("Successfully connected to the server")
 
 
 func _server_disconnected() -> void:
 	print("Disconnected from the server")
+	
+	for child in Players.get_children():
+		if child.is_in_group("Net"):
+			child.queue_free()
+	
+	reset_network_connections()
+	
+	if Global.ui != null:
+		var prompt = Global.instance_node(load("res://scenes/simple_prompt.tscn"), Global.ui)
+		prompt.set_text("Disconnected from server")
