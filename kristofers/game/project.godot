@@ -16,7 +16,7 @@ config/icon="res://icon.png"
 
 [autoload]
 
-Network="*res://code/network.gd"
+Network="*res://code/server/network.gd"
 Global="*res://code/global.gd"
 Players="*res://scenes/players.tscn"
 
