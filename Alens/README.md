@@ -8,3 +8,5 @@ Enter in required directory and run:
 ```terminal
 git clone https://github.com/KristofersSolo/Godot
 ```
+
+or just use [GitHub Desktop](https://desktop.github.com)
