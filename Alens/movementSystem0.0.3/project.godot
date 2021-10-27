@@ -11,6 +11,7 @@ config_version=4
 [application]
 
 config/name="movementSystem0.0.3"
+run/main_scene="res://source/entities/player/player_node.tscn"
 config/icon="res://icon.png"
 
 [physics]
