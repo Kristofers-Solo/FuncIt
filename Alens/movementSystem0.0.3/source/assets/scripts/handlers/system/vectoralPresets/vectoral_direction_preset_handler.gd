@@ -2,7 +2,7 @@ extends Node
 
 var vectoralState = {}
 
-func _ready() -> void:
+func getState(userState):
 	vectoralState = {
 		"0": { # Source (Client) positional rotation vectors
 			"0": { # Primary source positional vector
@@ -56,7 +56,4 @@ func _ready() -> void:
 			}
 		}
 	}
-	pass
-
-func getState():
 	return vectoralState

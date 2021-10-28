@@ -1,4 +1,5 @@
 extends Node
 
-func _ready():
+func update(userStateInstance):
+	userStateInstance.rotateBy(-1)
 	pass

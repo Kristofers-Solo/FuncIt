@@ -15,15 +15,23 @@ var physicsManagerInstance = preload("res://source/assets/scripts/controllers/ma
 
 # Local class variables
 var vectoralDirectionPreset
+var userInput
+var userState
+var VDIR
 
 func _ready():
-	vectoralDirectionPreset = vectoralDirectionPresetInstance.getState()
+	vectoralDirectionPreset = vectoralDirectionPresetInstance.getState(userStateInstance.update())
 
 func _process(delta):
 	# Update data-handler returned states
-	var userInput = userInputInstance.update()
-	var userState = userStateInstance.update()
+	userInput = userInputInstance.update()
+	userState = userStateInstance.update()
 	# Send the returned states through processors
-	var VDIR = VDIRprocessorInstance.process(userState, vectoralDirectionPreset)
+	VDIR = VDIRprocessorInstance.process(userState, vectoralDirectionPreset)
 	# Give the resulting data to game controllers
+	physicsManagerInstance.update(userStateInstance)
+	physics_process(delta)
 	pass
+
+func physics_process(delta):
+	rotation_degrees = userState["rotation"]
