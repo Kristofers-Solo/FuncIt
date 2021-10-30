@@ -33,9 +33,10 @@ func _process(delta: float) -> void:
 
 
 func _physics_process(delta):
-	if is_network_master():
-		mode_switch(delta)
-		screen_wrap()
+	if get_tree().has_network_peer():
+		if is_network_master():
+			mode_switch(delta)
+			screen_wrap()
 
 
 func mode_switch(delta):
@@ -117,10 +118,11 @@ func _network_peer_connected(id) -> void:
 
 
 func _on_network_tick_rate_timeout():
-	if is_network_master():
-		rset_unreliable("puppet_position", global_position)
-		rset_unreliable("puppet_velocity", velocity)
-		rset_unreliable("puppet_rotation", rotation_degrees)
+	if get_tree().has_network_peer():
+		if is_network_master():
+			rset_unreliable("puppet_position", global_position)
+			rset_unreliable("puppet_velocity", velocity)
+			rset_unreliable("puppet_rotation", rotation_degrees)
 
 
 sync func update_position(pos):
