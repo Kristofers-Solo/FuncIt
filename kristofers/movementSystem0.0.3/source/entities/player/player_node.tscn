@@ -1,0 +1,48 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://source/assets/scripts/controllers/player_sprite_controller.gd" type="Script" id=1]
+[ext_resource path="res://source/assets/scripts/controllers/player_collider_controller.gd" type="Script" id=2]
+[ext_resource path="res://source/assets/sprites/character/player/animation/idle/player_main_body_default_sprite_idle_animation – 8.png" type="Texture" id=3]
+[ext_resource path="res://source/assets/sprites/character/player/animation/idle/player_main_body_default_sprite_idle_animation – 5.png" type="Texture" id=4]
+[ext_resource path="res://source/assets/sprites/character/player/animation/idle/player_main_body_default_sprite_idle_animation – 9.png" type="Texture" id=5]
+[ext_resource path="res://source/assets/sprites/character/player/animation/idle/player_main_body_default_sprite_idle_animation.png" type="Texture" id=6]
+[ext_resource path="res://source/assets/sprites/character/player/animation/idle/player_main_body_default_sprite_idle_animation – 7.png" type="Texture" id=7]
+[ext_resource path="res://source/assets/sprites/character/player/animation/idle/player_main_body_default_sprite_idle_animation – 2.png" type="Texture" id=8]
+[ext_resource path="res://source/assets/sprites/character/player/animation/idle/player_main_body_default_sprite_idle_animation – 3.png" type="Texture" id=9]
+[ext_resource path="res://source/assets/sprites/character/player/animation/idle/player_main_body_default_sprite_idle_animation – 4.png" type="Texture" id=10]
+[ext_resource path="res://source/assets/sprites/character/player/animation/idle/player_main_body_default_sprite_idle_animation – 10.png" type="Texture" id=11]
+[ext_resource path="res://source/assets/sprites/character/player/animation/idle/player_main_body_default_sprite_idle_animation – 11.png" type="Texture" id=12]
+[ext_resource path="res://source/assets/sprites/character/player/animation/idle/player_main_body_default_sprite_idle_animation – 1.png" type="Texture" id=13]
+[ext_resource path="res://source/assets/sprites/character/player/animation/idle/player_main_body_default_sprite_idle_animation – 6.png" type="Texture" id=14]
+[ext_resource path="res://source/assets/scripts/handlers/character/player/player_node_handler.gd" type="Script" id=15]
+[ext_resource path="res://source/assets/scripts/handlers/character/player/player_body_handler.gd" type="Script" id=16]
+[ext_resource path="res://source/assets/sprites/character/player/player_main_body_default_sprite.png" type="Texture" id=17]
+
+[sub_resource type="CircleShape2D" id=1]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 13 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 14 ), ExtResource( 7 ), ExtResource( 3 ), ExtResource( 5 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "idle-default",
+"speed": 5.0
+} ]
+
+[node name="player_node" type="Node2D"]
+script = ExtResource( 15 )
+
+[node name="player_body" type="KinematicBody2D" parent="."]
+script = ExtResource( 16 )
+
+[node name="player_collider" type="CollisionShape2D" parent="player_body"]
+shape = SubResource( 1 )
+script = ExtResource( 2 )
+
+[node name="player_sprite" type="AnimatedSprite" parent="player_body"]
+frames = SubResource( 2 )
+animation = "idle-default"
+script = ExtResource( 1 )
+
+[node name="player_sprite_na" type="Sprite" parent="player_body"]
+visible = false
+texture = ExtResource( 17 )
