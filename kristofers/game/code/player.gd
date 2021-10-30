@@ -7,7 +7,7 @@ const ACCELERATION = 10
 
 var speed = 50
 var velocity = Vector2()
-var fly = false
+var fly = true
 
 var username_text = load("res://scenes/username_text.tscn")
 var username setget username_set
@@ -23,7 +23,7 @@ onready var tween = $Tween
 
 func _ready():
 	get_tree().connect("network_peer_connected", self, "_network_peer_connected")
-	username_text_instance = Global.instance_node_at_location(username_text, Players, global_position)
+	username_text_instance = Global.instance_node_at_location(username_text, PersistentNodes, global_position)
 	username_text_instance.player_following = self
 
 
@@ -121,3 +121,27 @@ func _on_network_tick_rate_timeout():
 		rset_unreliable("puppet_position", global_position)
 		rset_unreliable("puppet_velocity", velocity)
 		rset_unreliable("puppet_rotation", rotation_degrees)
+
+
+sync func update_position(pos):
+	global_position = pos
+	puppet_position = pos
+
+
+sync func destroy() -> void:
+	username_text_instance.visible = false
+	visible = false
+	$CollisionShape2D.disabled = true
+	$Hitbox/CollisionShape2D.disabled = true
+	Global.alive_players.erase(self)
+	
+	if get_tree().has_network_peer():
+		if is_network_master():
+			Global.player_master = null
+
+
+func _exit_tree() -> void:
+	Global.alive_players.erase(self)
+	if get_tree().has_network_peer():
+		if is_network_master():
+			Global.player_master = null

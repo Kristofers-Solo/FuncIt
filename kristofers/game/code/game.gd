@@ -12,8 +12,8 @@ func _ready() -> void:
 
 
 func setup_player_positions() -> void:
-	for player in Players.get_children():
-		if player.is_in_group("player"):
+	for player in PersistentNodes.get_children():
+		if player.is_in_group("Player"):
 			for spawn_location in $spawn_locations.get_children():
 				if int(spawn_location.name) == current_spawn_location_instance_number and current_player_location_instance_number != player:
 					player.rpc("update_position", spawn_location.global_position)
@@ -22,6 +22,6 @@ func setup_player_positions() -> void:
 
 
 func _player_disconnected(id) -> void:
-	if Players.has_node(str(id)):
-		Players.get_node(str(id)).username_text_instance.queue_free()
-		Players.get_node(str(id)).queue_free()
+	if PersistentNodes.has_node(str(id)):
+		PersistentNodes.get_node(str(id)).username_text_instance.queue_free()
+		PersistentNodes.get_node(str(id)).queue_free()

@@ -2,6 +2,9 @@ extends Control
 
 var player = load("res://scenes/player.tscn")
 
+var current_spawn_location_instance_number = 1
+var current_player_for_spawn_location_number = null
+
 onready var multiplayer_config_ui = $multiplayer_configure
 onready var username_text_edit = $multiplayer_configure/username_text_edit
 onready var device_ip_address = $UI/device_ip_address
@@ -16,7 +19,17 @@ func _ready():
 	device_ip_address.text = Network.ip_address
 	
 	if get_tree().network_peer != null:
-		pass
+		multiplayer_config_ui.hide()
+		
+		current_spawn_location_instance_number = 1
+		for player in PersistentNodes.get_children():
+			if player.is_in_group("Player"):
+				for spawn_location in $Spawn_locations.get_children():
+					if int(spawn_location.name) == current_spawn_location_instance_number and current_player_for_spawn_location_number != player:
+						player.rpc("update_position", spawn_location.global_position)
+						player.rpc("enable")
+						current_spawn_location_instance_number += 1
+						current_player_for_spawn_location_number = player
 	else:
 		start_game.hide()
 
@@ -36,9 +49,9 @@ func _player_connected(id) -> void:
 
 func _player_disconnected(id) -> void:
 	print("Player " + str(id) + " has disconnected")
-	if Players.has_node(str(id)):
-		Players.get_node(str(id)).username_text_instance.queue_free()
-		Players.get_node(str(id)).queue_free()
+	if PersistentNodes.has_node(str(id)):
+		PersistentNodes.get_node(str(id)).username_text_instance.queue_free()
+		PersistentNodes.get_node(str(id)).queue_free()
 
 
 func _on_create_server_pressed():
@@ -61,11 +74,13 @@ func _connected_to_server() -> void:
 	instance_player(get_tree().get_network_unique_id())
 
 
+
 func instance_player(id) -> void:
-	var player_instance = Global.instance_node_at_location(player, Players, Vector2(rand_range(0, 1920), rand_range(0, 1080)))
+	var player_instance = Global.instance_node_at_location(player, PersistentNodes, Vector2(rand_range(0, 1920), rand_range(0, 1080)))
 	player_instance.name = str(id)
 	player_instance.set_network_master(id)
 	player_instance.username = username_text_edit.text
+	current_spawn_location_instance_number += 1
 
 
 func _on_start_game_pressed():

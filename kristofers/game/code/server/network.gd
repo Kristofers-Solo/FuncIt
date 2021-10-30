@@ -1,13 +1,20 @@
 extends Node
 
 const DEFAULT_PORT = 28960
-const MAX_CLIENTS = 3
+const MAX_CLIENTS = 4
 
 var server = null
 var client = null
 
 var ip_address = ""
 var current_player_username = ""
+
+var client_connected_to_server = false
+
+var networked_object_name_index = 0 setget networked_object_name_index_set
+puppet var puppet_networked_object_name_index = 0 setget puppet_networked_object_name_index_set
+
+onready var client_connection_timeout_timer = Timer.new()
 
 
 func _ready() -> void:
@@ -39,6 +46,11 @@ func join_server() -> void:
 	get_tree().set_network_peer(client)
 
 
+func reset_network_connection() -> void:
+	if get_tree().has_network_peer():
+		get_tree().network_peer = null
+
+
 func reset_network_connections():
 	if get_tree().has_network_peer():
 		get_tree().network_peer = null
@@ -51,12 +63,42 @@ func _connected_to_server() -> void:
 func _server_disconnected() -> void:
 	print("Disconnected from the server")
 	
-	for child in Players.get_children():
+	for child in PersistentNodes.get_children():
 		if child.is_in_group("Net"):
 			child.queue_free()
-	
 	reset_network_connections()
 	
 	if Global.ui != null:
 		var prompt = Global.instance_node(load("res://scenes/simple_prompt.tscn"), Global.ui)
 		prompt.set_text("Disconnected from server")
+
+
+func _client_connection_timeout():
+	if client_connected_to_server == false:
+		print("Client has been timed out")
+		reset_network_connection()
+		
+		var connection_timeout_prompt = Global.instance_node(load("res://Simple_prompt.tscn"), get_tree().current_scene)
+		connection_timeout_prompt.set_text("Connection timed out")
+
+
+func _connection_failed():
+	for child in PersistentNodes.get_children():
+		if child.is_in_group("Net"):
+			child.queue_free()
+	reset_network_connection()
+	
+	if Global.ui != null:
+		var prompt = Global.instance_node(load("res://Simple_prompt.tscn"), Global.ui)
+		prompt.set_text("Connection failed")
+
+
+func puppet_networked_object_name_index_set(new_value):
+	networked_object_name_index = new_value
+
+
+func networked_object_name_index_set(new_value):
+	networked_object_name_index = new_value
+	
+	if get_tree().is_network_server():
+		rset("puppet_networked_object_name_index", networked_object_name_index)
