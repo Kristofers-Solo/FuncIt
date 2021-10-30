@@ -1,6 +1,6 @@
 extends Control
 
-var player = load("res://scenes/player.tscn")
+var player = load("res://source/entities/player/player_node.tscn")
 
 var current_spawn_location_instance_number = 1
 var current_player_for_spawn_location_number = null
@@ -88,4 +88,4 @@ func _on_start_game_pressed():
 
 
 sync func switch_to_game() -> void:
-	get_tree().change_scene("res://scenes/game.tscn") 
+	get_tree().change_scene("res://source/levels/trinity_site/trinitySite-level.tscn") 
