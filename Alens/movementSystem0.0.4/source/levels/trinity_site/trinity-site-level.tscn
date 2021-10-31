@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://source/entities/player/player-node.tscn" type="PackedScene" id=1]
+
+[node name="trinity-site" type="Node2D"]
+
+[node name="player-node" parent="." instance=ExtResource( 1 )]
+position = Vector2( 503, 311 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2( 0, -46 )
+polygon = PoolVector2Array( 227, 408, 260, 436, 319, 461, 392, 473, 474, 488, 562, 504, 629, 508, 692, 501, 751, 483, 795, 450, 823, 423, 864.224, 390.509, 903.116, 381.778, 930, 382, 953.912, 392.096, 965.412, 402.193, 980, 415, 994, 445, 1000, 488, 992, 540, 955, 568, 905, 578, 868, 584, 797, 575, 745, 560, 689, 560, 617, 562, 563, 574, 493, 583, 357, 589, 306, 582, 228, 546, 163, 498, 118, 438, 100, 372, 94, 294, 115, 237, 154, 198, 203, 187, 298, 204, 320, 238, 328, 269, 325, 312, 305, 338, 275, 358, 251, 371, 228, 392 )
