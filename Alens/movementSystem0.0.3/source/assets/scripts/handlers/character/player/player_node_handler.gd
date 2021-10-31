@@ -1,7 +1,7 @@
 extends Node2D
 
 func statePassback():
-	return {"node_global_position": transform.origin, "rotation": null}
+	return {"node_global_position": null, "rotation": null}
 
 func set_scale(scale) -> void:
 	$player_body/player_sprite_na.scale = Vector2(scale, scale)

@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="movementSystem0.0.3"
-run/main_scene="res://source/entities/player/player_node.tscn"
+run/main_scene="res://source/levels/trinity_site/trinitySite-level.tscn"
 config/icon="res://icon.png"
 
 [input]

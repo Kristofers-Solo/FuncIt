@@ -8,3 +8,8 @@ script = ExtResource( 2 )
 
 [node name="player_node" parent="." instance=ExtResource( 1 )]
 position = Vector2( 500.041, 281.319 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( 169.691, 439.532, 314.837, 499.922, 502.362, 521.111, 805.369, 508.397, 928.266, 434.235, 974.883, 566.668, 848.807, 598.452, 369.929, 597.392, 111.42, 526.408, 97.6474, 440.592 )
