@@ -13,6 +13,6 @@ data_*/
 *.pck
 *.x86_64
 *.log
-/.import
 test/
 build/
+builds/
