@@ -16,7 +16,7 @@
 [ext_resource path="res://source/assets/scripts/player-handlers/player-collider-handler.gd" type="Script" id=14]
 [ext_resource path="res://source/assets/scripts/player-handlers/player-body-handler.gd" type="Script" id=15]
 
-[sub_resource type="CircleShape2D" id=3]
+[sub_resource type="CircleShape2D" id=1]
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -32,15 +32,15 @@ animations = [ {
 script = ExtResource( 15 )
 
 [node name="player-collider" type="CollisionShape2D" parent="player-body"]
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 script = ExtResource( 14 )
 
 [node name="player-animated-sprite" type="AnimatedSprite" parent="player-body"]
-scale = Vector2( 0.25, 0.25 )
+scale = Vector2( 0.1, 0.1 )
 frames = SubResource( 2 )
 animation = "idle"
 
 [node name="player-sprite" type="Sprite" parent="player-body"]
 visible = false
-scale = Vector2( 0.25, 0.25 )
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 1 )

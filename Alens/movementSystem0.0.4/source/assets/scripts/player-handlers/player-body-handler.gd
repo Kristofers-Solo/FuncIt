@@ -19,10 +19,12 @@ var accelerationSpeed = 3.5
 var deccelerationSpeed = 4.25
 var jumpState = false
 var jumpSpeed = 0
-var maxJumpSpeed = 500
+var maxJumpSpeed = 400
 var time = 0
 var timeOut = 1
 var timedOut = true
+var movementRight = false
+var movementLeft = true
 
 func _ready():
 	# Allow update process override.
@@ -102,6 +104,14 @@ func _physics_process(delta):
 			movementVector = Vector2(-1,0)
 		else:
 			movementVector = Vector2(0,0)
+		if movementVector.x == 1 and movementRight == false:
+			movementRight = true
+			movementLeft = false
+			$"player-animated-sprite".flip_h = true
+		elif movementVector.x == -1 and movementLeft == false:
+			movementLeft = true
+			movementRight = false
+			$"player-animated-sprite".flip_h = false
 		if movementVector != Vector2(0,0) and jumpState == false:
 			movementSpeed = move_toward(movementSpeed, maxMovementSpeed, accelerationSpeed)
 		elif movementVector != Vector2(0,0) and jumpState == true:
@@ -114,7 +124,7 @@ func _physics_process(delta):
 			jumpState = true
 			time = 0
 		if jumpState == true and jumpSpeed < maxJumpSpeed:
-			print(jumpSpeed)
+			rotation_degrees = move_toward(rotation_degrees, 0, accelerationSpeed/10)
 			jumpSpeed = move_toward(jumpSpeed, maxJumpSpeed, accelerationSpeed * 10)
 		else:
 			jumpState = false

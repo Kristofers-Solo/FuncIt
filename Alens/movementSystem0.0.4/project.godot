@@ -14,6 +14,10 @@ config/name="Movement System 0 . 0 . 4"
 run/main_scene="res://source/levels/trinity_site/trinity-site-level.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/resizable=false
+
 [input]
 
 input_right={
