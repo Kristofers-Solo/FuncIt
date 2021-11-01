@@ -19,7 +19,7 @@ func get_input():
 		movement.y += 10
 	if Input.is_action_pressed("ui_up"):
 		movement.y -= 10
-	if Input.is_action_just_pressed("shoot"):
+	if Input.is_action_pressed("shoot"):
 		shoot()
 		
 func _physics_process(delta):
