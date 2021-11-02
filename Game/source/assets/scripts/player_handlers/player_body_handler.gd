@@ -6,6 +6,7 @@ var player_bullet = load("res://source/entities/bullet/player_bullet.tscn")
 var username_text = load("res://source/scenes/OVERLAY/elements/username_text.tscn")
 var username setget username_set
 var username_text_instance = null
+export var debug_mode = false
 
 var can_shoot = true
 var is_reloading = false
@@ -141,7 +142,7 @@ func _process(delta: float) -> void:
 func _physics_process(delta) -> void:
 	if get_tree().has_network_peer():
 		if is_network_master() and visible:
-			look_at(get_global_mouse_position())
+			#look_at(get_global_mouse_position())
 			if "0" in VDIR:
 				if VDIR["1"]["0"]["ray"]["length"] - dimensions["collider"]["radius"] > 2 and jumpState == false:
 					gravityVector = (VDIR["1"]["0"]["ray"]["position"] - user_state["global_position"]).normalized()
@@ -178,7 +179,7 @@ func _physics_process(delta) -> void:
 					jumpSpeed = move_toward(jumpSpeed, maxJumpSpeed, accelerationSpeed * 10)
 				else:
 					jumpState = false
-					jumpSpeed = 100
+					jumpSpeed = 300
 				if user_input["boost"] == true:
 					maxMovementSpeed = move_toward(maxMovementSpeed,120,accelerationSpeed)
 				else:
@@ -200,12 +201,13 @@ func _physics_process(delta) -> void:
 				move_and_slide(puppet_velocity * movementSpeed)
 
 func _draw():
-	for vector_type in VDIR:
-		var v_t = str(vector_type)
-		for vector in VDIR[v_t]:
-			var v = str(vector)
-			if v_t == "1":
-				draw_line(VDIR[v_t][v]["start"] - user_state["global_position"],(VDIR[v_t][v]["ray"]["position"] - user_state["global_position"]).rotated(-rotation),Color(255,255,255,1),1)
+	if debug_mode == true:
+		for vector_type in VDIR:
+			var v_t = str(vector_type)
+			for vector in VDIR[v_t]:
+				var v = str(vector)
+				if v_t == "1":
+					draw_line(VDIR[v_t][v]["start"] - user_state["global_position"],(VDIR[v_t][v]["ray"]["position"] - user_state["global_position"]).rotated(-rotation),Color(255,255,255,1),1)
 
 
 func lerp_angle(from, to, weight):
