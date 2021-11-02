@@ -1,8 +1,16 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://font/roboto.tres" type="DynamicFont" id=1]
-[ext_resource path="res://code/server/network_setup.gd" type="Script" id=2]
-[ext_resource path="res://code/UI.gd" type="Script" id=3]
+[ext_resource path="res://source/fonts/roboto/roboto.tres" type="DynamicFont" id=1]
+[ext_resource path="res://source/assets/scripts/server-handlers/network_processors/network_setup.gd" type="Script" id=2]
+[ext_resource path="res://source/assets/scripts/ui_element_handlers/UI.gd" type="Script" id=3]
+[ext_resource path="res://source/floor.tscn" type="PackedScene" id=4]
+[ext_resource path="res://font/Roboto-Regular.ttf" type="DynamicFontData" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 5 )
 
 [node name="network_setup" type="Control"]
 anchor_right = 1.0
@@ -70,9 +78,9 @@ script = ExtResource( 3 )
 
 [node name="start_game" type="Button" parent="UI"]
 margin_left = 27.0
-margin_top = 27.0
+margin_top = 24.7551
 margin_right = 391.0
-margin_bottom = 158.0
+margin_bottom = 155.755
 custom_fonts/font = ExtResource( 1 )
 text = "Start game"
 __meta__ = {
@@ -84,12 +92,16 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -150.0
-custom_fonts/font = ExtResource( 1 )
+custom_fonts/font = SubResource( 1 )
 align = 1
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="floor" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1048.45, 986.437 )
+scale = Vector2( 2, 1 )
 
 [connection signal="pressed" from="multiplayer_configure/create_server" to="." method="_on_create_server_pressed"]
 [connection signal="pressed" from="multiplayer_configure/join_server" to="." method="_on_join_server_pressed"]

@@ -1,6 +1,6 @@
 extends Control
 
-var player = load("res://scenes/player.tscn")
+var player = load("res://source/entities/player/player_node.tscn")
 
 var current_spawn_location_instance_number = 1
 var current_player_for_spawn_location_number = null
@@ -66,13 +66,12 @@ func _on_join_server_pressed():
 	if username_text_edit.text != "":
 		multiplayer_config_ui.hide()
 		username_text_edit.hide()
-		Global.instance_node(load("res://scenes/server_browser.tscn"), self)
+		Global.instance_node(load("res://source/scenes/GUI/server_handlers/server_browser.tscn"), self)
 
 
 func _connected_to_server() -> void:
 	yield(get_tree().create_timer(0.1), "timeout")
 	instance_player(get_tree().get_network_unique_id())
-
 
 
 func instance_player(id) -> void:
@@ -88,4 +87,4 @@ func _on_start_game_pressed():
 
 
 sync func switch_to_game() -> void:
-	get_tree().change_scene("res://scenes/game.tscn") 
+	get_tree().change_scene("res://source/levels/trinity_site/trinity_site_level.tscn") 

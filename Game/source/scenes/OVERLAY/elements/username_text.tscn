@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://font/roboto.tres" type="DynamicFont" id=1]
-[ext_resource path="res://code/username_text.gd" type="Script" id=2]
+[ext_resource path="res://source/fonts/roboto/roboto.tres" type="DynamicFont" id=1]
+[ext_resource path="res://source/assets/scripts/ui_element_handlers/username_text.gd" type="Script" id=2]
 
 [node name="username_text" type="Node2D" groups=[
 "Net",

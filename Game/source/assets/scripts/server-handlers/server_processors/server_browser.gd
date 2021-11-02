@@ -11,14 +11,14 @@ func _ready() -> void:
 	
 
 func _on_server_listener_new_server(serverInfo):
-	var server_node = Global.instance_node(load("res://scenes/server_display.tscn"), server_container)
+	var server_node = Global.instance_node(load("res://source/scenes/GUI/server-handlers/server_display.tscn"), server_container)
 	server_node.text = "%s - %s" % [serverInfo.ip, serverInfo.name]
 	server_node.ip_address = str(serverInfo.ip)
 
 
 func _on_server_listener_remove_server(serverIp):
 	for serverNode in server_container.get_children():
-		if serverNode.is_in_group("server_display"):
+		if serverNode.is_in_group("Server_display"):
 			if serverNode.ip_address == serverIp:
 				serverNode.queue_free()
 				break
