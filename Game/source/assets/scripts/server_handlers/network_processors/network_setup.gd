@@ -2,6 +2,7 @@ extends Control
 
 var player = load("res://source/entities/player/player_node.tscn")
 
+var min_players = 2
 var current_spawn_location_instance_number = 1
 var current_player_for_spawn_location_number = null
 
@@ -9,6 +10,7 @@ onready var multiplayer_config_ui = $multiplayer_configure
 onready var username_text_edit = $multiplayer_configure/username_text_edit
 onready var device_ip_address = $UI/device_ip_address
 onready var start_game = $UI/start_game
+onready var floor_ = $floor
 
 
 func _ready():
@@ -32,14 +34,17 @@ func _ready():
 						current_player_for_spawn_location_number = player
 	else:
 		start_game.hide()
+		floor_.hide()
 
 
 func _process(delta: float) -> void:
 	if get_tree().network_peer != null:
-		if get_tree().get_network_connected_peers().size() >= 0 and get_tree().is_network_server():
+		if get_tree().get_network_connected_peers().size() >= (min_players - 1) and get_tree().is_network_server():
 			start_game.show()
+			floor_.show()
 		else:
 			start_game.hide()
+			floor_.hide()
 
 
 func _player_connected(id) -> void:
@@ -87,4 +92,8 @@ func _on_start_game_pressed():
 
 
 sync func switch_to_game() -> void:
+	for child in PersistentNodes.get_children():
+		if child.is_in_group("Player"):
+			child.update_shoot_mode(true)
+	
 	get_tree().change_scene("res://source/levels/trinity_site/trinity_site_level.tscn") 
