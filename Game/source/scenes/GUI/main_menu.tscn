@@ -100,7 +100,7 @@ __meta__ = {
 }
 
 [node name="floor" parent="." instance=ExtResource( 4 )]
-position = Vector2( 962.997, 996.068 )
+position = Vector2( 960, 1096 )
 scale = Vector2( 2, 1 )
 
 [connection signal="pressed" from="multiplayer_configure/create_server" to="." method="_on_create_server_pressed"]

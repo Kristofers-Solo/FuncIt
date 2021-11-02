@@ -10,7 +10,6 @@ onready var multiplayer_config_ui = $multiplayer_configure
 onready var username_text_edit = $multiplayer_configure/username_text_edit
 onready var device_ip_address = $UI/device_ip_address
 onready var start_game = $UI/start_game
-onready var floor_ = $floor
 
 
 func _ready():
@@ -34,17 +33,14 @@ func _ready():
 						current_player_for_spawn_location_number = player
 	else:
 		start_game.hide()
-		floor_.hide()
 
 
 func _process(delta: float) -> void:
 	if get_tree().network_peer != null:
 		if get_tree().get_network_connected_peers().size() >= (min_players - 1) and get_tree().is_network_server():
 			start_game.show()
-			floor_.show()
 		else:
 			start_game.hide()
-			floor_.hide()
 
 
 func _player_connected(id) -> void:

@@ -107,10 +107,6 @@ func _process(delta: float) -> void:
 	if username_text_instance != null:
 		username_text_instance.name = "username" + name
 
-	if hp <= 0:
-			if get_tree().is_network_server():
-				rpc("destroy")
-
 
 	user_input = UIN_preset_pre_processor_instance.update()
 	user_state = get_user_state()
@@ -141,7 +137,6 @@ func _process(delta: float) -> void:
 func _physics_process(delta) -> void:
 	if get_tree().has_network_peer():
 		if is_network_master() and visible:
-			look_at(get_global_mouse_position())
 			if "0" in VDIR:
 				if VDIR["1"]["0"]["ray"]["length"] - dimensions["collider"]["radius"] > 2 and jumpState == false:
 					gravityVector = (VDIR["1"]["0"]["ray"]["position"] - user_state["global_position"]).normalized()
@@ -198,6 +193,11 @@ func _physics_process(delta) -> void:
 			
 			if not tween.is_active():
 				move_and_slide(puppet_velocity * movementSpeed)
+	if hp <= 0:
+		if get_tree().is_network_server():
+			rpc("destroy")
+
+
 
 func _draw():
 	for vector_type in VDIR:
@@ -289,7 +289,7 @@ func _on_hit_timer_timeout():
 	modulate = Color(1, 1, 1, 1)
 
 
-func _on_Hitbox_area_entered(area):
+func _on_hitbox_area_entered(area):
 	if get_tree().is_network_server():
 		if area.is_in_group("Player_damager") and area.get_parent().player_owner != int(name):
 			rpc("hit_by_damager", area.get_parent().damage)
@@ -308,8 +308,8 @@ sync func enable() -> void:
 	update_shoot_mode(false)
 	username_text_instance.visible = true
 	visible = true
-	$CollisionShape2D.disabled = false
-	$Hitbox/CollisionShape2D.disabled = false
+	$player_collider.disabled = false
+	$hitbox/CollisionShape2D.disabled = false
 	
 	if get_tree().has_network_peer():
 		if is_network_master():
@@ -336,6 +336,4 @@ func _exit_tree() -> void:
 	if get_tree().has_network_peer():
 		if is_network_master():
 			Global.player_master = null
-
-
 
