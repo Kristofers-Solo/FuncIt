@@ -1,6 +1,5 @@
 extends Node
 
-
 signal new_server
 signal remove_server
 

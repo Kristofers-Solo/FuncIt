@@ -55,10 +55,10 @@ func movement(delta):
 	if Input.is_action_just_pressed("stop"):
 		velocity.x = 0
 		velocity.y = 0
-	if Input.is_action_pressed("move_left"):
+	if Input.is_action_pressed("inpt_left"):
 		if velocity.x > -MAX_SPEED:
 			velocity.x -= speed
-	elif Input.is_action_pressed("move_right"):
+	elif Input.is_action_pressed("inpt_right"):
 		if velocity.x < MAX_SPEED:
 			velocity.x += speed
 	
@@ -74,13 +74,13 @@ func movement(delta):
 func flying():
 	var fly_speed = 1000
 	var velocity = Vector2()
-	if Input.is_action_pressed("move_right"):
+	if Input.is_action_pressed("inpt_right"):
 		velocity.x += 1
-	if Input.is_action_pressed("move_left"):
+	if Input.is_action_pressed("inpt_left"):
 		velocity.x -= 1
-	if Input.is_action_pressed("move_down"):
+	if Input.is_action_pressed("inpt_down"):
 		velocity.y += 1
-	if Input.is_action_pressed("move_up"):
+	if Input.is_action_pressed("inpt_up"):
 		velocity.y -= 1
 	velocity = velocity.normalized() * fly_speed
 	
