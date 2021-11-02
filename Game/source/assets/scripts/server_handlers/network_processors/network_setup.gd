@@ -2,7 +2,7 @@ extends Control
 
 var player = load("res://source/entities/player/player_node.tscn")
 
-var min_players = 2
+var min_players = 1
 var current_spawn_location_instance_number = 1
 var current_player_for_spawn_location_number = null
 
