@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://source/assets/scripts/server-handlers/trinity_site_level.gd" type="Script" id=1]
+[ext_resource path="res://source/assets/scripts/server_handlers/trinity_site_level.gd" type="Script" id=1]
 [ext_resource path="res://source/assets/scripts/ui_element_handlers/UI.gd" type="Script" id=2]
 [ext_resource path="res://source/levels/trinity_site/images/trinity_site_level_layout-monochrome.png" type="Texture" id=3]
 
@@ -27,16 +27,16 @@ polygon = PoolVector2Array( 411.392, 250.341, 409.273, 253.255, 403.446, 255.638
 [node name="spawn_locations" type="Node" parent="."]
 
 [node name="1" type="Position2D" parent="spawn_locations"]
-position = Vector2( 395.113, 723.483 )
+position = Vector2( 385.599, 826.944 )
 
 [node name="2" type="Position2D" parent="spawn_locations"]
-position = Vector2( 962.095, 904.443 )
+position = Vector2( 963.877, 884.843 )
 
 [node name="3" type="Position2D" parent="spawn_locations"]
-position = Vector2( 1780.68, 680.768 )
+position = Vector2( 1770.68, 678.768 )
 
 [node name="4" type="Position2D" parent="spawn_locations"]
-position = Vector2( 946.144, 307.022 )
+position = Vector2( 969.307, 315.931 )
 
 [node name="UI" type="CanvasLayer" parent="."]
 script = ExtResource( 2 )

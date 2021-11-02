@@ -1,13 +1,13 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://source/fonts/roboto/roboto.tres" type="DynamicFont" id=1]
-[ext_resource path="res://source/assets/scripts/server-handlers/network_processors/network_setup.gd" type="Script" id=2]
+[ext_resource path="res://source/assets/scripts/server_handlers/network_processors/network_setup.gd" type="Script" id=2]
 [ext_resource path="res://source/assets/scripts/ui_element_handlers/UI.gd" type="Script" id=3]
 [ext_resource path="res://source/floor.tscn" type="PackedScene" id=4]
-[ext_resource path="res://font/Roboto-Regular.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://source/fonts/roboto/Roboto-Regular.ttf" type="DynamicFontData" id=5]
 
 [sub_resource type="DynamicFont" id=1]
-size = 64
+size = 32
 use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 5 )
@@ -88,10 +88,10 @@ __meta__ = {
 }
 
 [node name="device_ip_address" type="Label" parent="UI"]
-anchor_top = 1.0
+anchor_left = 1.0
 anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -150.0
+margin_left = -256.0
+margin_bottom = 64.0
 custom_fonts/font = SubResource( 1 )
 align = 1
 valign = 1
@@ -100,7 +100,7 @@ __meta__ = {
 }
 
 [node name="floor" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1048.45, 986.437 )
+position = Vector2( 960, 1104 )
 scale = Vector2( 2, 1 )
 
 [connection signal="pressed" from="multiplayer_configure/create_server" to="." method="_on_create_server_pressed"]

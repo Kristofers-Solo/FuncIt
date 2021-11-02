@@ -6,7 +6,6 @@ var username_text_instance = null
 
 puppet var puppet_position = Vector2(0, 0) setget puppet_position_set
 puppet var puppet_velocity = Vector2()
-puppet var puppet_rotaion = 0
 puppet var puppet_username = "" setget puppet_username_set
 
 onready var tween = $Tween
@@ -115,7 +114,7 @@ func _process(delta: float) -> void:
 	process_rotation()
 
 
-func _physics_process(delta):
+func _physics_process(delta) -> void:
 	if get_tree().has_network_peer():
 		if is_network_master():
 			if "0" in VDIR:
@@ -203,7 +202,7 @@ func _on_network_tick_rate_timeout():
 		if is_network_master():
 			rset_unreliable("puppet_position", global_position)
 			#rset_unreliable("puppet_velocity", movementVector)
-			#rset_unreliable("puppet_rotation", rotation_degrees)
+			rset_unreliable("puppet_rotation", rotation_degrees)
 
 
 sync func update_position(pos):

@@ -2,7 +2,7 @@
 
 [ext_resource path="res://source/fonts/roboto/roboto.tres" type="DynamicFont" id=1]
 [ext_resource path="res://source/scenes/GUI/server_handlers/server_listener.tscn" type="PackedScene" id=2]
-[ext_resource path="res://source/assets/scripts/server-handlers/server_processors/server_browser.gd" type="Script" id=3]
+[ext_resource path="res://source/assets/scripts/server_handlers/server_processors/server_browser.gd" type="Script" id=3]
 
 [sub_resource type="Animation" id=1]
 resource_name = "searching_for_servers"

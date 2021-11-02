@@ -15,7 +15,6 @@ var username_text_instance = null
 
 puppet var puppet_position = Vector2(0, 0) setget puppet_position_set
 puppet var puppet_velocity = Vector2()
-puppet var puppet_rotaion = 0
 puppet var puppet_username = "" setget puppet_username_set
 
 onready var tween = $Tween
