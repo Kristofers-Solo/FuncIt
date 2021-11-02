@@ -15,6 +15,7 @@ onready var tween = $Tween
 func _ready():
 	get_tree().connect("network_peer_connected", self, "_network_peer_connected")
 	username_text_instance = Global.instance_node_at_location(username_text, PersistentNodes, global_position)
+	
 	username_text_instance.player_following = self
 
 
