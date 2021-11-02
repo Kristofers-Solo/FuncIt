@@ -24,7 +24,7 @@ func _ready():
 		current_spawn_location_instance_number = 1
 		for player in PersistentNodes.get_children():
 			if player.is_in_group("Player"):
-				for spawn_location in $Spawn_locations.get_children():
+				for spawn_location in $spawn_locations.get_children():
 					if int(spawn_location.name) == current_spawn_location_instance_number and current_player_for_spawn_location_number != player:
 						player.rpc("update_position", spawn_location.global_position)
 						player.rpc("enable")
