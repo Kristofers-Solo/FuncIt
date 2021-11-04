@@ -81,6 +81,6 @@ __meta__ = {
 }
 
 [node name="win_timer" type="Timer" parent="game_UI/Control/winner"]
-wait_time = 4.0
+wait_time = 2.0
 
 [connection signal="timeout" from="game_UI/Control/winner/win_timer" to="game_UI/Control/winner" method="_on_win_timer_timeout"]
