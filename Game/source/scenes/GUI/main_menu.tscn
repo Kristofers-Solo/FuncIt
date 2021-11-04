@@ -103,6 +103,20 @@ __meta__ = {
 position = Vector2( 960, 1096 )
 scale = Vector2( 2, 1 )
 
+[node name="spawn_locations" type="Node" parent="."]
+
+[node name="1" type="Position2D" parent="spawn_locations"]
+position = Vector2( 264, 880 )
+
+[node name="2" type="Position2D" parent="spawn_locations"]
+position = Vector2( 688, 912 )
+
+[node name="3" type="Position2D" parent="spawn_locations"]
+position = Vector2( 1264, 872 )
+
+[node name="4" type="Position2D" parent="spawn_locations"]
+position = Vector2( 1584, 888 )
+
 [connection signal="pressed" from="multiplayer_configure/create_server" to="." method="_on_create_server_pressed"]
 [connection signal="pressed" from="multiplayer_configure/join_server" to="." method="_on_join_server_pressed"]
 [connection signal="pressed" from="UI/start_game" to="." method="_on_start_game_pressed"]
