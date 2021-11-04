@@ -14,5 +14,5 @@ data_*/
 *.x86_64
 *.log
 test/
-build/
-builds/
+build/*
+builds/*
