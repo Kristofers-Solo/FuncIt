@@ -1,8 +1,7 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=44 format=2]
 
 [ext_resource path="res://source/assets/sprites/grass/idle/grass_type-0_frame_na – 1.png" type="Texture" id=1]
 [ext_resource path="res://source/assets/sprites/grass/idle/grass_type-0_frame_na – 2.png" type="Texture" id=2]
-[ext_resource path="res://source/assets/sprites/grass/trinity_site_level_layout-level_design_z-index_0_grass_type-2.png" type="Texture" id=3]
 [ext_resource path="res://source/assets/sprites/grass/idle/grass_type-0_frame_na – 10.png" type="Texture" id=4]
 [ext_resource path="res://source/assets/sprites/grass/idle/grass_type-0_frame_na – 5.png" type="Texture" id=5]
 [ext_resource path="res://source/assets/sprites/grass/idle/grass_type-0_frame_na – 6.png" type="Texture" id=6]
@@ -77,12 +76,11 @@ position = Vector2( -3.36365, 0 )
 scale = Vector2( 0.75, 0.75 )
 frames = SubResource( 1 )
 animation = "idle"
-frame = 4
+frame = 7
 playing = true
 
 [node name="trinity_site_level_layout-level_design_z-index_0_grass_type-2" type="Sprite" parent="."]
 visible = false
-texture = ExtResource( 3 )
 
 [node name="grass_node" type="Node2D" parent="."]
 

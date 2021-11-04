@@ -24,7 +24,9 @@ func _process(delta):
 				activeAnimation = "idle"
 			else:
 				activeAnimation = "idle_down"
-	print(reactionComplete)
+	if activeAnimation == "transition_down" or activeAnimation == "transition_up":
+		$trinity_site_level_grass_type_2_animated.play(activeAnimation)
+		reactionComplete = true
 
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("Player"):
