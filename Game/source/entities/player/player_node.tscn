@@ -1,0 +1,86 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://source/assets/sprites/character/player/animation/idle/player_main_body_default_sprite_idle_animation – 4.png" type="Texture" id=1]
+[ext_resource path="res://source/assets/scripts/player_handlers/player_collider_handler.gd" type="Script" id=2]
+[ext_resource path="res://source/assets/sprites/character/player/animation/idle/player_main_body_default_sprite_idle_animation – 1.png" type="Texture" id=3]
+[ext_resource path="res://source/assets/sprites/character/player/animation/idle/player_main_body_default_sprite_idle_animation – 3.png" type="Texture" id=4]
+[ext_resource path="res://source/assets/sprites/character/player/player_main_body_default_sprite.png" type="Texture" id=5]
+[ext_resource path="res://source/assets/sprites/character/player/animation/idle/player_main_body_default_sprite_idle_animation – 8.png" type="Texture" id=6]
+[ext_resource path="res://source/assets/sprites/character/player/animation/idle/player_main_body_default_sprite_idle_animation.png" type="Texture" id=7]
+[ext_resource path="res://source/assets/sprites/character/player/animation/idle/player_main_body_default_sprite_idle_animation – 9.png" type="Texture" id=8]
+[ext_resource path="res://source/assets/sprites/character/player/animation/idle/player_main_body_default_sprite_idle_animation – 10.png" type="Texture" id=9]
+[ext_resource path="res://source/assets/sprites/character/player/animation/idle/player_main_body_default_sprite_idle_animation – 11.png" type="Texture" id=10]
+[ext_resource path="res://source/assets/scripts/player_handlers/player_body_handler.gd" type="Script" id=11]
+[ext_resource path="res://source/assets/sprites/character/player/animation/idle/player_main_body_default_sprite_idle_animation – 5.png" type="Texture" id=12]
+[ext_resource path="res://source/assets/sprites/character/player/animation/idle/player_main_body_default_sprite_idle_animation – 2.png" type="Texture" id=13]
+[ext_resource path="res://source/assets/sprites/character/player/animation/idle/player_main_body_default_sprite_idle_animation – 6.png" type="Texture" id=14]
+[ext_resource path="res://source/assets/sprites/character/player/animation/idle/player_main_body_default_sprite_idle_animation – 7.png" type="Texture" id=15]
+[ext_resource path="res://icon.png" type="Texture" id=16]
+[ext_resource path="res://source/entities/player/shoot_point.gd" type="Script" id=17]
+
+[sub_resource type="CircleShape2D" id=1]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 13 ), ExtResource( 4 ), ExtResource( 1 ), ExtResource( 12 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 6 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "idle",
+"speed": 65.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 47.3339, 50.0489 )
+
+[node name="player" type="KinematicBody2D" groups=[
+"Net",
+"Player",
+]]
+script = ExtResource( 11 )
+
+[node name="player_collider" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+script = ExtResource( 2 )
+
+[node name="player_animated_sprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.2, 0.2 )
+frames = SubResource( 2 )
+animation = "idle"
+
+[node name="player_sprite" type="Sprite" parent="."]
+visible = false
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 5 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="network_tick_rate" type="Timer" parent="."]
+wait_time = 0.03
+autostart = true
+
+[node name="reload_timer" type="Timer" parent="."]
+wait_time = 0.15
+one_shot = true
+
+[node name="hit_timer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[node name="shoot_point" type="Position2D" parent="."]
+position = Vector2( -40.8514, -27.8513 )
+script = ExtResource( 17 )
+
+[node name="gun" type="Sprite" parent="shoot_point"]
+position = Vector2( 24.6369, 0.293762 )
+scale = Vector2( 0.0911242, 0.0308412 )
+texture = ExtResource( 16 )
+
+[node name="hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+position = Vector2( -3.49359, 3.44745 )
+shape = SubResource( 3 )
+
+[connection signal="timeout" from="network_tick_rate" to="." method="_on_network_tick_rate_timeout"]
+[connection signal="timeout" from="reload_timer" to="." method="_on_reload_timer_timeout"]
+[connection signal="timeout" from="hit_timer" to="." method="_on_hit_timer_timeout"]
+[connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]

@@ -1,0 +1,122 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://source/fonts/roboto/roboto.tres" type="DynamicFont" id=1]
+[ext_resource path="res://source/assets/scripts/server_handlers/network_processors/network_setup.gd" type="Script" id=2]
+[ext_resource path="res://source/assets/scripts/ui_element_handlers/UI.gd" type="Script" id=3]
+[ext_resource path="res://source/floor.tscn" type="PackedScene" id=4]
+[ext_resource path="res://source/fonts/roboto/Roboto-Regular.ttf" type="DynamicFontData" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 5 )
+
+[node name="network_setup" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="multiplayer_configure" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.5199
+margin_right = 2.5199
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="create_server" type="Button" parent="multiplayer_configure"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -267.5
+margin_top = -202.0
+margin_right = 267.5
+margin_bottom = -26.0
+custom_fonts/font = ExtResource( 1 )
+text = "Create server"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="join_server" type="Button" parent="multiplayer_configure"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -266.52
+margin_top = 28.0
+margin_right = 268.48
+margin_bottom = 204.0
+custom_fonts/font = ExtResource( 1 )
+text = "Join server"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="username_text_edit" type="LineEdit" parent="multiplayer_configure"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -422.5
+margin_top = 117.0
+margin_right = 422.5
+margin_bottom = 221.0
+custom_fonts/font = ExtResource( 1 )
+align = 1
+placeholder_text = "Enter username"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UI" type="CanvasLayer" parent="."]
+script = ExtResource( 3 )
+
+[node name="start_game" type="Button" parent="UI"]
+margin_left = 27.0
+margin_top = 24.7551
+margin_right = 391.0
+margin_bottom = 155.755
+custom_fonts/font = ExtResource( 1 )
+text = "Start game"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="device_ip_address" type="Label" parent="UI"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -256.0
+margin_bottom = 64.0
+custom_fonts/font = SubResource( 1 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="floor" parent="." instance=ExtResource( 4 )]
+position = Vector2( 960, 1096 )
+scale = Vector2( 2, 1 )
+
+[node name="spawn_locations" type="Node" parent="."]
+
+[node name="1" type="Position2D" parent="spawn_locations"]
+position = Vector2( 264, 880 )
+
+[node name="2" type="Position2D" parent="spawn_locations"]
+position = Vector2( 688, 912 )
+
+[node name="3" type="Position2D" parent="spawn_locations"]
+position = Vector2( 1264, 872 )
+
+[node name="4" type="Position2D" parent="spawn_locations"]
+position = Vector2( 1584, 888 )
+
+[connection signal="pressed" from="multiplayer_configure/create_server" to="." method="_on_create_server_pressed"]
+[connection signal="pressed" from="multiplayer_configure/join_server" to="." method="_on_join_server_pressed"]
+[connection signal="pressed" from="UI/start_game" to="." method="_on_start_game_pressed"]
