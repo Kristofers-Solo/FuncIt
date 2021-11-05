@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+export var debugMode = false
+
 var hp = 100 setget set_hp
 
 var player_bullet = load("res://source/entities/bullet/player_bullet.tscn")
@@ -34,21 +36,18 @@ var VDIR = {}
 var user_input = {}
 var user_state = {}
 var dimensions = {}
-var gravityVector = Vector2(0,0)
-var movementVector = Vector2(0,0)
-var movementSpeed = 0
-var maxMovementSpeed = 200
-var accelerationSpeed = 5
-var deccelerationSpeed = 4.25
-var jumpState = false
-var jumpSpeed = 0
-var maxJumpSpeed = 400
-var time = 0
-var timeOut = 1
-var timedOut = true
-var movementRight = false
-var movementLeft = true
 
+var currentMovementSpeed = 0
+var maxMovementSpeed = Vector2(200,400)
+var accelerationSpeed = 5
+var deccelerationSpeed = 8
+var rotationSpeed = 5
+var currentRotation = 0
+var rotationalHolder = 0
+var velocityVDIR = Vector2(0,0)
+var characterStates = {"onGround": false, "jumped": false, "faceDirection": true}
+
+var reverseControls = false
 
 func _ready():
 	get_tree().connect("network_peer_connected", self, "_network_peer_connected")
@@ -92,6 +91,7 @@ func get_dimensions():
 
 
 func process_rotation():
+	if rotation_degrees > 360 or rotation_degrees < -360: rotation_degrees = 0
 	var VDIR_ray_positive_y = VDIR["1"]["1"]["ray"]["position"].y - user_state["global_position"].y
 	var VDIR_ray_negative_y = VDIR["1"]["2"]["ray"]["position"].y - user_state["global_position"].y
 	var VDIR_ray_positive_x = VDIR["1"]["1"]["ray"]["position"].x - user_state["global_position"].x
@@ -111,7 +111,6 @@ func _process(delta: float) -> void:
 	user_input = UIN_preset_pre_processor_instance.update()
 	user_state = get_user_state()
 	dimensions = get_dimensions()
-	time += delta
 	VDIR = VDIR_preset_pre_processor_instance.update(user_state, dimensions)
 	for vector_type in VDIR:
 		var v_t = str(vector_type)
@@ -138,52 +137,53 @@ func _physics_process(delta) -> void:
 	if get_tree().has_network_peer():
 		if is_network_master() and visible:
 			if "0" in VDIR:
-				if VDIR["1"]["0"]["ray"]["length"] - dimensions["collider"]["radius"] > 2 and jumpState == false:
-					gravityVector = (VDIR["1"]["0"]["ray"]["position"] - user_state["global_position"]).normalized()
-					#print("Gravity on")
-				elif jumpState == false:
-					gravityVector = Vector2(0,0)
-				movementVector = Vector2(0,0)
-				if user_input["right"] == true:
-					movementVector = Vector2(1,0)
-				elif user_input["left"] == true:
-					movementVector = Vector2(-1,0)
+				if VDIR["1"]["0"]["ray"]["length"] - dimensions["collider"]["radius"] > 5:
+					characterStates["onGround"] = false
 				else:
-					movementVector = Vector2(0,0)
-				if movementVector.x == 1 and movementRight == false:
-					movementRight = true
-					movementLeft = false
-					$player_animated_sprite.flip_h = true
-				elif movementVector.x == -1 and movementLeft == false:
-					movementLeft = true
-					movementRight = false
-					$player_animated_sprite.flip_h = false
-				if movementVector != Vector2(0,0) and jumpState == false:
-					movementSpeed = move_toward(movementSpeed, maxMovementSpeed, accelerationSpeed)
-				elif movementVector != Vector2(0,0) and jumpState == true:
-					movementSpeed = move_toward(movementSpeed, maxMovementSpeed * 2, accelerationSpeed)
+					characterStates["onGround"] = true
+					characterStates["jumped"] = false
+				if characterStates["onGround"] and abs(velocityVDIR.x) < 5:
+					if rotation_degrees > 90 or rotation_degrees < -90:
+						reverseControls = true
+					else:
+						reverseControls = false
+				if VDIR["1"]["0"]["ray"]["collided"]:
+					rotationalHolder = rotation
+				if user_input["boost"] and not characterStates["jumped"]:
+					maxMovementSpeed.x = move_toward(maxMovementSpeed.x, 350, accelerationSpeed)
 				else:
-					movementSpeed = move_toward(movementSpeed, 0, deccelerationSpeed)
-				if timedOut == true and user_input["up"] == true and jumpState == false and VDIR["1"]["0"]["ray"]["length"] - dimensions["collider"]["radius"] < 2:
-					gravityVector = (VDIR["1"]["0"]["ray"]["position"] - user_state["global_position"]).normalized() * -1
-					jumpSpeed = 0
-					jumpState = true
-					time = 0
-				if jumpState == true and jumpSpeed < maxJumpSpeed:
-					rotation_degrees = move_toward(rotation_degrees, 0, accelerationSpeed/10)
-					jumpSpeed = move_toward(jumpSpeed, maxJumpSpeed, accelerationSpeed * 10)
-				else:
-					jumpState = false
-					jumpSpeed = 100
-				if user_input["boost"] == true:
-					maxMovementSpeed = move_toward(maxMovementSpeed,120,accelerationSpeed)
-				else:
-					maxMovementSpeed = move_toward(maxMovementSpeed,60,deccelerationSpeed)
-				if time < timeOut:
-					timedOut = false
-				else:
-					timedOut = true
-				move_and_slide(gravityVector * jumpSpeed + movementVector.rotated(rotation).normalized() * movementSpeed)
+					maxMovementSpeed.x = move_toward(maxMovementSpeed.x, 200, accelerationSpeed)
+				if characterStates["onGround"] and not characterStates["jumped"] and user_input["up"]:
+					velocityVDIR.y = -maxMovementSpeed.y
+					characterStates["jumped"] = true
+					rotationalHolder = rotation
+				if user_input["left"] and not reverseControls or user_input["right"] and reverseControls:
+					if velocityVDIR.x > 0:
+						velocityVDIR.x -= deccelerationSpeed
+					else:
+						velocityVDIR.x -= accelerationSpeed
+					if velocityVDIR.y < maxMovementSpeed.x and not characterStates["onGround"] and characterStates["jumped"]:
+						rotation_degrees -= rad2deg(rotationSpeed*delta)
+				if user_input["right"] and not reverseControls or user_input["left"] and reverseControls:
+					if velocityVDIR.x < 0:
+						velocityVDIR.x += deccelerationSpeed
+					else:
+						velocityVDIR.x += accelerationSpeed
+					if velocityVDIR.y < maxMovementSpeed.x and not characterStates["onGround"] and characterStates["jumped"]:
+						rotation_degrees += rad2deg(rotationSpeed*delta)
+				if characterStates["jumped"] and not characterStates["onGround"] and velocityVDIR.y > maxMovementSpeed.x:
+					if rotation_degrees > rad2deg(rotationalHolder): rotation_degrees -= rotationSpeed
+					elif rotation_degrees < rad2deg(rotationalHolder): rotation_degrees = move_toward(rotation_degrees, rad2deg(rotationalHolder), rotationSpeed)
+				if not user_input["right"] and not user_input["left"]:
+					velocityVDIR.x = move_toward(velocityVDIR.x, 0, deccelerationSpeed)
+				if not characterStates["onGround"]:
+					velocityVDIR.y += accelerationSpeed
+				elif characterStates["onGround"] and velocityVDIR.y > 0:
+					velocityVDIR.y -= deccelerationSpeed 
+				velocityVDIR = Vector2(clamp(velocityVDIR.x, -maxMovementSpeed.x, maxMovementSpeed.x), clamp(velocityVDIR.y, -maxMovementSpeed.y, maxMovementSpeed.y))
+				move_and_slide(velocityVDIR.rotated(rotationalHolder))
+				
+				
 				
 				if Input.is_action_pressed("input_shoot") and can_shoot and not is_reloading:
 					rpc("instance_bullet", get_tree().get_network_unique_id())
@@ -193,7 +193,7 @@ func _physics_process(delta) -> void:
 			rotation = lerp_angle(rotation, puppet_rotation, delta * 8)
 			
 			if not tween.is_active():
-				move_and_slide(puppet_velocity * movementSpeed)
+				move_and_slide(puppet_velocity * currentMovementSpeed)
 	if hp <= 0:
 		if get_tree().is_network_server():
 			rpc("destroy")
@@ -201,12 +201,13 @@ func _physics_process(delta) -> void:
 
 
 func _draw():
-	for vector_type in VDIR:
-		var v_t = str(vector_type)
-		for vector in VDIR[v_t]:
-			var v = str(vector)
-			if v_t == "1":
-				draw_line(VDIR[v_t][v]["start"] - user_state["global_position"],(VDIR[v_t][v]["ray"]["position"] - user_state["global_position"]).rotated(-rotation),Color(255,255,255,1),1)
+	if debugMode:
+		for vector_type in VDIR:
+			var v_t = str(vector_type)
+			for vector in VDIR[v_t]:
+				var v = str(vector)
+				if v_t == "1":
+					draw_line(VDIR[v_t][v]["start"] - user_state["global_position"],(VDIR[v_t][v]["ray"]["position"] - user_state["global_position"]).rotated(-rotation),Color(255,255,255,1),1)
 
 
 func lerp_angle(from, to, weight):

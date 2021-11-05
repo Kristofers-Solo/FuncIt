@@ -34,7 +34,7 @@ z_index = -5
 texture = ExtResource( 7 )
 
 [node name="trinity_site_level_layout-level_design_z-index_0-version_ct_f_hd_3840_2160" type="Sprite" parent="trinity_site_body/trinity_site_level_layout-level_design_z-index_-2-version_ct_f_hd_3840_2160 – 01"]
-z_index = 3
+z_index = 5
 texture = ExtResource( 3 )
 
 [node name="trinity_site_level_layout-level_design_z-index_-1-version_ct_f_hd_3840_2160" type="Sprite" parent="trinity_site_body/trinity_site_level_layout-level_design_z-index_-2-version_ct_f_hd_3840_2160 – 01"]
