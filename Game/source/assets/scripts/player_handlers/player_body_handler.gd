@@ -140,7 +140,7 @@ func _physics_process(delta) -> void:
 			if "0" in VDIR:
 				if VDIR["1"]["0"]["ray"]["length"] - dimensions["collider"]["radius"] > 2 and jumpState == false:
 					gravityVector = (VDIR["1"]["0"]["ray"]["position"] - user_state["global_position"]).normalized()
-					print("Gravity on")
+					#print("Gravity on")
 				elif jumpState == false:
 					gravityVector = Vector2(0,0)
 				movementVector = Vector2(0,0)
