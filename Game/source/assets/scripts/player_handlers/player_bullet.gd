@@ -1,5 +1,7 @@
 extends Sprite
 
+var gravitile = 5
+
 var velocity = Vector2(1, 0)
 var player_rotation
 

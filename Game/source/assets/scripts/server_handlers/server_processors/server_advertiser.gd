@@ -1,8 +1,8 @@
 extends Node
 
-
 export (float) var broadcast_interval = 1.0
 var server_info = {"name": "LAN Game"}
+
 var socket_udp
 var broadcast_timer = Timer.new()
 var broadcast_port = Network.DEFAULT_PORT

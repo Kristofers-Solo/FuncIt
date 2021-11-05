@@ -144,3 +144,5 @@ __meta__ = {
 [connection signal="pressed" from="background_panel/manual_setup" to="." method="_on_manual_setup_pressed"]
 [connection signal="pressed" from="background_panel/go_back" to="." method="_on_go_back_pressed"]
 [connection signal="pressed" from="background_panel/server_ip_text_edit/join_server" to="." method="_on_join_server_pressed"]
+[connection signal="new_server" from="server_listener" to="." method="_on_server_listener_new_server"]
+[connection signal="remove_server" from="server_listener" to="." method="_on_server_listener_remove_server"]

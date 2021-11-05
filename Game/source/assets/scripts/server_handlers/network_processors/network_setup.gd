@@ -76,7 +76,7 @@ func _connected_to_server() -> void:
 
 
 func instance_player(id) -> void:
-	var player_instance = Global.instance_node_at_location(player, PersistentNodes, Vector2(rand_range(0, 1920), rand_range(0, 1080)))
+	var player_instance = Global.instance_node_at_location(player, PersistentNodes, get_node("spawn_locations/" + str(current_spawn_location_instance_number)).global_position)
 	player_instance.name = str(id)
 	player_instance.set_network_master(id)
 	player_instance.username = username_text_edit.text

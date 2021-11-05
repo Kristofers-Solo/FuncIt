@@ -16,11 +16,11 @@ func _init():
 	cleanup_timer.wait_time = server_cleanup_threshold
 	cleanup_timer.one_shot = false
 	cleanup_timer.autostart = true
-	cleanup_timer.connect("timeout", self, 'clean_up')
+	cleanup_timer.connect("timeout", self, 'cleanup')
 	add_child(cleanup_timer)
 
 
-func ready():
+func _ready():
 	known_servers.clear()
 	
 	if socket_udp.listen(listen_port) != OK:
@@ -35,7 +35,7 @@ func _process(delta):
 		var server_port = socket_udp.get_packet_port()
 		var array_bytes = socket_udp.get_packet()
 		
-		if server_ip != "" and server_port > 0:
+		if server_ip != '' and server_port > 0:
 			if not known_servers.has(server_ip):
 				var serverMessage = array_bytes.get_string_from_ascii()
 				var gameInfo = parse_json(serverMessage)

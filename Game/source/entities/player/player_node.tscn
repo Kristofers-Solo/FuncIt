@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://source/assets/sprites/character/player/animation/idle/player_main_body_default_sprite_idle_animation – 4.png" type="Texture" id=1]
 [ext_resource path="res://source/assets/scripts/player_handlers/player_collider_handler.gd" type="Script" id=2]
@@ -15,6 +15,8 @@
 [ext_resource path="res://source/assets/sprites/character/player/animation/idle/player_main_body_default_sprite_idle_animation – 2.png" type="Texture" id=13]
 [ext_resource path="res://source/assets/sprites/character/player/animation/idle/player_main_body_default_sprite_idle_animation – 6.png" type="Texture" id=14]
 [ext_resource path="res://source/assets/sprites/character/player/animation/idle/player_main_body_default_sprite_idle_animation – 7.png" type="Texture" id=15]
+[ext_resource path="res://icon.png" type="Texture" id=16]
+[ext_resource path="res://source/entities/player/shoot_point.gd" type="Script" id=17]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -64,7 +66,13 @@ wait_time = 0.1
 one_shot = true
 
 [node name="shoot_point" type="Position2D" parent="."]
-position = Vector2( 55.9245, -31.8558 )
+position = Vector2( -40.8514, -27.8513 )
+script = ExtResource( 17 )
+
+[node name="gun" type="Sprite" parent="shoot_point"]
+position = Vector2( 24.6369, 0.293762 )
+scale = Vector2( 0.0911242, 0.0308412 )
+texture = ExtResource( 16 )
 
 [node name="hitbox" type="Area2D" parent="."]
 

@@ -11,7 +11,7 @@ func _ready() -> void:
 	
 
 func _on_server_listener_new_server(serverInfo):
-	var server_node = Global.instance_node(load("res://source/scenes/GUI/server-handlers/server_display.tscn"), server_container)
+	var server_node = Global.instance_node(load("res://source/scenes/GUI/server_handlers/server_display.tscn"), server_container)
 	server_node.text = "%s - %s" % [serverInfo.ip, serverInfo.name]
 	server_node.ip_address = str(serverInfo.ip)
 
@@ -33,6 +33,7 @@ func _on_manual_setup_pressed():
 	else:
 		server_ip_text_edit.text = ""
 		server_ip_text_edit.hide()
+		manual_setup_button.text = "Manual setup"
 		server_container.show()
 
 

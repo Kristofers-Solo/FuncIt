@@ -1,6 +1,6 @@
 extends Node
 
-const DEFAULT_PORT = 28914
+const DEFAULT_PORT = 28414
 const MAX_CLIENTS = 4
 
 var server = null
@@ -18,6 +18,12 @@ onready var client_connection_timeout_timer = Timer.new()
 
 
 func _ready() -> void:
+	add_child(client_connection_timeout_timer)
+	client_connection_timeout_timer.wait_time = 10
+	client_connection_timeout_timer.one_shot = true
+	
+	client_connection_timeout_timer.connect("timeout", self, "_client_connection_timeout")
+	
 	if OS.get_name() == "Windows":
 		ip_address = IP.get_local_addresses()[3]
 	elif OS.get_name() == "Android":
@@ -31,6 +37,7 @@ func _ready() -> void:
 	
 	get_tree().connect("connected_to_server", self, "_connected_to_server")
 	get_tree().connect("server_disconnected", self, "_server_disconnected")
+	get_tree().connect("connection_failed", self, "_connection_failed")
 
 
 func create_server() -> void:
@@ -44,14 +51,10 @@ func join_server() -> void:
 	client = NetworkedMultiplayerENet.new()
 	client.create_client(ip_address, DEFAULT_PORT)
 	get_tree().set_network_peer(client)
+	client_connection_timeout_timer.start()
 
 
 func reset_network_connection() -> void:
-	if get_tree().has_network_peer():
-		get_tree().network_peer = null
-
-
-func reset_network_connections():
 	if get_tree().has_network_peer():
 		get_tree().network_peer = null
 
@@ -66,7 +69,7 @@ func _server_disconnected() -> void:
 	for child in PersistentNodes.get_children():
 		if child.is_in_group("Net"):
 			child.queue_free()
-	reset_network_connections()
+	reset_network_connection()
 	
 	if Global.ui != null:
 		var prompt = Global.instance_node(load("res://source/scenes/OVERLAY/elements/simple_prompt.tscn"), Global.ui)
