@@ -13,7 +13,7 @@
 [ext_resource path="res://source/levels/trinity_site/images/trinity_site_level_layout-level_design_z-index_-2-version_ct_f_hd_3840_2160 – 025.png" type="Texture" id=45]
 [ext_resource path="res://source/assets/scripts/trinity_site_body_handler.gd" type="Script" id=46]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=1]
 size = 120
 outline_size = 7
 outline_color = Color( 0, 0, 0, 1 )
@@ -38,6 +38,7 @@ z_index = 3
 texture = ExtResource( 3 )
 
 [node name="trinity_site_level_layout-level_design_z-index_-1-version_ct_f_hd_3840_2160" type="Sprite" parent="trinity_site_body/trinity_site_level_layout-level_design_z-index_-2-version_ct_f_hd_3840_2160 – 01"]
+position = Vector2( 0, -0.561157 )
 z_index = 2
 texture = ExtResource( 8 )
 
@@ -59,40 +60,48 @@ polygon = PoolVector2Array( 761.5, 423.238, 765.865, 418.476, 769.04, 403.395, 7
 [node name="grass_node3" parent="trinity_site_body" instance=ExtResource( 9 )]
 position = Vector2( 393.822, 869.192 )
 scale = Vector2( 0.1, 0.1 )
+z_index = -3
 
 [node name="grass_node2" parent="trinity_site_body" instance=ExtResource( 9 )]
 position = Vector2( 764.908, 986.211 )
 scale = Vector2( 0.1, 0.1 )
+z_index = -3
 
 [node name="grass_node" parent="trinity_site_body" instance=ExtResource( 9 )]
 position = Vector2( 190.03, 791.328 )
 rotation = 0.760963
 scale = Vector2( 0.1, 0.1 )
+z_index = -3
 
 [node name="grass_node4" parent="trinity_site_body" instance=ExtResource( 9 )]
 position = Vector2( 1748.96, 770.377 )
 rotation = -0.811578
 scale = Vector2( 0.1, 0.1 )
+z_index = -3
 
 [node name="grass_node5" parent="trinity_site_body" instance=ExtResource( 9 )]
 position = Vector2( 1323.23, 880.375 )
 rotation = -0.541052
 scale = Vector2( 0.1, 0.1 )
+z_index = -3
 
 [node name="grass_node6" parent="trinity_site_body" instance=ExtResource( 9 )]
 position = Vector2( 1831.89, 614.616 )
 rotation = -1.26536
 scale = Vector2( 0.1, 0.1 )
+z_index = -3
 
 [node name="grass_node7" parent="trinity_site_body" instance=ExtResource( 9 )]
 position = Vector2( 1003.81, 929.937 )
 rotation = 0.404916
 scale = Vector2( 0.1, 0.1 )
+z_index = -3
 
 [node name="grass_node8" parent="trinity_site_body" instance=ExtResource( 9 )]
 position = Vector2( 1531.18, 870.873 )
 rotation = -0.0506146
 scale = Vector2( 0.1, 0.1 )
+z_index = -3
 
 [node name="spawn_locations" type="Node" parent="."]
 
@@ -134,7 +143,7 @@ margin_left = 2.37842
 margin_top = -35.5
 margin_right = 2.37842
 margin_bottom = 106.5
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 6
 custom_constants/shadow_offset_y = 6
