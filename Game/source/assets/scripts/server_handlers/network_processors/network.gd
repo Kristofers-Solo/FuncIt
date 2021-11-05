@@ -19,7 +19,7 @@ onready var client_connection_timeout_timer = Timer.new()
 
 func _ready() -> void:
 	add_child(client_connection_timeout_timer)
-	client_connection_timeout_timer.wait_time = 10
+	client_connection_timeout_timer.wait_time = 600 # 10 min
 	client_connection_timeout_timer.one_shot = true
 	
 	client_connection_timeout_timer.connect("timeout", self, "_client_connection_timeout")
@@ -79,6 +79,10 @@ func _server_disconnected() -> void:
 func _client_connection_timeout():
 	if client_connected_to_server == false:
 		print("Client has been timed out")
+		
+		for child in PersistentNodes.get_children():
+			if child.is_in_group("Net"):
+				child.queue_free()
 		reset_network_connection()
 		
 		var connection_timeout_prompt = Global.instance_node(load("res://source/scenes/OVERLAY/elements/simple_prompt.tscn"), get_tree().current_scene)
