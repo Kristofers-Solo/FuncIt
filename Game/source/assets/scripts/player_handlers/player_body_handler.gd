@@ -189,8 +189,6 @@ func _physics_process(delta) -> void:
 					is_reloading = true
 					reload_timer.start()
 		else:
-			rotation = lerp_angle(rotation, puppet_rotation, delta * 8)
-			
 			if not tween.is_active():
 				move_and_slide(puppet_velocity * movementSpeed)
 	if hp <= 0:
@@ -207,15 +205,6 @@ func _draw():
 			if v_t == "1":
 				draw_line(VDIR[v_t][v]["start"] - user_state["global_position"],(VDIR[v_t][v]["ray"]["position"] - user_state["global_position"]).rotated(-rotation),Color(255,255,255,1),1)
 
-
-func lerp_angle(from, to, weight):
-	return from + short_angle_dist(from, to) * weight
-
-
-func short_angle_dist(from, to):
-	var max_angle = PI * 2
-	var difference = fmod(to - from, max_angle)
-	return fmod(2 * difference, max_angle) - difference
 
 
 func puppet_position_set(new_value) -> void:
@@ -259,7 +248,7 @@ func _on_network_tick_rate_timeout():
 	if get_tree().has_network_peer():
 		if is_network_master():
 			rset_unreliable("puppet_position", global_position)
-			#rset_unreliable("puppet_velocity", movementVector)
+			rset_unreliable("puppet_velocity", movementVector)
 			rset_unreliable("puppet_rotation", rotation)
 
 
