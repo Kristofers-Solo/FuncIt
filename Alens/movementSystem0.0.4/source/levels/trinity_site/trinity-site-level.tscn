@@ -1,12 +1,23 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://source/entities/player/player-node.tscn" type="PackedScene" id=1]
 [ext_resource path="res://source/levels/trinity_site/images/trinity_site_level_layout-monochrome.png" type="Texture" id=2]
+[ext_resource path="res://script/Gun.gd" type="Script" id=3]
+[ext_resource path="res://icon.png" type="Texture" id=4]
 
 [node name="trinity-site" type="Node2D"]
 
 [node name="player-node" parent="." instance=ExtResource( 1 )]
-position = Vector2( 212.292, 277.24 )
+position = Vector2( 183.338, 269.222 )
+
+[node name="Barrel" type="Position2D" parent="player-node"]
+position = Vector2( -10.2453, -2.6727 )
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="player-node/Barrel"]
+position = Vector2( -26.9819, -0.589844 )
+scale = Vector2( 0.0818972, 0.0127678 )
+texture = ExtResource( 4 )
 
 [node name="trinity-site-body" type="StaticBody2D" parent="."]
 

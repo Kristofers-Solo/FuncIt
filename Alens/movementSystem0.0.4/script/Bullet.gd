@@ -12,51 +12,33 @@ var gravitile = 5
 
 func follow_line_trajectory():
 	velocity = Vector2(1, 0) #Vector2(cos(self.global_rotation), sin(self.global_rotation))
-	pass
+	return velocity
 
 func follow_sine_trajectory():
 	velocity.y = amplitude * cos(time * frequency)
 	velocity.x = 5
-	pass
+	return velocity
 
 func follow_parabolic_trajectory():
 	velocity.x = 5
 	velocity.y = 1 * time * gravitile
-	
-	
-func follow_n_parabolic_trajectory():
-	velocity.x = 5
-	velocity.y = -1 * time * gravitile
-	
+	return velocity
 
 func follow_hyperbolic_trajectory():
 	velocity.x = gravitile * time
 	velocity.y = 1
+	return velocity
 	
-func follow_n_hyperbolic_trajectory():
-	velocity.x = gravitile * time
-	velocity.y = -1
-	
-	
-func chosen_trajectory():
+func input():
 	if Input.is_action_just_pressed("line"):
-		follow_line_trajectory()
-	elif Input.is_action_just_pressed("parab"):
-		follow_parabolic_trajectory()
-	elif Input.is_action_just_pressed("n_parab"):
-		follow_n_parabolic_trajectory()
-	elif Input.is_action_just_pressed("hyper"):
-		follow_hyperbolic_trajectory()
-	elif Input.is_action_just_pressed("n_hyper"):
-		follow_n_hyperbolic_trajectory()
+		return follow_sine_trajectory()
 	elif Input.is_action_just_pressed("sine"):
-		follow_sine_trajectory()
+		return follow_line_trajectory()
 	else:
-		follow_line_trajectory()
-		
+		print('Trajectory is not selected')
+		queue_free()
 
 func _process(delta):
-	follow_sine_trajectory()
 	time += delta
 	position += velocity * speed * delta
 
