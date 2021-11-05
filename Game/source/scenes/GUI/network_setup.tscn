@@ -1,0 +1,141 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://source/assets/scripts/server_handlers/network_processors/network_setup.gd" type="Script" id=1]
+[ext_resource path="res://source/fonts/roboto/roboto.tres" type="DynamicFont" id=4]
+[ext_resource path="res://source/scenes/GUI/background.tscn" type="PackedScene" id=5]
+[ext_resource path="res://source/assets/sprites/GUI/lan_logo.svg" type="Texture" id=7]
+[ext_resource path="res://source/fonts/oxygen/oxygen_bold.tres" type="DynamicFont" id=8]
+[ext_resource path="res://source/scenes/OVERLAY/elements/button.tscn" type="PackedScene" id=9]
+
+[node name="network_setup" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="background" parent="." instance=ExtResource( 5 )]
+
+[node name="multiplayer_configure" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.5199
+margin_right = 2.5199
+rect_pivot_offset = Vector2( -2200.59, -462.965 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="username_text_edit" type="LineEdit" parent="multiplayer_configure"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 122.423
+margin_top = 250.12
+margin_right = 967.423
+margin_bottom = 354.12
+custom_fonts/font = ExtResource( 4 )
+align = 1
+placeholder_text = "Enter username"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="create_server" parent="multiplayer_configure" instance=ExtResource( 9 )]
+margin_left = 810.0
+margin_top = 424.0
+margin_right = 1110.0
+margin_bottom = 496.0
+
+[node name="Label" type="Label" parent="multiplayer_configure/create_server"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -150.0
+margin_top = -36.0
+margin_right = 150.0
+margin_bottom = 36.0
+custom_fonts/font = ExtResource( 8 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "CREATE SERVER"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="join_server" parent="multiplayer_configure" instance=ExtResource( 9 )]
+margin_left = 810.0
+margin_top = 504.0
+margin_right = 1110.0
+margin_bottom = 576.0
+
+[node name="Label" type="Label" parent="multiplayer_configure/join_server"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -233.0
+margin_top = -36.0
+margin_bottom = 36.0
+custom_fonts/font = ExtResource( 8 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "JOIN SERVER"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="lan_logo" type="Sprite" parent="multiplayer_configure/join_server"]
+position = Vector2( 33.5, 36 )
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="return" parent="multiplayer_configure" instance=ExtResource( 9 )]
+margin_left = 810.0
+margin_top = 584.0
+margin_right = 1110.0
+margin_bottom = 656.0
+
+[node name="Label" type="Label" parent="multiplayer_configure/return"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -150.0
+margin_top = -36.0
+margin_right = 150.0
+margin_bottom = 36.0
+custom_fonts/font = ExtResource( 8 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "RETURN"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="spawn_locations" type="Node" parent="."]
+
+[node name="1" type="Position2D" parent="spawn_locations"]
+position = Vector2( 384, 860 )
+
+[node name="2" type="Position2D" parent="spawn_locations"]
+position = Vector2( 768, 860 )
+
+[node name="3" type="Position2D" parent="spawn_locations"]
+position = Vector2( 1152, 860 )
+
+[node name="4" type="Position2D" parent="spawn_locations"]
+position = Vector2( 1536, 860 )
+
+[connection signal="pressed" from="multiplayer_configure/create_server" to="." method="_on_create_server_pressed"]
+[connection signal="pressed" from="multiplayer_configure/join_server" to="." method="_on_join_server_pressed"]
+[connection signal="pressed" from="multiplayer_configure/return" to="." method="_on_return_pressed"]

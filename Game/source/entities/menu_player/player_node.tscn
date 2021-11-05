@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://source/assets/sprites/character/menu_player/tank.svg" type="Texture" id=1]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 76.0267
+
+[node name="player" type="KinematicBody2D"]
+
+[node name="player_collider" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="player_sprite" type="Sprite" parent="."]
+position = Vector2( 0.561218, -8.41847 )
+texture = ExtResource( 1 )
