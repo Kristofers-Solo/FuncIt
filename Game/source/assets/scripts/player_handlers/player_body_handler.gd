@@ -48,6 +48,7 @@ var velocityVDIR = Vector2(0,0)
 var characterStates = {"onGround": false, "jumped": false, "faceDirection": true}
 
 var reverseControls = false
+var awaitingCollision = false
 
 func _ready():
 	get_tree().connect("network_peer_connected", self, "_network_peer_connected")
@@ -149,6 +150,10 @@ func _physics_process(delta) -> void:
 						reverseControls = false
 				if VDIR["1"]["0"]["ray"]["collided"]:
 					rotationalHolder = rotation
+					if awaitingCollision and velocityVDIR.y < 0:
+						velocityVDIR.y = 0
+						awaitingCollision = false
+				else: awaitingCollision = true 
 				if user_input["boost"] and not characterStates["jumped"]:
 					maxMovementSpeed.x = move_toward(maxMovementSpeed.x, 350, accelerationSpeed)
 				else:
