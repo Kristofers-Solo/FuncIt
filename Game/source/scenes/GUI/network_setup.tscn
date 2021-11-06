@@ -30,10 +30,10 @@ __meta__ = {
 [node name="username_text_edit" type="LineEdit" parent="multiplayer_configure"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = 122.423
-margin_top = 250.12
-margin_right = 967.423
-margin_bottom = 354.12
+margin_left = -404.594
+margin_top = 269.169
+margin_right = 440.406
+margin_bottom = 373.169
 custom_fonts/font = ExtResource( 4 )
 align = 1
 placeholder_text = "Enter username"

@@ -2,13 +2,21 @@ extends Control
 
 onready var server_listener = $server_listener
 onready var server_ip_text_edit = $background_panel/server_ip_text_edit
-onready var server_container = $background_panel/VBoxContainer
-onready var manual_setup_button = $background_panel/manual_setup
+onready var server_container = $controls/VBoxContainer
+onready var manual_setup_button = $controls/manual_setup/Label
+onready var background_panel = $background_panel
 
 
 func _ready() -> void:
-	server_ip_text_edit.hide()
-	
+	background_panel.hide()
+
+
+func _process(delta):
+	if Input.is_action_just_pressed("esc") and background_panel.is_visible_in_tree():
+		background_panel.hide()
+	elif Input.is_action_just_pressed("esc") and not background_panel.is_visible_in_tree():
+		get_tree().change_scene("res://source/scenes/GUI/network_setup.tscn")
+
 
 func _on_server_listener_new_server(serverInfo):
 	var server_node = Global.instance_node(load("res://source/scenes/GUI/server_handlers/server_display.tscn"), server_container)
@@ -25,16 +33,8 @@ func _on_server_listener_remove_server(serverIp):
 
 
 func _on_manual_setup_pressed():
-	if manual_setup_button.text != "Exit setup":
-		server_ip_text_edit.show()
-		manual_setup_button.text = "Exit setup"
-		server_container.hide()
-		server_ip_text_edit.call_deferred("grab_focus")
-	else:
-		server_ip_text_edit.text = ""
-		server_ip_text_edit.hide()
-		manual_setup_button.text = "Manual setup"
-		server_container.show()
+	background_panel.show()
+	server_ip_text_edit.call_deferred("grab_focus")
 
 
 func _on_join_server_pressed():
@@ -44,5 +44,5 @@ func _on_join_server_pressed():
 	Network.join_server()
 
 
-func _on_go_back_pressed():
-	get_tree().reload_current_scene()
+func _on_return_pressed():
+	get_tree().change_scene("res://source/scenes/GUI/network_setup.tscn")

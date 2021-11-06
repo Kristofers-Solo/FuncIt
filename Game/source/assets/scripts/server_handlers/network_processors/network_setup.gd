@@ -7,6 +7,11 @@ var player = load("res://source/entities/player/player_node.tscn")
 export onready var username_text_edit = $multiplayer_configure/username_text_edit
 
 
+func _process(delta):
+	if Input.is_action_just_pressed("esc"):
+		get_tree().change_scene("res://source/scenes/GUI/main_menu.tscn")
+
+
 func _on_create_server_pressed():
 	if username_text_edit.text != "":
 		Network.current_player_username = username_text_edit.text
@@ -29,3 +34,7 @@ func instance_player(id) -> void:
 
 func _on_return_pressed():
 	get_tree().change_scene("res://source/scenes/GUI/main_menu.tscn")
+
+
+func enter_username():
+	pass
