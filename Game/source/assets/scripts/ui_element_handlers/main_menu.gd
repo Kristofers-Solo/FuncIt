@@ -11,3 +11,7 @@ func _on_LAN_party_pressed():
 
 func _on_exit_pressed():
 	get_tree().quit()
+
+
+func _on_fullscreen_pressed():
+	OS.window_fullscreen = !OS.window_fullscreen
