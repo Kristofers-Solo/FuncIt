@@ -21,7 +21,8 @@ func _ready() -> void:
 	background_lobby.hide()
 	device_ip_address.hide()
 	text.hide()
-
+	
+	
 	get_tree().connect("network_peer_connected", self, "_player_connected")
 	get_tree().connect("network_peer_disconnected", self, "_player_disconnected")
 	get_tree().connect("connected_to_server", self, "_connected_to_server")
@@ -47,6 +48,9 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed("esc") and username.is_visible_in_tree():
+		username.hide()
+	
 	if get_tree().network_peer != null:
 		if get_tree().get_network_connected_peers().size() >= 0 and get_tree().is_network_server():
 			start_game.show()
