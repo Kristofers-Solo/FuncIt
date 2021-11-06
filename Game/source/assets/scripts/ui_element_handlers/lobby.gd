@@ -1,9 +1,9 @@
 extends Node2D
 
 var player = load("res://source/entities/player/player_node.tscn")
-var username_text_edit = NetworkSetup.username_text_edit
 
-var min_players = 1
+
+var min_players = 2
 var current_spawn_location_instance_number = 1
 var current_player_for_spawn_location_number = null
 
@@ -20,8 +20,7 @@ func _ready():
 	device_ip_address.text = Network.ip_address
 	
 	if get_tree().network_peer != null:
-		multiplayer_config_ui.hide()
-		
+	
 		current_spawn_location_instance_number = 1
 		for player in PersistentNodes.get_children():
 			if player.is_in_group("Player"):
@@ -31,8 +30,6 @@ func _ready():
 						player.rpc("enable")
 						current_spawn_location_instance_number += 1
 						current_player_for_spawn_location_number = player
-	else:
-		start_game.hide()
 
 
 func _process(delta: float) -> void:
@@ -64,7 +61,7 @@ func instance_player(id) -> void:
 	var player_instance = Global.instance_node_at_location(player, PersistentNodes, get_node("spawn_locations/" + str(current_spawn_location_instance_number)).global_position)
 	player_instance.name = str(id)
 	player_instance.set_network_master(id)
-	player_instance.username = username_text_edit.text
+	#player_instance.username = username_text_edit.text
 	current_spawn_location_instance_number += 1
 
 

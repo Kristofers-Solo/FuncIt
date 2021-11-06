@@ -122,20 +122,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="spawn_locations" type="Node" parent="."]
-
-[node name="1" type="Position2D" parent="spawn_locations"]
-position = Vector2( 384, 860 )
-
-[node name="2" type="Position2D" parent="spawn_locations"]
-position = Vector2( 768, 860 )
-
-[node name="3" type="Position2D" parent="spawn_locations"]
-position = Vector2( 1152, 860 )
-
-[node name="4" type="Position2D" parent="spawn_locations"]
-position = Vector2( 1536, 860 )
-
 [connection signal="pressed" from="multiplayer_configure/create_server" to="." method="_on_create_server_pressed"]
 [connection signal="pressed" from="multiplayer_configure/join_server" to="." method="_on_join_server_pressed"]
 [connection signal="pressed" from="multiplayer_configure/return" to="." method="_on_return_pressed"]

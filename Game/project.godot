@@ -19,7 +19,6 @@ config/icon="res://icon.png"
 Network="*res://source/assets/scripts/server_handlers/network_processors/network.gd"
 Global="*res://source/assets/scripts/server_handlers/global.gd"
 PersistentNodes="*res://source/scenes/OVERLAY/elements/persistent_nodes.tscn"
-NetworkSetup="*res://source/assets/scripts/server_handlers/network_processors/network_setup.gd"
 
 [debug]
 
