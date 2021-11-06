@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://source/scenes/OVERLAY/elements/floor.tscn" type="PackedScene" id=5]
+[ext_resource path="res://source/assets/sprites/GUI/background_main_menu.svg" type="Texture" id=6]
+
+[node name="background" type="Node2D"]
+
+[node name="background_main_menu" type="Sprite" parent="."]
+position = Vector2( 960, 540 )
+z_index = -10
+z_as_relative = false
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="floor" parent="." instance=ExtResource( 5 )]
+position = Vector2( 960, 1016 )

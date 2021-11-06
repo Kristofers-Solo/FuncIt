@@ -2,17 +2,26 @@ extends Control
 
 var player = load("res://source/entities/player/player_node.tscn")
 
-var min_players = 1
 var current_spawn_location_instance_number = 1
 var current_player_for_spawn_location_number = null
+var mode
 
 onready var multiplayer_config_ui = $multiplayer_configure
-onready var username_text_edit = $multiplayer_configure/username_text_edit
+onready var username_text_edit = $multiplayer_configure/username/username_text_edit
+onready var username = $multiplayer_configure/username
+
 onready var device_ip_address = $UI/device_ip_address
 onready var start_game = $UI/start_game
+onready var background_lobby = $background_lobby
+onready var text = $UI/text
 
 
-func _ready():
+func _ready() -> void:
+	username.hide()
+	background_lobby.hide()
+	device_ip_address.hide()
+	text.hide()
+
 	get_tree().connect("network_peer_connected", self, "_player_connected")
 	get_tree().connect("network_peer_disconnected", self, "_player_disconnected")
 	get_tree().connect("connected_to_server", self, "_connected_to_server")
@@ -21,7 +30,9 @@ func _ready():
 	
 	if get_tree().network_peer != null:
 		multiplayer_config_ui.hide()
-		
+		background_lobby.show()
+		device_ip_address.show()
+		text.show()
 		current_spawn_location_instance_number = 1
 		for player in PersistentNodes.get_children():
 			if player.is_in_group("Player"):
@@ -35,9 +46,9 @@ func _ready():
 		start_game.hide()
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if get_tree().network_peer != null:
-		if get_tree().get_network_connected_peers().size() >= (min_players - 1) and get_tree().is_network_server():
+		if get_tree().get_network_connected_peers().size() >= 0 and get_tree().is_network_server():
 			start_game.show()
 		else:
 			start_game.hide()
@@ -50,28 +61,28 @@ func _player_connected(id) -> void:
 
 func _player_disconnected(id) -> void:
 	print("Player " + str(id) + " has disconnected")
+	
 	if PersistentNodes.has_node(str(id)):
 		PersistentNodes.get_node(str(id)).username_text_instance.queue_free()
 		PersistentNodes.get_node(str(id)).queue_free()
 
-
 func _on_create_server_pressed():
-	if username_text_edit.text != "":
-		Network.current_player_username = username_text_edit.text
-		multiplayer_config_ui.hide()
-		Network.create_server()
-		instance_player(get_tree().get_network_unique_id())
+	username.show()
+	username_text_edit.call_deferred("grab_focus")
+	mode = "create"
 
 
 func _on_join_server_pressed():
-	if username_text_edit.text != "":
-		multiplayer_config_ui.hide()
-		username_text_edit.hide()
-		Global.instance_node(load("res://source/scenes/GUI/server_handlers/server_browser.tscn"), self)
+	username.show()
+	username_text_edit.call_deferred("grab_focus")
+	mode = "join"
 
 
 func _connected_to_server() -> void:
 	yield(get_tree().create_timer(0.1), "timeout")
+	device_ip_address.show()
+	background_lobby.show()
+	text.show()
 	instance_player(get_tree().get_network_unique_id())
 
 
@@ -92,4 +103,26 @@ sync func switch_to_game() -> void:
 		if child.is_in_group("Player"):
 			child.update_shoot_mode(true)
 	
-	get_tree().change_scene("res://source/levels/trinity_site/trinity_site_level.tscn") 
+	get_tree().change_scene("res://source/levels/trinity_site/trinity_site_level.tscn")
+
+
+func _on_confirm_pressed():
+	if mode == "create":
+		if username_text_edit.text != "":
+			Network.current_player_username = username_text_edit.text
+			multiplayer_config_ui.hide()
+			device_ip_address.show()
+			background_lobby.show()
+			text.show()
+			Network.create_server()
+			instance_player(get_tree().get_network_unique_id())
+	elif mode == "join":
+		if username_text_edit.text != "":
+			multiplayer_config_ui.hide()
+			#username_text_edit.hide()
+			Global.instance_node(load("res://source/scenes/GUI/server_handlers/server_browser.tscn"), self)
+
+
+func _on_return_pressed():
+	get_tree().change_scene("res://source/scenes/GUI/main_menu.tscn")
+
