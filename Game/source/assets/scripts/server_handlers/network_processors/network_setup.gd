@@ -4,9 +4,11 @@ var player = load("res://source/entities/player/player_node.tscn")
 
 var current_spawn_location_instance_number = 1
 var current_player_for_spawn_location_number = null
+var mode
 
 onready var multiplayer_config_ui = $multiplayer_configure
-onready var username_text_edit = $multiplayer_configure/username_text_edit
+onready var username_text_edit = $multiplayer_configure/username/username_text_edit
+onready var username = $multiplayer_configure/username
 
 onready var device_ip_address = $UI/device_ip_address
 onready var start_game = $UI/start_game
@@ -15,6 +17,7 @@ onready var text = $UI/text
 
 
 func _ready() -> void:
+	username.hide()
 	background_lobby.hide()
 	device_ip_address.hide()
 	text.hide()
@@ -64,21 +67,15 @@ func _player_disconnected(id) -> void:
 		PersistentNodes.get_node(str(id)).queue_free()
 
 func _on_create_server_pressed():
-	if username_text_edit.text != "":
-		Network.current_player_username = username_text_edit.text
-		multiplayer_config_ui.hide()
-		device_ip_address.show()
-		background_lobby.show()
-		text.show()
-		Network.create_server()
-		instance_player(get_tree().get_network_unique_id())
+	username.show()
+	username_text_edit.call_deferred("grab_focus")
+	mode = "create"
 
 
 func _on_join_server_pressed():
-	if username_text_edit.text != "":
-		multiplayer_config_ui.hide()
-		username_text_edit.hide()
-		Global.instance_node(load("res://source/scenes/GUI/server_handlers/server_browser.tscn"), self)
+	username.show()
+	username_text_edit.call_deferred("grab_focus")
+	mode = "join"
 
 
 func _connected_to_server() -> void:
@@ -109,5 +106,23 @@ sync func switch_to_game() -> void:
 	get_tree().change_scene("res://source/levels/trinity_site/trinity_site_level.tscn")
 
 
+func _on_confirm_pressed():
+	if mode == "create":
+		if username_text_edit.text != "":
+			Network.current_player_username = username_text_edit.text
+			multiplayer_config_ui.hide()
+			device_ip_address.show()
+			background_lobby.show()
+			text.show()
+			Network.create_server()
+			instance_player(get_tree().get_network_unique_id())
+	elif mode == "join":
+		if username_text_edit.text != "":
+			multiplayer_config_ui.hide()
+			#username_text_edit.hide()
+			Global.instance_node(load("res://source/scenes/GUI/server_handlers/server_browser.tscn"), self)
+
+
 func _on_return_pressed():
 	get_tree().change_scene("res://source/scenes/GUI/main_menu.tscn")
+
