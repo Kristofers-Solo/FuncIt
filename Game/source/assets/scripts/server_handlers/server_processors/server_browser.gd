@@ -2,7 +2,7 @@ extends Control
 
 onready var server_listener = $server_listener
 onready var server_ip_text_edit = $background_panel/server_ip_text_edit
-onready var server_container = $controls/VBoxContainer
+onready var server_container = $controls/background_panel/VBoxContainer
 onready var manual_setup_button = $controls/manual_setup/Label
 onready var background_panel = $background_panel
 
@@ -14,8 +14,6 @@ func _ready() -> void:
 func _process(delta):
 	if Input.is_action_just_pressed("esc") and background_panel.is_visible_in_tree():
 		background_panel.hide()
-	elif Input.is_action_just_pressed("esc") and not background_panel.is_visible_in_tree():
-		get_tree().change_scene("res://source/scenes/GUI/network_setup.tscn")
 
 
 func _on_server_listener_new_server(serverInfo):
@@ -45,4 +43,4 @@ func _on_join_server_pressed():
 
 
 func _on_return_pressed():
-	get_tree().change_scene("res://source/scenes/GUI/network_setup.tscn")
+	get_tree().reload_current_scene()
