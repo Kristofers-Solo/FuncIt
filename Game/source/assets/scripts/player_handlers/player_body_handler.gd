@@ -50,7 +50,17 @@ var characterStates = {"onGround": false, "jumped": false, "faceDirection": true
 var reverseControls = false
 var awaitingCollision = false
 
+var direction = "left"
+var theme = "01"
+
+var weaponRotationalStep = 2
+var weaponPositionalOffset = Vector2(0,0)
+var weaponPosition = Vector2(0,0)
+var weaponAngle = 0
+
 func _ready():
+	weaponPositionalOffset = Vector2(-$"weaponHolder/Player-character-theme-gun-01".texture.get_width() * $"weaponHolder/Player-character-theme-gun-01".scale.x / 2,-$"weaponHolder/Player-character-theme-gun-01".texture.get_height() * $"weaponHolder/Player-character-theme-gun-01".scale.y / 2) + Vector2(-$weaponHolder.get_shape().get_radius(), 0)
+	$"weaponHolder/Player-character-theme-gun-01".position = weaponPositionalOffset
 	get_tree().connect("network_peer_connected", self, "_network_peer_connected")
 	username_text_instance = Global.instance_node_at_location(username_text, PersistentNodes, global_position)
 	username_text_instance.player_following = self
@@ -107,8 +117,12 @@ func process_rotation():
 func _process(delta: float) -> void:
 	if username_text_instance != null:
 		username_text_instance.name = "username" + name
-
-
+	if $Particles2D.position.x > 0 and direction != "left": 
+		$Particles2D.position = Vector2(-$Particles2D.position.x,$Particles2D.position.y)
+		$Particles2D.scale = -$Particles2D.scale
+	elif $Particles2D.position.x < 0 and direction != "right": 
+		$Particles2D.position = Vector2(-$Particles2D.position.x,$Particles2D.position.y)
+		$Particles2D.scale = -$Particles2D.scale
 	user_input = UIN_preset_pre_processor_instance.update()
 	user_state = get_user_state()
 	dimensions = get_dimensions()
@@ -132,7 +146,7 @@ func _process(delta: float) -> void:
 					VDIR[v_t][v]["ray"]["collided"] = false
 	update()
 	process_rotation()
-
+	rotate_weapon()
 
 func _physics_process(delta) -> void:
 	if get_tree().has_network_peer():
@@ -150,11 +164,11 @@ func _physics_process(delta) -> void:
 						reverseControls = false
 				if VDIR["1"]["0"]["ray"]["collided"]:
 					rotationalHolder = rotation
-					if awaitingCollision and VDIR["1"]["0"]["ray"]["length"] - dimensions["collider"]["radius"] < 5:
-						velocityVDIR.y = 0
-						awaitingCollision = false
-				else: awaitingCollision = true 
-				print(velocityVDIR.y <= 0, awaitingCollision,"(",velocityVDIR.y,")", awaitingCollision)
+				if characterStates["jumped"] and not VDIR["1"]["0"]["ray"]["collided"]:
+					awaitingCollision = true
+				elif characterStates["jumped"] and awaitingCollision and VDIR["1"]["0"]["ray"]["collided"]:
+					awaitingCollision = false
+					if velocityVDIR.y < 0: velocityVDIR.y = 0
 				if user_input["boost"] and not characterStates["jumped"]:
 					maxMovementSpeed.x = move_toward(maxMovementSpeed.x, 350, accelerationSpeed)
 				else:
@@ -168,6 +182,8 @@ func _physics_process(delta) -> void:
 						velocityVDIR.x -= deccelerationSpeed
 					else:
 						velocityVDIR.x -= accelerationSpeed
+						if not characterStates["jumped"]:
+							direction = "left"
 					if velocityVDIR.y < maxMovementSpeed.x and not characterStates["onGround"] and characterStates["jumped"]:
 						rotation_degrees -= rad2deg(rotationSpeed*delta)
 				if user_input["right"] and not reverseControls or user_input["left"] and reverseControls:
@@ -175,13 +191,23 @@ func _physics_process(delta) -> void:
 						velocityVDIR.x += deccelerationSpeed
 					else:
 						velocityVDIR.x += accelerationSpeed
+						if not characterStates["jumped"]:
+							direction = "right"
 					if velocityVDIR.y < maxMovementSpeed.x and not characterStates["onGround"] and characterStates["jumped"]:
 						rotation_degrees += rad2deg(rotationSpeed*delta)
 				if characterStates["jumped"] and not characterStates["onGround"] and velocityVDIR.y > maxMovementSpeed.x:
-					if rotation_degrees > rad2deg(rotationalHolder): rotation_degrees -= rotationSpeed
-					elif rotation_degrees < rad2deg(rotationalHolder): rotation_degrees = move_toward(rotation_degrees, rad2deg(rotationalHolder), rotationSpeed)
+					if rotation_degrees > rad2deg(rotationalHolder): rotation_degrees -= rotationSpeed / 2
+					elif rotation_degrees < rad2deg(rotationalHolder): rotation_degrees = move_toward(rotation_degrees, rad2deg(rotationalHolder), rotationSpeed / 2)
 				if not user_input["right"] and not user_input["left"]:
 					velocityVDIR.x = move_toward(velocityVDIR.x, 0, deccelerationSpeed)
+				if velocityVDIR.x != 0 and maxMovementSpeed.x == 200:
+					$player_animated_sprite.play("move-speed-"+direction+"-"+theme)
+				elif maxMovementSpeed.x > 200 and not characterStates["jumped"]:
+					$player_animated_sprite.play("boost-speed-"+direction+"-"+theme)
+					$Particles2D.set_emitting(true)
+				else:
+					$player_animated_sprite.play("idle-speed-"+direction+"-"+theme)
+					$Particles2D.set_emitting(false)
 				if not characterStates["onGround"]:
 					velocityVDIR.y += accelerationSpeed
 				elif characterStates["onGround"] and velocityVDIR.y > 0:
@@ -345,3 +371,24 @@ func _exit_tree() -> void:
 		if is_network_master():
 			Global.player_master = null
 
+func rotate_weapon():
+	weaponPosition = $"weaponHolder/Player-character-theme-gun-01".position
+	weaponPosition -= Vector2(weaponPositionalOffset.x,0).rotated(deg2rad(weaponAngle)) + Vector2(0,weaponPositionalOffset.y)
+	if user_input["r_inc"]:
+		weaponAngle += weaponRotationalStep
+	if user_input["r_dec"]:
+		weaponAngle -= weaponRotationalStep
+	if direction == "right":
+		if weaponAngle + weaponRotationalStep < 87.5:
+			weaponAngle = 180 - weaponAngle
+		weaponAngle = clamp(weaponAngle, 87.5,180)
+		$"weaponHolder/Player-character-theme-gun-01".flip_v = true
+	elif direction == "left": 
+		if weaponAngle - weaponRotationalStep > 92.5:
+			weaponAngle = abs(weaponAngle - 180)
+		weaponAngle = clamp(weaponAngle, 0, 92.5)
+		$"weaponHolder/Player-character-theme-gun-01".flip_v = false
+	weaponPosition += Vector2(weaponPositionalOffset.x,0).rotated(deg2rad(weaponAngle)) + Vector2(0,weaponPositionalOffset.y)
+	$"weaponHolder/Player-character-theme-gun-01".position = weaponPosition
+	$"weaponHolder/Player-character-theme-gun-01".rotation_degrees = weaponAngle
+	pass
