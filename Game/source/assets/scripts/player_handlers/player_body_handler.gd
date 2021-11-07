@@ -150,10 +150,11 @@ func _physics_process(delta) -> void:
 						reverseControls = false
 				if VDIR["1"]["0"]["ray"]["collided"]:
 					rotationalHolder = rotation
-					if awaitingCollision and velocityVDIR.y < 0:
+					if awaitingCollision and VDIR["1"]["0"]["ray"]["length"] - dimensions["collider"]["radius"] < 5:
 						velocityVDIR.y = 0
 						awaitingCollision = false
 				else: awaitingCollision = true 
+				print(velocityVDIR.y <= 0, awaitingCollision,"(",velocityVDIR.y,")", awaitingCollision)
 				if user_input["boost"] and not characterStates["jumped"]:
 					maxMovementSpeed.x = move_toward(maxMovementSpeed.x, 350, accelerationSpeed)
 				else:
