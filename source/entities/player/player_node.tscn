@@ -334,7 +334,6 @@ animations = [ {
 "Player",
 ]]
 script = ExtResource( 11 )
-theme = "03"
 
 [node name="player_collider" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
