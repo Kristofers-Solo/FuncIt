@@ -67,9 +67,23 @@ var weaponAngle = 0
 var particleTexture = ImageTexture.new()
 var particleImage = Image.new()
 
-func _ready():
-	weaponPositionalOffset = Vector2(-$"weaponHolder/Player-character-theme-gun-na".texture.get_width() * $"weaponHolder/Player-character-theme-gun-na".scale.x / 2,-$"weaponHolder/Player-character-theme-gun-na".texture.get_height() * $"weaponHolder/Player-character-theme-gun-na".scale.y / 2) + Vector2(-$weaponHolder.get_shape().get_radius(), 0)
+func equip_weapon():
+	if Input.is_action_just_pressed("line"):
+		weaponPositionalOffset = Vector2(-$"weaponHolder/Player-character-theme-gun-na1".texture.get_width() * $"weaponHolder/Player-character-theme-gun-na1".scale.x / 2,-$"weaponHolder/Player-character-theme-gun-na1".texture.get_height() * $"weaponHolder/Player-character-theme-gun-na1".scale.y / 2) + Vector2(-$weaponHolder.get_shape().get_radius(), 0)
+	if Input.is_action_just_pressed("sine"):
+		weaponPositionalOffset = Vector2(-$"weaponHolder/Player-character-theme-gun-na2".texture.get_width() * $"weaponHolder/Player-character-theme-gun-na2".scale.x / 2,-$"weaponHolder/Player-character-theme-gun-na2".texture.get_height() * $"weaponHolder/Player-character-theme-gun-na2".scale.y / 2) + Vector2(-$weaponHolder.get_shape().get_radius(), 0)
+	if Input.is_action_just_pressed("parab"):
+		weaponPositionalOffset = Vector2(-$"weaponHolder/Player-character-theme-gun-na3".texture.get_width() * $"weaponHolder/Player-character-theme-gun-na3".scale.x / 2,-$"weaponHolder/Player-character-theme-gun-na3".texture.get_height() * $"weaponHolder/Player-character-theme-gun-na3".scale.y / 2) + Vector2(-$weaponHolder.get_shape().get_radius(), 0)
+	if Input.is_action_just_pressed("hyper"):
+		weaponPositionalOffset = Vector2(-$"weaponHolder/Player-character-theme-gun-na4".texture.get_width() * $"weaponHolder/Player-character-theme-gun-na4".scale.x / 2,-$"weaponHolder/Player-character-theme-gun-na4".texture.get_height() * $"weaponHolder/Player-character-theme-gun-na4".scale.y / 2) + Vector2(-$weaponHolder.get_shape().get_radius(), 0)
 	$"weaponHolder/Player-character-theme-gun".position = weaponPositionalOffset
+	return weaponPositionalOffset
+	pass
+	
+
+func _ready():
+	#weaponPositionalOffset = Vector2(-$"weaponHolder/Player-character-theme-gun-na3".texture.get_width() * $"weaponHolder/Player-character-theme-gun-na3".scale.x / 2,-$"weaponHolder/Player-character-theme-gun-na3".texture.get_height() * $"weaponHolder/Player-character-theme-gun-na3".scale.y / 2) + Vector2(-$weaponHolder.get_shape().get_radius(), 0)
+	#$"weaponHolder/Player-character-theme-gun".position = weaponPositionalOffset
 	get_tree().connect("network_peer_connected", self, "_network_peer_connected")
 	username_text_instance = Global.instance_node_at_location(username_text, PersistentNodes, global_position)
 	username_text_instance.player_following = self
@@ -125,8 +139,8 @@ func process_rotation():
 
 func _process(delta: float) -> void:
 	$"weaponHolder/Player-character-theme-gun".play(theme)
-	particleImage.load("res://source/assets/sprites/character/player/theme/" + theme + "/na/Player-character-theme-particle-"+theme+".png")
-	particleTexture.create_from_image(particleImage)
+	#particleImage.load("res://source/assets/sprites/character/player/theme/" + theme + "/na/Player-character-theme-particle-"+theme+".png")
+	#particleTexture.create_from_image(particleImage)
 	$Particles2D.texture = particleTexture
 	if username_text_instance != null:
 		username_text_instance.name = "username" + name
@@ -159,6 +173,7 @@ func _process(delta: float) -> void:
 					VDIR[v_t][v]["ray"]["collided"] = false
 	update()
 	process_rotation()
+	equip_weapon()
 
 
 func _physics_process(delta) -> void:
@@ -219,7 +234,7 @@ func _physics_process(delta) -> void:
 					$player_animated_sprite.play("boost-speed-"+direction+"-"+theme)
 					$Particles2D.set_emitting(true)
 				else:
-					$player_animated_sprite.play("idle-speed-"+direction+"-"+theme)
+					#$player_animated_sprite.play("idle-speed-"+direction+"-"+theme)
 					$Particles2D.set_emitting(false)
 				if not characterStates["onGround"]:
 					velocityVDIR.y += accelerationSpeed
