@@ -17,6 +17,12 @@ puppet var puppet_position = Vector2(0, 0) setget puppet_position_set
 puppet var puppet_velocity = Vector2()
 puppet var puppet_rotation = 0
 puppet var puppet_username = "" setget puppet_username_set
+puppet var puppet_weapon_position = Vector2()
+puppet var puppet_weapon_angle = 0
+puppet var puppet_direction = "left"
+puppet var puppet_theme = "01"
+puppet var puppet_character_states = {}
+
 
 onready var tween = $Tween
 onready var sprite = $player_sprite
@@ -61,6 +67,7 @@ var weaponAngle = 0
 func _ready():
 	weaponPositionalOffset = Vector2(-$"weaponHolder/Player-character-theme-gun-01".texture.get_width() * $"weaponHolder/Player-character-theme-gun-01".scale.x / 2,-$"weaponHolder/Player-character-theme-gun-01".texture.get_height() * $"weaponHolder/Player-character-theme-gun-01".scale.y / 2) + Vector2(-$weaponHolder.get_shape().get_radius(), 0)
 	$"weaponHolder/Player-character-theme-gun-01".position = weaponPositionalOffset
+	
 	get_tree().connect("network_peer_connected", self, "_network_peer_connected")
 	username_text_instance = Global.instance_node_at_location(username_text, PersistentNodes, global_position)
 	username_text_instance.player_following = self
@@ -71,7 +78,9 @@ func _ready():
 	if get_tree().has_network_peer():
 		if is_network_master():
 			Global.player_master = self
-	
+			print($"weaponHolder/Player-character-theme-gun-01".position)
+		else:
+			print($"weaponHolder/Player-character-theme-gun-01".position)
 	# Allow update process override.
 	set_process(true)
 	$player_animated_sprite.play("idle")
@@ -146,7 +155,7 @@ func _process(delta: float) -> void:
 					VDIR[v_t][v]["ray"]["collided"] = false
 	update()
 	process_rotation()
-	rotate_weapon()
+	
 
 func _physics_process(delta) -> void:
 	if get_tree().has_network_peer():
@@ -217,15 +226,23 @@ func _physics_process(delta) -> void:
 				
 				
 				
-				if Input.is_action_pressed("input_shoot") and can_shoot and not is_reloading:
-					rpc("instance_bullet", get_tree().get_network_unique_id())
-					is_reloading = true
-					reload_timer.start()
+				#if Input.is_action_pressed("input_shoot") and can_shoot and not is_reloading:
+				#	rpc("instance_bullet", get_tree().get_network_unique_id())
+				#	is_reloading = true
+				#	reload_timer.start()
+				rotate_weapon()
 		else:
-			rotation = lerp_angle(rotation, puppet_rotation, delta * 8)
-			
+			#rotation = lerp_angle(rotation, puppet_rotation, delta * 8)
+			$"weaponHolder/Player-character-theme-gun-01".position = puppet_weapon_position
+			weaponAngle = puppet_weapon_angle
+			direction = puppet_direction
+
+			rotate_weapon()
 			if not tween.is_active():
-				move_and_slide(puppet_velocity * currentMovementSpeed)
+				pass
+				
+				
+
 	if hp <= 0:
 		if get_tree().is_network_server():
 			rpc("destroy")
@@ -295,6 +312,10 @@ func _on_network_tick_rate_timeout():
 			rset_unreliable("puppet_position", global_position)
 			#rset_unreliable("puppet_velocity", movementVector)
 			rset_unreliable("puppet_rotation", rotation)
+			rset_unreliable("puppet_weapon_position", weaponPosition)
+			rset_unreliable("puppet_weapon_angle", weaponAngle)
+			rset_unreliable("puppet_direction", direction)
+			rset_unreliable("puppet_character_states", characterStates)
 
 
 sync func instance_bullet(id):
@@ -391,4 +412,3 @@ func rotate_weapon():
 	weaponPosition += Vector2(weaponPositionalOffset.x,0).rotated(deg2rad(weaponAngle)) + Vector2(0,weaponPositionalOffset.y)
 	$"weaponHolder/Player-character-theme-gun-01".position = weaponPosition
 	$"weaponHolder/Player-character-theme-gun-01".rotation_degrees = weaponAngle
-	pass
