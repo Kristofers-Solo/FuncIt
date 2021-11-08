@@ -50,7 +50,7 @@ sync func destroy() -> void:
 	queue_free()
 
 
-func _on_Destroy_timer_timeout():
+func _on_destroy_timer_timeout():
 	if get_tree().has_network_peer():
 		if get_tree().is_network_server():
 			rpc("destroy")

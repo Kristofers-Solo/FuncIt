@@ -6,18 +6,21 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 22.0883, 10 )
 
-[node name="player_bullet" type="Sprite" groups=["Net"]]
+[node name="player_bullet" type="Sprite" groups=[
+"Net",
+]]
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
 
-[node name="hitbox" type="Area2D" parent="." groups=["Player_damager"]]
+[node name="hitbox" type="Area2D" parent="." groups=[
+"Player_damager",
+]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
 visible = false
 shape = SubResource( 1 )
 
 [node name="destroy_timer" type="Timer" parent="."]
-wait_time = 5.0
 one_shot = true
 autostart = true
 
