@@ -241,7 +241,6 @@ func _physics_process(delta) -> void:
 			$"weaponHolder/Player-character-theme-gun".position = puppet_weapon_position
 			weaponAngle = puppet_weapon_angle
 			direction = puppet_direction
-
 			if velocityVDIR.x != 0 and maxMovementSpeed.x == 200:
 				$player_animated_sprite.play("move-speed-"+direction+"-"+theme)
 			elif maxMovementSpeed.x > 200 and not characterStates["jumped"]:
