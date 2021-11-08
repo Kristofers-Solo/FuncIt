@@ -13,7 +13,8 @@ data_*/
 *.pck
 *.x86_64
 *.log
-test/
-build/*
-builds/*
 *.zip
+
+/test/
+/[Bb]uild/**
+/[Bb]uilds/**
