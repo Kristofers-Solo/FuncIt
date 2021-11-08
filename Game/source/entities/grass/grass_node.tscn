@@ -76,7 +76,7 @@ position = Vector2( -3.36365, 0 )
 scale = Vector2( 0.75, 0.75 )
 frames = SubResource( 1 )
 animation = "idle"
-frame = 2
+frame = 4
 playing = true
 
 [node name="trinity_site_level_layout-level_design_z-index_0_grass_type-2" type="Sprite" parent="."]
