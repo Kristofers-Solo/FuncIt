@@ -1,0 +1,303 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://source/scenes/GUI/server_handlers/server_listener.tscn" type="PackedScene" id=2]
+[ext_resource path="res://source/assets/scripts/server_handlers/server_processors/server_browser.gd" type="Script" id=3]
+[ext_resource path="res://source/scenes/OVERLAY/elements/button.tscn" type="PackedScene" id=4]
+[ext_resource path="res://source/assets/sprites/GUI/background_server.svg" type="Texture" id=5]
+[ext_resource path="res://source/assets/sprites/GUI/server_title.svg" type="Texture" id=6]
+[ext_resource path="res://source/assets/sprites/GUI/button_disabled.svg" type="Texture" id=7]
+[ext_resource path="res://source/fonts/oxygen/Oxygen-Regular.ttf" type="DynamicFontData" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+size = 36
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 8 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "searching_for_servers"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "Searching for servers", "Searching for servers.", "Searching for servers..", "Searching for servers..." ]
+}
+
+[sub_resource type="DynamicFont" id=4]
+size = 36
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 8 )
+
+[sub_resource type="StyleBoxEmpty" id=8]
+
+[sub_resource type="StyleBoxEmpty" id=9]
+
+[sub_resource type="DynamicFont" id=7]
+size = 36
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 8 )
+
+[node name="server_browser" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="background_server" type="Sprite" parent="."]
+position = Vector2( 960, 540 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="controls" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.51978
+margin_top = 1.77069
+margin_right = 2.51978
+margin_bottom = 1.77075
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="manual_setup" parent="controls" instance=ExtResource( 4 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 40.0
+margin_top = -116.0
+margin_right = 340.0
+margin_bottom = -44.0
+
+[node name="Label" type="Label" parent="controls/manual_setup"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "MANUAL SETUP"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="online" type="TextureButton" parent="controls"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 40.0
+margin_top = -36.0
+margin_right = 340.0
+margin_bottom = 36.0
+texture_normal = ExtResource( 7 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="controls/online"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 68.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.329412, 0.329412, 0.329412, 1 )
+text = "ONLINE"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="return" parent="controls" instance=ExtResource( 4 )]
+margin_left = 1000.0
+margin_top = 584.0
+margin_right = 1300.0
+margin_bottom = 656.0
+
+[node name="Label" type="Label" parent="controls/return"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "RETURN"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="background_panel" type="Panel" parent="controls"]
+self_modulate = Color( 0.0862745, 0.0862745, 0.0862745, 0.392157 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -447.5
+margin_top = -66.0
+margin_right = -20.0
+margin_bottom = 171.5
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="controls/background_panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = -30.0
+margin_right = -10.0
+margin_bottom = -10.0
+rect_pivot_offset = Vector2( -279.611, -199.539 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="server_title" type="Sprite" parent="controls/background_panel"]
+position = Vector2( 225, -25 )
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="searching_for_servers" type="Label" parent="controls/background_panel/server_title"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -450.0
+margin_top = -64.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 0, 70 )
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Searching for servers"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="controls/background_panel/server_title/searching_for_servers"]
+autoplay = "searching_for_servers"
+playback_speed = 0.5
+anims/searching_for_servers = SubResource( 3 )
+
+[node name="server_listener" parent="." instance=ExtResource( 2 )]
+
+[node name="popup_screen" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( -1045.07, 31.7226 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="enter_server_ip" type="Sprite" parent="popup_screen"]
+position = Vector2( 960, 465 )
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Label" type="Label" parent="popup_screen/enter_server_ip"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -225.0
+margin_top = -25.0
+margin_right = -225.0
+margin_bottom = -25.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Enter server IP"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="panel" type="Panel" parent="popup_screen"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -200.0
+margin_top = -50.0
+margin_right = 200.0
+margin_bottom = 50.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="server_ip_text_edit" type="LineEdit" parent="popup_screen/panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -175.0
+margin_top = -28.0
+margin_right = 175.0
+margin_bottom = 28.0
+custom_styles/focus = SubResource( 8 )
+custom_styles/normal = SubResource( 9 )
+custom_fonts/font = SubResource( 7 )
+custom_colors/selection_color = Color( 0.8, 0.8, 0.8, 1 )
+align = 1
+placeholder_text = "Server IP"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="join_server" parent="popup_screen/panel" instance=ExtResource( 4 )]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -150.0
+margin_top = 25.0
+margin_right = 150.0
+margin_bottom = 97.0
+
+[node name="Label" type="Label" parent="popup_screen/panel/join_server"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "JOIN SERVER"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[connection signal="pressed" from="controls/manual_setup" to="." method="_on_manual_setup_pressed"]
+[connection signal="pressed" from="controls/return" to="." method="_on_return_pressed"]
+[connection signal="new_server" from="server_listener" to="." method="_on_server_listener_new_server"]
+[connection signal="remove_server" from="server_listener" to="." method="_on_server_listener_remove_server"]
+[connection signal="pressed" from="popup_screen/panel/join_server" to="." method="_on_join_server_pressed"]
