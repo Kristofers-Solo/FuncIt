@@ -78,9 +78,7 @@ func _ready():
 	if get_tree().has_network_peer():
 		if is_network_master():
 			Global.player_master = self
-			print($"weaponHolder/Player-character-theme-gun-01".position)
-		else:
-			print($"weaponHolder/Player-character-theme-gun-01".position)
+	
 	# Allow update process override.
 	set_process(true)
 	$player_animated_sprite.play("idle")

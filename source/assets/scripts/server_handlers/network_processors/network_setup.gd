@@ -7,8 +7,9 @@ var current_player_for_spawn_location_number = null
 var mode
 
 onready var multiplayer_config_ui = $multiplayer_configure
-onready var username_text_edit = $multiplayer_configure/username/username_text_edit
-onready var username = $multiplayer_configure/username
+onready var username_text_edit = $multiplayer_configure/popup_screen/panel/username_text_edit
+onready var username = $multiplayer_configure/popup_screen
+onready var controls = $multiplayer_configure/controls
 
 onready var device_ip_address = $UI/device_ip_address
 onready var start_game = $UI/start_game
@@ -26,7 +27,7 @@ func _ready() -> void:
 	get_tree().connect("network_peer_connected", self, "_player_connected")
 	get_tree().connect("network_peer_disconnected", self, "_player_disconnected")
 	get_tree().connect("connected_to_server", self, "_connected_to_server")
-	
+
 	device_ip_address.text = Network.ip_address
 	
 	if get_tree().network_peer != null:
@@ -71,12 +72,14 @@ func _player_disconnected(id) -> void:
 		PersistentNodes.get_node(str(id)).queue_free()
 
 func _on_create_server_pressed():
+	controls.hide()
 	username.show()
 	username_text_edit.call_deferred("grab_focus")
 	mode = "create"
 
 
 func _on_join_server_pressed():
+	controls.hide()
 	username.show()
 	username_text_edit.call_deferred("grab_focus")
 	mode = "join"
@@ -123,7 +126,6 @@ func _on_confirm_pressed():
 	elif mode == "join":
 		if username_text_edit.text != "":
 			multiplayer_config_ui.hide()
-			#username_text_edit.hide()
 			Global.instance_node(load("res://source/scenes/GUI/server_handlers/server_browser.tscn"), self)
 
 

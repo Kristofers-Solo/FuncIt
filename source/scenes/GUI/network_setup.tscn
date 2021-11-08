@@ -1,9 +1,8 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://source/assets/scripts/server_handlers/network_processors/network_setup.gd" type="Script" id=1]
 [ext_resource path="res://source/fonts/oxygen/Oxygen-Regular.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://source/fonts/oxygen/Oxygen-Bold.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://source/fonts/roboto/roboto.tres" type="DynamicFont" id=4]
 [ext_resource path="res://source/scenes/GUI/background.tscn" type="PackedScene" id=5]
 [ext_resource path="res://source/scenes/OVERLAY/elements/floor.tscn" type="PackedScene" id=6]
 [ext_resource path="res://source/assets/sprites/GUI/lan_logo.svg" type="Texture" id=7]
@@ -13,20 +12,37 @@
 [ext_resource path="res://source/assets/scripts/ui_element_handlers/UI.gd" type="Script" id=11]
 [ext_resource path="res://source/assets/sprites/GUI/background_lobby.svg" type="Texture" id=12]
 [ext_resource path="res://source/scenes/OVERLAY/elements/wall.tscn" type="PackedScene" id=13]
+[ext_resource path="res://source/assets/sprites/GUI/server_title.svg" type="Texture" id=15]
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=7]
 size = 36
 use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="StyleBoxEmpty" id=8]
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="DynamicFont" id=5]
+size = 36
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 36
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=9]
 size = 88
 use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=10]
 size = 22
 use_mipmaps = true
 use_filter = true
@@ -52,13 +68,20 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="create_server" parent="multiplayer_configure" instance=ExtResource( 9 )]
+[node name="controls" type="Control" parent="multiplayer_configure"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="create_server" parent="multiplayer_configure/controls" instance=ExtResource( 9 )]
 margin_left = 810.0
 margin_top = 424.0
 margin_right = 1110.0
 margin_bottom = 496.0
 
-[node name="Label" type="Label" parent="multiplayer_configure/create_server"]
+[node name="Label" type="Label" parent="multiplayer_configure/controls/create_server"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -77,13 +100,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="join_server" parent="multiplayer_configure" instance=ExtResource( 9 )]
+[node name="join_server" parent="multiplayer_configure/controls" instance=ExtResource( 9 )]
 margin_left = 810.0
 margin_top = 504.0
 margin_right = 1110.0
 margin_bottom = 576.0
 
-[node name="Label" type="Label" parent="multiplayer_configure/join_server"]
+[node name="Label" type="Label" parent="multiplayer_configure/controls/join_server"]
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
@@ -101,20 +124,20 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="lan_logo" type="Sprite" parent="multiplayer_configure/join_server"]
+[node name="lan_logo" type="Sprite" parent="multiplayer_configure/controls/join_server"]
 position = Vector2( 33.5, 36 )
 texture = ExtResource( 7 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="return" parent="multiplayer_configure" instance=ExtResource( 9 )]
+[node name="return" parent="multiplayer_configure/controls" instance=ExtResource( 9 )]
 margin_left = 810.0
 margin_top = 584.0
 margin_right = 1110.0
 margin_bottom = 656.0
 
-[node name="Label" type="Label" parent="multiplayer_configure/return"]
+[node name="Label" type="Label" parent="multiplayer_configure/controls/return"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -133,47 +156,84 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="username" type="Panel" parent="multiplayer_configure"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -480.0
-margin_top = -270.0
-margin_right = 480.0
-margin_bottom = 270.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="username_text_edit" type="LineEdit" parent="multiplayer_configure/username"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -403.0
-margin_top = -243.0
-margin_right = 403.0
-margin_bottom = -138.0
-custom_fonts/font = ExtResource( 4 )
-custom_colors/selection_color = Color( 0.607843, 0.607843, 0.607843, 1 )
-custom_colors/cursor_color = Color( 1, 1, 1, 1 )
-align = 1
-placeholder_text = "Enter username"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="confirm" parent="multiplayer_configure/username/username_text_edit" instance=ExtResource( 9 )]
-margin_left = 255.623
-margin_top = 129.885
-margin_right = 555.623
-margin_bottom = 201.885
-
-[node name="Label" type="Label" parent="multiplayer_configure/username/username_text_edit/confirm"]
+[node name="popup_screen" type="Control" parent="multiplayer_configure"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="enter_server_ip" type="Sprite" parent="multiplayer_configure/popup_screen"]
+position = Vector2( 960, 465 )
+texture = ExtResource( 15 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Label" type="Label" parent="multiplayer_configure/popup_screen/enter_server_ip"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -225.0
+margin_top = -25.0
+margin_right = -225.0
+margin_bottom = -25.0
+custom_fonts/font = SubResource( 7 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Enter your username"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="panel" type="Panel" parent="multiplayer_configure/popup_screen"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -200.0
+margin_top = -50.0
+margin_right = 200.0
+margin_bottom = 50.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="username_text_edit" type="LineEdit" parent="multiplayer_configure/popup_screen/panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -175.0
+margin_top = -28.0
+margin_right = 175.0
+margin_bottom = 28.0
+custom_styles/focus = SubResource( 8 )
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
+custom_colors/selection_color = Color( 0.8, 0.8, 0.8, 1 )
+align = 1
+placeholder_text = "username"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="confirm" parent="multiplayer_configure/popup_screen/panel" instance=ExtResource( 9 )]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -150.0
+margin_top = 25.0
+margin_right = 150.0
+margin_bottom = 97.0
+
+[node name="Label" type="Label" parent="multiplayer_configure/popup_screen/panel/confirm"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "CONFIRM"
 align = 1
@@ -246,7 +306,7 @@ margin_left = -319.0
 margin_top = -56.0
 margin_right = 319.0
 margin_bottom = 56.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 9 )
 custom_colors/font_color = Color( 0.439216, 0.666667, 1, 0.27451 )
 align = 1
 valign = 1
@@ -264,7 +324,7 @@ margin_left = -116.5
 margin_top = 60.0
 margin_right = 116.5
 margin_bottom = 89.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 10 )
 custom_colors/font_color = Color( 0.439216, 0.666667, 1, 0.27451 )
 text = "WAITING FOR PLAYERS"
 align = 1
@@ -287,8 +347,8 @@ position = Vector2( 1152, 860 )
 [node name="4" type="Position2D" parent="spawn_locations"]
 position = Vector2( 1536, 860 )
 
-[connection signal="pressed" from="multiplayer_configure/create_server" to="." method="_on_create_server_pressed"]
-[connection signal="pressed" from="multiplayer_configure/join_server" to="." method="_on_join_server_pressed"]
-[connection signal="pressed" from="multiplayer_configure/return" to="." method="_on_return_pressed"]
-[connection signal="pressed" from="multiplayer_configure/username/username_text_edit/confirm" to="." method="_on_confirm_pressed"]
+[connection signal="pressed" from="multiplayer_configure/controls/create_server" to="." method="_on_create_server_pressed"]
+[connection signal="pressed" from="multiplayer_configure/controls/join_server" to="." method="_on_join_server_pressed"]
+[connection signal="pressed" from="multiplayer_configure/controls/return" to="." method="_on_return_pressed"]
+[connection signal="pressed" from="multiplayer_configure/popup_screen/panel/confirm" to="." method="_on_confirm_pressed"]
 [connection signal="pressed" from="UI/start_game" to="." method="_on_start_game_pressed"]
