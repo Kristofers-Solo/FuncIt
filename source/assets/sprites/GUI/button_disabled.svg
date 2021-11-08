@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="300"
+   height="72"
+   viewBox="0 0 79.375 19.05"
+   version="1.1"
+   id="svg429"
+   sodipodi:docname="button_disabled.svg"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview431"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     units="px"
+     inkscape:zoom="1.1224747"
+     inkscape:cx="29.844769"
+     inkscape:cy="189.31384"
+     inkscape:window-width="1920"
+     inkscape:window-height="1007"
+     inkscape:window-x="1920"
+     inkscape:window-y="44"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs426">
+    <clipPath
+       id="b">
+      <rect
+         width="551"
+         height="75"
+         fill="none"
+         id="rect7"
+         x="0"
+         y="0" />
+    </clipPath>
+    <radialGradient
+       id="a"
+       cx="491.85364"
+       cy="491.85364"
+       r="491.85364"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.51641379,0,0,0.29048275,1.5258789e-6,-2.3742676e-7)"
+       fx="491.85364"
+       fy="491.85364">
+      <stop
+         offset="0"
+         stop-color="#345475"
+         id="stop2" />
+      <stop
+         offset="1"
+         stop-color="#1c142d"
+         id="stop4" />
+    </radialGradient>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       transform="matrix(0.396875,0,0,0.381,-204.39062,-118.11)"
+       id="g401">
+      <path
+         d="M 15,0 H 194 V 35 A 15,15 0 0 1 179,50 H 0 V 15 A 15,15 0 0 1 15,0 Z"
+         transform="translate(521,310)"
+         fill="#292929"
+         id="path375" />
+      <path
+         d="M 15,0 H 45 V 35 A 15,15 0 0 1 30,50 H 0 V 15 A 15,15 0 0 1 15,0 Z"
+         transform="translate(515,310)"
+         fill="#3d3d3d"
+         id="path377" />
+      <g
+         transform="translate(454,252)"
+         id="g395">
+        <g
+           transform="translate(74,74)"
+           fill="none"
+           stroke="#1e1e1e"
+           stroke-width="1"
+           id="g383">
+          <circle
+             cx="9.5"
+             cy="9.5"
+             r="9.5"
+             stroke="none"
+             id="circle379" />
+          <circle
+             cx="9.5"
+             cy="9.5"
+             r="9"
+             fill="none"
+             id="circle381" />
+        </g>
+        <path
+           d="m 2412.521,-2093.832 c 0,0 -11.763,8.455 -0.018,17.834"
+           transform="translate(-2329.017,2168.322)"
+           fill="none"
+           stroke="#1e1e1e"
+           stroke-width="1"
+           id="path385" />
+        <path
+           d="m 2448.727,-2094.419 c 0,0 11.466,8.548 -0.088,17.887"
+           transform="translate(-2365.258,2168.856)"
+           fill="none"
+           stroke="#1e1e1e"
+           stroke-width="1"
+           id="path387" />
+        <path
+           d="M 11.078,1 H 26.413"
+           transform="translate(64.703,77.519)"
+           fill="none"
+           stroke="#1e1e1e"
+           stroke-width="1"
+           id="path389" />
+        <path
+           d="M 16.676,0 H 31.735"
+           transform="translate(59.228,88.42)"
+           fill="none"
+           stroke="#1e1e1e"
+           stroke-width="1"
+           id="path391" />
+        <line
+           x2="18.431"
+           transform="translate(74.276,83.691)"
+           fill="none"
+           stroke="#1e1e1e"
+           stroke-width="1"
+           opacity="0.76"
+           id="line393"
+           x1="0"
+           y1="0"
+           y2="0" />
+      </g>
+    </g>
+  </g>
+</svg>
