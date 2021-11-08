@@ -10,7 +10,6 @@ onready var label = $Label
 
 func _process(delta: float) -> void:
 	if player_following != null:
-		print(player_following.global_position)
 		global_position = player_following.global_position + Vector2(0,distanceToPlayerOffset).rotated(player_following.rotation)
 
 
