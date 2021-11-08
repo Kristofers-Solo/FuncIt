@@ -238,7 +238,7 @@ func _physics_process(delta) -> void:
 		else:
 			rotation = lerp_angle(rotation, puppet_rotation, delta * 8)
 			#rotation = puppet_rotation
-			$"weaponHolder/Player-character-theme-gun-01".position = puppet_weapon_position
+			$"weaponHolder/Player-character-theme-gun".position = puppet_weapon_position
 			weaponAngle = puppet_weapon_angle
 			direction = puppet_direction
 
