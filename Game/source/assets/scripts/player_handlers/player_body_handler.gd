@@ -51,16 +51,19 @@ var reverseControls = false
 var awaitingCollision = false
 
 var direction = "left"
-var theme = "01"
+export var theme = "01"
 
 var weaponRotationalStep = 2
 var weaponPositionalOffset = Vector2(0,0)
 var weaponPosition = Vector2(0,0)
 var weaponAngle = 0
 
+var particleTexture = ImageTexture.new()
+var particleImage = Image.new()
+
 func _ready():
-	weaponPositionalOffset = Vector2(-$"weaponHolder/Player-character-theme-gun-01".texture.get_width() * $"weaponHolder/Player-character-theme-gun-01".scale.x / 2,-$"weaponHolder/Player-character-theme-gun-01".texture.get_height() * $"weaponHolder/Player-character-theme-gun-01".scale.y / 2) + Vector2(-$weaponHolder.get_shape().get_radius(), 0)
-	$"weaponHolder/Player-character-theme-gun-01".position = weaponPositionalOffset
+	weaponPositionalOffset = Vector2(-$"weaponHolder/Player-character-theme-gun-na".texture.get_width() * $"weaponHolder/Player-character-theme-gun-na".scale.x / 2,-$"weaponHolder/Player-character-theme-gun-na".texture.get_height() * $"weaponHolder/Player-character-theme-gun-na".scale.y / 2) + Vector2(-$weaponHolder.get_shape().get_radius(), 0)
+	$"weaponHolder/Player-character-theme-gun".position = weaponPositionalOffset
 	get_tree().connect("network_peer_connected", self, "_network_peer_connected")
 	username_text_instance = Global.instance_node_at_location(username_text, PersistentNodes, global_position)
 	username_text_instance.player_following = self
@@ -115,6 +118,10 @@ func process_rotation():
 
 
 func _process(delta: float) -> void:
+	$"weaponHolder/Player-character-theme-gun".play(theme)
+	particleImage.load("res://source/assets/sprites/character/player/theme/" + theme + "/na/Player-character-theme-particle-"+theme+".png")
+	particleTexture.create_from_image(particleImage)
+	$Particles2D.texture = particleTexture
 	if username_text_instance != null:
 		username_text_instance.name = "username" + name
 	if $Particles2D.position.x > 0 and direction != "left": 
@@ -372,7 +379,7 @@ func _exit_tree() -> void:
 			Global.player_master = null
 
 func rotate_weapon():
-	weaponPosition = $"weaponHolder/Player-character-theme-gun-01".position
+	weaponPosition = $"weaponHolder/Player-character-theme-gun".position
 	weaponPosition -= Vector2(weaponPositionalOffset.x,0).rotated(deg2rad(weaponAngle)) + Vector2(0,weaponPositionalOffset.y)
 	if user_input["r_inc"]:
 		weaponAngle += weaponRotationalStep
@@ -382,13 +389,13 @@ func rotate_weapon():
 		if weaponAngle + weaponRotationalStep < 87.5:
 			weaponAngle = 180 - weaponAngle
 		weaponAngle = clamp(weaponAngle, 87.5,180)
-		$"weaponHolder/Player-character-theme-gun-01".flip_v = true
+		$"weaponHolder/Player-character-theme-gun".flip_v = true
 	elif direction == "left": 
 		if weaponAngle - weaponRotationalStep > 92.5:
 			weaponAngle = abs(weaponAngle - 180)
 		weaponAngle = clamp(weaponAngle, 0, 92.5)
-		$"weaponHolder/Player-character-theme-gun-01".flip_v = false
+		$"weaponHolder/Player-character-theme-gun".flip_v = false
 	weaponPosition += Vector2(weaponPositionalOffset.x,0).rotated(deg2rad(weaponAngle)) + Vector2(0,weaponPositionalOffset.y)
-	$"weaponHolder/Player-character-theme-gun-01".position = weaponPosition
-	$"weaponHolder/Player-character-theme-gun-01".rotation_degrees = weaponAngle
+	$"weaponHolder/Player-character-theme-gun".position = weaponPosition
+	$"weaponHolder/Player-character-theme-gun".rotation_degrees = weaponAngle
 	pass
