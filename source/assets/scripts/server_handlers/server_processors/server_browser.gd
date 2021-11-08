@@ -1,19 +1,18 @@
 extends Control
 
 onready var server_listener = $server_listener
-onready var server_ip_text_edit = $background_panel/server_ip_text_edit
+onready var server_ip_text_edit = $popup_screen/panel/server_ip_text_edit
 onready var server_container = $controls/background_panel/VBoxContainer
-onready var manual_setup_button = $controls/manual_setup/Label
-onready var background_panel = $background_panel
+onready var popup_screen = $popup_screen
 
 
 func _ready() -> void:
-	background_panel.hide()
+	popup_screen.hide()
 
 
 func _process(delta):
-	if Input.is_action_just_pressed("esc") and background_panel.is_visible_in_tree():
-		background_panel.hide()
+	if Input.is_action_just_pressed("esc") and popup_screen.is_visible_in_tree():
+		popup_screen.hide()
 
 
 func _on_server_listener_new_server(serverInfo):
@@ -31,7 +30,8 @@ func _on_server_listener_remove_server(serverIp):
 
 
 func _on_manual_setup_pressed():
-	background_panel.show()
+	$controls.hide()
+	popup_screen.show()
 	server_ip_text_edit.call_deferred("grab_focus")
 
 

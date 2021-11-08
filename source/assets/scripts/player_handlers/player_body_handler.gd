@@ -57,23 +57,25 @@ var reverseControls = false
 var awaitingCollision = false
 
 var direction = "left"
-var theme = "01"
+export var theme = "01"
 
 var weaponRotationalStep = 2
 var weaponPositionalOffset = Vector2(0,0)
 var weaponPosition = Vector2(0,0)
 var weaponAngle = 0
 
+var particleTexture = ImageTexture.new()
+var particleImage = Image.new()
+
 func _ready():
-	weaponPositionalOffset = Vector2(-$"weaponHolder/Player-character-theme-gun-01".texture.get_width() * $"weaponHolder/Player-character-theme-gun-01".scale.x / 2,-$"weaponHolder/Player-character-theme-gun-01".texture.get_height() * $"weaponHolder/Player-character-theme-gun-01".scale.y / 2) + Vector2(-$weaponHolder.get_shape().get_radius(), 0)
-	$"weaponHolder/Player-character-theme-gun-01".position = weaponPositionalOffset
-	
+	weaponPositionalOffset = Vector2(-$"weaponHolder/Player-character-theme-gun-na".texture.get_width() * $"weaponHolder/Player-character-theme-gun-na".scale.x / 2,-$"weaponHolder/Player-character-theme-gun-na".texture.get_height() * $"weaponHolder/Player-character-theme-gun-na".scale.y / 2) + Vector2(-$weaponHolder.get_shape().get_radius(), 0)
+	$"weaponHolder/Player-character-theme-gun".position = weaponPositionalOffset
 	get_tree().connect("network_peer_connected", self, "_network_peer_connected")
 	username_text_instance = Global.instance_node_at_location(username_text, PersistentNodes, global_position)
 	username_text_instance.player_following = self
 	update_shoot_mode(false)
 	Global.alive_players.append(self)
-	
+
 	yield(get_tree(), "idle_frame")
 	if get_tree().has_network_peer():
 		if is_network_master():
@@ -121,12 +123,16 @@ func process_rotation():
 
 
 func _process(delta: float) -> void:
+	$"weaponHolder/Player-character-theme-gun".play(theme)
+	particleImage.load("res://source/assets/sprites/character/player/theme/" + theme + "/na/Player-character-theme-particle-"+theme+".png")
+	particleTexture.create_from_image(particleImage)
+	$Particles2D.texture = particleTexture
 	if username_text_instance != null:
 		username_text_instance.name = "username" + name
-	if $Particles2D.position.x > 0 and direction != "left": 
+	if $Particles2D.position.x > 0 and direction != "left":
 		$Particles2D.position = Vector2(-$Particles2D.position.x,$Particles2D.position.y)
 		$Particles2D.scale = -$Particles2D.scale
-	elif $Particles2D.position.x < 0 and direction != "right": 
+	elif $Particles2D.position.x < 0 and direction != "right":
 		$Particles2D.position = Vector2(-$Particles2D.position.x,$Particles2D.position.y)
 		$Particles2D.scale = -$Particles2D.scale
 	user_input = UIN_preset_pre_processor_instance.update()
@@ -152,7 +158,7 @@ func _process(delta: float) -> void:
 					VDIR[v_t][v]["ray"]["collided"] = false
 	update()
 	process_rotation()
-	
+
 
 func _physics_process(delta) -> void:
 	if get_tree().has_network_peer():
@@ -217,12 +223,12 @@ func _physics_process(delta) -> void:
 				if not characterStates["onGround"]:
 					velocityVDIR.y += accelerationSpeed
 				elif characterStates["onGround"] and velocityVDIR.y > 0:
-					velocityVDIR.y -= deccelerationSpeed 
+					velocityVDIR.y -= deccelerationSpeed
 				velocityVDIR = Vector2(clamp(velocityVDIR.x, -maxMovementSpeed.x, maxMovementSpeed.x), clamp(velocityVDIR.y, -maxMovementSpeed.y, maxMovementSpeed.y))
 				move_and_slide(velocityVDIR.rotated(rotationalHolder))
-				
-				
-				
+
+
+
 				#if Input.is_action_pressed("input_shoot") and can_shoot and not is_reloading:
 				#	rpc("instance_bullet", get_tree().get_network_unique_id())
 				#	is_reloading = true
@@ -232,10 +238,10 @@ func _physics_process(delta) -> void:
 
 			rotation = lerp_angle(rotation, puppet_rotation, delta * 8)
 			#rotation = puppet_rotation
-			$"weaponHolder/Player-character-theme-gun-01".position = puppet_weapon_position
+			$"weaponHolder/Player-character-theme-gun".position = puppet_weapon_position
 			weaponAngle = puppet_weapon_angle
 			direction = puppet_direction
-			
+
 			if velocityVDIR.x != 0 and maxMovementSpeed.x == 200:
 				$player_animated_sprite.play("move-speed-"+direction+"-"+theme)
 			elif maxMovementSpeed.x > 200 and not characterStates["jumped"]:
@@ -244,13 +250,13 @@ func _physics_process(delta) -> void:
 			else:
 				$player_animated_sprite.play("idle-speed-"+direction+"-"+theme)
 				$Particles2D.set_emitting(false)
-				
+
 			rotate_weapon()
 
 			if not tween.is_active():
 				pass
-				
-				
+
+
 
 	if hp <= 0:
 		if get_tree().is_network_server():
@@ -364,11 +370,11 @@ sync func enable() -> void:
 	visible = true
 	$player_collider.disabled = false
 	$hitbox/CollisionShape2D.disabled = false
-	
+
 	if get_tree().has_network_peer():
 		if is_network_master():
 			Global.player_master = self
-	
+
 	if not Global.alive_players.has(self):
 		Global.alive_players.append(self)
 
@@ -379,7 +385,7 @@ sync func destroy() -> void:
 	$player_collider.disabled = true
 	$hitbox/CollisionShape2D.disabled = true
 	Global.alive_players.erase(self)
-	
+
 	if get_tree().has_network_peer():
 		if is_network_master():
 			Global.player_master = null
@@ -392,7 +398,7 @@ func _exit_tree() -> void:
 			Global.player_master = null
 
 func rotate_weapon():
-	weaponPosition = $"weaponHolder/Player-character-theme-gun-01".position
+	weaponPosition = $"weaponHolder/Player-character-theme-gun".position
 	weaponPosition -= Vector2(weaponPositionalOffset.x,0).rotated(deg2rad(weaponAngle)) + Vector2(0,weaponPositionalOffset.y)
 	if user_input["r_inc"]:
 		weaponAngle += weaponRotationalStep
@@ -402,12 +408,13 @@ func rotate_weapon():
 		if weaponAngle + weaponRotationalStep < 87.5:
 			weaponAngle = 180 - weaponAngle
 		weaponAngle = clamp(weaponAngle, 87.5,180)
-		$"weaponHolder/Player-character-theme-gun-01".flip_v = true
-	elif direction == "left": 
+		$"weaponHolder/Player-character-theme-gun".flip_v = true
+	elif direction == "left":
 		if weaponAngle - weaponRotationalStep > 92.5:
 			weaponAngle = abs(weaponAngle - 180)
 		weaponAngle = clamp(weaponAngle, 0, 92.5)
-		$"weaponHolder/Player-character-theme-gun-01".flip_v = false
+		$"weaponHolder/Player-character-theme-gun".flip_v = false
 	weaponPosition += Vector2(weaponPositionalOffset.x,0).rotated(deg2rad(weaponAngle)) + Vector2(0,weaponPositionalOffset.y)
-	$"weaponHolder/Player-character-theme-gun-01".position = weaponPosition
-	$"weaponHolder/Player-character-theme-gun-01".rotation_degrees = weaponAngle
+	$"weaponHolder/Player-character-theme-gun".position = weaponPosition
+	$"weaponHolder/Player-character-theme-gun".rotation_degrees = weaponAngle
+	pass

@@ -1,10 +1,20 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://source/fonts/roboto/roboto.tres" type="DynamicFont" id=1]
+[ext_resource path="res://source/fonts/oxygen/Oxygen-Bold.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://source/assets/scripts/ui_element_handlers/simple_prompt.gd" type="Script" id=2]
 [ext_resource path="res://source/fonts/roboto/Roboto-Regular.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://source/scenes/OVERLAY/elements/button.tscn" type="PackedScene" id=4]
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 0.380392 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 50
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
 size = 100
 use_mipmaps = true
 use_filter = true
@@ -27,22 +37,32 @@ margin_left = -704.0
 margin_top = -330.0
 margin_right = 704.0
 margin_bottom = 330.0
+custom_styles/panel = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ok" type="Button" parent="Panel"]
+[node name="ok" parent="Panel" instance=ExtResource( 4 )]
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.5
 anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -150.0
+margin_top = 83.5
+margin_right = 150.0
+margin_bottom = 155.5
+
+[node name="OK" type="Label" parent="Panel/ok"]
+anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -257.0
-margin_top = -310.0
-margin_right = 257.0
-margin_bottom = -113.0
-custom_fonts/font = ExtResource( 1 )
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "OK"
+align = 1
+valign = 1
+uppercase = true
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -55,9 +75,12 @@ margin_left = -516.0
 margin_top = -155.5
 margin_right = 516.0
 margin_bottom = -37.5
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 3 )
 text = "Simple prompt"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="pressed" from="Panel/ok" to="." method="_on_ok_pressed"]

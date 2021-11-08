@@ -26,7 +26,7 @@ func _ready():
 	if socket_udp.listen(listen_port) != OK:
 		print("GameServer LAN service: Error listening port: " + str(listen_port))
 	else:
-		print("GameServer LAN service: Llistening port: " + str(listen_port))
+		print("GameServer LAN service: Listening port: " + str(listen_port))
 
 
 func _process(delta):
@@ -63,4 +63,6 @@ func _exit_tree():
 	socket_udp.close()
 
 
+func get_ip():
+	return socket_udp.get_packet_ip()
 

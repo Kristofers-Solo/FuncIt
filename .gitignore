@@ -15,6 +15,6 @@ data_*/
 *.log
 *.zip
 
-/test/
-/[Bb]uild/**
-/[Bb]uilds/**
+test/
+[Bb]uild/**
+[Bb]uilds/**
