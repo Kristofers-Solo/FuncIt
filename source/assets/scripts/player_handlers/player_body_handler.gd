@@ -228,12 +228,10 @@ func _physics_process(delta) -> void:
 				velocityVDIR = Vector2(clamp(velocityVDIR.x, -maxMovementSpeed.x, maxMovementSpeed.x), clamp(velocityVDIR.y, -maxMovementSpeed.y, maxMovementSpeed.y))
 				move_and_slide(velocityVDIR.rotated(rotationalHolder))
 
-
-
-				#if Input.is_action_pressed("input_shoot") and can_shoot and not is_reloading:
-				#	rpc("instance_bullet", get_tree().get_network_unique_id())
-				#	is_reloading = true
-				#	reload_timer.start()
+				if Input.is_action_pressed("input_shoot") and can_shoot and not is_reloading:
+					rpc("instance_bullet", get_tree().get_network_unique_id())
+					is_reloading = true
+					reload_timer.start()
 				rotate_weapon()
 		else:
 			rotation = lerp_angle(rotation, puppet_rotation, delta * 8)
@@ -250,17 +248,13 @@ func _physics_process(delta) -> void:
 			else:
 				$player_animated_sprite.play("idle-speed-"+direction+"-"+theme)
 				$Particles2D.set_emitting(false)
-
+				
 			rotate_weapon()
 			if not tween.is_active():
 				pass
-
-
-
 	if hp <= 0:
 		if get_tree().is_network_server():
 			rpc("destroy")
-
 
 
 func _draw():
@@ -425,4 +419,3 @@ func rotate_weapon():
 	weaponPosition += Vector2(weaponPositionalOffset.x,0).rotated(deg2rad(weaponAngle)) + Vector2(0,weaponPositionalOffset.y)
 	$"weaponHolder/Player-character-theme-gun".position = weaponPosition
 	$"weaponHolder/Player-character-theme-gun".rotation_degrees = weaponAngle
-	pass
