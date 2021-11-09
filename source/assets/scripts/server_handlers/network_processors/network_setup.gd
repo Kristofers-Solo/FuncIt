@@ -51,6 +51,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("esc") and username.is_visible_in_tree():
 		username.hide()
+		controls.show()
 	
 	if get_tree().network_peer != null:
 		if get_tree().get_network_connected_peers().size() >= 0 and get_tree().is_network_server():
