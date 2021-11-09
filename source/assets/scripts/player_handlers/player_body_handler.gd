@@ -373,6 +373,8 @@ sync func enable() -> void:
 	visible = true
 	$player_collider.disabled = false
 	$hitbox/CollisionShape2D.disabled = false
+	$player_collider.disabled = false
+	$weaponHolder.disabled = false
 
 	if get_tree().has_network_peer():
 		if is_network_master():
@@ -387,6 +389,8 @@ sync func destroy() -> void:
 	visible = false
 	$player_collider.disabled = true
 	$hitbox/CollisionShape2D.disabled = true
+	$player_collider.disabled = true
+	$weaponHolder.disabled = true
 	Global.alive_players.erase(self)
 
 	if get_tree().has_network_peer():
