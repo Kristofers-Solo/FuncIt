@@ -13,6 +13,7 @@ func _ready() -> void:
 func _process(delta):
 	if Input.is_action_just_pressed("esc") and popup_screen.is_visible_in_tree():
 		popup_screen.hide()
+		$controls.show()
 
 
 func _on_server_listener_new_server(serverInfo):

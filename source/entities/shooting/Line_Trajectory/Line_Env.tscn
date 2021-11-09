@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://source/entities/shooting/Line_Trajectory/Line_Bullet.tscn" type="PackedScene" id=1]
+[ext_resource path="res://source/assets/scripts/shooting/Line/Line_Env.gd" type="Script" id=2]
+
+[node name="Env" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Bullet" parent="." instance=ExtResource( 1 )]
