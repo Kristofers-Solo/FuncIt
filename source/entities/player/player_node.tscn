@@ -15,7 +15,7 @@
 [ext_resource path="res://source/assets/sprites/character/player/theme/01/animation/left_r/Player-character-theme-01_anim-idle – 7.png" type="Texture" id=13]
 [ext_resource path="res://source/assets/sprites/character/player/theme/01/animation/left_r/Player-character-theme-01_anim-idle – 12.png" type="Texture" id=14]
 [ext_resource path="res://source/assets/sprites/character/player/theme/01/animation/left_r/Player-character-theme-01_anim-idle – 10.png" type="Texture" id=15]
-[ext_resource path="res://source/entities/player/Gun_.gd" type="Script" id=16]
+[ext_resource path="res://source/assets/scripts/shooting/Gun_.gd" type="Script" id=16]
 [ext_resource path="res://source/assets/sprites/character/player/theme/01/animation/left_r/Player-character-theme-01_anim-idle – 18.png" type="Texture" id=18]
 [ext_resource path="res://source/assets/sprites/character/player/theme/01/animation/right_r/Player-character-theme-01_anim-idle – 34.png" type="Texture" id=19]
 [ext_resource path="res://source/assets/sprites/character/player/theme/01/animation/left_r/Player-character-theme-01_anim-idle – 17.png" type="Texture" id=20]
@@ -175,11 +175,6 @@
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 162 ), ExtResource( 135 ), ExtResource( 146 ), ExtResource( 141 ), ExtResource( 143 ), ExtResource( 163 ), ExtResource( 149 ), ExtResource( 136 ), ExtResource( 154 ), ExtResource( 137 ), ExtResource( 165 ), ExtResource( 142 ), ExtResource( 139 ), ExtResource( 159 ), ExtResource( 140 ), ExtResource( 155 ), ExtResource( 144 ), ExtResource( 151 ), ExtResource( 153 ), ExtResource( 166 ) ],
-"loop": true,
-"name": "move-speed-left-04",
-"speed": 35.0
-}, {
 "frames": [ ExtResource( 48 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 32 ), ExtResource( 13 ), ExtResource( 40 ), ExtResource( 6 ), ExtResource( 15 ), ExtResource( 22 ), ExtResource( 14 ), ExtResource( 9 ), ExtResource( 37 ), ExtResource( 23 ), ExtResource( 39 ), ExtResource( 20 ), ExtResource( 18 ), ExtResource( 7 ), ExtResource( 34 ) ],
 "loop": true,
 "name": "boost-speed-left-01",
@@ -279,6 +274,11 @@ animations = [ {
 "loop": true,
 "name": "move-speed-right-01",
 "speed": 35.0
+}, {
+"frames": [ ExtResource( 162 ), ExtResource( 135 ), ExtResource( 146 ), ExtResource( 141 ), ExtResource( 143 ), ExtResource( 163 ), ExtResource( 149 ), ExtResource( 136 ), ExtResource( 154 ), ExtResource( 137 ), ExtResource( 165 ), ExtResource( 142 ), ExtResource( 139 ), ExtResource( 159 ), ExtResource( 140 ), ExtResource( 155 ), ExtResource( 144 ), ExtResource( 151 ), ExtResource( 153 ), ExtResource( 166 ) ],
+"loop": true,
+"name": "move-speed-left-04",
+"speed": 35.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=3]
@@ -309,14 +309,9 @@ radius = 41.5403
 
 [sub_resource type="SpriteFrames" id=6]
 animations = [ {
-"frames": [ ExtResource( 168 ) ],
+"frames": [ ExtResource( 170 ) ],
 "loop": true,
-"name": "03",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 169 ) ],
-"loop": true,
-"name": "04",
+"name": "02",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 27 ) ],
@@ -324,15 +319,22 @@ animations = [ {
 "name": "01",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 170 ) ],
+"frames": [ ExtResource( 169 ) ],
 "loop": true,
-"name": "02",
+"name": "04",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 168 ) ],
+"loop": true,
+"name": "03",
 "speed": 5.0
 } ]
 
-[node name="player" type="KinematicBody2D" groups=["Net", "Player"]]
+[node name="player" type="KinematicBody2D" groups=[
+"Net",
+"Player",
+]]
 script = ExtResource( 11 )
-theme = "03"
 
 [node name="player_collider" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
