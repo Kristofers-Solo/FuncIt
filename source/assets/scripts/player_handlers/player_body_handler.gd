@@ -77,13 +77,12 @@ func equip_weapon():
 	if Input.is_action_just_pressed("hyper"):
 		weaponPositionalOffset = Vector2(-$"weaponHolder/Player-character-theme-gun-na4".texture.get_width() * $"weaponHolder/Player-character-theme-gun-na4".scale.x / 2,-$"weaponHolder/Player-character-theme-gun-na4".texture.get_height() * $"weaponHolder/Player-character-theme-gun-na4".scale.y / 2) + Vector2(-$weaponHolder.get_shape().get_radius(), 0)
 	$"weaponHolder/Player-character-theme-gun".position = weaponPositionalOffset
-	return weaponPositionalOffset
 	pass
 	
 
 func _ready():
-	#weaponPositionalOffset = Vector2(-$"weaponHolder/Player-character-theme-gun-na3".texture.get_width() * $"weaponHolder/Player-character-theme-gun-na3".scale.x / 2,-$"weaponHolder/Player-character-theme-gun-na3".texture.get_height() * $"weaponHolder/Player-character-theme-gun-na3".scale.y / 2) + Vector2(-$weaponHolder.get_shape().get_radius(), 0)
-	#$"weaponHolder/Player-character-theme-gun".position = weaponPositionalOffset
+	weaponPositionalOffset = Vector2(-$"weaponHolder/Player-character-theme-gun-na3".texture.get_width() * $"weaponHolder/Player-character-theme-gun-na3".scale.x / 2,-$"weaponHolder/Player-character-theme-gun-na3".texture.get_height() * $"weaponHolder/Player-character-theme-gun-na3".scale.y / 2) + Vector2(-$weaponHolder.get_shape().get_radius(), 0)
+	$"weaponHolder/Player-character-theme-gun".position = weaponPositionalOffset
 	get_tree().connect("network_peer_connected", self, "_network_peer_connected")
 	username_text_instance = Global.instance_node_at_location(username_text, PersistentNodes, global_position)
 	username_text_instance.player_following = self
@@ -173,7 +172,6 @@ func _process(delta: float) -> void:
 					VDIR[v_t][v]["ray"]["collided"] = false
 	update()
 	process_rotation()
-	equip_weapon()
 
 
 func _physics_process(delta) -> void:
@@ -249,6 +247,7 @@ func _physics_process(delta) -> void:
 				#	rpc("instance_bullet", get_tree().get_network_unique_id())
 				#	is_reloading = true
 				#	reload_timer.start()
+				
 				rotate_weapon()
 		else:
 			rotation = lerp_angle(rotation, puppet_rotation, delta * 8)
@@ -421,6 +420,7 @@ func _exit_tree() -> void:
 			Global.player_master = null
 
 func rotate_weapon():
+	#equip_weapon()
 	weaponPosition = $"weaponHolder/Player-character-theme-gun".position
 	weaponPosition -= Vector2(weaponPositionalOffset.x,0).rotated(deg2rad(weaponAngle)) + Vector2(0,weaponPositionalOffset.y)
 	if user_input["r_inc"]:

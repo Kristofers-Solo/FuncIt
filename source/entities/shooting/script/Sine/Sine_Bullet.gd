@@ -6,7 +6,6 @@ var velocity = Vector2()
 var time = 0
 export var amplitude = 4
 export var frequency = 5
-var gravitile = 5
 
 
 func follow_sine_trajectory():
