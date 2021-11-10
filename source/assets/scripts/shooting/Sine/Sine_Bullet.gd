@@ -1,4 +1,4 @@
-extends Area2D
+extends Sprite
 
 export var speed = 100
 var velocity = Vector2()
@@ -6,7 +6,6 @@ var velocity = Vector2()
 var time = 0
 export var amplitude = 4
 export var frequency = 5
-
 
 func follow_sine_trajectory():
 	velocity.y = amplitude * cos(time * frequency)

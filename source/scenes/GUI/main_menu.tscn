@@ -31,6 +31,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="FunCitGameLogoDarkTransparent" type="Sprite" parent="foreground"]
+position = Vector2( 980, 333.502 )
+scale = Vector2( 0.462963, 0.462963 )
+texture = ExtResource( 4 )
+
 [node name="play" parent="foreground" instance=ExtResource( 7 )]
 margin_left = 810.0
 margin_top = 500.0
@@ -123,11 +128,6 @@ custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="FunCitGameLogoDarkTransparent" type="Sprite" parent="."]
-position = Vector2( 980, 335 )
-scale = Vector2( 0.462963, 0.462963 )
-texture = ExtResource( 4 )
 
 [connection signal="pressed" from="foreground/play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="foreground/LAN_party" to="." method="_on_LAN_party_pressed"]

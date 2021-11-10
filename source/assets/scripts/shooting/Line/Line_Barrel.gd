@@ -1,16 +1,20 @@
-extends StaticBody2D # Y = aX
+extends Line2D
 
-onready var bullet_env = preload("res://source/entities/shooting/Line_Trajectory/Line_Env.tscn")
+export var speed = 100
+var velocity = Vector2(0, 0)
+var dot_position = Vector2(0, 0)
+
+var time = 0
+var a_parameter = 0
 
 
-func shoot():
-	var bullet = bullet_env.instance()
-	get_parent().get_parent().get_parent().add_child(bullet)
-	bullet.global_position = $Position2D.global_position
-	bullet.global_rotation = $Position2D.global_rotation
-	
-	
+func _draw():
+	velocity.y = 10 * a_parameter
+	velocity.x = 10
+	dot_position += velocity * speed * 0.06944
+	draw_circle(dot_position, 1, Color(225, 225, 225))
+	time += 0.06944
 
 func _process(delta):
-	if Input.is_action_just_pressed("input_shoot"):
-		shoot()
+	update()
+	
