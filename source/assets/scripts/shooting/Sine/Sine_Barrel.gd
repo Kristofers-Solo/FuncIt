@@ -1,20 +1,33 @@
-extends StaticBody2D
-
-onready var bullet_env = preload("res://source/entities/shooting/Sine_Trajectory/Sine_Env.tscn")
-
-var velocity = Vector2(1, 0)
-var shooting_speed = 200
+extends Line2D
 
 
+export var speed = 100
+var velocity = Vector2(0, 0)
+var dot_position = Vector2(0, 0)
+var dot_array:PoolVector2Array = []
 
-func shoot():
-	var bullet = bullet_env.instance()
-	get_parent().get_parent().get_parent().add_child(bullet)
-	bullet.global_position = $Position2D.global_position
-	bullet.global_rotation = $Position2D.global_rotation
-	pass
+var time = 0
+export var amplitude = 4
+export var frequency = 5
+
+var maxpoints = 15
+
+
+func follow_sine_trajectory(time):
+	for x in range(maxpoints):
+		velocity.y = amplitude * cos(time * frequency)
+		velocity.x = 5
+		dot_position += velocity 
+		dot_array.append(dot_position)
+	return dot_array
 	
+func construct_a_line():
+	clear_points()
+	for x in range(maxpoints):
+		add_point(follow_sine_trajectory(x))
+	pass
 
 func _process(delta):
-	if Input.is_action_just_pressed("input_shoot"):
-		shoot()
+	time += delta
+	self.points = follow_sine_trajectory(time)
+	pass

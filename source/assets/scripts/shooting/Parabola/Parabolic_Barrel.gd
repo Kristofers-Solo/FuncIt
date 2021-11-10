@@ -12,5 +12,5 @@ func shoot():
 	
 
 func _process(delta):
-	if Input.is_action_just_pressed("shoot"):
+	if Input.is_action_just_pressed("input_shoot"):
 		shoot()

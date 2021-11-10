@@ -1,4 +1,4 @@
-extends Area2D
+extends Sprite
 
 var velocity = Vector2()
 var speed = 1
@@ -9,7 +9,7 @@ var gravitile = 5
 
 func follow_hyperbolic_trajectory():
 	velocity.x = gravitile * time
-	velocity.y = 1/time
+	velocity.y = 1 / time
 	
 
 func _process(delta):
@@ -18,7 +18,7 @@ func _process(delta):
 	position += velocity * speed * delta
 
 
-func _on_Bullet_body_entered(body):
+func _on_hitbox_body_entered(body):
 	if body.is_in_group("mobs"):
 		body.queue_free()
 	queue_free()

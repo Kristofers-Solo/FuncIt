@@ -175,6 +175,66 @@
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
+"frames": [ ExtResource( 167 ), ExtResource( 157 ), ExtResource( 158 ), ExtResource( 126 ), ExtResource( 90 ), ExtResource( 89 ), ExtResource( 97 ), ExtResource( 88 ), ExtResource( 98 ), ExtResource( 91 ), ExtResource( 125 ), ExtResource( 105 ), ExtResource( 82 ), ExtResource( 84 ), ExtResource( 92 ), ExtResource( 103 ), ExtResource( 122 ), ExtResource( 130 ), ExtResource( 104 ), ExtResource( 116 ) ],
+"loop": true,
+"name": "idle-speed-right-02",
+"speed": 25.0
+}, {
+"frames": [ ExtResource( 48 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 32 ), ExtResource( 13 ), ExtResource( 40 ), ExtResource( 6 ), ExtResource( 15 ), ExtResource( 22 ), ExtResource( 14 ), ExtResource( 9 ), ExtResource( 37 ), ExtResource( 23 ), ExtResource( 39 ), ExtResource( 20 ), ExtResource( 18 ), ExtResource( 7 ), ExtResource( 34 ) ],
+"loop": true,
+"name": "move-speed-left-01",
+"speed": 35.0
+}, {
+"frames": [ ExtResource( 114 ), ExtResource( 128 ), ExtResource( 93 ), ExtResource( 107 ), ExtResource( 117 ), ExtResource( 102 ), ExtResource( 81 ), ExtResource( 118 ), ExtResource( 76 ), ExtResource( 115 ), ExtResource( 127 ), ExtResource( 123 ), ExtResource( 113 ), ExtResource( 77 ), ExtResource( 78 ), ExtResource( 124 ), ExtResource( 94 ), ExtResource( 112 ), ExtResource( 131 ), ExtResource( 95 ) ],
+"loop": true,
+"name": "boost-speed-right-03",
+"speed": 50.0
+}, {
+"frames": [ ExtResource( 73 ), ExtResource( 57 ), ExtResource( 65 ), ExtResource( 64 ), ExtResource( 54 ), ExtResource( 71 ), ExtResource( 58 ), ExtResource( 66 ), ExtResource( 62 ), ExtResource( 59 ), ExtResource( 56 ), ExtResource( 60 ), ExtResource( 63 ), ExtResource( 50 ), ExtResource( 61 ), ExtResource( 67 ), ExtResource( 72 ), ExtResource( 51 ), ExtResource( 68 ), ExtResource( 69 ) ],
+"loop": true,
+"name": "idle-speed-left-02",
+"speed": 25.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 42 ), ExtResource( 35 ), ExtResource( 24 ), ExtResource( 8 ), ExtResource( 31 ), ExtResource( 30 ), ExtResource( 38 ), ExtResource( 10 ), ExtResource( 43 ), ExtResource( 41 ), ExtResource( 33 ), ExtResource( 44 ), ExtResource( 19 ), ExtResource( 29 ), ExtResource( 25 ), ExtResource( 36 ), ExtResource( 12 ), ExtResource( 45 ), ExtResource( 21 ) ],
+"loop": true,
+"name": "idle-speed-right-01",
+"speed": 25.0
+}, {
+"frames": [ ExtResource( 73 ), ExtResource( 57 ), ExtResource( 65 ), ExtResource( 64 ), ExtResource( 54 ), ExtResource( 71 ), ExtResource( 58 ), ExtResource( 66 ), ExtResource( 62 ), ExtResource( 59 ), ExtResource( 56 ), ExtResource( 60 ), ExtResource( 63 ), ExtResource( 50 ), ExtResource( 61 ), ExtResource( 67 ), ExtResource( 72 ), ExtResource( 51 ), ExtResource( 68 ), ExtResource( 69 ) ],
+"loop": true,
+"name": "move-speed-left-02",
+"speed": 35.0
+}, {
+"frames": [ ExtResource( 114 ), ExtResource( 128 ), ExtResource( 93 ), ExtResource( 107 ), ExtResource( 117 ), ExtResource( 102 ), ExtResource( 81 ), ExtResource( 118 ), ExtResource( 76 ), ExtResource( 115 ), ExtResource( 127 ), ExtResource( 123 ), ExtResource( 113 ), ExtResource( 77 ), ExtResource( 78 ), ExtResource( 124 ), ExtResource( 94 ), ExtResource( 112 ), ExtResource( 131 ), ExtResource( 95 ) ],
+"loop": true,
+"name": "move-speed-right-03",
+"speed": 35.0
+}, {
+"frames": [ ExtResource( 99 ), ExtResource( 83 ), ExtResource( 109 ), ExtResource( 111 ), ExtResource( 101 ), ExtResource( 96 ), ExtResource( 79 ), ExtResource( 132 ), ExtResource( 119 ), ExtResource( 80 ), ExtResource( 85 ), ExtResource( 86 ), ExtResource( 87 ), ExtResource( 106 ), ExtResource( 121 ), ExtResource( 129 ), ExtResource( 100 ), ExtResource( 108 ), ExtResource( 110 ), ExtResource( 120 ) ],
+"loop": true,
+"name": "idle-speed-right-04",
+"speed": 25.0
+}, {
+"frames": [ ExtResource( 162 ), ExtResource( 135 ), ExtResource( 146 ), ExtResource( 141 ), ExtResource( 143 ), ExtResource( 163 ), ExtResource( 149 ), ExtResource( 136 ), ExtResource( 154 ), ExtResource( 137 ), ExtResource( 165 ), ExtResource( 142 ), ExtResource( 139 ), ExtResource( 159 ), ExtResource( 140 ), ExtResource( 155 ), ExtResource( 144 ), ExtResource( 151 ), ExtResource( 153 ), ExtResource( 166 ) ],
+"loop": true,
+"name": "idle-speed-left-04",
+"speed": 25.0
+}, {
+"frames": [ ExtResource( 70 ), ExtResource( 49 ), ExtResource( 74 ), ExtResource( 75 ), ExtResource( 28 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 55 ), ExtResource( 150 ), ExtResource( 156 ), ExtResource( 138 ), ExtResource( 161 ), ExtResource( 145 ), ExtResource( 148 ), ExtResource( 147 ), ExtResource( 133 ), ExtResource( 164 ), ExtResource( 134 ), ExtResource( 152 ), ExtResource( 160 ) ],
+"loop": true,
+"name": "boost-speed-left-03",
+"speed": 50.0
+}, {
+"frames": [ ExtResource( 167 ), ExtResource( 157 ), ExtResource( 158 ), ExtResource( 126 ), ExtResource( 90 ), ExtResource( 89 ), ExtResource( 97 ), ExtResource( 88 ), ExtResource( 98 ), ExtResource( 91 ), ExtResource( 125 ), ExtResource( 105 ), ExtResource( 82 ), ExtResource( 84 ), ExtResource( 92 ), ExtResource( 103 ), ExtResource( 122 ), ExtResource( 130 ), ExtResource( 104 ), ExtResource( 116 ) ],
+"loop": true,
+"name": "boost-speed-right-02",
+"speed": 50.0
+}, {
+"frames": [ ExtResource( 99 ), ExtResource( 83 ), ExtResource( 109 ), ExtResource( 111 ), ExtResource( 101 ), ExtResource( 96 ), ExtResource( 79 ), ExtResource( 132 ), ExtResource( 119 ), ExtResource( 80 ), ExtResource( 85 ), ExtResource( 86 ), ExtResource( 87 ), ExtResource( 106 ), ExtResource( 121 ), ExtResource( 129 ), ExtResource( 100 ), ExtResource( 108 ), ExtResource( 110 ), ExtResource( 120 ) ],
+"loop": true,
+"name": "move-speed-right-04",
+"speed": 35.0
+}, {
 "frames": [ ExtResource( 48 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 32 ), ExtResource( 13 ), ExtResource( 40 ), ExtResource( 6 ), ExtResource( 15 ), ExtResource( 22 ), ExtResource( 14 ), ExtResource( 9 ), ExtResource( 37 ), ExtResource( 23 ), ExtResource( 39 ), ExtResource( 20 ), ExtResource( 18 ), ExtResource( 7 ), ExtResource( 34 ) ],
 "loop": true,
 "name": "boost-speed-left-01",
@@ -185,14 +245,14 @@ animations = [ {
 "name": "boost-speed-right-01",
 "speed": 50.0
 }, {
-"frames": [ ExtResource( 73 ), ExtResource( 57 ), ExtResource( 65 ), ExtResource( 64 ), ExtResource( 54 ), ExtResource( 71 ), ExtResource( 58 ), ExtResource( 66 ), ExtResource( 62 ), ExtResource( 59 ), ExtResource( 56 ), ExtResource( 60 ), ExtResource( 63 ), ExtResource( 50 ), ExtResource( 61 ), ExtResource( 67 ), ExtResource( 72 ), ExtResource( 51 ), ExtResource( 68 ), ExtResource( 69 ) ],
+"frames": [ ExtResource( 99 ), ExtResource( 83 ), ExtResource( 109 ), ExtResource( 111 ), ExtResource( 101 ), ExtResource( 96 ), ExtResource( 79 ), ExtResource( 132 ), ExtResource( 119 ), ExtResource( 80 ), ExtResource( 85 ), ExtResource( 86 ), ExtResource( 87 ), ExtResource( 106 ), ExtResource( 121 ), ExtResource( 129 ), ExtResource( 100 ), ExtResource( 108 ), ExtResource( 110 ), ExtResource( 120 ) ],
 "loop": true,
-"name": "move-speed-left-02",
-"speed": 35.0
+"name": "boost-speed-right-04",
+"speed": 50.0
 }, {
-"frames": [ ExtResource( 167 ), ExtResource( 157 ), ExtResource( 158 ), ExtResource( 126 ), ExtResource( 90 ), ExtResource( 89 ), ExtResource( 97 ), ExtResource( 88 ), ExtResource( 98 ), ExtResource( 91 ), ExtResource( 125 ), ExtResource( 105 ), ExtResource( 82 ), ExtResource( 84 ), ExtResource( 92 ), ExtResource( 103 ), ExtResource( 122 ), ExtResource( 130 ), ExtResource( 104 ), ExtResource( 116 ) ],
+"frames": [ ExtResource( 5 ), ExtResource( 42 ), ExtResource( 35 ), ExtResource( 24 ), ExtResource( 8 ), ExtResource( 31 ), ExtResource( 30 ), ExtResource( 38 ), ExtResource( 10 ), ExtResource( 43 ), ExtResource( 41 ), ExtResource( 33 ), ExtResource( 44 ), ExtResource( 19 ), ExtResource( 29 ), ExtResource( 25 ), ExtResource( 36 ), ExtResource( 12 ), ExtResource( 45 ), ExtResource( 21 ) ],
 "loop": true,
-"name": "move-speed-right-02",
+"name": "move-speed-right-01",
 "speed": 35.0
 }, {
 "frames": [ ExtResource( 70 ), ExtResource( 49 ), ExtResource( 74 ), ExtResource( 75 ), ExtResource( 28 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 55 ), ExtResource( 150 ), ExtResource( 156 ), ExtResource( 138 ), ExtResource( 161 ), ExtResource( 145 ), ExtResource( 148 ), ExtResource( 147 ), ExtResource( 133 ), ExtResource( 164 ), ExtResource( 134 ), ExtResource( 152 ), ExtResource( 160 ) ],
@@ -200,45 +260,15 @@ animations = [ {
 "name": "move-speed-left-03",
 "speed": 35.0
 }, {
-"frames": [ ExtResource( 5 ), ExtResource( 42 ), ExtResource( 35 ), ExtResource( 24 ), ExtResource( 8 ), ExtResource( 31 ), ExtResource( 30 ), ExtResource( 38 ), ExtResource( 10 ), ExtResource( 43 ), ExtResource( 41 ), ExtResource( 33 ), ExtResource( 44 ), ExtResource( 19 ), ExtResource( 29 ), ExtResource( 25 ), ExtResource( 36 ), ExtResource( 12 ), ExtResource( 45 ), ExtResource( 21 ) ],
+"frames": [ ExtResource( 167 ), ExtResource( 157 ), ExtResource( 158 ), ExtResource( 126 ), ExtResource( 90 ), ExtResource( 89 ), ExtResource( 97 ), ExtResource( 88 ), ExtResource( 98 ), ExtResource( 91 ), ExtResource( 125 ), ExtResource( 105 ), ExtResource( 82 ), ExtResource( 84 ), ExtResource( 92 ), ExtResource( 103 ), ExtResource( 122 ), ExtResource( 130 ), ExtResource( 104 ), ExtResource( 116 ) ],
 "loop": true,
-"name": "idle-speed-right-01",
-"speed": 25.0
-}, {
-"frames": [ ExtResource( 114 ), ExtResource( 128 ), ExtResource( 93 ), ExtResource( 107 ), ExtResource( 117 ), ExtResource( 102 ), ExtResource( 81 ), ExtResource( 118 ), ExtResource( 76 ), ExtResource( 115 ), ExtResource( 127 ), ExtResource( 123 ), ExtResource( 113 ), ExtResource( 77 ), ExtResource( 78 ), ExtResource( 124 ), ExtResource( 94 ), ExtResource( 112 ), ExtResource( 131 ), ExtResource( 95 ) ],
-"loop": true,
-"name": "move-speed-right-03",
+"name": "move-speed-right-02",
 "speed": 35.0
 }, {
 "frames": [ ExtResource( 162 ), ExtResource( 135 ), ExtResource( 146 ), ExtResource( 141 ), ExtResource( 143 ), ExtResource( 163 ), ExtResource( 149 ), ExtResource( 136 ), ExtResource( 154 ), ExtResource( 137 ), ExtResource( 165 ), ExtResource( 142 ), ExtResource( 139 ), ExtResource( 159 ), ExtResource( 140 ), ExtResource( 155 ), ExtResource( 144 ), ExtResource( 151 ), ExtResource( 153 ), ExtResource( 166 ) ],
 "loop": true,
-"name": "idle-speed-left-04",
-"speed": 25.0
-}, {
-"frames": [ ExtResource( 73 ), ExtResource( 57 ), ExtResource( 65 ), ExtResource( 64 ), ExtResource( 54 ), ExtResource( 71 ), ExtResource( 58 ), ExtResource( 66 ), ExtResource( 62 ), ExtResource( 59 ), ExtResource( 56 ), ExtResource( 60 ), ExtResource( 63 ), ExtResource( 50 ), ExtResource( 61 ), ExtResource( 67 ), ExtResource( 72 ), ExtResource( 51 ), ExtResource( 68 ), ExtResource( 69 ) ],
-"loop": true,
-"name": "idle-speed-left-02",
-"speed": 25.0
-}, {
-"frames": [ ExtResource( 99 ), ExtResource( 83 ), ExtResource( 109 ), ExtResource( 111 ), ExtResource( 101 ), ExtResource( 96 ), ExtResource( 79 ), ExtResource( 132 ), ExtResource( 119 ), ExtResource( 80 ), ExtResource( 85 ), ExtResource( 86 ), ExtResource( 87 ), ExtResource( 106 ), ExtResource( 121 ), ExtResource( 129 ), ExtResource( 100 ), ExtResource( 108 ), ExtResource( 110 ), ExtResource( 120 ) ],
-"loop": true,
-"name": "boost-speed-right-04",
-"speed": 50.0
-}, {
-"frames": [ ExtResource( 70 ), ExtResource( 49 ), ExtResource( 74 ), ExtResource( 75 ), ExtResource( 28 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 55 ), ExtResource( 150 ), ExtResource( 156 ), ExtResource( 138 ), ExtResource( 161 ), ExtResource( 145 ), ExtResource( 148 ), ExtResource( 147 ), ExtResource( 133 ), ExtResource( 164 ), ExtResource( 134 ), ExtResource( 152 ), ExtResource( 160 ) ],
-"loop": true,
-"name": "boost-speed-left-03",
-"speed": 50.0
-}, {
-"frames": [ ExtResource( 48 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 32 ), ExtResource( 13 ), ExtResource( 40 ), ExtResource( 6 ), ExtResource( 15 ), ExtResource( 22 ), ExtResource( 14 ), ExtResource( 9 ), ExtResource( 37 ), ExtResource( 23 ), ExtResource( 39 ), ExtResource( 20 ), ExtResource( 18 ), ExtResource( 7 ), ExtResource( 34 ) ],
-"loop": true,
-"name": "idle-speed-left-01",
-"speed": 25.0
-}, {
-"frames": [ ExtResource( 99 ), ExtResource( 83 ), ExtResource( 109 ), ExtResource( 111 ), ExtResource( 101 ), ExtResource( 96 ), ExtResource( 79 ), ExtResource( 132 ), ExtResource( 119 ), ExtResource( 80 ), ExtResource( 85 ), ExtResource( 86 ), ExtResource( 87 ), ExtResource( 106 ), ExtResource( 121 ), ExtResource( 129 ), ExtResource( 100 ), ExtResource( 108 ), ExtResource( 110 ), ExtResource( 120 ) ],
-"loop": true,
-"name": "idle-speed-right-04",
-"speed": 25.0
+"name": "move-speed-left-04",
+"speed": 35.0
 }, {
 "frames": [ ExtResource( 162 ), ExtResource( 135 ), ExtResource( 146 ), ExtResource( 141 ), ExtResource( 143 ), ExtResource( 163 ), ExtResource( 149 ), ExtResource( 136 ), ExtResource( 154 ), ExtResource( 137 ), ExtResource( 165 ), ExtResource( 142 ), ExtResource( 139 ), ExtResource( 159 ), ExtResource( 140 ), ExtResource( 155 ), ExtResource( 144 ), ExtResource( 151 ), ExtResource( 153 ), ExtResource( 166 ) ],
 "loop": true,
@@ -247,38 +277,8 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 48 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 32 ), ExtResource( 13 ), ExtResource( 40 ), ExtResource( 6 ), ExtResource( 15 ), ExtResource( 22 ), ExtResource( 14 ), ExtResource( 9 ), ExtResource( 37 ), ExtResource( 23 ), ExtResource( 39 ), ExtResource( 20 ), ExtResource( 18 ), ExtResource( 7 ), ExtResource( 34 ) ],
 "loop": true,
-"name": "move-speed-left-01",
-"speed": 35.0
-}, {
-"frames": [ ExtResource( 167 ), ExtResource( 157 ), ExtResource( 158 ), ExtResource( 126 ), ExtResource( 90 ), ExtResource( 89 ), ExtResource( 97 ), ExtResource( 88 ), ExtResource( 98 ), ExtResource( 91 ), ExtResource( 125 ), ExtResource( 105 ), ExtResource( 82 ), ExtResource( 84 ), ExtResource( 92 ), ExtResource( 103 ), ExtResource( 122 ), ExtResource( 130 ), ExtResource( 104 ), ExtResource( 116 ) ],
-"loop": true,
-"name": "idle-speed-right-02",
+"name": "idle-speed-left-01",
 "speed": 25.0
-}, {
-"frames": [ ExtResource( 114 ), ExtResource( 128 ), ExtResource( 93 ), ExtResource( 107 ), ExtResource( 117 ), ExtResource( 102 ), ExtResource( 81 ), ExtResource( 118 ), ExtResource( 76 ), ExtResource( 115 ), ExtResource( 127 ), ExtResource( 123 ), ExtResource( 113 ), ExtResource( 77 ), ExtResource( 78 ), ExtResource( 124 ), ExtResource( 94 ), ExtResource( 112 ), ExtResource( 131 ), ExtResource( 95 ) ],
-"loop": true,
-"name": "boost-speed-right-03",
-"speed": 50.0
-}, {
-"frames": [ ExtResource( 99 ), ExtResource( 83 ), ExtResource( 109 ), ExtResource( 111 ), ExtResource( 101 ), ExtResource( 96 ), ExtResource( 79 ), ExtResource( 132 ), ExtResource( 119 ), ExtResource( 80 ), ExtResource( 85 ), ExtResource( 86 ), ExtResource( 87 ), ExtResource( 106 ), ExtResource( 121 ), ExtResource( 129 ), ExtResource( 100 ), ExtResource( 108 ), ExtResource( 110 ), ExtResource( 120 ) ],
-"loop": true,
-"name": "move-speed-right-04",
-"speed": 35.0
-}, {
-"frames": [ ExtResource( 167 ), ExtResource( 157 ), ExtResource( 158 ), ExtResource( 126 ), ExtResource( 90 ), ExtResource( 89 ), ExtResource( 97 ), ExtResource( 88 ), ExtResource( 98 ), ExtResource( 91 ), ExtResource( 125 ), ExtResource( 105 ), ExtResource( 82 ), ExtResource( 84 ), ExtResource( 92 ), ExtResource( 103 ), ExtResource( 122 ), ExtResource( 130 ), ExtResource( 104 ), ExtResource( 116 ) ],
-"loop": true,
-"name": "boost-speed-right-02",
-"speed": 50.0
-}, {
-"frames": [ ExtResource( 5 ), ExtResource( 42 ), ExtResource( 35 ), ExtResource( 24 ), ExtResource( 8 ), ExtResource( 31 ), ExtResource( 30 ), ExtResource( 38 ), ExtResource( 10 ), ExtResource( 43 ), ExtResource( 41 ), ExtResource( 33 ), ExtResource( 44 ), ExtResource( 19 ), ExtResource( 29 ), ExtResource( 25 ), ExtResource( 36 ), ExtResource( 12 ), ExtResource( 45 ), ExtResource( 21 ) ],
-"loop": true,
-"name": "move-speed-right-01",
-"speed": 35.0
-}, {
-"frames": [ ExtResource( 162 ), ExtResource( 135 ), ExtResource( 146 ), ExtResource( 141 ), ExtResource( 143 ), ExtResource( 163 ), ExtResource( 149 ), ExtResource( 136 ), ExtResource( 154 ), ExtResource( 137 ), ExtResource( 165 ), ExtResource( 142 ), ExtResource( 139 ), ExtResource( 159 ), ExtResource( 140 ), ExtResource( 155 ), ExtResource( 144 ), ExtResource( 151 ), ExtResource( 153 ), ExtResource( 166 ) ],
-"loop": true,
-"name": "move-speed-left-04",
-"speed": 35.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=3]
@@ -316,17 +316,17 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 27 ) ],
 "loop": true,
-"name": "01",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 169 ) ],
-"loop": true,
 "name": "04",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 168 ) ],
 "loop": true,
 "name": "03",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 169 ) ],
+"loop": true,
+"name": "04",
 "speed": 5.0
 } ]
 
@@ -384,7 +384,6 @@ texture = ExtResource( 26 )
 shape = SubResource( 5 )
 
 [node name="Player-character-theme-gun" type="AnimatedSprite" parent="weaponHolder"]
-position = Vector2( -13, 1 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 6 )
 animation = "04"
@@ -395,28 +394,8 @@ position = Vector2( -120, 0 )
 rotation = 3.14159
 scale = Vector2( 4, 4 )
 
-[node name="Player-character-theme-gun-na1" type="Sprite" parent="weaponHolder"]
-visible = false
-position = Vector2( -100, 7 )
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 171 )
-
-[node name="Player-character-theme-gun-na2" type="Sprite" parent="weaponHolder"]
-visible = false
-position = Vector2( -106, -18 )
-scale = Vector2( 0.177591, 0.18125 )
-texture = ExtResource( 171 )
-
 [node name="Player-character-theme-gun-na3" type="Sprite" parent="weaponHolder"]
-visible = false
-position = Vector2( -93, -65 )
-scale = Vector2( 0.375937, 0.251953 )
-texture = ExtResource( 171 )
-
-[node name="Player-character-theme-gun-na4" type="Sprite" parent="weaponHolder"]
-visible = false
-position = Vector2( -104, -38 )
-scale = Vector2( 0.508138, 0.140008 )
+scale = Vector2( 0.3, 0.25 )
 texture = ExtResource( 171 )
 
 [connection signal="timeout" from="network_tick_rate" to="." method="_on_network_tick_rate_timeout"]

@@ -18,7 +18,7 @@ func _process(delta):
 	position += velocity * speed * delta
 
 
-func _on_Bullet_body_entered(body):
+func _on_hitbox_body_entered(body):
 	if body.is_in_group("mobs"):
 		body.queue_free()
 	queue_free()
