@@ -15,7 +15,7 @@
 [ext_resource path="res://source/assets/sprites/character/player/theme/01/animation/left_r/Player-character-theme-01_anim-idle – 7.png" type="Texture" id=13]
 [ext_resource path="res://source/assets/sprites/character/player/theme/01/animation/left_r/Player-character-theme-01_anim-idle – 12.png" type="Texture" id=14]
 [ext_resource path="res://source/assets/sprites/character/player/theme/01/animation/left_r/Player-character-theme-01_anim-idle – 10.png" type="Texture" id=15]
-[ext_resource path="res://source/entities/player/Gun_.gd" type="Script" id=16]
+[ext_resource path="res://source/assets/scripts/shooting/Gun_.gd" type="Script" id=16]
 [ext_resource path="res://source/assets/sprites/character/player/theme/01/animation/left_r/Player-character-theme-01_anim-idle – 18.png" type="Texture" id=18]
 [ext_resource path="res://source/assets/sprites/character/player/theme/01/animation/right_r/Player-character-theme-01_anim-idle – 34.png" type="Texture" id=19]
 [ext_resource path="res://source/assets/sprites/character/player/theme/01/animation/left_r/Player-character-theme-01_anim-idle – 17.png" type="Texture" id=20]

@@ -3,7 +3,7 @@ extends AnimatedSprite
 var trajectory:String = 'line'
 var trajectory_line = 'sine'
 
-var bullet = {
+var bullet_env = {
 	'line' : preload("res://source/entities/shooting/Line_Trajectory/Line_Env.tscn"),
 	'sine' : preload("res://source/entities/shooting/Sine_Trajectory/Sine_Env.tscn"),
 	'parab' : preload("res://source/entities/shooting/Parabolic_Trajectory/Parabolic_Env.tscn"),
@@ -31,10 +31,10 @@ func choose_trajectory():
 		
 
 func shoot(trajectory:String):
-	var b = bullet[trajectory].instance()
-	get_parent().get_parent().get_parent().add_child(b)
-	b.global_position = $Position2D.global_position
-	b.global_rotation = $Position2D.global_rotation
+	var bullet = bullet_env[trajectory].instance()
+	get_parent().get_parent().get_parent().add_child(bullet)
+	bullet.global_position = $Position2D.global_position
+	bullet.global_rotation = $Position2D.global_rotation
 	pass
 	
 func enable_trajectory_line(trajectory_line:String):

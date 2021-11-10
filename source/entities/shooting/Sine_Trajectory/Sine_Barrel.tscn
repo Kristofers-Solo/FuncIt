@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://source/entities/shooting/Sine_Trajectory/Sine_Barrel.gd" type="Script" id=1]
+[ext_resource path="res://source/assets/scripts/shooting/Sine/Sine_Barrel.gd" type="Script" id=1]
 
 [node name="Sine_Barrel" type="Line2D"]
 show_behind_parent = true
