@@ -31,6 +31,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="FunCitGameLogoDarkTransparent" type="Sprite" parent="foreground"]
+position = Vector2( 980, 333.502 )
+scale = Vector2( 0.462963, 0.462963 )
+texture = ExtResource( 4 )
+
 [node name="play" parent="foreground" instance=ExtResource( 7 )]
 margin_left = 810.0
 margin_top = 500.0
@@ -46,8 +51,8 @@ margin_left = -150.0
 margin_top = -36.0
 margin_right = 150.0
 margin_bottom = 36.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "PLAY"
 align = 1
 valign = 1
@@ -71,8 +76,8 @@ margin_left = -98.8223
 margin_top = -36.0
 margin_right = 134.178
 margin_bottom = 36.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "LAN Party"
 align = 1
 valign = 1
@@ -103,8 +108,8 @@ margin_left = -150.0
 margin_top = -36.0
 margin_right = 150.0
 margin_bottom = 36.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "EXIT"
 align = 1
 valign = 1
@@ -118,16 +123,11 @@ margin_left = 1798.91
 margin_top = 989.536
 margin_right = 1889.91
 margin_bottom = 1061.54
-custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
 custom_fonts/font = ExtResource( 8 )
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="FunCitGameLogoDarkTransparent" type="Sprite" parent="."]
-position = Vector2( 980, 335 )
-scale = Vector2( 0.462963, 0.462963 )
-texture = ExtResource( 4 )
 
 [connection signal="pressed" from="foreground/play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="foreground/LAN_party" to="." method="_on_LAN_party_pressed"]

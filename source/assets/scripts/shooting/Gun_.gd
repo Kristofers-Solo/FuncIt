@@ -45,8 +45,8 @@ func enable_trajectory_line(trajectory_line:String):
 
 func _process(delta):
 	choose_trajectory()
-	if Input.is_action_just_pressed("shoot"):
+	if Input.is_action_just_pressed("input_shoot"):
 		#enable_trajectory_line(trajectory_line)
 		pass
-	elif Input.is_action_just_released('shoot'):
+	elif Input.is_action_just_released("input_shoot"):
 		shoot(trajectory)
