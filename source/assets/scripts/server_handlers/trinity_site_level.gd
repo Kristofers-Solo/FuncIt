@@ -19,29 +19,35 @@ func _process(delta):
 		if gameControllerStates["waiting"] and gameControllerStates["players"] != {} and not gameControllerStates["simulatingEnvironment"]:
 			if gameTimer > 5:
 				# Wait for tanks to fall to the ground
-				gameControllerStates["allowMove"] = true
-				gameControllerStates["activePlayer"] = gameControllerStates["players"][activePlayerIndicator]
-				gameControllerStates["waiting"] = false
-				gameTimer = 0
+				#gameControllerStates["allowMove"] = true
+				#gameControllerStates["activePlayer"] = gameControllerStates["players"]
+				#gameControllerStates["waiting"] = false
+				#gameTimer = 0
+				pass
 		if gameControllerStates["allowMove"]:
 			# Get the active player and allow their inputs to have effect.
-			print("Awaiting player input and processing it to adjust location and rotation")
+			#print("Awaiting player input and processing it to adjust location and rotation")
 			# DO FOR EACH PLAYER - ONE AFTER THE OTHER
+			pass
 		if gameControllerStates["allowAim"] and gameControllerStates["allowInput"]:
 			# Get the active player and allow their input into adjusting function.
-			print("Awaiting player input and processing it to adjust aim.")
+			#print("Awaiting player input and processing it to adjust aim.")
 			# DO FOR EACH PLAYER - AT THE SAME TIME
-		if gameControllerStates["allowShooot"]:
+			pass
+		if gameControllerStates["allowShoot"]:
 			# Enable function locking feature and prepare for shooting phase -- simulatingEnvironment = true
-			print("Awaiting player function confirmation.")
+			#print("Awaiting player function confirmation.")
 			# DO FOR EACH PLAYER - AT THE SAME TIME
+			pass
 		if gameControllerStates["simulatingEnvironment"]:
 			# Ignore player input, request player weapons to fire the bullets and account for the damages.
 			# Reset the cycle back to the move stage if neither player won the game.
-			print("Game result: undetermined, returning to move phase.")
+			#print("Game result: undetermined, returning to move phase.")
+			pass
 	if gameControllerStates["singleplayer"]:
 		# Do not interrupt user input -> only request checking for victory.
-		print("Singleplayer mode selected, awaiting game result.")
+		#print("Singleplayer mode selected, awaiting game result.")
+		pass
 
 func setup_player_positions() -> void:
 	for player in PersistentNodes.get_children():
