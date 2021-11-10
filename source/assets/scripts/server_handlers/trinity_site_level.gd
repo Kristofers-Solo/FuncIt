@@ -31,7 +31,7 @@ func _process(delta):
 			# Get the active player and allow their input into adjusting function.
 			print("Awaiting player input and processing it to adjust aim.")
 			# DO FOR EACH PLAYER - AT THE SAME TIME
-		if gameControllerStates["allowShooot"]:
+		if gameControllerStates["allowShoot"]:
 			# Enable function locking feature and prepare for shooting phase -- simulatingEnvironment = true
 			print("Awaiting player function confirmation.")
 			# DO FOR EACH PLAYER - AT THE SAME TIME

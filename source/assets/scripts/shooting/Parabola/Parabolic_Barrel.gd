@@ -1,16 +1,23 @@
-extends StaticBody2D # Y = aX
+extends Line2D
 
-onready var bullet_env = preload("res://source/entities/shooting/Parabolic_Trajectory/Parabolic_Env.tscn")
+var speed_parab = 100
+var velocity = Vector2(0, 0)
+var dot_position = Vector2(0, 0)
+
+var time = 0
+var a_parameter = 1
+var b_parameter = 0
 
 
-func shoot():
-	var bullet = bullet_env.instance()
-	get_parent().get_parent().get_parent().add_child(bullet)
-	bullet.global_position = $Position2D.global_position
-	bullet.global_rotation = $Position2D.global_rotation
-	
-	
+func _draw():
+	velocity.y = time*(a_parameter * time + b_parameter)
+	velocity.x = 5
+	dot_position += velocity * speed_parab * 0.06944
+	draw_circle(dot_position, 1, Color(225, 225, 225))
+	time += 0.06944
 
 func _process(delta):
-	if Input.is_action_just_pressed("input_shoot"):
-		shoot()
+	update()
+	
+
+
