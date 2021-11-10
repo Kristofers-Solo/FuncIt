@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="745" height="536" viewBox="0 0 745 536">
+  <defs>
+    <clipPath id="clip-Player-character-2">
+      <rect width="745" height="536"/>
+    </clipPath>
+  </defs>
+  <g id="Player-character-2" clip-path="url(#clip-Player-character-2)">
+    <g id="Tank" transform="translate(89.76 -68.517)">
+      <path id="Union_1" data-name="Union 1" d="M-3580,592.223a75,75,0,0,1-75-75v-11h-15v-70h55.764l54.684-98.911H-3526V310.222a139,139,0,0,1,139-139h20a12,12,0,0,1,12-12h121v-14a11,11,0,0,1,11-11,11,11,0,0,1,11,11v14h9a12,12,0,0,1,12,12h25v130h23.806v24.995H-3090v91.005h35v19h15v70h-15v11a75,75,0,0,1-75,75Z" transform="translate(3670 4.39)"/>
+    </g>
+    <g id="Gun" transform="matrix(0.899, -0.438, 0.438, 0.899, -18.392, 158.166)">
+      <path id="Union_2" data-name="Union 2" d="M-3482,96V77h-130V96h-58V-4h58V11h188V96Z" transform="translate(3226.313 1838.464) rotate(30)"/>
+    </g>
+  </g>
+</svg>
