@@ -9,7 +9,7 @@ var gameTimer = 0
 
 func _ready() -> void:
 	get_tree().connect("network_peer_disconnected", self, "_player_disconnected")
-	
+
 	if get_tree().is_network_server():
 		setup_player_positions()
 

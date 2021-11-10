@@ -1,21 +1,22 @@
-extends Area2D
+extends Sprite
 
-export var speed = 100
+export var speed_parab = 100
 var velocity = Vector2()
 
 var time = 0
-var gravitile = 5
+var a_parameter = 1
+var b_parameter = 0
 
 
 func follow_parabolic_trajectory():
 	velocity.x = 5
-	velocity.y = 1 * time * gravitile
+	velocity.y = time*(a_parameter * time + b_parameter)
 
 
 func _process(delta):
 	follow_parabolic_trajectory()
 	time += delta
-	position += velocity * speed * delta
+	position += velocity * speed_parab * delta
 
 
 func _on_hitbox_body_entered(body):
