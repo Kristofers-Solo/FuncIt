@@ -7,22 +7,22 @@ var alive_players = []
 var clientPhase = {
 	"0": {
 		"phase_name": "Movement phase",
-		"length": 10,
+		"length": 2,
 		"start_time": null
 	},
 	"1": {
 		"phase_name": "Weapon adjustment phase",
-		"length": 20,
+		"length": 2,
 		"start_time": null
 	},
 	"2": {
 		"phase_name": "Bullet simulation phase",
-		"length": 5,
+		"length": 2,
 		"start_time": null
 	},
 	"3": {
 		"phase_name": "Idle phase",
-		"length": 5,
+		"length": 2,
 		"start_time": null
 	}
 }
@@ -35,7 +35,7 @@ func phase_update_global():
 	if gameStart:
 		if activePhase != null:
 			if clientPhase[str(activePhase)]["start_time"] != null:
-				if currentTime["second"] - clientPhase[str(activePhase)]["start_time"]["second"] > clientPhase[str(activePhase)]["length"]:
+				if currentTime["second"] + currentTime["minute"] * 60 - clientPhase[str(activePhase)]["start_time"]["second"] - clientPhase[str(activePhase)]["start_time"]["minute"] * 60 > clientPhase[str(activePhase)]["length"]:
 					if activePhase + 1 == clientPhase.size():
 						clientPhase[str(activePhase)]["start_time"] = null 
 						activePhase = 0
@@ -50,6 +50,13 @@ func phase_update_global():
 func start_game():
 	gameStart = true
 	pass
+
+func get_client_phase():
+	return {"clientPhase": clientPhase, "activePhase": activePhase, "gameStart": gameStart, "currentTime": currentTime}
+
+func phase_update_puppet(phase):
+	clientPhase = phase["clientPhase"]
+	activePhase = phase["activePhase"]
 
 func instance_node_at_location(node: Object, parent: Object, location: Vector2) -> Object:
 	var node_instance = instance_node(node, parent)

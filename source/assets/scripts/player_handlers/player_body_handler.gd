@@ -84,6 +84,7 @@ var particleTexture = ImageTexture.new()
 var particleImage = Image.new()
 
 var globalActivePhase = null
+var clientPhase = null
 
 func _ready():
 	
@@ -144,7 +145,6 @@ func process_rotation():
 
 
 func _process(delta: float) -> void:
-	globalActivePhase = Global.phase_update_global()
 	$"weaponHolder/Player-character-theme-gun".play(theme)
 	particleImage.load("res://source/assets/sprites/character/player/theme/" + theme + "/na/Player-character-theme-particle-"+theme+".png")
 	particleTexture.create_from_image(particleImage)
@@ -256,8 +256,10 @@ func _physics_process(delta) -> void:
 					rpc("shoot", trajectory, get_tree().get_network_unique_id())
 					is_reloading = true
 					reload_timer.start()
+			globalActivePhase = Global.phase_update_global()
+			clientPhase = Global.get_client_phase()
 		else:
-
+			Global.phase_update_puppet(clientPhase)
 			rotation = lerp_angle(rotation, puppet_rotation, delta * 8)
 			$"weaponHolder/Player-character-theme-gun".position = puppet_weapon_position
 			weaponAngle = puppet_weapon_angle
