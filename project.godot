@@ -20,10 +20,6 @@ Network="*res://source/assets/scripts/server_handlers/network_processors/network
 Global="*res://source/assets/scripts/server_handlers/global.gd"
 PersistentNodes="*res://source/scenes/OVERLAY/elements/persistent_nodes.tscn"
 
-[debug]
-
-settings/stdout/print_fps=true
-
 [display]
 
 window/size/width=1920

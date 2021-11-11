@@ -6,7 +6,6 @@ var trajectory:String = 'line'
 var trajectory_line = 'line'
 
 var bullet
-var player_bullet = load("res://source/entities/shooting/Line_Trajectory/Line_Bullet.tscn")
 var username_text = load("res://source/scenes/OVERLAY/elements/username_text.tscn")
 var username setget username_set
 var username_text_instance = null
@@ -85,6 +84,7 @@ var particleTexture = ImageTexture.new()
 var particleImage = Image.new()
 
 func _ready():
+	
 	weaponPositionalOffset = Vector2(-$"weaponHolder/Player-character-theme-gun-na3".texture.get_width() * $"weaponHolder/Player-character-theme-gun-na3".scale.x / 2,-$"weaponHolder/Player-character-theme-gun-na3".texture.get_height() * $"weaponHolder/Player-character-theme-gun-na3".scale.y / 2) + Vector2(-$weaponHolder.get_shape().get_radius(), 0)
 	$"weaponHolder/Player-character-theme-gun".position = weaponPositionalOffset
 	
@@ -142,6 +142,8 @@ func process_rotation():
 
 
 func _process(delta: float) -> void:
+#	print(OS.get_time())
+	print(Global.time_output())
 	$"weaponHolder/Player-character-theme-gun".play(theme)
 	particleImage.load("res://source/assets/sprites/character/player/theme/" + theme + "/na/Player-character-theme-particle-"+theme+".png")
 	particleTexture.create_from_image(particleImage)
@@ -256,7 +258,6 @@ func _physics_process(delta) -> void:
 		else:
 
 			rotation = lerp_angle(rotation, puppet_rotation, delta * 8)
-			#rotation = puppet_rotation
 			$"weaponHolder/Player-character-theme-gun".position = puppet_weapon_position
 			weaponAngle = puppet_weapon_angle
 			direction = puppet_direction

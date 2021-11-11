@@ -15,3 +15,11 @@ func instance_node(node: Object, parent: Object) -> Object:
 	var node_instance = node.instance()
 	parent.add_child(node_instance)
 	return node_instance
+
+var time
+
+func time_input(d):
+	time = d
+
+func time_output():
+	return time

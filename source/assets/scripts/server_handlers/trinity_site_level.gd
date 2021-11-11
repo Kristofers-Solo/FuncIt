@@ -2,7 +2,7 @@ extends Node2D
 
 var current_spawn_location_instance_number = 1
 var current_player_location_instance_number = null
-
+var time = 20
 
 func _ready() -> void:
 	get_tree().connect("network_peer_disconnected", self, "_player_disconnected")
@@ -24,3 +24,12 @@ func _player_disconnected(id) -> void:
 	if PersistentNodes.has_node(str(id)):
 		PersistentNodes.get_node(str(id)).username_text_instance.queue_free()
 		PersistentNodes.get_node(str(id)).queue_free()
+
+
+func _on_timer_timeout():
+	time -= 1
+
+
+func _process(delta):
+	Global.time_input(time)
+	$timer.text = str(time)

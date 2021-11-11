@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://source/assets/scripts/server_handlers/trinity_site_level.gd" type="Script" id=1]
 [ext_resource path="res://source/assets/scripts/ui_element_handlers/UI.gd" type="Script" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://source/levels/trinity_site/images/trinity_site_level_layout-level_design_z-index_-2-version_ct_f_hd_3840_2160 – 01.png" type="Texture" id=7]
 [ext_resource path="res://source/levels/trinity_site/images/trinity_site_level_layout-level_design_z-index_-1-version_ct_f_hd_3840_2160.png" type="Texture" id=8]
 [ext_resource path="res://source/entities/grass/grass_node.tscn" type="PackedScene" id=9]
+[ext_resource path="res://source/fonts/oxygen/oxygen_bold.tres" type="DynamicFont" id=10]
 [ext_resource path="res://source/levels/trinity_site/images/trinity_site_level_layout-level_design_z-index_-2-version_ct_f_hd_3840_2160 – 02.png" type="Texture" id=44]
 [ext_resource path="res://source/levels/trinity_site/images/trinity_site_level_layout-level_design_z-index_-2-version_ct_f_hd_3840_2160 – 025.png" type="Texture" id=45]
 [ext_resource path="res://source/assets/scripts/trinity_site_body_handler.gd" type="Script" id=46]
@@ -159,4 +160,19 @@ __meta__ = {
 [node name="win_timer" type="Timer" parent="game_UI/Control/winner"]
 wait_time = 4.0
 
+[node name="timer" type="Label" parent="."]
+margin_right = 347.0
+margin_bottom = 164.0
+custom_fonts/font = ExtResource( 10 )
+text = "null"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="timer" type="Timer" parent="timer"]
+autostart = true
+
 [connection signal="timeout" from="game_UI/Control/winner/win_timer" to="game_UI/Control/winner" method="_on_win_timer_timeout"]
+[connection signal="timeout" from="timer/timer" to="." method="_on_timer_timeout"]
