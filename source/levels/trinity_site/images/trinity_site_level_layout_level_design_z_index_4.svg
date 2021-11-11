@@ -1,0 +1,1018 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="1920"
+   height="1080"
+   viewBox="0 0 1919.9999 1080"
+   version="1.1"
+   id="svg166"
+   sodipodi:docname="trinity_site_level_layout-level_design_z-index_0-version_ct_f_hd_3822.svg"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview168"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     showgrid="false"
+     inkscape:zoom="1"
+     inkscape:cx="1111.5"
+     inkscape:cy="430.5"
+     inkscape:window-width="1920"
+     inkscape:window-height="1007"
+     inkscape:window-x="1920"
+     inkscape:window-y="44"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="Map-z-index_0" />
+  <defs
+     id="defs5">
+    <clipPath
+       id="clip-trinity_site_level_layout-level_design_z-index_0-version_ct_f_hd_3822">
+      <rect
+         width="38.560001"
+         height="22.33"
+         id="rect2"
+         x="0"
+         y="0" />
+    </clipPath>
+  </defs>
+  <g
+     id="trinity_site_level_layout-level_design_z-index_0-version_ct_f_hd_3822"
+     clip-path="url(#clip-trinity_site_level_layout-level_design_z-index_0-version_ct_f_hd_3822)"
+     transform="scale(49.792529,48.365428)">
+    <g
+       id="_0"
+       data-name="0"
+       transform="translate(0.801,4.586)">
+      <g
+         id="z-index-0"
+         transform="translate(-0.801,-4.586)">
+        <g
+           id="Map-z-index_0">
+          <path
+             id="Path_3"
+             data-name="Path 3"
+             d="m 1349.9745,1421.861 2.5785,2.752 2.7,-2.828 z"
+             fill="#e56770"
+             transform="translate(-1349.976,-1421.863)"
+             sodipodi:nodetypes="cccc" />
+          <path
+             id="Path_4"
+             data-name="Path 4"
+             d="m 1349.6205,1420.714 0,5.1879 2.5732,-2.4969 z"
+             fill="#eb6c73"
+             sodipodi:nodetypes="cccc"
+             transform="translate(-1349.622,-1420.716)" />
+          <path
+             id="Path_5"
+             data-name="Path 5"
+             d="m 1431.417,1424.987 2.206,2.162 1.47,-1.592 0.335,-3.319 h -1.312 z"
+             fill="#d96777"
+             transform="translate(-1428.882,-1422.285)" />
+          <path
+             id="Path_6"
+             data-name="Path 6"
+             d="m 1368.65,1509.6 -4.3823,0 2.2213,-2.1723 z"
+             fill="#e06773"
+             transform="translate(-1363.916,-1504.76)"
+             sodipodi:nodetypes="cccc" />
+          <path
+             id="Path_7"
+             data-name="Path 7"
+             d="m 1350.522,1578.587 -0.3605,0.3519 0,1.2965 1.7924,-1.6501 z"
+             fill="#e76871"
+             transform="translate(-1350.163,-1573.753)"
+             sodipodi:nodetypes="ccccc" />
+          <path
+             id="Path_8"
+             data-name="Path 8"
+             d="m 1389.4518,1578.5853 2.9415,0 -1.2913,1.0178 -0.828,0.836 -1.434,-1.439 z"
+             fill="#df6773"
+             transform="translate(-1387.658,-1573.753)"
+             sodipodi:nodetypes="cccccc" />
+          <path
+             id="Path_9"
+             data-name="Path 9"
+             d="m 1508.5,1422.435 -0.353,3.092 -1.479,1.558 1.96,-0.564 1.244,-0.176 z"
+             fill="#d16579"
+             transform="translate(-1501.97,-1422.285)" />
+          <path
+             id="Path_10"
+             data-name="Path 10"
+             d="m 1569.421,1426.217 1.845,-1.742 -2.31,-2.442 h -1.031 z"
+             fill="#cb657b"
+             transform="translate(-1561.582,-1422.206)" />
+          <path
+             id="Path_11"
+             data-name="Path 11"
+             d="m 1611.439,1492.243 -1.784,1.784 1.35,0.074 1.823,0.3 z"
+             fill="#c7647d"
+             transform="translate(-1601.844,-1490.011)" />
+          <path
+             id="Path_12"
+             data-name="Path 12"
+             d="m 1350.783,1592.224 -1.1845,1.2394 -0.01,1.1066 h 1.8128 z"
+             fill="#e36872"
+             transform="translate(-1349.6,-1586.981)"
+             sodipodi:nodetypes="ccccc" />
+          <path
+             id="Path_13"
+             data-name="Path 13"
+             d="m 1390.3,1593.77 -0.773,1.008 -0.627,-2.41 z"
+             fill="#de6671"
+             transform="translate(-1387.716,-1587.121)" />
+          <path
+             id="Path_14"
+             data-name="Path 14"
+             d="m 1351.239,1666.737 -1.8975,0.03 1.2585,1.252 z"
+             fill="#dd6673"
+             transform="translate(-1349.353,-1659.178)"
+             sodipodi:nodetypes="cccc" />
+          <path
+             id="Path_15"
+             data-name="Path 15"
+             d="m 1599.477,1422.222 2.347,2.346 2.325,-2.44 z"
+             fill="#c9647a"
+             transform="translate(-1592.227,-1422.285)" />
+          <path
+             id="Path_16"
+             data-name="Path 16"
+             d="m 1670.835,1467.406 1.038,-0.527 0.284,-0.312 0.162,-0.312 -2.034,-1.812 -0.787,0.837 z"
+             fill="#c0627e"
+             transform="translate(-1659.891,-1463.04)" />
+          <path
+             id="Path_17"
+             data-name="Path 17"
+             d="m 1695.843,1423.264 1.307,-1.5 h 1.671 v 2.422 l -0.29,0.312 -0.714,0.58 z"
+             fill="#bf637f"
+             transform="translate(-1685.446,-1421.862)" />
+          <path
+             id="Path_18"
+             data-name="Path 18"
+             d="m 1794.543,1423.989 1.532,-0.5 -0.573,-1.935 h -1.047 z"
+             fill="#b86383"
+             transform="translate(-1781.189,-1421.725)" />
+          <path
+             id="Path_19"
+             data-name="Path 19"
+             d="m 1828.761,1423.444 h 1.36 l -1.843,-1.544 z"
+             fill="#b05f82"
+             transform="translate(-1813.913,-1421.766)" />
+          <path
+             id="Path_20"
+             data-name="Path 20"
+             d="m 1828.1,1421.638 2.3,1.968 0.223,0.05 1.243,-0.214 -0.7,-1.8 z"
+             fill="#ad6187"
+             transform="translate(-1814.095,-1421.763)" />
+          <path
+             id="Path_21"
+             data-name="Path 21"
+             d="m 1907.07,1473.866 1.049,-0.171 0.259,0.979 z"
+             fill="#a8618b"
+             transform="translate(-1890.344,-1472.016)" />
+          <path
+             id="Path_22"
+             data-name="Path 22"
+             d="m 1349.9645,1670.866 1.2795,1.257 -0.174,1.013 -1.0971,-0.149 z"
+             fill="#d7606d"
+             transform="translate(-1349.976,-1663.277)"
+             sodipodi:nodetypes="ccccc" />
+          <path
+             id="Path_23"
+             data-name="Path 23"
+             d="m 1349.9729,1741.336 1.0431,0 -1.0397,1.0137 z"
+             fill="#dc6774"
+             transform="translate(-1349.976,-1731.626)"
+             sodipodi:nodetypes="cccc" />
+          <path
+             id="Path_24"
+             data-name="Path 24"
+             d="m 1349.9229,1744.8135 1.0551,-1.0125 -0.1345,1.634 z"
+             fill="#de6a79"
+             transform="translate(-1349.938,-1734.091)"
+             sodipodi:nodetypes="cccc" />
+          <path
+             id="Path_25"
+             data-name="Path 25"
+             d="m 1350.4,1786.146 0.023,1.255 -0.8856,0.034 0.5586,-1.4969 z"
+             fill="#d26171"
+             transform="translate(-1349.605,-1774.881)"
+             sodipodi:nodetypes="ccccc" />
+          <path
+             id="Path_26"
+             data-name="Path 26"
+             d="m 1350.35,1775.532 -0.4974,1.3245 7e-4,-1.6508 z"
+             fill="#d96675"
+             transform="translate(-1349.853,-1764.482)"
+             sodipodi:nodetypes="cccc" />
+          <path
+             id="Path_27"
+             data-name="Path 27"
+             d="m 1349.828,1834.686 h 0.837 l 0.322,0.962 h -1.16 z"
+             fill="#d46577"
+             transform="translate(-1349.938,-1822.174)" />
+          <path
+             id="Path_28"
+             data-name="Path 28"
+             d="m 1373.347,1821.21 -0.073,0.434 v 0.017 l 0.327,0.914 z"
+             fill="#d36678"
+             transform="translate(-1372.552,-1809.101)"
+             sodipodi:nodetypes="ccccc" />
+          <path
+             id="Path_29"
+             data-name="Path 29"
+             d="M 1349.875,1866.933 H 1351 l -1.0649,0.9023 z"
+             fill="#d36679"
+             transform="translate(-1349.938,-1853.485)"
+             sodipodi:nodetypes="cccc" />
+          <path
+             id="Path_30"
+             data-name="Path 30"
+             d="m 1349.8,1859.672 1.248,-1.042 v 2.975 l -1.186,-1.12 z"
+             fill="#cf667b"
+             transform="translate(-1349.976,-1845.219)" />
+          <path
+             id="Path_31"
+             data-name="Path 31"
+             d="m 1384.842,1867.324 v 1.955 l 1.0594,1.113 0.3796,-0.388 -0.725,-1.146 z"
+             fill="#cb667c"
+             transform="translate(-1383.779,-1853.827)"
+             sodipodi:nodetypes="cccccc" />
+          <path
+             id="Path_32"
+             data-name="Path 32"
+             d="m 1382.385,1928.384 -0.025,1.634 h 0.838 l 0.281,-0.5 z"
+             fill="#c9647c"
+             transform="translate(-1381.322,-1912.962)" />
+          <path
+             id="Path_33"
+             data-name="Path 33"
+             d="m 1349.9,1924.148 1.141,1.053 0.023,1.741 -1.164,-1.044 z"
+             fill="#c9647b"
+             transform="translate(-1349.976,-1908.96)" />
+          <path
+             id="Path_34"
+             data-name="Path 34"
+             d="m 1384.842,1984.833 v 1.556 l 1.519,-1.559 z"
+             fill="#c1637e"
+             transform="translate(-1383.779,-1967.814)" />
+          <path
+             id="Path_35"
+             data-name="Path 35"
+             d="m 1404.956,1956.533 -0.349,0.527 1.581,-0.039 -0.849,-0.845 z"
+             fill="#c2647f"
+             transform="translate(-1402.82,-1940.022)" />
+          <path
+             id="Path_36"
+             data-name="Path 36"
+             d="m 1350.456,1980.911 -1.0635,-0.9534 -0,3.8019 z"
+             fill="#c7647c"
+             transform="translate(-1349.393,-1962.96)"
+             sodipodi:nodetypes="cccc" />
+          <path
+             id="Path_37"
+             data-name="Path 37"
+             d="m 1349.3925,2014.9765 1.0655,-2.8805 v 2.107 l -1.066,1.541 z"
+             fill="#c5647e"
+             transform="translate(-1349.393,-1994.177)"
+             sodipodi:nodetypes="ccccc" />
+          <path
+             id="Path_38"
+             data-name="Path 38"
+             d="m 1384.876,1983.729 1.521,-1.521 0.68,-0.029 1.065,1.142 z"
+             fill="#be6481"
+             transform="translate(-1383.812,-1965.196)" />
+          <path
+             id="Path_39"
+             data-name="Path 39"
+             d="m 1456.773,1984.532 1.979,2.1 0.5,-0.65 -1.131,-0.607 z"
+             fill="#b36285"
+             transform="translate(-1453.565,-1967.523)" />
+          <path
+             id="Path_40"
+             data-name="Path 40"
+             d="m 1385.594,2021.967 -3.429,0.344 v 2.359 z"
+             fill="#bb617f"
+             transform="translate(-1381.141,-2003.889)" />
+          <path
+             id="Path_41"
+             data-name="Path 41"
+             d="m 1350.265,2079.419 -1.067,1.568 v 1.247 h 2 l -0.956,-2.044 z"
+             fill="#c06481"
+             transform="translate(-1349.199,-2059.42)" />
+          <path
+             id="Path_42"
+             data-name="Path 42"
+             d="m 1380.745,2029.226 1.021,-0.772 2.789,2.857 h -2.827 z"
+             fill="#b35d7e"
+             transform="translate(-1379.735,-2008.506)" />
+          <path
+             id="Path_43"
+             data-name="Path 43"
+             d="m 1339.6,2023.954 2.422,-1.874 0.492,4.652 z"
+             fill="#b46285"
+             transform="translate(-1337.694,-2003.927)"
+             sodipodi:nodetypes="cccc" />
+          <path
+             id="Path_44"
+             data-name="Path 44"
+             d="m 1492.5,2022.125 -0.419,-4.736 4.719,4.719 z"
+             fill="#a7618b"
+             transform="translate(-1487.764,-1999.287)" />
+          <path
+             id="Path_45"
+             data-name="Path 45"
+             d="m 1521.762,2026.8 0.542,-0.559 3.9,1.654 -0.562,2.766 z"
+             fill="#a6608a"
+             transform="translate(-1516.615,-2007.832)" />
+          <path
+             id="Path_46"
+             data-name="Path 46"
+             d="m 1480.1,2025.149 2.166,0.4 1.184,-0.039 1.1,-0.232 -0.739,1.475 z"
+             fill="#a15e8a"
+             transform="translate(-1474.243,-2006.652)" />
+          <path
+             id="Path_47"
+             data-name="Path 47"
+             d="m 1649.783,2088.92 v -0.1 l -0.461,2.479 h 1.725 z"
+             fill="#985e8e"
+             transform="translate(-1640.322,-2068.478)" />
+          <path
+             id="Path_48"
+             data-name="Path 48"
+             d="m 1658.955,2052.579 -0.5,0.88 -0.08,0.588 1.3,2.171 0.254,-2.092 0.171,-1.312 z"
+             fill="#985d8d"
+             transform="translate(-1648.983,-2033.446)" />
+          <path
+             id="Path_49"
+             data-name="Path 49"
+             d="m 1683.98,2037.839 0.771,0.771 -0.144,1.283 -0.926,-1.522 z"
+             fill="#975d8e"
+             transform="translate(-1673.653,-2019.216)" />
+          <path
+             id="Path_50"
+             data-name="Path 50"
+             d="m 1694.611,2034.546 0.716,-0.15 0.03,0.875 z"
+             fill="#995d8d"
+             transform="translate(-1684.255,-2015.896)" />
+          <path
+             id="Path_51"
+             data-name="Path 51"
+             d="m 1706.225,2106.724 2.174,0.648 -0.159,1.454 h -2.269 z"
+             fill="#8b598f"
+             transform="translate(-1695.273,-2086.046)" />
+          <path
+             id="Path_52"
+             data-name="Path 52"
+             d="m 1714.694,2063.729 1.988,1.982 -2.189,-0.675 z"
+             fill="#915c8f"
+             transform="translate(-1703.587,-2044.334)" />
+          <path
+             id="Path_53"
+             data-name="Path 53"
+             d="m 1606.789,2030.5 -0.419,-0.074 -0.417,0.074 -0.287,0.566 1.148,0.194 0.749,0.762 0.1,-1.115 -0.421,-0.269 z"
+             fill="#975d8e"
+             transform="translate(-1595.72,-2011.877)" />
+          <path
+             id="Path_54"
+             data-name="Path 54"
+             d="m 1742.618,2050.236 0.108,-1.144 0.936,1.188 -0.446,0.563 z"
+             fill="#915c91"
+             transform="translate(-1730.785,-2030.091)" />
+          <path
+             id="Path_55"
+             data-name="Path 55"
+             d="m 1762.937,2090.334 -0.446,0.554 0.922,0.891 z"
+             fill="#8d5c93"
+             transform="translate(-1750.057,-2070.145)" />
+          <path
+             id="Path_56"
+             data-name="Path 56"
+             d="m 1771.523,2075.343 1.187,0.838 -0.68,0.644 z"
+             fill="#8a5c94"
+             transform="translate(-1758.676,-2055.198)" />
+          <path
+             id="Path_57"
+             data-name="Path 57"
+             d="m 1781.924,2131.245 -0.09,1.511 1.61,0.016 -1.147,-1.153 z"
+             fill="#865a93"
+             transform="translate(-1768.861,-2109.948)" />
+          <path
+             id="Path_58"
+             data-name="Path 58"
+             d="m 1794.8,2108.428 0.706,-0.752 2.136,1.932 h -1.6 z"
+             fill="#845d98"
+             transform="translate(-1781.473,-2086.787)" />
+          <path
+             id="Path_59"
+             data-name="Path 59"
+             d="m 1806.07,2106.513 1.3,0.221 1.129,-0.061 0.154,1.738 h -0.419 z"
+             fill="#7d5a98"
+             transform="translate(-1792.033,-2085.563)" />
+          <path
+             id="Path_60"
+             data-name="Path 60"
+             d="m 1896.312,2101.741 1.312,-0.623 -0.637,2.311 -0.482,0.029 z"
+             fill="#7a5a9a"
+             transform="translate(-1879.893,-2080.608)" />
+          <path
+             id="Path_61"
+             data-name="Path 61"
+             d="m 1919.946,2082.006 0.7,-0.588 0.24,2.912 h -1.615 z"
+             fill="#77599c"
+             transform="translate(-1902.228,-2061.496)" />
+          <path
+             id="Path_62"
+             data-name="Path 62"
+             d="m 1961.373,2073.507 0.678,-0.169 h 0.537 l -1.05,1.921 z"
+             fill="#76599c"
+             transform="translate(-1942.976,-2053.555)" />
+          <path
+             id="Path_63"
+             data-name="Path 63"
+             d="m 1964.178,2073.618 1.069,-1.916 0.75,0.337 0.275,0.292 -1.99,2.422 z"
+             fill="#72589d"
+             transform="translate(-1945.641,-2051.91)" />
+          <path
+             id="Path_64"
+             data-name="Path 64"
+             d="m 1971.458,2133.041 2.648,0.865 -0.328,0.49 h -3.464 z"
+             fill="#6757a1"
+             transform="translate(-1951.685,-2111.578)" />
+          <path
+             id="Path_65"
+             data-name="Path 65"
+             d="m 2006.537,2093.3 1.671,1.92 -2.561,-0.833 z"
+             fill="#6b57a0"
+             transform="translate(-1985.907,-2072.91)" />
+          <path
+             id="Path_66"
+             data-name="Path 66"
+             d="m 2039.471,2100.385 1.292,-1.089 h -0.969 l -0.806,-0.176 -1.047,-0.482 z"
+             fill="#6257a4"
+             transform="translate(-2017.173,-2078.07)" />
+          <path
+             id="Path_67"
+             data-name="Path 67"
+             d="m 2113.234,2108.906 1.3,-0.5 0.515,2.1 h -2.528 z"
+             fill="#5a54a5"
+             transform="translate(-2089.632,-2087.683)" />
+          <path
+             id="Path_68"
+             data-name="Path 68"
+             d="m 2086.125,2125.56 h 0.8 l 0.809,-1.809 -1.422,1.29 z"
+             fill="#6057a5"
+             transform="translate(-2064.029,-2102.735)" />
+          <path
+             id="Path_69"
+             data-name="Path 69"
+             d="m 2174.913,2076.846 1.086,-0.962 -0.669,3.033 z"
+             fill="#5955a7"
+             transform="translate(-2150.047,-2056.127)" />
+          <path
+             id="Path_70"
+             data-name="Path 70"
+             d="m 2192.557,2045.543 0.312,-0.507 0.453,-0.425 c 0,0 0.458,3.1 0.094,4.092 -0.364,0.992 -1.548,-0.112 -1.548,-0.112 z"
+             fill="#5354a8"
+             transform="translate(-2166.601,-2025.785)" />
+          <path
+             id="Path_71"
+             data-name="Path 71"
+             d="m 2240.6,2037.063 0.71,-0.219 h 0.714 l -0.494,4.309 -0.831,-0.095 z"
+             fill="#5354a9"
+             transform="translate(-2213.874,-2018.251)" />
+          <path
+             id="Path_72"
+             data-name="Path 72"
+             d="m 2274.915,2037.373 2.538,-2.565 -2.1,-0.29 v 0.052 z"
+             fill="#4d55ad"
+             transform="translate(-2247.212,-2015.888)" />
+          <path
+             id="Path_73"
+             data-name="Path 73"
+             d="m 2272.062,2096.7 2.373,-1.354 -1.232,-1.143 -1,0.93 z"
+             fill="#4954ae"
+             transform="translate(-2244.387,-2073.9)" />
+          <path
+             id="Path_74"
+             data-name="Path 74"
+             d="m 2273.709,2129.221 0.319,1.352 0.01,0.024 h -2.747 z"
+             fill="#4252af"
+             transform="translate(-2243.634,-2107.795)" />
+          <path
+             id="Path_75"
+             data-name="Path 75"
+             d="m 2310.2,2047.886 1.52,-1.435 0.654,3.394 z"
+             fill="#4554b1"
+             transform="translate(-2281.478,-2027.558)" />
+          <path
+             id="Path_76"
+             data-name="Path 76"
+             d="m 2352.325,2133.7 h 1.225 l -1.7,-1.521 z"
+             fill="#3e52b1"
+             transform="translate(-2321.917,-2110.897)" />
+          <path
+             id="Path_77"
+             data-name="Path 77"
+             d="m 2357.34,2040.4 1.957,-0.213 -0.7,4.031 -0.667,-0.646 z"
+             fill="#4052b0"
+             transform="translate(-2327.109,-2021.488)" />
+          <path
+             id="Path_78"
+             data-name="Path 78"
+             d="m 2395.353,2035.657 0.18,0.473 h 0.906 l -0.378,-4.427 z"
+             fill="#3b51b1"
+             transform="translate(-2363.954,-2013.083)" />
+          <path
+             id="Path_79"
+             data-name="Path 79"
+             d="m 2421.623,2115.045 2.383,1.716 h -2.284 z"
+             fill="#334fb3"
+             transform="translate(-2389.38,-2093.954)" />
+          <path
+             id="Path_80"
+             data-name="Path 80"
+             d="m 2415.893,2030.254 0.174,2.49 1.526,1.028 -1.159,-3.74 z"
+             fill="#3751b5"
+             transform="translate(-2383.814,-2011.545)" />
+          <path
+             id="Path_81"
+             data-name="Path 81"
+             d="m 2435.542,1997.406 0.545,1.792 2.137,-2.759 -0.592,-0.187 -0.871,0.563 z"
+             fill="#3b52b3"
+             transform="translate(-2402.946,-1978.869)" />
+          <path
+             id="Path_82"
+             data-name="Path 82"
+             d="m 2452.543,2023.829 0.612,1.932 1.767,-3.646 -0.736,-0.441 z"
+             fill="#3550b3"
+             transform="translate(-2419.387,-2003.533)" />
+          <path
+             id="Path_83"
+             data-name="Path 83"
+             d="m 2471.255,2073.969 1.2,-2.452 1.06,3.062 h -1.372 z"
+             fill="#3050b7"
+             transform="translate(-2437.515,-2051.758)" />
+          <path
+             id="Path_84"
+             data-name="Path 84"
+             d="m 2513.68,2037.867 0.6,-1.238 1.844,4.241 -1.4,-0.016 z"
+             fill="#2c4fb8"
+             transform="translate(-2478.753,-2018.042)" />
+          <path
+             id="Path_85"
+             data-name="Path 85"
+             d="m 2553.964,2084.484 2.352,0.535 h 0.191 v 2.269 h -1.325 z"
+             fill="#214dbb"
+             transform="translate(-2517.835,-2064.47)" />
+          <path
+             id="Path_86"
+             data-name="Path 86"
+             d="m 2534.057,2037.564 3.153,0.119 v 2 l -2.556,-0.72 z"
+             fill="#2a50ba"
+             transform="translate(-2498.522,-2018.949)" />
+          <path
+             id="Path_87"
+             data-name="Path 87"
+             d="m 2509.1,1990 0.5,-0.734 3.357,-0.241 -1.638,1.569 c 0,0 -1.421,-0.109 -1.437,-0.109 -0.016,0 -0.782,-0.485 -0.782,-0.485 z"
+             fill="#3252ba"
+             transform="translate(-2474.401,-1971.825)" />
+          <path
+             id="Path_88"
+             data-name="Path 88"
+             d="m 2577.612,1993.22 1.76,0.242 v -1.922 z"
+             fill="#2a50bb"
+             transform="translate(-2540.777,-1974.541)" />
+          <path
+             id="Path_89"
+             data-name="Path 89"
+             d="m 2501.453,1936.24 0.547,0.257 2.257,-0.308 -1.082,-1.812 -0.468,0.612 z"
+             fill="#3453b9"
+             transform="translate(-2466.781,-1918.872)" />
+          <path
+             id="Path_90"
+             data-name="Path 90"
+             d="m 2562.844,1934.377 1.076,1.818 h 1.139 v -1.009 z"
+             fill="#2f50b8"
+             transform="translate(-2526.45,-1918.873)" />
+          <path
+             id="Path_91"
+             data-name="Path 91"
+             d="m 2580.086,1887.273 -1.745,-0.86 0.753,-1.586 0.992,1.024 z"
+             fill="#3250b5"
+             transform="translate(-2541.414,-1870.695)" />
+          <path
+             id="Path_92"
+             data-name="Path 92"
+             d="m 2563.5865,1888.3306 0.7585,-1.6366 -1.314,1.388 z"
+             fill="#3651b5"
+             transform="translate(-2526.632,-1872.565)"
+             sodipodi:nodetypes="cccc" />
+          <path
+             id="Path_93"
+             data-name="Path 93"
+             d="m 2561.662,1843.423 1.177,-1.215 -0.164,-1.5 z"
+             fill="#3751b4"
+             transform="translate(-2525.14,-1828.012)" />
+          <path
+             id="Path_94"
+             data-name="Path 94"
+             d="m 2597.826,1835.976 0.146,1.516 1.109,1.423 v -2.515 z"
+             fill="#3551b6"
+             transform="translate(-2560.315,-1823.306)" />
+          <path
+             id="Path_95"
+             data-name="Path 95"
+             d="m 2601.057,1798.45 -0.969,-0.416 0.086,-1.325 z"
+             fill="#3a53b5"
+             transform="translate(-2562.583,-1785.334)" />
+          <path
+             id="Path_96"
+             data-name="Path 96"
+             d="m 2602.532,1764.762 1.048,-1.263 v 3.469 z"
+             fill="#3c53b4"
+             transform="translate(-2564.955,-1753.39)" />
+          <path
+             id="Path_97"
+             data-name="Path 97"
+             d="m 2593.919,1737.991 0.9458,-1.0329 4e-4,-0.7006 -1.2492,-0.087 z"
+             fill="#3e51b0"
+             transform="translate(-2556.305,-1726.612)"
+             sodipodi:nodetypes="ccccc" />
+          <path
+             id="Path_98"
+             data-name="Path 98"
+             d="m 2593.617,1670.893 1.248,0.1457 0,-2.041 z"
+             fill="#4152b0"
+             transform="translate(-2556.305,-1661.344)"
+             sodipodi:nodetypes="cccc" />
+          <path
+             id="Path_99"
+             data-name="Path 99"
+             d="m 2571.0192,1674.7028 -1.5592,-0.6498 0.725,1.853 z"
+             fill="#4552ae"
+             transform="translate(-2532.869,-1666.356)"
+             sodipodi:nodetypes="cccc" />
+          <path
+             id="Path_100"
+             data-name="Path 100"
+             d="m 2569.459,1648.536 1.506,0.648 0.4659,-0.594 2e-4,-0.9057 z"
+             fill="#4552ae"
+             transform="translate(-2532.869,-1640.831)"
+             sodipodi:nodetypes="ccccc" />
+          <path
+             id="Path_101"
+             data-name="Path 101"
+             d="m 2567.5691,1592.7961 -0,-1.557 -2.0838,2.1789 0.123,0.207 z"
+             fill="#4754b0"
+             transform="translate(-2529.008,-1585.906)"
+             sodipodi:nodetypes="ccccc" />
+          <path
+             id="Path_102"
+             data-name="Path 102"
+             d="m 2597.4114,1557.8283 1.0487,-1.1162 -0,-1.1519 -1.0852,1.0488 z"
+             fill="#4a54ae"
+             transform="translate(-2559.899,-1551.379)"
+             sodipodi:nodetypes="ccccc" />
+          <path
+             id="Path_103"
+             data-name="Path 103"
+             d="m 2549.472,1599.877 -1.549,1.263 0.526,0.8 1.092,-1.125 z"
+             fill="#4c54ac"
+             transform="translate(-2511.975,-1594.404)" />
+          <path
+             id="Path_104"
+             data-name="Path 104"
+             d="m 2460.041,1573.919 1.3,-1.058 -4,-1.058 1.191,0.8 z"
+             fill="#5054ab"
+             transform="translate(-2424.092,-1567.172)" />
+          <path
+             id="Path_105"
+             data-name="Path 105"
+             d="m 2519.661,1546.657 1.707,-1.407 0.969,1.217 -0.279,0.312 V 1547 l -0.257,0.218 z"
+             fill="#5254a9"
+             transform="translate(-2484.555,-1541.532)" />
+          <path
+             id="Path_106"
+             data-name="Path 106"
+             d="m 2576.675,1529.591 0.976,1.119 0.7791,-0.7538 -6e-4,-0.8573 z"
+             fill="#4f53a9"
+             transform="translate(-2539.869,-1525.775)"
+             sodipodi:nodetypes="ccccc" />
+          <path
+             id="Path_107"
+             data-name="Path 107"
+             d="m 2457.264,1518.114 0.975,-1.72 1.862,1.54 -0.884,0.664 z"
+             fill="#5954a5"
+             transform="translate(-2424.092,-1513.443)" />
+          <path
+             id="Path_108"
+             data-name="Path 108"
+             d="m 2487.135,1517.33 1.784,1.511 0.914,-0.664 z"
+             fill="#5754a6"
+             transform="translate(-2452.999,-1514.35)" />
+          <path
+             id="Path_109"
+             data-name="Path 109"
+             d="m 2505.7055,1480.6559 -1.7705,0.5791 -2.22,-0.778 1.975,-1.2 z"
+             fill="#5453a7"
+             transform="translate(-2467.145,-1477.332)"
+             sodipodi:nodetypes="ccccc" />
+          <path
+             id="Path_110"
+             data-name="Path 110"
+             d="m 2567.3278,1457.5417 2.0325,1.3639 7e-4,-1.9195 z"
+             fill="#5254a9"
+             transform="translate(-2530.801,-1455.582)"
+             sodipodi:nodetypes="cccc" />
+          <path
+             id="Path_111"
+             data-name="Path 111"
+             d="m 2541.6777,1419.1468 -1.737,-1.737 2.8542,0.01 -0,1.4001 z"
+             fill="#5554a8"
+             transform="translate(-2504.232,-1417.415)"
+             sodipodi:nodetypes="ccccc" />
+          <path
+             id="Path_112"
+             data-name="Path 112"
+             d="m 2463.819,1422 -2.481,0.457 3.156,1.377 0.942,-0.251 z"
+             fill="#5b55a5"
+             transform="translate(-2427.972,-1421.863)" />
+          <path
+             id="Path_113"
+             data-name="Path 113"
+             d="m 2412.472,1421.785 1.35,0.683 4.087,-0.683 z"
+             fill="#5b55a5"
+             transform="translate(-2380.457,-1421.863)" />
+          <path
+             id="Path_114"
+             data-name="Path 114"
+             d="m 2458.33,1433.19 1.969,-1.184 -3.22,-1.412 z"
+             fill="#6158a6"
+             transform="translate(-2423.744,-1430.071)" />
+          <path
+             id="Path_115"
+             data-name="Path 115"
+             d="m 2461.9,1437.7 0.733,2.408 0.476,0.112 z"
+             fill="#6256a3"
+             transform="translate(-2428.516,-1437.091)" />
+          <path
+             id="Path_116"
+             data-name="Path 116"
+             d="m 2401.945,1421.219 c 0.439,-0.208 1.669,0.784 1.669,0.784 l 0.768,2.359 -2.524,-1.525 c 0,0 -0.352,-1.41 0.087,-1.618 z"
+             fill="#695aa4"
+             transform="translate(-2370.227,-1421.391)" />
+          <path
+             id="Path_117"
+             data-name="Path 117"
+             d="m 2399.491,1478.361 -1.016,2.234 1.923,0.567 0.9,-1.656 z"
+             fill="#6158a6"
+             transform="translate(-2367.132,-1476.548)" />
+          <path
+             id="Path_118"
+             data-name="Path 118"
+             d="m 2351.769,1465.26 -1.6,2.561 1.466,0.094 0.871,-2.2 z"
+             fill="#6c58a0"
+             transform="translate(-2320.152,-1463.833)" />
+          <path
+             id="Path_119"
+             data-name="Path 119"
+             d="m 2358.417,1421.8 1.734,-0.109 -0.278,1.607 -0.322,0.489 z"
+             fill="#70589d"
+             transform="translate(-2328.245,-1421.863)" />
+          <path
+             id="Path_120"
+             data-name="Path 120"
+             d="m 2293.524,1423.184 -0.76,1.128 -2.377,-2.935 v -0.274 h 2.069 z"
+             fill="#73589b"
+             transform="translate(-2262.159,-1421.258)" />
+          <path
+             id="Path_121"
+             data-name="Path 121"
+             d="m 2299.908,1462.439 1.294,1.637 -0.613,0.992 -1.511,0.139 z"
+             fill="#73589c"
+             transform="translate(-2270.594,-1461.012)" />
+          <path
+             id="Path_122"
+             data-name="Path 122"
+             d="m 2264.368,1414.937 1.125,1.313 -0.875,2.861 -1.057,-2.766 z"
+             fill="#7a5a9b"
+             transform="translate(-2236.143,-1414.87)" />
+          <path
+             id="Path_123"
+             data-name="Path 123"
+             d="m 2206.288,1461.492 -1.8,1.434 0.825,1.076 0.892,0.463 1.076,-0.234 -1,-2.739 z"
+             fill="#7b5c9c"
+             transform="translate(-2178.841,-1460.075)" />
+          <path
+             id="Path_124"
+             data-name="Path 124"
+             d="m 2220.745,1423.2 0.782,-0.519 1.047,-1.672 -2.437,0.063 z"
+             fill="#825b98"
+             transform="translate(-2194.074,-1421.13)" />
+          <path
+             id="Path_125"
+             data-name="Path 125"
+             d="m 2168.2,1418.431 h -1.3 l -0.366,2.172 1.173,0.916 0.988,-0.833 z"
+             fill="#865b95"
+             transform="translate(-2142.024,-1418.618)" />
+          <path
+             id="Path_126"
+             data-name="Path 126"
+             d="m 2113.223,1421.77 h -1.328 l -0.778,1.768 1.663,0.3 z"
+             fill="#8f5d93"
+             transform="translate(-2088.27,-1421.863)" />
+          <path
+             id="Path_127"
+             data-name="Path 127"
+             d="m 2053.785,1421.693 -1.86,-1.761 2.734,-0.094 z"
+             fill="#955d90"
+             transform="translate(-2030.956,-1419.979)" />
+          <path
+             id="Path_128"
+             data-name="Path 128"
+             d="m 2013.75,1433.636 -1.985,2.41 0.482,-0.177 0.45,-0.425 0.716,-0.42 1.3,-0.349 -0.574,-0.622 z"
+             fill="#985d8d"
+             transform="translate(-1991.894,-1433.005)" />
+          <path
+             id="Path_129"
+             data-name="Path 129"
+             d="M 1993.088,1423.258 1991.5,1421 h 2.016 l 0.751,0.856 z"
+             fill="#9d5e8c"
+             transform="translate(-1972.422,-1421.145)" />
+          <path
+             id="Path_130"
+             data-name="Path 130"
+             d="m 1959.676,1394.762 -1.2,2.6 0.9,0.339 0.733,-0.231 0.807,-0.862 z"
+             fill="#a05e8a"
+             transform="translate(-1940.202,-1394.451)" />
+          <path
+             id="Path_131"
+             data-name="Path 131"
+             d="m 1919.838,1417.888 1,2.944 0.274,0.21 0.5935,-2.97 z"
+             fill="#aa618a"
+             transform="translate(-1902.823,-1418.076)"
+             sodipodi:nodetypes="ccccc" />
+          <path
+             id="Path_132"
+             data-name="Path 132"
+             d="m 1959.734,1420.926 -0.406,0.063 -0.567,3.059 1.458,-2.084 z"
+             fill="#a35f8a"
+             transform="translate(-1940.484,-1421.145)" />
+          <path
+             id="Path_133"
+             data-name="Path 133"
+             d="m 1870.417,1664.607 0.588,-0.608 0.6,-0.334 0.6,-0.064 0.476,0.113 0.871,1.823 -2.9435,0.069 z"
+             fill="#4a56a3"
+             sodipodi:nodetypes="cccccccc"
+             transform="translate(-1854.786,-1655.989)" />
+          <path
+             id="Path_134"
+             data-name="Path 134"
+             d="m 1852.389,1708.47 -0.313,0.654 -0.283,0.187 0.302,1.585 1.617,-0.764 -1.115,-0.809 z"
+             fill="#495aaa"
+             sodipodi:nodetypes="ccccccc"
+             transform="translate(-1836.73,-1699.74)" />
+          <path
+             id="Path_135"
+             data-name="Path 135"
+             d="m 1805.113,1736.563 -0.454,0.156 -0.383,0.262 -0.478,0.6 -0.12,0.351 1.735,0.205 z"
+             fill="#3456af"
+             transform="translate(-1790.05,-1726.992)" />
+          <path
+             id="Path_136"
+             data-name="Path 136"
+             d="m 1798.88,1782.006 -0.124,0.659 0.165,0.609 0.33,0.518 0.641,0.447 0.735,-2.031 z"
+             fill="#405cb1"
+             transform="translate(-1785.276,-1771.07)"
+             sodipodi:nodetypes="ccccccc" />
+          <path
+             id="Path_137"
+             data-name="Path 137"
+             d="m 1836.689,1783.983 0.378,0.224 0.393,0.271 0.225,0.552 0.2,-3.269 -0.466,0.208 z"
+             fill="#515aa6"
+             transform="translate(-1822.068,-1770.831)"
+             sodipodi:nodetypes="ccccccc" />
+          <path
+             id="Path_138"
+             data-name="Path 138"
+             d="m 1869.966,1819.427 2.693,2.865 -0.669,0.338 -0.591,0.018 -0.848,-0.274 -0.716,-0.815 z"
+             fill="#705c99"
+             transform="translate(-1854.221,-1807.368)"
+             sodipodi:nodetypes="ccccccc" />
+          <path
+             id="Path_139"
+             data-name="Path 139"
+             d="m 1875.554,1765.114 0.035,-3 -1.167,0.54 -0.072,1.129 z"
+             fill="#5c5ca2"
+             transform="translate(-1858.605,-1751.724)"
+             sodipodi:nodetypes="ccccc" />
+          <path
+             id="Path_140"
+             data-name="Path 140"
+             d="m 1876.259,1733.066 2.683,-0.249 0.127,1.711 -1.7075,-0.676 z"
+             fill="#6d5e9e"
+             sodipodi:nodetypes="ccccc"
+             transform="translate(-1860.379,-1723.456)" />
+          <path
+             id="Path_141"
+             data-name="Path 141"
+             d="m 1914.243,1734.433 -0.047,2.9483 1.503,1.5837 0.832,-0.281 c -0.4332,-1.3505 -0.942,-2.6756 -1.524,-3.969 -0.572,-1.063 -0.764,-0.282 -0.764,-0.282 z"
+             fill="#755991"
+             transform="translate(-1897.261,-1724.041)"
+             sodipodi:nodetypes="cccccc" />
+          <path
+             id="Path_142"
+             data-name="Path 142"
+             d="m 1940.936,1773.5 2.366,0.887 -0.835,3.1 z"
+             fill="#8d669a"
+             transform="translate(-1923.191,-1762.815)" />
+          <path
+             id="Path_143"
+             data-name="Path 143"
+             d="m 1972.4,1731.263 v -1.748 l 4.5493,-0.01 -2.4243,2.471 z"
+             fill="#a0648c"
+             transform="translate(-1953.837,-1720.154)"
+             sodipodi:nodetypes="ccccc" />
+          <path
+             id="Path_144"
+             data-name="Path 144"
+             d="m 1946.226,1675.536 -0.6872,-1.6667 0.5272,0.2967 0.674,0.254 0.754,-0.159 0.573,-0.312 2.082,1.6"
+             fill="#81669f"
+             transform="translate(-1927.663,-1666.175)"
+             sodipodi:nodetypes="ccccccc" />
+          <path
+             id="Path_145"
+             data-name="Path 145"
+             d="m 2030.121,1669.024 0.572,-0.129 0.595,0.057 0.635,0.3 0.38,0.426 0.235,0.366 0.18,0.563 -0.574,0.023 z"
+             fill="#a16289"
+             transform="translate(-2009.701,-1661.239)" />
+          <path
+             id="Path_146"
+             data-name="Path 146"
+             d="m 2041.24,1729.515 -2.37,2.457 3.4584,1.3148 0.792,-1.2984 z"
+             fill="#c36880"
+             transform="translate(-2018.182,-1720.15)"
+             sodipodi:nodetypes="ccccc" />
+          <path
+             id="Path_147"
+             data-name="Path 147"
+             d="m 2111.885,1723.769 1.8,2.4 -0.082,-0.835 -0.206,-0.609 -0.442,-0.515 z"
+             fill="#ce677a"
+             transform="translate(-2088.755,-1714.296)" />
+          <path
+             id="Path_148"
+             data-name="Path 148"
+             d="m 2032.851,1821.319 -1.277,1.247 1.858,1.407 0.8,-1.343 0.459,-0.183 0.5,-0.249 z"
+             fill="#c6677d"
+             transform="translate(-2011.058,-1809.094)" />
+          <path
+             id="Path_149"
+             data-name="Path 149"
+             d="m 1994.995,1905.741 1.533,0.7 1.319,-0.367 0.147,-0.16 z"
+             fill="#be6883"
+             transform="translate(-1975.627,-1891.099)" />
+          <path
+             id="Path_150"
+             data-name="Path 150"
+             d="m 1993.448,1864.939 -1.237,1.169 3.008,0.181 z"
+             fill="#ba6c8b"
+             transform="translate(-1972.927,-1851.471)" />
+          <path
+             id="Path_151"
+             data-name="Path 151"
+             d="m 1992.739,1802.929 1.734,0.659 -2.542,2.45 z"
+             fill="#a96488"
+             transform="translate(-1972.657,-1791.363)" />
+          <path
+             id="Path_152"
+             data-name="Path 152"
+             d="m 1758.254,2115.22 -0.3,2.221 h 2.384 l 0.152,-1.421 z"
+             fill="#8c598f"
+             transform="translate(-1747.363,-2094.626)" />
+          <g
+             id="Subtraction_5"
+             data-name="Subtraction 5"
+             transform="translate(0.766,1.591)"
+             fill="none">
+            <path
+               d="m 22.194,19.679 a 3.774,3.774 0 0 1 -0.783,-0.082 3.729,3.729 0 0 1 -1.38,-0.605 3.776,3.776 0 0 1 -0.563,-0.49 1.873,1.873 0 0 0 -2.1,0.059 3.756,3.756 0 0 1 -1.2,0.818 3.731,3.731 0 0 1 -0.71,0.223 3.755,3.755 0 0 1 -3.893,-1.609 v 0 L 11.546,17.958 C 11.521,17.92 11.497,17.88 11.473,17.841 a 1.877,1.877 0 0 0 -1.831,-0.811 7.5,7.5 0 1 1 0,-14.379 1.9,1.9 0 0 0 0.274,0.02 1.886,1.886 0 0 0 0.459,-0.057 1.864,1.864 0 0 0 0.8,-0.425 1.891,1.891 0 0 0 0.3,-0.35 A 3.772,3.772 0 0 1 12.813,0.506 3.731,3.731 0 0 1 14.7,0 a 3.773,3.773 0 0 1 0.793,0.084 3.731,3.731 0 0 1 1.389,0.616 3.78,3.78 0 0 1 0.566,0.5 1.866,1.866 0 0 0 1.011,0.3 1.881,1.881 0 0 0 0.491,-0.065 1.859,1.859 0 0 0 0.452,-0.189 3.76,3.76 0 0 1 1.238,-0.91 3.73,3.73 0 0 1 0.746,-0.249 3.755,3.755 0 0 1 4.114,1.89 1.881,1.881 0 0 0 0.3,0.305 1.86,1.86 0 0 0 0.753,0.369 1.892,1.892 0 0 0 0.428,0.049 c 0.042,0 0.084,0 0.126,0 a 7.5,7.5 0 1 1 0.148,14.333 1.9,1.9 0 0 0 -0.274,-0.02 1.877,1.877 0 0 0 -1.558,0.832 c -0.023,0.039 -0.047,0.078 -0.072,0.117 v 0 0 l -0.009,0.017 v 0 a 3.74,3.74 0 0 1 -3.148,1.7 z m -3.749,-6.69 a 1.511,1.511 0 0 1 0.339,0.038 1.483,1.483 0 0 1 0.319,0.113 1.875,1.875 0 0 0 3.04,-0.991 0.756,0.756 0 0 1 0.43,-0.455 1.875,1.875 0 0 0 0,-3.679 0.758,0.758 0 0 1 -0.414,-0.414 1.874,1.874 0 0 0 -3.059,-1.063 1.486,1.486 0 0 1 -0.319,0.113 1.5,1.5 0 0 1 -1,-0.114 1.875,1.875 0 0 0 -3.071,1.156 0.763,0.763 0 0 1 -0.37,0.321 1.863,1.863 0 0 0 -0.2,0.05 v 0 a 1.876,1.876 0 0 0 0.2,3.629 0.753,0.753 0 0 1 0.373,0.33 1.874,1.874 0 0 0 3.065,1.117 1.5,1.5 0 0 1 0.659,-0.152 z"
+               stroke="none"
+               id="path157" />
+            <path
+               d="m 22.193554,19.42914 c 1.18631,0 2.282339,-0.594 2.931869,-1.588959 l 0.01153,-0.0178 c 0.02334,-0.03623 0.04605,-0.07294 0.06749,-0.109079 l 0.0074,-0.0117 c 0.09712,-0.144831 0.21196,-0.27746 0.341269,-0.394171 0.127741,-0.115358 0.269571,-0.215118 0.421551,-0.296499 0.15226,-0.08153 0.314239,-0.14435 0.481409,-0.186689 0.270166,-0.06846 0.554996,-0.08275 0.8309,-0.04247 l 0.01786,0.0026 0.01729,0.0052 c 0.668569,0.198888 1.364799,0.299728 2.06937,0.299728 3.996439,0 7.247789,-3.252189 7.247789,-7.2496795 0,-3.9974994 -3.25135,-7.2496996 -7.247789,-7.2496996 -0.755581,0 -1.49996,0.1157301 -2.21245,0.3439601 l -0.0292,0.00936 -0.0306,0.00202 c -0.21078,0.013903 -0.423088,-0.00335 -0.626719,-0.05072 -0.15624,-0.03635 -0.308201,-0.09047 -0.45158,-0.16081 C 25.897612,2.663482 25.762102,2.5767319 25.638212,2.4759221 25.513132,2.374182 25.399393,2.2577519 25.300133,2.1298821 l -0.01281,-0.0165 -0.0099,-0.01841 C 24.665604,0.95694101 23.483934,0.25000101 22.193554,0.25000101 c -0.25408,0 -0.507591,0.02735 -0.753471,0.08129 -0.23923,0.05251 -0.4735,0.13065001 -0.69629,0.23225001 -0.21898,0.09988 -0.42851,0.22307997 -0.622779,0.36620002 C 19.928183,1.071781 19.749214,1.234271 19.589073,1.412711 l -0.02616,0.02914 -0.03381,0.01975 c -0.16074,0.09389 -0.333381,0.16613 -0.513061,0.21471 -0.18064,0.04886 -0.36784,0.07363 -0.556399,0.07363 -0.408521,0 -0.80491,-0.11596 -1.14631,-0.33534 l -0.02678,-0.01721 -0.02162,-0.02337 c -0.159699,-0.1727 -0.33751,-0.3299601 -0.52846,-0.46737999 -0.19248,-0.13845998 -0.39945,-0.25755 -0.615169,-0.35395003 C 15.901653,0.454521 15.671063,0.379071 15.435924,0.328421 14.890332,0.2108977 14.308676,0.22642091 13.770623,0.37355101 13.479974,0.453031 13.200204,0.57037097 12.939074,0.72231102 12.423413,1.022351 11.989803,1.452181 11.685134,1.965331 l -0.0073,0.01149 c -0.09771,0.1459001 -0.212961,0.27928 -0.34252,0.3964301 -0.12798,0.11573 -0.26988,0.2155499 -0.421681,0.2966499 -0.15188,0.08121 -0.313759,0.1437302 -0.48114,0.1858001 -0.269314,0.067698 -0.5548541,0.081998 -0.8302295,0.04171 l -0.01783,-0.00261 -0.01727,-0.00514 C 8.8985834,2.6907411 8.2023439,2.5898809 7.4978237,2.5898809 c -3.9964602,0 -7.24782021,3.2522002 -7.24782021,7.2496996 0,3.9974905 3.25136001,7.2496795 7.24782021,7.2496795 0.7044497,0 1.4007197,-0.100859 2.0694599,-0.299759 l 0.01723,-0.0051 0.017779,-0.0026 c 0.2741633,-0.04019 0.5605004,-0.02609 0.8313214,0.04235 0.16716,0.04232 0.32909,0.105068 0.48131,0.186539 0.15172,0.08123 0.29344,0.180931 0.421199,0.29635 0.12933,0.116819 0.244071,0.249439 0.341051,0.394171 l 0.0073,0.0116 c 0.02183,0.0368 0.04463,0.07366 0.06776,0.10956 l 0.02134,0.03271 c 0.650619,0.985649 1.743,1.574098 2.92213,1.574098 0.239859,0 0.47943,-0.02438 0.712069,-0.07247 0.22655,-0.04684 0.449281,-0.116708 0.66202,-0.20767 0.208841,-0.08927 0.410131,-0.19981 0.598291,-0.32852 0.186579,-0.12763 0.36159,-0.274 0.52018,-0.43503 l 0.01489,-0.01512 0.01722,-0.01239 c 0.17935,-0.12905 0.376639,-0.22876 0.58638,-0.296379 0.210629,-0.06791 0.43029,-0.102351 0.65287,-0.102351 0.405749,0 0.80036,0.11491 1.141169,0.33231 l 0.02613,0.01667 0.02128,0.02255 c 0.15955,0.16914 0.336519,0.322939 0.526029,0.45714 0.19106,0.135328 0.39625,0.251678 0.609841,0.345819 0.217569,0.09588 0.445709,0.169541 0.67807,0.21893 0.2388,0.05077 0.48488,0.07651 0.73139,0.07651 m -3.227287,-6.076157 c -0.07644,-0.03523 -0.15654,-0.06262 -0.238493,-0.08154 -0.18335,-0.04231 -0.380373,-0.04268 -0.56567,1.8e-4 -0.08248,0.01908 -0.163014,0.0466 -0.239807,0.08195 -0.181618,0.150099 -0.384976,0.267985 -0.604964,0.350649 -0.23871,0.08971 -0.490089,0.1352 -0.747139,0.1352 -0.257501,0 -0.50929,-0.04564 -0.74838,-0.13567 -0.2309,-0.08694 -0.443461,-0.2127 -0.631771,-0.37378 -0.367152,-0.314066 -0.616841,-0.7443 -0.706755,-1.215829 -0.05168,-0.07821 -0.124741,-0.140869 -0.209948,-0.179782 -0.979208,-0.205073 -1.687087,-1.075335 -1.687087,-2.0797591 0,-0.2327394 0.03744,-0.4616203 0.11129,-0.6802702 0.0714,-0.2114601 0.17552,-0.4097195 0.309441,-0.5892601 0.13231,-0.1773891 0.2907,-0.33251 0.470759,-0.4610701 0.154359,-0.1101875 0.321691,-0.1987185 0.498611,-0.2638912 v 0 l 0.120743,-0.040382 c 0.05682,-0.017127 0.114879,-0.031967 0.173187,-0.044274 0.08239,-0.037604 0.153949,-0.097348 0.206007,-0.1716914 0.08221,-0.4795676 0.328458,-0.9183102 0.697413,-1.2404509 0.18939,-0.16536 0.40398,-0.2945499 0.637811,-0.3839898 0.24213,-0.09262 0.497389,-0.1395798 0.75868,-0.1395798 0.257069,0 0.508429,0.04548 0.747109,0.13518 0.219974,0.082658 0.423317,0.2005406 0.604917,0.3506346 0.07683,0.035336 0.157425,0.062873 0.240013,0.081955 0.185442,0.042893 0.381878,0.042529 0.56538,1.598e-4 0.08213,-0.018966 0.162373,-0.046415 0.238928,-0.081699 0.18165,-0.1502075 0.385075,-0.2681961 0.605162,-0.3509412 0.23879,-0.08977 0.490261,-0.1352897 0.74741,-0.1352897 1.00382,0 1.873819,0.7076111 2.079151,1.6865921 0.05012,0.1094551 0.139379,0.1985684 0.249165,0.2487712 0.978349,0.205606 1.685575,1.0757561 1.685575,2.0794964 0,1.0037204 -0.707199,1.8738524 -1.685509,2.0794574 -0.0585,0.02679 -0.112482,0.06543 -0.157121,0.112603 -0.0473,0.04997 -0.08429,0.109777 -0.107388,0.173522 -0.05521,0.226194 -0.146898,0.44053 -0.272623,0.637288 -0.125729,0.19678 -0.28203,0.37066 -0.46459,0.51683 -0.184309,0.14754 -0.390059,0.2625 -0.611549,0.34168 -0.22918,0.08191 -0.46978,0.12344 -0.715111,0.12344 -0.257189,0 -0.508709,-0.04554 -0.74758,-0.13537 -0.220081,-0.08276 -0.423553,-0.200792 -0.605266,-0.351068 m 3.227287,6.326157 c -0.26396,0 -0.527521,-0.02758 -0.783371,-0.08197 -0.249119,-0.05296 -0.493689,-0.131932 -0.7269,-0.234701 -0.22892,-0.10089 -0.448799,-0.225569 -0.65353,-0.370579 -0.202919,-0.143702 -0.392479,-0.30842 -0.563389,-0.489601 -0.30057,-0.191731 -0.648691,-0.29308 -1.00672,-0.29308 -0.1965,0 -0.39035,0.03038 -0.576151,0.09029 -0.18497,0.05963 -0.35894,0.14758 -0.517089,0.26137 -0.169871,0.172489 -0.357331,0.32926 -0.55715,0.46595 -0.201611,0.137921 -0.41733,0.256371 -0.641171,0.35206 -0.22802,0.09749 -0.46678,0.17239 -0.70967,0.222611 -0.24924,0.05152 -0.50585,0.07765 -0.762689,0.07765 -1.263371,0 -2.433751,-0.630419 -3.13077,-1.686378 l -6.11e-4,-2.1e-5 c -8.2e-4,-5e-5 -0.0016,-10e-5 -0.0024,-1.61e-4 l -4.91e-4,-2.8e-5 c -0.0063,-0.01166 -0.01284,-0.02337 -0.01935,-0.03482 -0.02478,-0.03846 -0.04921,-0.07796 -0.07261,-0.117401 -0.08556,-0.127689 -0.186809,-0.244718 -0.300939,-0.347818 -0.112721,-0.10182 -0.23775,-0.189791 -0.37162,-0.261462 -0.13431,-0.07188 -0.27718,-0.127248 -0.424671,-0.164588 -0.238849,-0.06036 -0.4917536,-0.07281 -0.7336998,-0.03734 C 8.9466839,17.234911 8.2264338,17.33926 7.4978237,17.33926 3.3635135,17.33926 3.4838868e-6,13.974911 3.4838868e-6,9.8395805 3.4838868e-6,5.7042308 3.3635135,2.3398809 7.4978237,2.3398809 c 0.7286701,0 1.4488897,0.1043501 2.1406698,0.3101602 0.243021,0.035557 0.4954105,0.022946 0.7330905,-0.0368 0.147559,-0.03709 0.290279,-0.09219 0.424199,-0.1638 0.133921,-0.07155 0.25905,-0.15958 0.371901,-0.2616201 0.114339,-0.10339 0.216119,-0.22118 0.302479,-0.3501199 0.326351,-0.54966 0.79082,-1.01008002 1.34318,-1.33146999 C 13.093233,0.343371 13.393124,0.217601 13.704674,0.132401 c 0.576614,-0.15766669 1.199133,-0.1743206 1.78389,-0.04838 0.25208,0.0543 0.49928,0.13519 0.73475,0.24043 0.231179,0.10330999 0.45295,0.23090997 0.659149,0.37924001 0.204531,0.14719998 0.39497,0.31561999 0.566021,0.50058999 0.300999,0.19342 0.65066,0.29566 1.01116,0.29566 0.1665,0 0.33174,-0.02185 0.49112,-0.06496 0.158399,-0.04282 0.31056,-0.10649 0.452249,-0.18925 0.17154,-0.1911401 0.36323,-0.36517001 0.569731,-0.51727999 0.208139,-0.15333002 0.43265,-0.28534001 0.667299,-0.39237001 0.23885,-0.10891999 0.48999,-0.19269 0.746441,-0.24898 C 21.649933,0.029311 21.921473,9.991455e-7 22.193554,9.991455e-7 c 1.38257,0 2.6486,0.7573800208545 3.30405,1.9765501008545 0.08765,0.11292 0.18804,0.2156598 0.29835,0.3053898 0.109249,0.0889 0.228689,0.16536 0.354999,0.2272702 0.12645,0.06203 0.260441,0.10974 0.398211,0.1417999 0.179787,0.041816 0.367685,0.057028 0.553589,0.04475 0.737201,-0.2361501 1.50724,-0.3558801 2.288721,-0.3558801 4.13429,0 7.497789,3.3643499 7.497789,7.4996996 0,4.1353305 -3.363499,7.4996795 -7.497789,7.4996795 -0.728741,0 -1.44895,-0.104339 -2.14065,-0.310108 -0.243635,-0.03559 -0.494902,-0.023 -0.733351,0.03743 -0.147539,0.03737 -0.29047,0.0928 -0.42482,0.164739 -0.134149,0.07184 -0.2593,0.15987 -0.372009,0.26165 -0.11412,0.102999 -0.21546,0.22004 -0.30118,0.34787 -0.02298,0.03874 -0.04732,0.07809 -0.07234,0.11693 l -0.0013,0.0023 c -0.0029,0.0051 -0.0061,0.01086 -0.0093,0.01655 -3.01e-4,4.9e-5 -6.01e-4,8e-5 -9.5e-4,1.08e-4 l -1.81e-4,3.1e-5 c -5e-5,0 -1.2e-4,9e-6 -1.7e-4,2.1e-5 l -4.8e-4,5.9e-5 c -0.69586,1.06592 -1.87016,1.702299 -3.141209,1.702299 z M 18.444613,12.98949 c 0.114781,0 0.22894,0.01292 0.339341,0.03839 0.11,0.02539 0.217199,0.06346 0.31862,0.11316 0.1661,0.14182 0.35348,0.25254 0.556939,0.32905 0.210641,0.07921 0.43255,0.11937 0.65958,0.11937 0.216591,0 0.42888,-0.03663 0.63097,-0.10886 0.19531,-0.06982 0.37681,-0.17123 0.539451,-0.30143 0.16116,-0.12903 0.29916,-0.28253 0.410159,-0.45626 0.113,-0.17684 0.19481,-0.36975 0.24316,-0.57335 0.03429,-0.10124 0.09167,-0.19623 0.165951,-0.27471 0.0738,-0.07799 0.16496,-0.14044 0.263629,-0.1806 0.87529,-0.17221 1.510571,-0.94588 1.510571,-1.8396104 0,-0.8937502 -0.635321,-1.6674395 -1.510641,-1.8396501 -0.18704,-0.07617 -0.337919,-0.2268997 -0.41396,-0.41357 -0.17197,-0.8759098 -0.945499,-1.5116396 -1.83929,-1.5116396 -0.227009,0 -0.44887,0.04014 -0.65943,0.1192999 -0.20342,0.07648 -0.39077,0.18714 -0.55685,0.3289399 -0.101509,0.04973 -0.208819,0.08784 -0.31896,0.1132799 -0.220385,0.050873 -0.455687,0.051228 -0.677969,-1.798e-4 -0.11056,-0.02555 -0.21819,-0.06373 -0.31988,-0.1134501 -0.166031,-0.1417002 -0.353311,-0.2522802 -0.55666,-0.32869 -0.210481,-0.0791 -0.432251,-0.1191998 -0.65917,-0.1191998 -0.23065,0 -0.45585,0.04141 -0.669361,0.1230798 -0.206249,0.07889 -0.395579,0.1928902 -0.56271,0.33881 -0.337869,0.2950001 -0.559129,0.7006802 -0.623,1.1423101 -0.08408,0.1444297 -0.2154,0.2585397 -0.369759,0.3213301 -0.06586,0.01301 -0.13159,0.029739 -0.19537,0.04974 l -7.8e-4,8.01e-5 c -6e-5,1.097e-4 -8e-5,1.498e-4 -1.11e-4,1.803e-4 -0.18804,0.05901 -0.36504,0.1472196 -0.526099,0.2621994 -0.15896,0.1134901 -0.298801,0.2504501 -0.415621,0.4070701 -0.11817,0.1584196 -0.210009,0.3332901 -0.27298,0.5197697 -0.06513,0.1928501 -0.09815,0.3948107 -0.09815,0.6002903 0,0.8943702 0.635881,1.6681302 1.511971,1.8398602 0.157619,0.06404 0.2901,0.18132 0.373029,0.33022 0.07201,0.43259 0.29622,0.82868 0.6313,1.11532 0.16617,0.14214 0.353691,0.2531 0.55736,0.32979 0.21082,0.07938 0.432971,0.11963 0.660281,0.11963 0.2269,0 0.448689,-0.04011 0.659189,-0.11922 0.20337,-0.07642 0.390671,-0.18701 0.5567,-0.32869 0.101691,-0.04975 0.20925,-0.08792 0.319691,-0.11346 0.110739,-0.02561 0.224749,-0.0386 0.338859,-0.0386 z"
+               stroke="none"
+               fill="#efefef"
+               id="path159"
+               sodipodi:nodetypes="ccccccsccccsssccssccscsscccccscssccccssscccccscssssccccccccccsccsscssssccccccccsccscsccsccccccccscscccsccsccsccccccssccscccsccsccsccccccccccssscscccccccccscccccscccccsssccccccccccccccsccssccccccsccsscccccsscccccccccscccssccss" />
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
