@@ -146,11 +146,11 @@ func process_rotation():
 
 
 func _process(delta: float) -> void:
-	user_input = UIN_preset_pre_processor_instance.update()
-	enter_phase_limits()
+	user_input = UIN_preset_pre_processor_instance.update(clientPhase)
 	if get_tree().is_network_server():
 		Global.phase_update_global()
 		clientPhase = Global.get_current_phase()
+		theme = "03"
 	else:
 		if puppet_phase != null:
 			clientPhase = puppet_phase
@@ -478,31 +478,3 @@ func rotate_weapon():
 	$"weaponHolder/Player-character-theme-gun".position = weaponPosition
 	$"weaponHolder/Player-character-theme-gun".rotation_degrees = weaponAngle
 	pass
-
-func enter_phase_limits():
-	if clientPhase != null and clientPhase["active"] != null:
-		if clientPhase["active"]["phase_id"] == 0:
-			user_input["r_inc"] = false
-			user_input["r_dec"] = false
-			user_input["shoot"] = false
-		elif clientPhase["active"]["phase_id"] == 1:
-			user_input["left"] = false
-			user_input["right"] = false
-			user_input["up"] = false
-			user_input["down"] = false
-			user_input["shoot"] = false
-		elif clientPhase["active"]["phase_id"] == 2:
-			user_input["left"] = false
-			user_input["right"] = false
-			user_input["up"] = false
-			user_input["down"] = false
-			user_input["r_inc"] = false
-			user_input["r_dec"] = false
-		else:
-			user_input["left"] = false
-			user_input["right"] = false
-			user_input["up"] = false
-			user_input["down"] = false
-			user_input["r_inc"] = false
-			user_input["r_dec"] = false
-			user_input["shoot"] = false

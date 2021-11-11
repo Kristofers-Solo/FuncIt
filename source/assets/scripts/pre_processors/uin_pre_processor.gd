@@ -9,6 +9,7 @@ func _init() -> void:
 		"up": false,
 		"down": false,
 		"debug": false,
+		"boost": false,
 		"enter": false,
 		"r_inc": false,
 		"r_dec": false,
@@ -16,7 +17,7 @@ func _init() -> void:
 	}
 	pass
 
-func update():
+func update(clientPhase):
 	inputState = {
 		"right": Input.is_action_pressed("input_right"),
 		"left": Input.is_action_pressed("input_left"),
@@ -29,4 +30,35 @@ func update():
 		"r_dec": Input.is_action_pressed("rotation_decrease"),
 		"shoot": Input.is_action_pressed("input_shoot")
 	}
+	if clientPhase != null and clientPhase["active"] != null:
+		if clientPhase["active"]["phase_id"] == 0:
+			inputState["r_inc"] = false
+			inputState["r_dec"] = false
+			inputState["shoot"] = false
+		elif clientPhase["active"]["phase_id"] == 1:
+			inputState["left"] = false
+			inputState["right"] = false
+			inputState["up"] = false
+			inputState["down"] = false
+			inputState["shoot"] = false
+		elif clientPhase["active"]["phase_id"] == 2:
+			inputState["left"] = false
+			inputState["right"] = false
+			inputState["up"] = false
+			inputState["down"] = false
+			inputState["r_inc"] = false
+			inputState["r_dec"] = false
+		else:
+			inputState  = {
+				"right": false,
+				"left": false,
+				"up": false,
+				"down": false,
+				"debug": false,
+				"boost": false,
+				"enter": false,
+				"r_inc": false,
+				"r_dec": false,
+				"shoot": false
+			}
 	return inputState
