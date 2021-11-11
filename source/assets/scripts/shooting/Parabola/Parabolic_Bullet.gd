@@ -3,6 +3,7 @@ extends Sprite
 export(int) var damage = 25
 export(int) var speed_parab = 100
 var velocity = Vector2()
+var player_owner = 0
 
 var time = 0
 var a_parameter = 1

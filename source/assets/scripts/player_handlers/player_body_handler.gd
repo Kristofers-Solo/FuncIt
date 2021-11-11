@@ -87,10 +87,11 @@ var particleImage = Image.new()
 func _ready():
 	weaponPositionalOffset = Vector2(-$"weaponHolder/Player-character-theme-gun-na3".texture.get_width() * $"weaponHolder/Player-character-theme-gun-na3".scale.x / 2,-$"weaponHolder/Player-character-theme-gun-na3".texture.get_height() * $"weaponHolder/Player-character-theme-gun-na3".scale.y / 2) + Vector2(-$weaponHolder.get_shape().get_radius(), 0)
 	$"weaponHolder/Player-character-theme-gun".position = weaponPositionalOffset
+	
 	get_tree().connect("network_peer_connected", self, "_network_peer_connected")
 	username_text_instance = Global.instance_node_at_location(username_text, PersistentNodes, global_position)
 	username_text_instance.player_following = self
-	update_shoot_mode(false)
+	update_shoot_mode(true)
 	Global.alive_players.append(self)
 
 	yield(get_tree(), "idle_frame")
@@ -99,6 +100,7 @@ func _ready():
 			Global.player_master = self
 	# Allow update process override.
 	set_process(true)
+	
 	$player_animated_sprite.play("idle")
 
 
@@ -248,7 +250,6 @@ func _physics_process(delta) -> void:
 				choose_trajectory()
 				enable_trajectory_line(trajectory_line)
 				if Input.is_action_just_released("input_shoot") and can_shoot and not is_reloading:
-#					shoot(trajectory)
 					rpc("shoot", trajectory, get_tree().get_network_unique_id())
 					is_reloading = true
 					reload_timer.start()
@@ -297,6 +298,7 @@ sync func shoot(trajectory:String, id):
 	add_child(bullet)
 	bullet.global_position = shoot_point.global_position
 	bullet.global_rotation = shoot_point.global_rotation
+#	bullet.player_owner = id
 
 
 func enable_trajectory_line(trajectory_line:String):
@@ -327,6 +329,7 @@ func puppet_bullet_position_set(new_value) -> void:
 	puppet_bullet_position = new_value
 	tween.interpolate_property(self, "global_position", global_position, puppet_bullet_position, 0.1)
 	tween.start()
+
 
 func set_hp(new_value):
 	hp = new_value
@@ -402,6 +405,7 @@ sync func hit_by_damager(damage):
 
 
 sync func enable() -> void:
+	direction = "left"
 	hp = 100
 	can_shoot = false
 	update_shoot_mode(false)
@@ -417,6 +421,9 @@ sync func enable() -> void:
 
 	if not Global.alive_players.has(self):
 		Global.alive_players.append(self)
+	
+	weaponPositionalOffset = Vector2(-$"weaponHolder/Player-character-theme-gun-na3".texture.get_width() * $"weaponHolder/Player-character-theme-gun-na3".scale.x / 2,-$"weaponHolder/Player-character-theme-gun-na3".texture.get_height() * $"weaponHolder/Player-character-theme-gun-na3".scale.y / 2) + Vector2(-$weaponHolder.get_shape().get_radius(), 0)
+	$"weaponHolder/Player-character-theme-gun".position = weaponPositionalOffset
 
 
 sync func destroy() -> void:

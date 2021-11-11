@@ -6,6 +6,7 @@ var speed_hyper = 100
 var time = 0.05
 var a_parameter = 1
 var b_parameter = 1
+var player_owner = 0
 
 
 

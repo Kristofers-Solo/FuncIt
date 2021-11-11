@@ -5,7 +5,7 @@
 
 [sub_resource type="CapsuleShape2D" id=1]
 
-[node name="player_bullet" type="Sprite" groups=[
+[node name="player_bullet2" type="Sprite" groups=[
 "Net",
 ]]
 texture = ExtResource( 1 )
