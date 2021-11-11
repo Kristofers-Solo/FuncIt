@@ -1,6 +1,7 @@
 extends Sprite
 
-export var speed_parab = 100
+export(int) var damage = 25
+export(int) var speed_parab = 100
 var velocity = Vector2()
 
 var time = 0
