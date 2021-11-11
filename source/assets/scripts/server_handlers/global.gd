@@ -24,39 +24,40 @@ var clientPhase = {
 		"phase_name": "Idle phase",
 		"length": 2,
 		"start_time": null
-	}
+	},
+	"active": null
 }
-var activePhase = null
+var activePhaseTracker = null
 var currentTime = null
 var gameStart = false
 
 func phase_update_global():
 	currentTime = OS.get_time()
 	if gameStart:
-		if activePhase != null:
-			if clientPhase[str(activePhase)]["start_time"] != null:
-				if currentTime["second"] + currentTime["minute"] * 60 - clientPhase[str(activePhase)]["start_time"]["second"] - clientPhase[str(activePhase)]["start_time"]["minute"] * 60 > clientPhase[str(activePhase)]["length"]:
-					if activePhase + 1 == clientPhase.size():
-						clientPhase[str(activePhase)]["start_time"] = null 
-						activePhase = 0
+		if activePhaseTracker != null:
+			if clientPhase[str(activePhaseTracker)]["start_time"] != null:
+				if currentTime["second"] + currentTime["minute"] * 60 - clientPhase[str(activePhaseTracker)]["start_time"]["second"] - clientPhase[str(activePhaseTracker)]["start_time"]["minute"] * 60 > clientPhase[str(activePhaseTracker)]["length"]:
+					if activePhaseTracker == clientPhase.size():
+						clientPhase[str(activePhaseTracker)]["start_time"] = null 
+						activePhaseTracker = 0
 					else: 
-						clientPhase[str(activePhase)]["start_time"] = null 
-						activePhase += 1
-			else: clientPhase[str(activePhase)]["start_time"] = currentTime
-		else: activePhase = 0
-		return clientPhase[str(activePhase)]
+						clientPhase[str(activePhaseTracker)]["start_time"] = null 
+						activePhaseTracker += 1
+			else: clientPhase[str(activePhaseTracker)]["start_time"] = currentTime
+		else: activePhaseTracker = 0
+		clientPhase["active"] = clientPhase[str(activePhaseTracker)]
 	pass
 
 func start_game():
 	gameStart = true
 	pass
 
-func get_client_phase():
-	return {"clientPhase": clientPhase, "activePhase": activePhase, "gameStart": gameStart, "currentTime": currentTime}
+func get_current_phase():
+	return clientPhase
 
-func phase_update_puppet(phase):
-	clientPhase = phase["clientPhase"]
-	activePhase = phase["activePhase"]
+func set_current_phase(phase):
+	clientPhase = phase
+	pass
 
 func instance_node_at_location(node: Object, parent: Object, location: Vector2) -> Object:
 	var node_instance = instance_node(node, parent)
@@ -68,11 +69,3 @@ func instance_node(node: Object, parent: Object) -> Object:
 	var node_instance = node.instance()
 	parent.add_child(node_instance)
 	return node_instance
-
-var time
-
-func time_input(d):
-	time = d
-
-func time_output():
-	return time

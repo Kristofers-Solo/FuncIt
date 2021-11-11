@@ -24,6 +24,7 @@ puppet var puppet_direction = "left"
 puppet var puppet_theme = "01"
 puppet var puppet_character_states = {}
 puppet var puppet_bullet_position = Vector2() setget puppet_bullet_position_set
+puppet var puppet_phase = null
 
 onready var tween = $Tween
 onready var sprite = $player_sprite
@@ -145,6 +146,15 @@ func process_rotation():
 
 
 func _process(delta: float) -> void:
+	if get_tree().is_network_server():
+		Global.phase_update_global()
+		clientPhase = Global.get_current_phase()
+		rset_unreliable("puppet_phase", clientPhase)
+		print("MASTER:",clientPhase)
+	else:
+		if puppet_phase != null: clientPhase = puppet_phase
+		Global.set_current_phase(clientPhase)
+		print("SLAVE:",clientPhase)
 	$"weaponHolder/Player-character-theme-gun".play(theme)
 	particleImage.load("res://source/assets/sprites/character/player/theme/" + theme + "/na/Player-character-theme-particle-"+theme+".png")
 	particleTexture.create_from_image(particleImage)
@@ -249,17 +259,13 @@ func _physics_process(delta) -> void:
 				velocityVDIR = Vector2(clamp(velocityVDIR.x, -maxMovementSpeed.x, maxMovementSpeed.x), clamp(velocityVDIR.y, -maxMovementSpeed.y, maxMovementSpeed.y))
 				move_and_slide(velocityVDIR.rotated(rotationalHolder))
 				rotate_weapon()
-				
 				choose_trajectory()
 				enable_trajectory_line(trajectory_line)
 				if Input.is_action_just_released("input_shoot") and can_shoot and not is_reloading:
 					rpc("shoot", trajectory, get_tree().get_network_unique_id())
 					is_reloading = true
 					reload_timer.start()
-			globalActivePhase = Global.phase_update_global()
-			clientPhase = Global.get_client_phase()
 		else:
-			if clientPhase != null: Global.phase_update_puppet(clientPhase)
 			rotation = lerp_angle(rotation, puppet_rotation, delta * 8)
 			$"weaponHolder/Player-character-theme-gun".position = puppet_weapon_position
 			weaponAngle = puppet_weapon_angle
