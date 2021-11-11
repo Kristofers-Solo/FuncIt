@@ -24,7 +24,7 @@ puppet var puppet_direction = "left"
 puppet var puppet_theme = "01"
 puppet var puppet_character_states = {}
 puppet var puppet_bullet_position = Vector2() setget puppet_bullet_position_set
-puppet var puppet_phase = null
+puppet var puppet_phase setget puppet_phase_set
 
 onready var tween = $Tween
 onready var sprite = $player_sprite
@@ -149,11 +149,11 @@ func _process(delta: float) -> void:
 	if get_tree().is_network_server():
 		Global.phase_update_global()
 		clientPhase = Global.get_current_phase()
-		rset_unreliable("puppet_phase", clientPhase)
 		print("MASTER:",clientPhase)
 	else:
-		if puppet_phase != null: clientPhase = puppet_phase
-		Global.set_current_phase(clientPhase)
+		if puppet_phase != null:
+			clientPhase = puppet_phase
+			Global.set_current_phase(clientPhase)
 		print("SLAVE:",clientPhase)
 	$"weaponHolder/Player-character-theme-gun".play(theme)
 	particleImage.load("res://source/assets/sprites/character/player/theme/" + theme + "/na/Player-character-theme-particle-"+theme+".png")
@@ -328,6 +328,9 @@ func _draw():
 					draw_line(VDIR[v_t][v]["start"] - user_state["global_position"],(VDIR[v_t][v]["ray"]["position"] - user_state["global_position"]).rotated(-rotation),Color(255,255,255,1),1)
 
 
+func puppet_phase_set(new_value) -> void:
+	puppet_phase = new_value
+
 
 func puppet_position_set(new_value) -> void:
 	puppet_position = new_value
@@ -382,6 +385,8 @@ func _on_network_tick_rate_timeout():
 			rset_unreliable("puppet_direction", direction)
 			#rset_unreliable("puppet_character_states", characterStates)
 			rset_unreliable("puppet_bullet_position", bullet)
+			if get_tree().is_network_server():
+				rset_unreliable("puppet_phase", clientPhase)
 
 
 sync func update_position(pos):
@@ -450,6 +455,7 @@ func _exit_tree() -> void:
 	if get_tree().has_network_peer():
 		if is_network_master():
 			Global.player_master = null
+
 
 func rotate_weapon():
 	#equip_weapon()

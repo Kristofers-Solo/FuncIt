@@ -37,7 +37,7 @@ func phase_update_global():
 		if activePhaseTracker != null:
 			if clientPhase[str(activePhaseTracker)]["start_time"] != null:
 				if currentTime["second"] + currentTime["minute"] * 60 - clientPhase[str(activePhaseTracker)]["start_time"]["second"] - clientPhase[str(activePhaseTracker)]["start_time"]["minute"] * 60 > clientPhase[str(activePhaseTracker)]["length"]:
-					if activePhaseTracker == clientPhase.size():
+					if activePhaseTracker == clientPhase.size - 1:
 						clientPhase[str(activePhaseTracker)]["start_time"] = null 
 						activePhaseTracker = 0
 					else: 

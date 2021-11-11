@@ -34,4 +34,5 @@ func _on_timer_timeout():
 
 func _process(delta):
 	globalActivePhase = Global.get_current_phase()
-	if globalActivePhase["active"] != null: $timer.text = str(globalActivePhase["active"]["phase_name"])
+	if globalActivePhase["active"] != null:
+		$timer.text = str(globalActivePhase["active"]["phase_name"])
