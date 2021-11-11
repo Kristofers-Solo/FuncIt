@@ -3,18 +3,11 @@ extends AnimatedSprite
 var trajectory:String = 'line'
 var trajectory_line = 'line'
 
-var bullet_env = {
+var bullet_trajectory = {
 	'line' : preload("res://source/entities/shooting/Line_Trajectory/Line_Env.tscn"),
 	'sine' : preload("res://source/entities/shooting/Sine_Trajectory/Sine_Env.tscn"),
 	'parab' : preload("res://source/entities/shooting/Parabolic_Trajectory/Parabolic_Env.tscn"),
 	'hyper' : preload("res://source/entities/shooting/Hyperbolic_Trajectory/Hyperbolic_Env.tscn")
-}
-
-var bullet_trajectory = {
-	'line' : preload("res://source/entities/shooting/Line_Trajectory/Line_Barrel.tscn"),
-	'sine' : preload("res://source/entities/shooting/Sine_Trajectory/Sine_Barrel.tscn"),
-	'parab' : preload("res://source/entities/shooting/Parabolic_Trajectory/Parabolic_Barrel.tscn"),
-	'hyper' : preload("res://source/entities/shooting/Hyperbolic_Trajectory/Hyperbolic_Barrel.tscn")
 }
 
 func choose_trajectory():
@@ -33,7 +26,7 @@ func choose_trajectory():
 
 
 func shoot(trajectory:String):
-	var bullet = bullet_env[trajectory].instance()
+	var bullet = bullet_trajectory[trajectory].instance()
 	get_parent().get_parent().get_parent().add_child(bullet)
 	bullet.global_position = $Shooting_Point.global_position
 	bullet.global_rotation = $Shooting_Point.global_rotation

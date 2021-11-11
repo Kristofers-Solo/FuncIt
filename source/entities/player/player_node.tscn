@@ -308,14 +308,14 @@ radius = 41.5403
 
 [sub_resource type="SpriteFrames" id=6]
 animations = [ {
-"frames": [ ExtResource( 168 ) ],
+"frames": [ ExtResource( 170 ) ],
 "loop": true,
-"name": "03",
+"name": "02",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 170 ) ],
 "loop": true,
-"name": "02",
+"name": "03",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 169 ) ],

@@ -97,7 +97,6 @@ func _ready():
 	if get_tree().has_network_peer():
 		if is_network_master():
 			Global.player_master = self
-
 	# Allow update process override.
 	set_process(true)
 	$player_animated_sprite.play("idle")
@@ -254,6 +253,7 @@ func _physics_process(delta) -> void:
 					is_reloading = true
 					reload_timer.start()
 		else:
+
 			rotation = lerp_angle(rotation, puppet_rotation, delta * 8)
 			#rotation = puppet_rotation
 			$"weaponHolder/Player-character-theme-gun".position = puppet_weapon_position
@@ -269,6 +269,7 @@ func _physics_process(delta) -> void:
 				$player_animated_sprite.play("idle-speed-"+direction+"-"+theme)
 				$Particles2D.set_emitting(false)
 			rotate_weapon()
+
 			if not tween.is_active():
 				pass
 	if hp <= 0:
@@ -314,15 +315,6 @@ func _draw():
 				if v_t == "1":
 					draw_line(VDIR[v_t][v]["start"] - user_state["global_position"],(VDIR[v_t][v]["ray"]["position"] - user_state["global_position"]).rotated(-rotation),Color(255,255,255,1),1)
 
-
-func lerp_angle(from, to, weight):
-	return from + short_angle_dist(from, to) * weight
-
-
-func short_angle_dist(from, to):
-	var max_angle = PI * 2
-	var difference = fmod(to - from, max_angle)
-	return fmod(2 * difference, max_angle) - difference
 
 
 func puppet_position_set(new_value) -> void:
@@ -417,6 +409,7 @@ sync func enable() -> void:
 	visible = true
 	$player_collider.disabled = false
 	$hitbox/CollisionShape2D.disabled = false
+	$weaponHolder.disabled = false
 
 	if get_tree().has_network_peer():
 		if is_network_master():
@@ -431,6 +424,7 @@ sync func destroy() -> void:
 	visible = false
 	$player_collider.disabled = true
 	$hitbox/CollisionShape2D.disabled = true
+	$weaponHolder.disabled = true
 	Global.alive_players.erase(self)
 
 	if get_tree().has_network_peer():
