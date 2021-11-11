@@ -146,15 +146,15 @@ func process_rotation():
 
 
 func _process(delta: float) -> void:
+	user_input = UIN_preset_pre_processor_instance.update()
+	enter_phase_limits()
 	if get_tree().is_network_server():
 		Global.phase_update_global()
 		clientPhase = Global.get_current_phase()
-		print("MASTER:",clientPhase)
 	else:
 		if puppet_phase != null:
 			clientPhase = puppet_phase
 			Global.set_current_phase(clientPhase)
-		print("SLAVE:",clientPhase)
 	$"weaponHolder/Player-character-theme-gun".play(theme)
 	particleImage.load("res://source/assets/sprites/character/player/theme/" + theme + "/na/Player-character-theme-particle-"+theme+".png")
 	particleTexture.create_from_image(particleImage)
@@ -167,7 +167,6 @@ func _process(delta: float) -> void:
 	elif $Particles2D.position.x < 0 and direction != "right":
 		$Particles2D.position = Vector2(-$Particles2D.position.x,$Particles2D.position.y)
 		$Particles2D.scale = -$Particles2D.scale
-	user_input = UIN_preset_pre_processor_instance.update()
 	user_state = get_user_state()
 	dimensions = get_dimensions()
 	VDIR = VDIR_preset_pre_processor_instance.update(user_state, dimensions)
@@ -261,7 +260,7 @@ func _physics_process(delta) -> void:
 				rotate_weapon()
 				choose_trajectory()
 				enable_trajectory_line(trajectory_line)
-				if Input.is_action_just_released("input_shoot") and can_shoot and not is_reloading:
+				if user_input["shoot"] and can_shoot and not is_reloading:
 					rpc("shoot", trajectory, get_tree().get_network_unique_id())
 					is_reloading = true
 					reload_timer.start()
@@ -480,5 +479,30 @@ func rotate_weapon():
 	$"weaponHolder/Player-character-theme-gun".rotation_degrees = weaponAngle
 	pass
 
-
-
+func enter_phase_limits():
+	if clientPhase != null and clientPhase["active"] != null:
+		if clientPhase["active"]["phase_id"] == 0:
+			user_input["r_inc"] = false
+			user_input["r_dec"] = false
+			user_input["shoot"] = false
+		elif clientPhase["active"]["phase_id"] == 1:
+			user_input["left"] = false
+			user_input["right"] = false
+			user_input["up"] = false
+			user_input["down"] = false
+			user_input["shoot"] = false
+		elif clientPhase["active"]["phase_id"] == 2:
+			user_input["left"] = false
+			user_input["right"] = false
+			user_input["up"] = false
+			user_input["down"] = false
+			user_input["r_inc"] = false
+			user_input["r_dec"] = false
+		else:
+			user_input["left"] = false
+			user_input["right"] = false
+			user_input["up"] = false
+			user_input["down"] = false
+			user_input["r_inc"] = false
+			user_input["r_dec"] = false
+			user_input["shoot"] = false

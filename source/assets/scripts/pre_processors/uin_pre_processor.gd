@@ -11,7 +11,8 @@ func _init() -> void:
 		"debug": false,
 		"enter": false,
 		"r_inc": false,
-		"r_dec": false
+		"r_dec": false,
+		"shoot": false
 	}
 	pass
 
@@ -25,6 +26,7 @@ func update():
 		"boost": Input.is_action_pressed("input_shift"),
 		"enter": Input.is_action_pressed("input_enter"),
 		"r_inc": Input.is_action_pressed("rotation_increase"),
-		"r_dec": Input.is_action_pressed("rotation_decrease")
+		"r_dec": Input.is_action_pressed("rotation_decrease"),
+		"shoot": Input.is_action_pressed("input_shoot")
 	}
 	return inputState

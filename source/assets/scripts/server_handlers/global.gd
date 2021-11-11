@@ -6,21 +6,25 @@ var alive_players = []
 
 var clientPhase = {
 	"0": {
+		"phase_id": 0,
 		"phase_name": "Movement phase",
 		"length": 2,
 		"start_time": null
 	},
 	"1": {
+		"phase_id": 1,
 		"phase_name": "Weapon adjustment phase",
 		"length": 2,
 		"start_time": null
 	},
 	"2": {
+		"phase_id": 2,
 		"phase_name": "Bullet simulation phase",
 		"length": 2,
 		"start_time": null
 	},
 	"3": {
+		"phase_id": 3,
 		"phase_name": "Idle phase",
 		"length": 2,
 		"start_time": null
@@ -37,7 +41,7 @@ func phase_update_global():
 		if activePhaseTracker != null:
 			if clientPhase[str(activePhaseTracker)]["start_time"] != null:
 				if currentTime["second"] + currentTime["minute"] * 60 - clientPhase[str(activePhaseTracker)]["start_time"]["second"] - clientPhase[str(activePhaseTracker)]["start_time"]["minute"] * 60 > clientPhase[str(activePhaseTracker)]["length"]:
-					if activePhaseTracker == clientPhase.size - 1:
+					if activePhaseTracker == clientPhase.size() - 2:
 						clientPhase[str(activePhaseTracker)]["start_time"] = null 
 						activePhaseTracker = 0
 					else: 
