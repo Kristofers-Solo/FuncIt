@@ -259,7 +259,7 @@ func _physics_process(delta) -> void:
 			globalActivePhase = Global.phase_update_global()
 			clientPhase = Global.get_client_phase()
 		else:
-			Global.phase_update_puppet(clientPhase)
+			if clientPhase != null: Global.phase_update_puppet(clientPhase)
 			rotation = lerp_angle(rotation, puppet_rotation, delta * 8)
 			$"weaponHolder/Player-character-theme-gun".position = puppet_weapon_position
 			weaponAngle = puppet_weapon_angle
