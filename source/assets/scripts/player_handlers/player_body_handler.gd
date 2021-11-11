@@ -295,7 +295,7 @@ func choose_trajectory():
 
 sync func shoot(trajectory:String, id):
 	bullet = bullet_env[trajectory].instance()
-	add_child(bullet)
+	get_parent().add_child(bullet)
 	bullet.global_position = shoot_point.global_position
 	bullet.global_rotation = shoot_point.global_rotation
 #	bullet.player_owner = id
@@ -303,7 +303,7 @@ sync func shoot(trajectory:String, id):
 
 func enable_trajectory_line(trajectory_line:String):
 	var x = bullet_trajectory[trajectory_line].instance()
-	add_child(x)
+	get_parent().add_child(x)
 	x.global_position = shoot_point.global_position
 	x.global_rotation = shoot_point.global_rotation
 
