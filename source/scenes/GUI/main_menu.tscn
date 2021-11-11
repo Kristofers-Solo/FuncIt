@@ -20,7 +20,7 @@ __meta__ = {
 [node name="background" parent="." instance=ExtResource( 2 )]
 
 [node name="player" parent="background" instance=ExtResource( 1 )]
-position = Vector2( 408, 887 )
+position = Vector2( 408, 872 )
 
 [node name="foreground" type="Control" parent="."]
 anchor_right = 1.0
