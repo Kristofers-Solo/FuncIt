@@ -8,7 +8,7 @@ export_presets.cfg
 .mono/
 data_*/
 
-
+*.import
 *.exe
 *.pck
 *.x86_64
