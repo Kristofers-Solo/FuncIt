@@ -106,19 +106,19 @@ z_index = -3
 [node name="spawn_locations" type="Node" parent="."]
 
 [node name="1" type="Position2D" parent="spawn_locations"]
-position = Vector2( 138.53, 694.841 )
+position = Vector2( 260, 540 )
 z_index = 1
 
 [node name="2" type="Position2D" parent="spawn_locations"]
-position = Vector2( 677.446, 912.1 )
+position = Vector2( 460, 540 )
 z_index = 1
 
 [node name="3" type="Position2D" parent="spawn_locations"]
-position = Vector2( 1174.91, 949.813 )
+position = Vector2( 1460, 540 )
 z_index = 1
 
 [node name="4" type="Position2D" parent="spawn_locations"]
-position = Vector2( 1645.35, 803.706 )
+position = Vector2( 1640, 540 )
 z_index = 1
 
 [node name="UI" type="CanvasLayer" parent="."]
@@ -131,7 +131,6 @@ script = ExtResource( 6 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
-"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -143,16 +142,15 @@ margin_left = 2.37842
 margin_top = -35.5
 margin_right = 2.37842
 margin_bottom = 106.5
-custom_fonts/font = SubResource( 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 6
 custom_constants/shadow_offset_y = 6
+custom_fonts/font = SubResource( 1 )
 text = "You are the winner"
 align = 1
 valign = 1
 script = ExtResource( 5 )
 __meta__ = {
-"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 

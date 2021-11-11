@@ -1,6 +1,5 @@
 extends Sprite
 
-export(int) var damage = 25
 var velocity = Vector2()
 var speed_hyper = 100
 var time = 0.05

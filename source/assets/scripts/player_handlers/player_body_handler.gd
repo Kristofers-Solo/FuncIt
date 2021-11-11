@@ -2,15 +2,13 @@ extends KinematicBody2D
 
 export var debugMode = false
 
-var trajectory:String = 'line'
-var trajectory_line = 'line'
+var hp = 100 setget set_hp
 
-var bullet
-var player_bullet = load("res://source/entities/shooting/Line_Trajectory/Line_Bullet.tscn")
+var player_bullet = load("res://source/entities/bullet/player_bullet.tscn")
 var username_text = load("res://source/scenes/OVERLAY/elements/username_text.tscn")
 var username setget username_set
 var username_text_instance = null
-var hp = 100 setget set_hp
+
 var can_shoot = true
 var is_reloading = false
 
@@ -24,28 +22,13 @@ puppet var puppet_weapon_angle = 0
 puppet var puppet_direction = "left"
 puppet var puppet_theme = "01"
 puppet var puppet_character_states = {}
-puppet var puppet_bullet_position = Vector2() setget puppet_bullet_position_set
+
 
 onready var tween = $Tween
 onready var sprite = $player_sprite
 onready var reload_timer = $reload_timer
-onready var shoot_point = $"weaponHolder/Player-character-theme-gun/shoot_point"
+onready var shoot_point = $shoot_point
 onready var hit_timer = $hit_timer
-
-
-var bullet_env = {
-	'line' : preload("res://source/entities/shooting/Line_Trajectory/Line_Env.tscn"),
-	'sine' : preload("res://source/entities/shooting/Sine_Trajectory/Sine_Env.tscn"),
-	'parab' : preload("res://source/entities/shooting/Parabolic_Trajectory/Parabolic_Env.tscn"),
-	'hyper' : preload("res://source/entities/shooting/Hyperbolic_Trajectory/Hyperbolic_Env.tscn")
-}
-
-var bullet_trajectory = {
-	'line' : preload("res://source/entities/shooting/Line_Trajectory/Line_Barrel.tscn"),
-	'sine' : preload("res://source/entities/shooting/Sine_Trajectory/Sine_Barrel.tscn"),
-	'parab' : preload("res://source/entities/shooting/Parabolic_Trajectory/Parabolic_Barrel.tscn"),
-	'hyper' : preload("res://source/entities/shooting/Hyperbolic_Trajectory/Hyperbolic_Barrel.tscn")
-}
 
 
 # Instance of data pre_processors
@@ -98,6 +81,7 @@ func _ready():
 	if get_tree().has_network_peer():
 		if is_network_master():
 			Global.player_master = self
+
 	# Allow update process override.
 	set_process(true)
 	
@@ -245,7 +229,13 @@ func _physics_process(delta) -> void:
 					velocityVDIR.y -= deccelerationSpeed
 				velocityVDIR = Vector2(clamp(velocityVDIR.x, -maxMovementSpeed.x, maxMovementSpeed.x), clamp(velocityVDIR.y, -maxMovementSpeed.y, maxMovementSpeed.y))
 				move_and_slide(velocityVDIR.rotated(rotationalHolder))
-				rotate_weapon()
+
+
+
+				#if Input.is_action_pressed("input_shoot") and can_shoot and not is_reloading:
+				#	rpc("instance_bullet", get_tree().get_network_unique_id())
+				#	is_reloading = true
+				#	reload_timer.start()
 				
 				choose_trajectory()
 				enable_trajectory_line(trajectory_line)
@@ -254,7 +244,6 @@ func _physics_process(delta) -> void:
 					is_reloading = true
 					reload_timer.start()
 		else:
-
 			rotation = lerp_angle(rotation, puppet_rotation, delta * 8)
 			#rotation = puppet_rotation
 			$"weaponHolder/Player-character-theme-gun".position = puppet_weapon_position
@@ -269,28 +258,18 @@ func _physics_process(delta) -> void:
 			else:
 				$player_animated_sprite.play("idle-speed-"+direction+"-"+theme)
 				$Particles2D.set_emitting(false)
-			rotate_weapon()
 
+			rotate_weapon()
 			if not tween.is_active():
 				pass
+				
 	if hp <= 0:
-		if get_tree().is_network_server():
-			rpc("destroy")
-
-
-func choose_trajectory():
-	if Input.is_action_just_pressed("line"):
-		trajectory = 'line'
-		trajectory_line = 'line'
-	elif Input.is_action_just_pressed("sine"):
-		trajectory = 'sine'
-		trajectory_line = 'sine'
-	elif Input.is_action_just_pressed("parab"):
-		trajectory = 'parab'
-		trajectory_line = 'parab'
-	elif Input.is_action_just_pressed("hyper"):
-		trajectory = 'hyper'
-		trajectory_line = 'hyper'
+		if username_text_instance != null:
+			username_text_instance.visible = false
+		
+		if get_tree().has_network_peer():
+			if get_tree().is_network_server():
+				rpc("destroy")
 
 
 sync func shoot(trajectory:String, id):
@@ -301,11 +280,6 @@ sync func shoot(trajectory:String, id):
 #	bullet.player_owner = id
 
 
-func enable_trajectory_line(trajectory_line:String):
-	var x = bullet_trajectory[trajectory_line].instance()
-	add_child(x)
-	x.global_position = shoot_point.global_position
-	x.global_rotation = shoot_point.global_rotation
 
 
 func _draw():
@@ -317,6 +291,15 @@ func _draw():
 				if v_t == "1":
 					draw_line(VDIR[v_t][v]["start"] - user_state["global_position"],(VDIR[v_t][v]["ray"]["position"] - user_state["global_position"]).rotated(-rotation),Color(255,255,255,1),1)
 
+
+func lerp_angle(from, to, weight):
+	return from + short_angle_dist(from, to) * weight
+
+
+func short_angle_dist(from, to):
+	var max_angle = PI * 2
+	var difference = fmod(to - from, max_angle)
+	return fmod(2 * difference, max_angle) - difference
 
 
 func puppet_position_set(new_value) -> void:
@@ -371,7 +354,15 @@ func _on_network_tick_rate_timeout():
 			rset_unreliable("puppet_weapon_angle", weaponAngle)
 			rset_unreliable("puppet_direction", direction)
 			#rset_unreliable("puppet_character_states", characterStates)
-			rset_unreliable("puppet_bullet_position", bullet)
+
+
+sync func instance_bullet(id):
+	var player_bullet_instance = Global.instance_node_at_location(player_bullet, PersistentNodes, shoot_point.global_position)
+	player_bullet_instance.name = "Bullet" + name + str(Network.networked_object_name_index)
+	player_bullet_instance.set_network_master(id)
+	player_bullet_instance.player_rotation = rotation
+	player_bullet_instance.player_owner = id
+	Network.networked_object_name_index += 1
 
 
 sync func update_position(pos):
@@ -393,7 +384,7 @@ func _on_hit_timer_timeout():
 
 func _on_hitbox_area_entered(area):
 	if get_tree().is_network_server():
-		if area.is_in_group("Player_damager"):
+		if area.is_in_group("Player_damager") and area.get_parent().player_owner != int(name):
 			rpc("hit_by_damager", area.get_parent().damage)
 			area.get_parent().rpc("destroy")
 
@@ -413,7 +404,6 @@ sync func enable() -> void:
 	visible = true
 	$player_collider.disabled = false
 	$hitbox/CollisionShape2D.disabled = false
-	$weaponHolder.disabled = false
 
 	if get_tree().has_network_peer():
 		if is_network_master():
@@ -431,7 +421,6 @@ sync func destroy() -> void:
 	visible = false
 	$player_collider.disabled = true
 	$hitbox/CollisionShape2D.disabled = true
-	$weaponHolder.disabled = true
 	Global.alive_players.erase(self)
 
 	if get_tree().has_network_peer():
@@ -467,6 +456,3 @@ func rotate_weapon():
 	$"weaponHolder/Player-character-theme-gun".position = weaponPosition
 	$"weaponHolder/Player-character-theme-gun".rotation_degrees = weaponAngle
 	pass
-
-
-

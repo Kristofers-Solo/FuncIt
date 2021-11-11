@@ -1,7 +1,6 @@
 extends Sprite
 
-export(int) var damage = 25
-export(int) var speed = 100
+export var speed = 100
 var velocity = Vector2()
 var player_owner = 0
 
