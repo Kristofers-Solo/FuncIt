@@ -1,6 +1,5 @@
 extends Sprite
 
-export(int) var damage = 25
 export var speed_line = 1000
 var velocity = Vector2()
 
@@ -11,6 +10,7 @@ var a_parameter = 0
 func follow_line_trajectory():
 	velocity.x = time
 	velocity.y = time*a_parameter
+
 
 
 func _process(delta):
