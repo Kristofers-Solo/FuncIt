@@ -83,6 +83,8 @@ var weaponAngle = 0
 var particleTexture = ImageTexture.new()
 var particleImage = Image.new()
 
+var globalActivePhase = null
+
 func _ready():
 	
 	weaponPositionalOffset = Vector2(-$"weaponHolder/Player-character-theme-gun-na3".texture.get_width() * $"weaponHolder/Player-character-theme-gun-na3".scale.x / 2,-$"weaponHolder/Player-character-theme-gun-na3".texture.get_height() * $"weaponHolder/Player-character-theme-gun-na3".scale.y / 2) + Vector2(-$weaponHolder.get_shape().get_radius(), 0)
@@ -142,8 +144,7 @@ func process_rotation():
 
 
 func _process(delta: float) -> void:
-#	print(OS.get_time())
-	print(Global.time_output())
+	globalActivePhase = Global.phase_update_global()
 	$"weaponHolder/Player-character-theme-gun".play(theme)
 	particleImage.load("res://source/assets/sprites/character/player/theme/" + theme + "/na/Player-character-theme-particle-"+theme+".png")
 	particleTexture.create_from_image(particleImage)

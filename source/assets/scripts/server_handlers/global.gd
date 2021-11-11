@@ -4,6 +4,52 @@ var player_master = null
 var ui = null
 var alive_players = []
 
+var clientPhase = {
+	"0": {
+		"phase_name": "Movement phase",
+		"length": 10,
+		"start_time": null
+	},
+	"1": {
+		"phase_name": "Weapon adjustment phase",
+		"length": 20,
+		"start_time": null
+	},
+	"2": {
+		"phase_name": "Bullet simulation phase",
+		"length": 5,
+		"start_time": null
+	},
+	"3": {
+		"phase_name": "Idle phase",
+		"length": 5,
+		"start_time": null
+	}
+}
+var activePhase = null
+var currentTime = null
+var gameStart = false
+
+func phase_update_global():
+	currentTime = OS.get_time()
+	if gameStart:
+		if activePhase != null:
+			if clientPhase[str(activePhase)]["start_time"] != null:
+				if currentTime["second"] - clientPhase[str(activePhase)]["start_time"]["second"] > clientPhase[str(activePhase)]["length"]:
+					if activePhase + 1 == clientPhase.size():
+						clientPhase[str(activePhase)]["start_time"] = null 
+						activePhase = 0
+					else: 
+						clientPhase[str(activePhase)]["start_time"] = null 
+						activePhase += 1
+			else: clientPhase[str(activePhase)]["start_time"] = currentTime
+		else: activePhase = 0
+		return clientPhase[str(activePhase)]
+	pass
+
+func start_game():
+	gameStart = true
+	pass
 
 func instance_node_at_location(node: Object, parent: Object, location: Vector2) -> Object:
 	var node_instance = instance_node(node, parent)

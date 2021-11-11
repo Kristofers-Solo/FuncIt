@@ -4,11 +4,13 @@ var current_spawn_location_instance_number = 1
 var current_player_location_instance_number = null
 var time = 20
 
+var globalActivePhase = null
+
 func _ready() -> void:
 	get_tree().connect("network_peer_disconnected", self, "_player_disconnected")
 	if get_tree().is_network_server():
 		setup_player_positions()
-
+	Global.start_game()
 
 func setup_player_positions() -> void:
 	for player in PersistentNodes.get_children():
@@ -31,5 +33,5 @@ func _on_timer_timeout():
 
 
 func _process(delta):
-	Global.time_input(time)
-	$timer.text = str(time)
+	globalActivePhase = Global.phase_update_global()
+	$timer.text = str(globalActivePhase["phase_name"])
