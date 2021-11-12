@@ -146,7 +146,7 @@ func process_rotation():
 
 
 func _process(delta: float) -> void:
-	user_input = UIN_preset_pre_processor_instance.update(clientPhase)
+	user_input = UIN_preset_pre_processor_instance.update(Global.get_current_phase())
 	if get_tree().is_network_server():
 		Global.phase_update_global()
 		clientPhase = Global.get_current_phase()
