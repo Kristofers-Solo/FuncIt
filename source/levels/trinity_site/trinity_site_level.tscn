@@ -35,7 +35,7 @@ z_index = -1
 texture = ExtResource( 3 )
 
 [node name="trinity_site_level_layout_level_design_z_index_1" type="Sprite" parent="trinity_site_body/scene"]
-position = Vector2( 1151.48, 2433.1 )
+position = Vector2( 960, 2955.72 )
 z_index = -1
 texture = ExtResource( 11 )
 
