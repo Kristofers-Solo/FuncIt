@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://source/assets/scripts/server_handlers/trinity_site_level.gd" type="Script" id=1]
 [ext_resource path="res://source/assets/scripts/ui_element_handlers/UI.gd" type="Script" id=2]
@@ -165,10 +165,10 @@ margin_left = 2.37842
 margin_top = -35.5
 margin_right = 2.37842
 margin_bottom = 106.5
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 6
 custom_constants/shadow_offset_y = 6
-custom_fonts/font = SubResource( 1 )
 text = "You are the winner"
 align = 1
 valign = 1
