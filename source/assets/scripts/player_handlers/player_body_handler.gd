@@ -13,6 +13,7 @@ var hp = 100 setget set_hp
 var can_shoot = true
 var is_reloading = false
 
+
 puppet var puppet_hp = 100 setget puppet_hp_set
 puppet var puppet_position = Vector2(0, 0) setget puppet_position_set
 puppet var puppet_velocity = Vector2()
@@ -288,23 +289,28 @@ func _physics_process(delta) -> void:
 
 
 func choose_trajectory():
+	Global.get('line_button')
+	Global.get('sine_button')
+	Global.get('parab_button')
+	Global.get('hyper_button')
+	
 	if Input.is_action_just_pressed("line"):
 		trajectory = 'line'
 		trajectory_line = 'line'
-	elif Input.is_action_just_pressed("sine"):
+	if Input.is_action_just_pressed("sine"):
 		trajectory = 'sine'
 		trajectory_line = 'sine'
-	elif Input.is_action_just_pressed("parab"):
+	if Input.is_action_just_pressed("parab"):
 		trajectory = 'parab'
 		trajectory_line = 'parab'
-	elif Input.is_action_just_pressed("hyper"):
+	if Input.is_action_just_pressed("hyper"):
 		trajectory = 'hyper'
 		trajectory_line = 'hyper'
 
 
 sync func shoot(trajectory:String, id):
 	bullet = bullet_env[trajectory].instance()
-	add_child(bullet)
+	get_parent().add_child(bullet)
 	bullet.global_position = shoot_point.global_position
 	bullet.global_rotation = shoot_point.global_rotation
 #	bullet.player_owner = id
@@ -312,7 +318,7 @@ sync func shoot(trajectory:String, id):
 
 func enable_trajectory_line(trajectory_line:String):
 	var x = bullet_trajectory[trajectory_line].instance()
-	add_child(x)
+	get_parent().add_child(x)
 	x.global_position = shoot_point.global_position
 	x.global_rotation = shoot_point.global_rotation
 

@@ -2,16 +2,15 @@
 
 [ext_resource path="res://source/assets/scripts/server_handlers/trinity_site_level.gd" type="Script" id=1]
 [ext_resource path="res://source/assets/scripts/ui_element_handlers/UI.gd" type="Script" id=2]
-[ext_resource path="res://source/levels/trinity_site/images/trinity_site_level_layout-level_design_z-index_0-version_ct_f_hd_3840_2160.png" type="Texture" id=3]
+[ext_resource path="res://source/levels/trinity_site/images/trinity_site_level_layout_level_design_z_index_0.svg" type="Texture" id=3]
 [ext_resource path="res://source/fonts/roboto/Roboto-Regular.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://source/assets/scripts/ui_element_handlers/winner.gd" type="Script" id=5]
 [ext_resource path="res://source/assets/scripts/ui_element_handlers/game_UI.gd" type="Script" id=6]
-[ext_resource path="res://source/levels/trinity_site/images/trinity_site_level_layout-level_design_z-index_-2-version_ct_f_hd_3840_2160 – 01.png" type="Texture" id=7]
-[ext_resource path="res://source/levels/trinity_site/images/trinity_site_level_layout-level_design_z-index_-1-version_ct_f_hd_3840_2160.png" type="Texture" id=8]
+[ext_resource path="res://source/levels/trinity_site/images/trinity_site_level_layout_level_design_z_index_4.svg" type="Texture" id=7]
+[ext_resource path="res://source/levels/trinity_site/images/trinity_site_level_layout_level_design_z_index_3.svg" type="Texture" id=8]
 [ext_resource path="res://source/entities/grass/grass_node.tscn" type="PackedScene" id=9]
-[ext_resource path="res://source/fonts/oxygen/oxygen_bold.tres" type="DynamicFont" id=10]
-[ext_resource path="res://source/levels/trinity_site/images/trinity_site_level_layout-level_design_z-index_-2-version_ct_f_hd_3840_2160 – 02.png" type="Texture" id=44]
-[ext_resource path="res://source/levels/trinity_site/images/trinity_site_level_layout-level_design_z-index_-2-version_ct_f_hd_3840_2160 – 025.png" type="Texture" id=45]
+[ext_resource path="res://source/levels/trinity_site/images/trinity_site_level_layout_level_design_z_index_2.svg" type="Texture" id=10]
+[ext_resource path="res://source/levels/trinity_site/images/trinity_site_level_layout_level_design_z_index_1.svg" type="Texture" id=11]
 [ext_resource path="res://source/assets/scripts/trinity_site_body_handler.gd" type="Script" id=46]
 
 [sub_resource type="DynamicFont" id=1]
@@ -28,99 +27,120 @@ script = ExtResource( 1 )
 [node name="trinity_site_body" type="StaticBody2D" parent="."]
 script = ExtResource( 46 )
 
-[node name="trinity_site_level_layout-level_design_z-index_-2-version_ct_f_hd_3840_2160 – 01" type="Sprite" parent="trinity_site_body"]
-position = Vector2( 960, 540 )
-scale = Vector2( 0.5, 0.5 )
-z_index = -5
-texture = ExtResource( 7 )
+[node name="scene" type="Node2D" parent="trinity_site_body"]
 
-[node name="trinity_site_level_layout-level_design_z-index_0-version_ct_f_hd_3840_2160" type="Sprite" parent="trinity_site_body/trinity_site_level_layout-level_design_z-index_-2-version_ct_f_hd_3840_2160 – 01"]
-z_index = 5
+[node name="trinity_site_level_layout_level_design_z_index_0" type="Sprite" parent="trinity_site_body/scene"]
+position = Vector2( 960, 540 )
+z_index = -1
 texture = ExtResource( 3 )
 
-[node name="trinity_site_level_layout-level_design_z-index_-1-version_ct_f_hd_3840_2160" type="Sprite" parent="trinity_site_body/trinity_site_level_layout-level_design_z-index_-2-version_ct_f_hd_3840_2160 – 01"]
-position = Vector2( 0, -0.561157 )
-z_index = 2
+[node name="trinity_site_level_layout_level_design_z_index_1" type="Sprite" parent="trinity_site_body/scene"]
+position = Vector2( 960, 2955.72 )
+z_index = -1
+texture = ExtResource( 11 )
+
+[node name="trinity_site_level_layout_level_design_z_index_2" type="Sprite" parent="trinity_site_body/scene"]
+position = Vector2( 960, 540 )
+z_index = -1
+texture = ExtResource( 10 )
+
+[node name="trinity_site_level_layout_level_design_z_index_3" type="Sprite" parent="trinity_site_body/scene"]
+position = Vector2( 960, 540 )
+z_index = -1
 texture = ExtResource( 8 )
 
-[node name="trinity_site_level_layout-level_design_z-index_-2-version_ct_f_hd_3840_2160 – 02" type="Sprite" parent="trinity_site_body/trinity_site_level_layout-level_design_z-index_-2-version_ct_f_hd_3840_2160 – 01"]
-z_index = 1
-texture = ExtResource( 44 )
-
-[node name="trinity_site_level_layout-level_design_z-index_-2-version_ct_f_hd_3840_2160 – 025" type="Sprite" parent="trinity_site_body/trinity_site_level_layout-level_design_z-index_-2-version_ct_f_hd_3840_2160 – 01"]
-position = Vector2( -275.886, 3244.16 )
-rotation = -1.01229
-texture = ExtResource( 45 )
+[node name="trinity_site_level_layout_level_design_z_index_4" type="Sprite" parent="trinity_site_body/scene"]
+position = Vector2( 960, 540 )
+texture = ExtResource( 7 )
 
 [node name="trinity_site_outer_collider" type="CollisionPolygon2D" parent="trinity_site_body"]
-polygon = PoolVector2Array( 0, 8, 0, 1080, 1920, 1080, 1920, 0, 8, 0, 208, 216, 232, 200, 248, 192, 264, 184, 288, 176, 312, 168, 344, 160, 376.511, 156.535, 408.324, 155.118, 436.672, 156.378, 468.17, 160.472, 495.731, 165.985, 518.409, 171.969, 539.04, 171.812, 560.459, 166.772, 577.94, 157.953, 593.217, 147.086, 606.131, 132.597, 616.368, 117.95, 628.18, 102.359, 643.614, 86.452, 662.198, 71.648, 679.049, 60.3087, 698.105, 51.4892, 718.737, 43.9297, 741.888, 39.205, 763.149, 37.7876, 787.087, 37.7876, 808.979, 41.7248, 828.035, 46.7645, 848.194, 54.639, 865.518, 63.9309, 880.794, 74.1678, 894.338, 85.5071, 906.78, 97.3188, 922.686, 105.823, 941.743, 110.863, 963.634, 112.595, 983.478, 109.918, 1000.33, 103.303, 1014.5, 94.169, 1026, 82.8297, 1041.59, 69.2856, 1059.7, 58.7337, 1078.76, 50.2293, 1097.82, 43.1422, 1115.77, 39.3625, 1134.2, 37.4726, 1153.72, 37.4726, 1171.84, 39.3625, 1193.41, 43.1422, 1212.94, 49.5993, 1230.42, 57.9463, 1247.59, 66.9232, 1261.45, 78.2625, 1274.83, 89.2868, 1285.23, 100.626, 1293.42, 111.02, 1300.66, 121.415, 1308.38, 134.644, 1319.09, 146.771, 1333.42, 157.323, 1352.48, 167.244, 1374.53, 172.914, 1396.42, 173.072, 1415.16, 167.559, 1435.95, 162.205, 1460.2, 157.953, 1486.19, 155.748, 1509.97, 154.803, 1533.75, 155.748, 1554.54, 157.795, 1580.99, 161.417, 1603.52, 166.615, 1624.46, 173.702, 1646.67, 180.789, 1669.98, 191.026, 1686.67, 199.687, 1701.79, 208.507, 1722.11, 222.051, 1744.47, 237.643, 1761.01, 252.289, 1774.39, 265.046, 1791.24, 283.315, 1803.84, 299.221, 1814.87, 314.655, 1825.42, 330.877, 1833.61, 343.633, 1844.79, 363.792, 1852.19, 381.274, 1859.44, 400.33, 1865.11, 417.654, 1869.52, 434.033, 1873.61, 452.302, 1877.07, 473.248, 1879.28, 491.832, 1880.85, 507.581, 1881.96, 523.015, 1881.96, 546.953, 1880.07, 566.482, 1877.23, 583.334, 1874.87, 599.24, 1871.25, 615.147, 1866.52, 634.518, 1858.49, 655.464, 1849.67, 677.828, 1843.53, 692.632, 1836.44, 706.018, 1826.36, 725.075, 1816.91, 740.824, 1804.31, 758.148, 1794.71, 770.274, 1781.95, 782.874, 1762.58, 801.93, 1748.25, 814.214, 1730.14, 829.176, 1715.8, 839.57, 1696.43, 852.012, 1674.38, 863.823, 1651.86, 872.958, 1632.81, 880.045, 1612.65, 886.659, 1587.29, 892.644, 1568.24, 896.266, 1548.39, 899.574, 1529.97, 901.148, 1508.39, 901.621, 1474.53, 899.259, 1447.6, 896.424, 1422.56, 891.384, 1403.5, 886.187, 1381.61, 884.927, 1361.61, 888.077, 1343.34, 895.006, 1329.95, 902.881, 1318.3, 914.063, 1306.96, 927.134, 1297.35, 941.151, 1289.32, 951.86, 1280.97, 961.625, 1264.91, 976.114, 1252.47, 986.193, 1237.82, 995.328, 1222.23, 1003.2, 1202.7, 1009.82, 1184.43, 1015.64, 1170.1, 1016.9, 1139.55, 1018.01, 1112.15, 1015.17, 1091.83, 1010.76, 1074.98, 1004.62, 1055.13, 995.013, 1037.65, 984.461, 1020.01, 969.657, 1004.11, 955.01, 984.736, 946.821, 965.364, 944.301, 946.151, 945.561, 926.307, 949.498, 907.881, 957.688, 894.021, 970.287, 880.162, 983.516, 866.146, 992.335, 843.625, 1003.2, 821.733, 1010.6, 793.858, 1016.75, 767.557, 1018.48, 741.571, 1017.06, 714.168, 1010.92, 690.859, 1002.1, 671.015, 989.816, 650.227, 974.539, 630.068, 954.38, 614.791, 935.324, 601.405, 918.158, 587.388, 904.299, 572.112, 894.849, 553.685, 888.235, 531.952, 884.455, 508.958, 886.817, 486.752, 892.487, 454.781, 898.471, 432.26, 899.731, 402.652, 900.991, 376.509, 900.361, 348.791, 896.582, 328.632, 893.274, 297.764, 885.242, 271.305, 876.58, 244.532, 864.926, 222.326, 852.957, 199.175, 838.94, 180.591, 825.081, 159.96, 807.757, 144.211, 792.638, 129.564, 778.621, 114.445, 761.297, 100.114, 740.509, 86.727, 719.878, 79.1674, 706.963, 67.1982, 682.395, 55.0714, 654.992, 46.567, 627.903, 41.5273, 605.067, 37.4326, 580.971, 34.2828, 555.143, 33.1803, 534.354, 33.3378, 510.258, 35.0702, 487.265, 36.9601, 468.523, 41.0548, 446.317, 46.567, 426.158, 52.5516, 405.685, 61.2136, 386.313, 71.9229, 363.162, 80.1124, 347.571, 91.6092, 327.885, 104.681, 308.041, 123.737, 284.417, 140.116, 268.196, 156.653, 251.659, 175.551, 235.123, 192.56, 222.681, 205.317, 215.122 )
+visible = false
+position = Vector2( 0, 0.14032 )
+polygon = PoolVector2Array( 0, 0, 0, 1080, 1920, 1080, 1920, 0, 0, 0, 227.078, 251.576, 250.057, 238.716, 274.405, 228.228, 292.384, 221.673, 313.897, 214.862, 334.753, 209.523, 358.132, 205.22, 382.827, 202.383, 409.277, 201.827, 435.42, 202.456, 465.186, 205.134, 493.926, 211.01, 519.048, 216.658, 534.656, 217.699, 557.412, 214.502, 582.58, 205.383, 602.026, 191.948, 615.454, 177.563, 628.683, 158.034, 647.539, 136.814, 667.164, 120.844, 690.21, 106.973, 712.235, 97.6472, 739.877, 90.668, 774.309, 88.0035, 804.16, 91.7876, 825.603, 96.6227, 846.416, 105.873, 866.743, 117.762, 887.712, 132.54, 899.419, 144.445, 920.353, 155.553, 946.942, 160.91, 974.92, 160.116, 1001.62, 151.816, 1011.91, 146.1, 1023.42, 134.592, 1043.79, 118.38, 1064.82, 105.971, 1088.65, 97.0615, 1113.15, 90.6025, 1134.81, 88.6608, 1160.57, 88.7524, 1192.41, 95.4948, 1218.78, 104.626, 1240.46, 117.742, 1259.67, 131.601, 1273.25, 144.75, 1284, 158.25, 1294.66, 173.873, 1303.5, 185.717, 1320.12, 200.053, 1343.84, 213.26, 1365.36, 218.265, 1391.56, 217.932, 1436.77, 207.086, 1464.18, 204.258, 1502.71, 201.459, 1539.23, 203.145, 1575.17, 208.763, 1609.44, 217.689, 1634.97, 226.532, 1674.83, 244.225, 1706.76, 263.983, 1736, 285.5, 1769.65, 317.592, 1796.35, 349.235, 1819.5, 384.5, 1835.5, 418.75, 1846.58, 446.657, 1853.6, 472.193, 1858.91, 500.958, 1860.77, 518.439, 1862.09, 540.158, 1862.09, 558.963, 1862.36, 576.445, 1860.53, 595.002, 1854.65, 635.897, 1845.85, 657.551, 1836.92, 680.766, 1830.37, 696.243, 1818.07, 721.84, 1797.17, 754.487, 1786.45, 769.567, 1777.13, 779.886, 1758.26, 800.093, 1745.56, 811.404, 1725.92, 827.476, 1713.25, 837.083, 1693.02, 849.631, 1672.61, 861.618, 1651.86, 872.958, 1632.81, 880.045, 1612.65, 886.659, 1587.29, 892.644, 1568.24, 896.266, 1548.39, 899.574, 1530.2, 902.181, 1508.72, 903.243, 1474.45, 902.68, 1445.16, 899.112, 1421.53, 894.141, 1400.82, 889.241, 1380.66, 888.016, 1361.28, 889.401, 1343.34, 895.006, 1328.91, 901.071, 1316.43, 909.98, 1304.18, 921.339, 1291.71, 937.153, 1276.96, 955.422, 1264.45, 969.58, 1249.82, 982.087, 1234.01, 992.322, 1218.89, 1000.2, 1200.15, 1007.13, 1182.51, 1012.8, 1168.81, 1015, 1139.22, 1016.53, 1112.02, 1014.45, 1091.32, 1010.08, 1074.81, 1004.08, 1056.28, 994.399, 1037.71, 983.423, 1020.66, 968.772, 1004.11, 955.01, 984.736, 946.821, 965.364, 944.301, 946.151, 945.561, 926.307, 949.498, 907.881, 957.688, 891.807, 969.002, 877.355, 981.209, 862.389, 991.066, 841.483, 1001.59, 820.377, 1009.63, 792.8, 1015.11, 767.512, 1016.78, 741.76, 1014.44, 714.375, 1008.23, 691.281, 998.825, 671.627, 987.94, 651.136, 971.904, 631.759, 951.636, 617.581, 931.188, 603.101, 914.217, 587.667, 903.508, 572.112, 894.849, 553.875, 888.86, 531.25, 886.985, 509.375, 889.485, 489.059, 896.071, 456.023, 900.437, 433.017, 902.207, 402.577, 902.443, 375.486, 901.444, 348.586, 897.668, 328.41, 893.775, 297.764, 885.242, 271.305, 876.58, 245.017, 863.922, 222.901, 851.209, 199.99, 837.303, 181.052, 822.603, 161.095, 804.764, 145, 789.75, 131.137, 773.614, 117.121, 756.261, 104.107, 737.073, 90.4884, 714.948, 84.1245, 701.866, 73.5203, 676.34, 63.475, 647.957, 56.358, 621.362, 53.0765, 598.652, 50.7458, 574.176, 49.9822, 548.534, 51.3171, 524.21, 54.05, 502.347, 57.9652, 478.935, 65.729, 450.104, 76.5, 420, 88.5, 396.75, 103.93, 368.416, 117.419, 349.542, 134.172, 328.541, 160.954, 299.989, 184.571, 279.643, 208.144, 262.427, 227.215, 251.568 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="trinity_site_body"]
-polygon = PoolVector2Array( 761.5, 423.238, 765.865, 418.476, 769.04, 403.395, 775.39, 388.315, 784.517, 372.838, 798.407, 359.742, 817.059, 347.043, 838.092, 338.312, 861.109, 334.74, 888.889, 337.518, 914.684, 348.63, 937.305, 363.313, 961.512, 365.298, 984.133, 360.139, 1003.98, 348.233, 1027.79, 337.518, 1058.34, 334.74, 1087.71, 340.693, 1115.89, 358.154, 1136.92, 381.965, 1147.64, 406.173, 1154.38, 422.841, 1170.26, 433.953, 1198.04, 442.287, 1215.5, 456.97, 1233.35, 478.4, 1243.67, 504.592, 1246.45, 530.784, 1242.48, 558.564, 1234.15, 578.803, 1219.47, 597.058, 1202.4, 611.742, 1179.78, 622.457, 1159.94, 628.013, 1149.22, 642.696, 1142.87, 666.11, 1130.57, 685.556, 1111.52, 701.827, 1093.27, 713.335, 1074.61, 718.891, 1049.22, 720.479, 1028.18, 716.51, 997.229, 704.208, 974.212, 691.906, 950.004, 689.921, 927.78, 695.874, 914.684, 707.383, 891.27, 717.304, 863.887, 721.272, 838.092, 716.907, 811.106, 706.986, 794.835, 694.683, 782.136, 679.603, 770.231, 653.014, 764.675, 636.743, 749.594, 623.647, 724.593, 616.901, 703.957, 601.424, 681.733, 574.438, 671.812, 545.071, 671.812, 516.895, 679.352, 487.528, 696.417, 461.732, 724.99, 441.89, 752.372, 429.587 )
+visible = false
+position = Vector2( -1.85065, 22.7908 )
+polygon = PoolVector2Array( 760.896, 422.258, 762.577, 414.269, 767.623, 399.658, 774.514, 386.775, 784.517, 372.838, 798.407, 359.742, 817.059, 347.043, 838.092, 338.312, 861.109, 334.74, 888.889, 337.518, 914.684, 348.63, 937.305, 363.313, 961.512, 365.298, 984.133, 360.139, 1003.63, 347.195, 1027.73, 339.249, 1058.31, 337.005, 1088.48, 342.802, 1115.8, 357.525, 1138.46, 380.527, 1150.2, 402.84, 1155.88, 421.129, 1162.89, 427.644, 1170.24, 431.208, 1183.63, 435.004, 1198.04, 442.287, 1217.63, 456.124, 1236.61, 477.787, 1247.94, 503.98, 1251.58, 531.439, 1247.27, 560.377, 1236.9, 581.816, 1221.39, 602.006, 1202.93, 616.65, 1181.61, 627.594, 1163.99, 633.782, 1153.75, 645.954, 1148.28, 662.772, 1131.87, 687.151, 1112.67, 703.706, 1093.6, 714.433, 1074.78, 721.041, 1047.87, 722.676, 1024.54, 719.406, 993.617, 706.473, 975.851, 695.834, 950.726, 694.334, 931.915, 699.78, 915.891, 710.242, 891.721, 719.934, 863.18, 723.205, 836.314, 719.202, 809.383, 708.02, 793.034, 696.052, 779.284, 679.917, 765.05, 653.596, 760.437, 636.991, 748.001, 630.533, 736.819, 627.856, 723.905, 622.186, 711.306, 614.942, 699.132, 603.782, 686.894, 590.671, 677.378, 575.068, 671.161, 559.912, 667.578, 543.664, 666.437, 527.932, 668.914, 512.928, 672.193, 497.533, 677.554, 485.97, 685.668, 472.034, 695.6, 460.909, 709.599, 448.526, 723.91, 439.687, 736.397, 434.355, 752.372, 429.587 )
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="grass_node3" parent="trinity_site_body" instance=ExtResource( 9 )]
-position = Vector2( 393.822, 869.192 )
-scale = Vector2( 0.1, 0.1 )
-z_index = -3
+[node name="grass_nodes" type="Node2D" parent="trinity_site_body"]
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="grass_node2" parent="trinity_site_body" instance=ExtResource( 9 )]
-position = Vector2( 764.908, 986.211 )
-scale = Vector2( 0.1, 0.1 )
-z_index = -3
-
-[node name="grass_node" parent="trinity_site_body" instance=ExtResource( 9 )]
+[node name="grass_node" parent="trinity_site_body/grass_nodes" instance=ExtResource( 9 )]
 position = Vector2( 190.03, 791.328 )
 rotation = 0.760963
 scale = Vector2( 0.1, 0.1 )
-z_index = -3
 
-[node name="grass_node4" parent="trinity_site_body" instance=ExtResource( 9 )]
+[node name="grass_node2" parent="trinity_site_body/grass_nodes" instance=ExtResource( 9 )]
+position = Vector2( 764.908, 986.211 )
+scale = Vector2( 0.1, 0.1 )
+
+[node name="grass_node3" parent="trinity_site_body/grass_nodes" instance=ExtResource( 9 )]
+position = Vector2( 395.002, 873.675 )
+scale = Vector2( 0.1, 0.1 )
+
+[node name="grass_node4" parent="trinity_site_body/grass_nodes" instance=ExtResource( 9 )]
 position = Vector2( 1748.96, 770.377 )
 rotation = -0.811578
 scale = Vector2( 0.1, 0.1 )
-z_index = -3
 
-[node name="grass_node5" parent="trinity_site_body" instance=ExtResource( 9 )]
+[node name="grass_node5" parent="trinity_site_body/grass_nodes" instance=ExtResource( 9 )]
 position = Vector2( 1323.23, 880.375 )
 rotation = -0.541052
 scale = Vector2( 0.1, 0.1 )
-z_index = -3
 
-[node name="grass_node6" parent="trinity_site_body" instance=ExtResource( 9 )]
-position = Vector2( 1831.89, 614.616 )
-rotation = -1.26536
+[node name="grass_node6" parent="trinity_site_body/grass_nodes" instance=ExtResource( 9 )]
+position = Vector2( 1829.06, 617.091 )
+rotation = -1.35787
 scale = Vector2( 0.1, 0.1 )
-z_index = -3
 
-[node name="grass_node7" parent="trinity_site_body" instance=ExtResource( 9 )]
+[node name="grass_node7" parent="trinity_site_body/grass_nodes" instance=ExtResource( 9 )]
 position = Vector2( 1003.81, 929.937 )
 rotation = 0.404916
 scale = Vector2( 0.1, 0.1 )
-z_index = -3
 
-[node name="grass_node8" parent="trinity_site_body" instance=ExtResource( 9 )]
-position = Vector2( 1531.18, 870.873 )
+[node name="grass_node8" parent="trinity_site_body/grass_nodes" instance=ExtResource( 9 )]
+position = Vector2( 1530.93, 871.873 )
 rotation = -0.0506146
 scale = Vector2( 0.1, 0.1 )
-z_index = -3
 
 [node name="spawn_locations" type="Node" parent="."]
 
 [node name="1" type="Position2D" parent="spawn_locations"]
 position = Vector2( 138.53, 694.841 )
 z_index = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="2" type="Position2D" parent="spawn_locations"]
 position = Vector2( 677.446, 912.1 )
 z_index = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="3" type="Position2D" parent="spawn_locations"]
 position = Vector2( 1174.91, 949.813 )
 z_index = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="4" type="Position2D" parent="spawn_locations"]
 position = Vector2( 1645.35, 803.706 )
 z_index = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="UI" type="CanvasLayer" parent="."]
 script = ExtResource( 2 )
@@ -131,6 +151,7 @@ script = ExtResource( 6 )
 [node name="Control" type="Control" parent="game_UI"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 10 )
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
@@ -160,19 +181,58 @@ __meta__ = {
 [node name="win_timer" type="Timer" parent="game_UI/Control/winner"]
 wait_time = 4.0
 
-[node name="timer" type="Label" parent="."]
-margin_right = 347.0
-margin_bottom = 164.0
-custom_fonts/font = ExtResource( 10 )
-text = "null"
-align = 1
-valign = 1
+[node name="Line" type="Button" parent="game_UI/Control"]
+anchor_left = 0.018
+anchor_top = 0.875
+anchor_right = 0.06
+anchor_bottom = 0.95
+margin_left = 0.439999
+margin_top = -6.10352e-05
+margin_right = -0.200005
+text = "Line"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="timer" type="Timer" parent="timer"]
-autostart = true
+[node name="Sine" type="Button" parent="game_UI/Control"]
+anchor_left = 0.018
+anchor_top = 0.875
+anchor_right = 0.06
+anchor_bottom = 0.95
+margin_left = 118.44
+margin_top = -6.10352e-05
+margin_right = 117.8
+text = "Sine"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Parab" type="Button" parent="game_UI/Control"]
+anchor_left = 0.018
+anchor_top = 0.875
+anchor_right = 0.06
+anchor_bottom = 0.95
+margin_left = 233.44
+margin_top = -6.10352e-05
+margin_right = 232.8
+text = "Parabola"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Hyper" type="Button" parent="game_UI/Control"]
+anchor_left = 0.018
+anchor_top = 0.875
+anchor_right = 0.06
+anchor_bottom = 0.95
+margin_left = 348.44
+margin_top = -6.10352e-05
+margin_right = 347.8
+text = "Hyperbola"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="timeout" from="game_UI/Control/winner/win_timer" to="game_UI/Control/winner" method="_on_win_timer_timeout"]
-[connection signal="timeout" from="timer/timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="game_UI/Control/Line" to="game_UI/Control" method="_on_Line_pressed"]
+[connection signal="pressed" from="game_UI/Control/Sine" to="game_UI/Control" method="_on_Sine_pressed"]

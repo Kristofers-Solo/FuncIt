@@ -1,0 +1,1055 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="1920"
+   height="1080"
+   viewBox="0 0 1920 1080"
+   version="1.1"
+   id="svg154"
+   sodipodi:docname="trinity_site_level_layout_level_design_z_index_3.svg"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview156"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     showgrid="false"
+     inkscape:zoom="0.5"
+     inkscape:cx="793"
+     inkscape:cy="621"
+     inkscape:window-width="1920"
+     inkscape:window-height="1007"
+     inkscape:window-x="1920"
+     inkscape:window-y="44"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs17">
+    <linearGradient
+       id="linear-gradient"
+       x1="-101.913"
+       x2="3144.3158"
+       y2="3075.3746"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.284489,0,0,0.77851972,2812.1816,-2102.3484)"
+       y1="0">
+      <stop
+         offset="0"
+         stop-color="#ef6465"
+         id="stop2" />
+      <stop
+         offset="1"
+         stop-color="#1f4ebd"
+         id="stop4" />
+    </linearGradient>
+    <linearGradient
+       id="linear-gradient-2"
+       x1="53.179485"
+       y1="88.838027"
+       x2="591.85637"
+       y2="625.638"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.1988537,0,0,0.83413016,1486.221,948.55149)">
+      <stop
+         offset="0"
+         stop-color="#313131"
+         id="stop7" />
+      <stop
+         offset="0.506"
+         stop-color="#181818"
+         id="stop9" />
+      <stop
+         offset="1"
+         id="stop11" />
+    </linearGradient>
+    <clipPath
+       id="clip-trinity_site_level_layout-level_design_z-index_-1-version_ct_f_hd_3840_2160">
+      <rect
+         width="3840"
+         height="2160"
+         id="rect14"
+         x="0"
+         y="0" />
+    </clipPath>
+    <clipPath
+       id="clip-trinity_site_level_layout-level_design_z-index_-1-version_ct_f_hd_3840_2160-3">
+      <rect
+         width="3840"
+         height="2160"
+         id="rect14-6"
+         x="0"
+         y="0" />
+    </clipPath>
+    <linearGradient
+       id="linear-gradient-5"
+       x1="-101.913"
+       x2="3144.3159"
+       y2="3075.3745"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.63918039,0,-0.00136599,0.36028231,4.0945057,0.07500562)"
+       y1="0">
+      <stop
+         offset="0"
+         stop-color="#ef6465"
+         id="stop2-6" />
+      <stop
+         offset="1"
+         stop-color="#1f4ebd"
+         id="stop4-3" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linear-gradient-5"
+       id="linearGradient36113"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.63918039,0,-0.00136599,0.36028231,4.0944767,0.07501642)"
+       x1="-101.913"
+       y1="0"
+       x2="3144.3159"
+       y2="3075.3745" />
+    <filter
+       y="-0.011111111"
+       height="1.0222222"
+       inkscape:menu-tooltip="Darkens the edge with an inner blur and adds a flexible glow"
+       inkscape:menu="Shadows and Glows"
+       inkscape:label="Dark and Glow"
+       style="color-interpolation-filters:sRGB;"
+       id="filter36837"
+       x="-0.00625"
+       width="1.0125">
+      <feGaussianBlur
+         stdDeviation="5"
+         result="result6"
+         id="feGaussianBlur36827" />
+      <feComposite
+         result="result8"
+         in="SourceGraphic"
+         operator="atop"
+         in2="result6"
+         id="feComposite36829" />
+      <feComposite
+         result="result9"
+         operator="over"
+         in2="SourceAlpha"
+         in="result8"
+         id="feComposite36831" />
+      <feColorMatrix
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0 "
+         result="result10"
+         id="feColorMatrix36833" />
+      <feBlend
+         in="result10"
+         mode="normal"
+         in2="result6"
+         id="feBlend36835" />
+    </filter>
+  </defs>
+  <g
+     inkscape:groupmode="layer"
+     id="layer1"
+     inkscape:label="Layer 1"
+     style="display:inline">
+    <script
+       id="mesh_polyfill"
+       type="text/javascript">
+!function(){const t=&quot;http://www.w3.org/2000/svg&quot;,e=&quot;http://www.w3.org/1999/xlink&quot;,s=&quot;http://www.w3.org/1999/xhtml&quot;,r=2;if(document.createElementNS(t,&quot;meshgradient&quot;).x)return;const n=(t,e,s,r)=&gt;{let n=new x(.5*(e.x+s.x),.5*(e.y+s.y)),o=new x(.5*(t.x+e.x),.5*(t.y+e.y)),i=new x(.5*(s.x+r.x),.5*(s.y+r.y)),a=new x(.5*(n.x+o.x),.5*(n.y+o.y)),h=new x(.5*(n.x+i.x),.5*(n.y+i.y)),l=new x(.5*(a.x+h.x),.5*(a.y+h.y));return[[t,o,a,l],[l,h,i,r]]},o=t=&gt;{let e=t[0].distSquared(t[1]),s=t[2].distSquared(t[3]),r=.25*t[0].distSquared(t[2]),n=.25*t[1].distSquared(t[3]),o=e&gt;s?e:s,i=r&gt;n?r:n;return 18*(o&gt;i?o:i)},i=(t,e)=&gt;Math.sqrt(t.distSquared(e)),a=(t,e)=&gt;t.scale(2/3).add(e.scale(1/3)),h=t=&gt;{let e,s,r,n,o,i,a,h=new g;return t.match(/(\w+\(\s*[^)]+\))+/g).forEach(t=&gt;{let l=t.match(/[\w.-]+/g),d=l.shift();switch(d){case&quot;translate&quot;:2===l.length?e=new g(1,0,0,1,l[0],l[1]):(console.error(&quot;mesh.js: translate does not have 2 arguments!&quot;),e=new g(1,0,0,1,0,0)),h=h.append(e);break;case&quot;scale&quot;:1===l.length?s=new g(l[0],0,0,l[0],0,0):2===l.length?s=new g(l[0],0,0,l[1],0,0):(console.error(&quot;mesh.js: scale does not have 1 or 2 arguments!&quot;),s=new g(1,0,0,1,0,0)),h=h.append(s);break;case&quot;rotate&quot;:if(3===l.length&amp;&amp;(e=new g(1,0,0,1,l[1],l[2]),h=h.append(e)),l[0]){r=l[0]*Math.PI/180;let t=Math.cos(r),e=Math.sin(r);Math.abs(t)&lt;1e-16&amp;&amp;(t=0),Math.abs(e)&lt;1e-16&amp;&amp;(e=0),a=new g(t,e,-e,t,0,0),h=h.append(a)}else console.error(&quot;math.js: No argument to rotate transform!&quot;);3===l.length&amp;&amp;(e=new g(1,0,0,1,-l[1],-l[2]),h=h.append(e));break;case&quot;skewX&quot;:l[0]?(r=l[0]*Math.PI/180,n=Math.tan(r),o=new g(1,0,n,1,0,0),h=h.append(o)):console.error(&quot;math.js: No argument to skewX transform!&quot;);break;case&quot;skewY&quot;:l[0]?(r=l[0]*Math.PI/180,n=Math.tan(r),i=new g(1,n,0,1,0,0),h=h.append(i)):console.error(&quot;math.js: No argument to skewY transform!&quot;);break;case&quot;matrix&quot;:6===l.length?h=h.append(new g(...l)):console.error(&quot;math.js: Incorrect number of arguments for matrix!&quot;);break;default:console.error(&quot;mesh.js: Unhandled transform type: &quot;+d)}}),h},l=t=&gt;{let e=[],s=t.split(/[ ,]+/);for(let t=0,r=s.length-1;t&lt;r;t+=2)e.push(new x(parseFloat(s[t]),parseFloat(s[t+1])));return e},d=(t,e)=&gt;{for(let s in e)t.setAttribute(s,e[s])},c=(t,e,s,r,n)=&gt;{let o,i,a=[0,0,0,0];for(let h=0;h&lt;3;++h)e[h]&lt;t[h]&amp;&amp;e[h]&lt;s[h]||t[h]&lt;e[h]&amp;&amp;s[h]&lt;e[h]?a[h]=0:(a[h]=.5*((e[h]-t[h])/r+(s[h]-e[h])/n),o=Math.abs(3*(e[h]-t[h])/r),i=Math.abs(3*(s[h]-e[h])/n),a[h]&gt;o?a[h]=o:a[h]&gt;i&amp;&amp;(a[h]=i));return a},u=[[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0],[-3,3,0,0,-2,-1,0,0,0,0,0,0,0,0,0,0],[2,-2,0,0,1,1,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0],[0,0,0,0,0,0,0,0,-3,3,0,0,-2,-1,0,0],[0,0,0,0,0,0,0,0,2,-2,0,0,1,1,0,0],[-3,0,3,0,0,0,0,0,-2,0,-1,0,0,0,0,0],[0,0,0,0,-3,0,3,0,0,0,0,0,-2,0,-1,0],[9,-9,-9,9,6,3,-6,-3,6,-6,3,-3,4,2,2,1],[-6,6,6,-6,-3,-3,3,3,-4,4,-2,2,-2,-2,-1,-1],[2,0,-2,0,0,0,0,0,1,0,1,0,0,0,0,0],[0,0,0,0,2,0,-2,0,0,0,0,0,1,0,1,0],[-6,6,6,-6,-4,-2,4,2,-3,3,-3,3,-2,-1,-2,-1],[4,-4,-4,4,2,2,-2,-2,2,-2,2,-2,1,1,1,1]],f=t=&gt;{let e=[];for(let s=0;s&lt;16;++s){e[s]=0;for(let r=0;r&lt;16;++r)e[s]+=u[s][r]*t[r]}return e},p=(t,e,s)=&gt;{const r=e*e,n=s*s,o=e*e*e,i=s*s*s;return t[0]+t[1]*e+t[2]*r+t[3]*o+t[4]*s+t[5]*s*e+t[6]*s*r+t[7]*s*o+t[8]*n+t[9]*n*e+t[10]*n*r+t[11]*n*o+t[12]*i+t[13]*i*e+t[14]*i*r+t[15]*i*o},y=t=&gt;{let e=[],s=[],r=[];for(let s=0;s&lt;4;++s)e[s]=[],e[s][0]=n(t[0][s],t[1][s],t[2][s],t[3][s]),e[s][1]=[],e[s][1].push(...n(...e[s][0][0])),e[s][1].push(...n(...e[s][0][1])),e[s][2]=[],e[s][2].push(...n(...e[s][1][0])),e[s][2].push(...n(...e[s][1][1])),e[s][2].push(...n(...e[s][1][2])),e[s][2].push(...n(...e[s][1][3]));for(let t=0;t&lt;8;++t){s[t]=[];for(let r=0;r&lt;4;++r)s[t][r]=[],s[t][r][0]=n(e[0][2][t][r],e[1][2][t][r],e[2][2][t][r],e[3][2][t][r]),s[t][r][1]=[],s[t][r][1].push(...n(...s[t][r][0][0])),s[t][r][1].push(...n(...s[t][r][0][1])),s[t][r][2]=[],s[t][r][2].push(...n(...s[t][r][1][0])),s[t][r][2].push(...n(...s[t][r][1][1])),s[t][r][2].push(...n(...s[t][r][1][2])),s[t][r][2].push(...n(...s[t][r][1][3]))}for(let t=0;t&lt;8;++t){r[t]=[];for(let e=0;e&lt;8;++e)r[t][e]=[],r[t][e][0]=s[t][0][2][e],r[t][e][1]=s[t][1][2][e],r[t][e][2]=s[t][2][2][e],r[t][e][3]=s[t][3][2][e]}return r};class x{constructor(t,e){this.x=t||0,this.y=e||0}toString(){return`(x=${this.x}, y=${this.y})`}clone(){return new x(this.x,this.y)}add(t){return new x(this.x+t.x,this.y+t.y)}scale(t){return void 0===t.x?new x(this.x*t,this.y*t):new x(this.x*t.x,this.y*t.y)}distSquared(t){let e=this.x-t.x,s=this.y-t.y;return e*e+s*s}transform(t){let e=this.x*t.a+this.y*t.c+t.e,s=this.x*t.b+this.y*t.d+t.f;return new x(e,s)}}class g{constructor(t,e,s,r,n,o){void 0===t?(this.a=1,this.b=0,this.c=0,this.d=1,this.e=0,this.f=0):(this.a=t,this.b=e,this.c=s,this.d=r,this.e=n,this.f=o)}toString(){return`affine: ${this.a} ${this.c} ${this.e} \n       ${this.b} ${this.d} ${this.f}`}append(t){t instanceof g||console.error(&quot;mesh.js: argument to Affine.append is not affine!&quot;);let e=this.a*t.a+this.c*t.b,s=this.b*t.a+this.d*t.b,r=this.a*t.c+this.c*t.d,n=this.b*t.c+this.d*t.d,o=this.a*t.e+this.c*t.f+this.e,i=this.b*t.e+this.d*t.f+this.f;return new g(e,s,r,n,o,i)}}class w{constructor(t,e){this.nodes=t,this.colors=e}paintCurve(t,e){if(o(this.nodes)&gt;r){const s=n(...this.nodes);let r=[[],[]],o=[[],[]];for(let t=0;t&lt;4;++t)r[0][t]=this.colors[0][t],r[1][t]=(this.colors[0][t]+this.colors[1][t])/2,o[0][t]=r[1][t],o[1][t]=this.colors[1][t];let i=new w(s[0],r),a=new w(s[1],o);i.paintCurve(t,e),a.paintCurve(t,e)}else{let s=Math.round(this.nodes[0].x);if(s&gt;=0&amp;&amp;s&lt;e){let r=4*(~~this.nodes[0].y*e+s);t[r]=Math.round(this.colors[0][0]),t[r+1]=Math.round(this.colors[0][1]),t[r+2]=Math.round(this.colors[0][2]),t[r+3]=Math.round(this.colors[0][3])}}}}class m{constructor(t,e){this.nodes=t,this.colors=e}split(){let t=[[],[],[],[]],e=[[],[],[],[]],s=[[[],[]],[[],[]]],r=[[[],[]],[[],[]]];for(let s=0;s&lt;4;++s){const r=n(this.nodes[0][s],this.nodes[1][s],this.nodes[2][s],this.nodes[3][s]);t[0][s]=r[0][0],t[1][s]=r[0][1],t[2][s]=r[0][2],t[3][s]=r[0][3],e[0][s]=r[1][0],e[1][s]=r[1][1],e[2][s]=r[1][2],e[3][s]=r[1][3]}for(let t=0;t&lt;4;++t)s[0][0][t]=this.colors[0][0][t],s[0][1][t]=this.colors[0][1][t],s[1][0][t]=(this.colors[0][0][t]+this.colors[1][0][t])/2,s[1][1][t]=(this.colors[0][1][t]+this.colors[1][1][t])/2,r[0][0][t]=s[1][0][t],r[0][1][t]=s[1][1][t],r[1][0][t]=this.colors[1][0][t],r[1][1][t]=this.colors[1][1][t];return[new m(t,s),new m(e,r)]}paint(t,e){let s,n=!1;for(let t=0;t&lt;4;++t)if((s=o([this.nodes[0][t],this.nodes[1][t],this.nodes[2][t],this.nodes[3][t]]))&gt;r){n=!0;break}if(n){let s=this.split();s[0].paint(t,e),s[1].paint(t,e)}else{new w([...this.nodes[0]],[...this.colors[0]]).paintCurve(t,e)}}}class b{constructor(t){this.readMesh(t),this.type=t.getAttribute(&quot;type&quot;)||&quot;bilinear&quot;}readMesh(t){let e=[[]],s=[[]],r=Number(t.getAttribute(&quot;x&quot;)),n=Number(t.getAttribute(&quot;y&quot;));e[0][0]=new x(r,n);let o=t.children;for(let t=0,r=o.length;t&lt;r;++t){e[3*t+1]=[],e[3*t+2]=[],e[3*t+3]=[],s[t+1]=[];let r=o[t].children;for(let n=0,o=r.length;n&lt;o;++n){let o=r[n].children;for(let r=0,i=o.length;r&lt;i;++r){let i=r;0!==t&amp;&amp;++i;let h,d=o[r].getAttribute(&quot;path&quot;),c=&quot;l&quot;;null!=d&amp;&amp;(c=(h=d.match(/\s*([lLcC])\s*(.*)/))[1]);let u=l(h[2]);switch(c){case&quot;l&quot;:0===i?(e[3*t][3*n+3]=u[0].add(e[3*t][3*n]),e[3*t][3*n+1]=a(e[3*t][3*n],e[3*t][3*n+3]),e[3*t][3*n+2]=a(e[3*t][3*n+3],e[3*t][3*n])):1===i?(e[3*t+3][3*n+3]=u[0].add(e[3*t][3*n+3]),e[3*t+1][3*n+3]=a(e[3*t][3*n+3],e[3*t+3][3*n+3]),e[3*t+2][3*n+3]=a(e[3*t+3][3*n+3],e[3*t][3*n+3])):2===i?(0===n&amp;&amp;(e[3*t+3][3*n+0]=u[0].add(e[3*t+3][3*n+3])),e[3*t+3][3*n+1]=a(e[3*t+3][3*n],e[3*t+3][3*n+3]),e[3*t+3][3*n+2]=a(e[3*t+3][3*n+3],e[3*t+3][3*n])):(e[3*t+1][3*n]=a(e[3*t][3*n],e[3*t+3][3*n]),e[3*t+2][3*n]=a(e[3*t+3][3*n],e[3*t][3*n]));break;case&quot;L&quot;:0===i?(e[3*t][3*n+3]=u[0],e[3*t][3*n+1]=a(e[3*t][3*n],e[3*t][3*n+3]),e[3*t][3*n+2]=a(e[3*t][3*n+3],e[3*t][3*n])):1===i?(e[3*t+3][3*n+3]=u[0],e[3*t+1][3*n+3]=a(e[3*t][3*n+3],e[3*t+3][3*n+3]),e[3*t+2][3*n+3]=a(e[3*t+3][3*n+3],e[3*t][3*n+3])):2===i?(0===n&amp;&amp;(e[3*t+3][3*n+0]=u[0]),e[3*t+3][3*n+1]=a(e[3*t+3][3*n],e[3*t+3][3*n+3]),e[3*t+3][3*n+2]=a(e[3*t+3][3*n+3],e[3*t+3][3*n])):(e[3*t+1][3*n]=a(e[3*t][3*n],e[3*t+3][3*n]),e[3*t+2][3*n]=a(e[3*t+3][3*n],e[3*t][3*n]));break;case&quot;c&quot;:0===i?(e[3*t][3*n+1]=u[0].add(e[3*t][3*n]),e[3*t][3*n+2]=u[1].add(e[3*t][3*n]),e[3*t][3*n+3]=u[2].add(e[3*t][3*n])):1===i?(e[3*t+1][3*n+3]=u[0].add(e[3*t][3*n+3]),e[3*t+2][3*n+3]=u[1].add(e[3*t][3*n+3]),e[3*t+3][3*n+3]=u[2].add(e[3*t][3*n+3])):2===i?(e[3*t+3][3*n+2]=u[0].add(e[3*t+3][3*n+3]),e[3*t+3][3*n+1]=u[1].add(e[3*t+3][3*n+3]),0===n&amp;&amp;(e[3*t+3][3*n+0]=u[2].add(e[3*t+3][3*n+3]))):(e[3*t+2][3*n]=u[0].add(e[3*t+3][3*n]),e[3*t+1][3*n]=u[1].add(e[3*t+3][3*n]));break;case&quot;C&quot;:0===i?(e[3*t][3*n+1]=u[0],e[3*t][3*n+2]=u[1],e[3*t][3*n+3]=u[2]):1===i?(e[3*t+1][3*n+3]=u[0],e[3*t+2][3*n+3]=u[1],e[3*t+3][3*n+3]=u[2]):2===i?(e[3*t+3][3*n+2]=u[0],e[3*t+3][3*n+1]=u[1],0===n&amp;&amp;(e[3*t+3][3*n+0]=u[2])):(e[3*t+2][3*n]=u[0],e[3*t+1][3*n]=u[1]);break;default:console.error(&quot;mesh.js: &quot;+c+&quot; invalid path type.&quot;)}if(0===t&amp;&amp;0===n||r&gt;0){let e=window.getComputedStyle(o[r]).stopColor.match(/^rgb\s*\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*\)$/i),a=window.getComputedStyle(o[r]).stopOpacity,h=255;a&amp;&amp;(h=Math.floor(255*a)),e&amp;&amp;(0===i?(s[t][n]=[],s[t][n][0]=Math.floor(e[1]),s[t][n][1]=Math.floor(e[2]),s[t][n][2]=Math.floor(e[3]),s[t][n][3]=h):1===i?(s[t][n+1]=[],s[t][n+1][0]=Math.floor(e[1]),s[t][n+1][1]=Math.floor(e[2]),s[t][n+1][2]=Math.floor(e[3]),s[t][n+1][3]=h):2===i?(s[t+1][n+1]=[],s[t+1][n+1][0]=Math.floor(e[1]),s[t+1][n+1][1]=Math.floor(e[2]),s[t+1][n+1][2]=Math.floor(e[3]),s[t+1][n+1][3]=h):3===i&amp;&amp;(s[t+1][n]=[],s[t+1][n][0]=Math.floor(e[1]),s[t+1][n][1]=Math.floor(e[2]),s[t+1][n][2]=Math.floor(e[3]),s[t+1][n][3]=h))}}e[3*t+1][3*n+1]=new x,e[3*t+1][3*n+2]=new x,e[3*t+2][3*n+1]=new x,e[3*t+2][3*n+2]=new x,e[3*t+1][3*n+1].x=(-4*e[3*t][3*n].x+6*(e[3*t][3*n+1].x+e[3*t+1][3*n].x)+-2*(e[3*t][3*n+3].x+e[3*t+3][3*n].x)+3*(e[3*t+3][3*n+1].x+e[3*t+1][3*n+3].x)+-1*e[3*t+3][3*n+3].x)/9,e[3*t+1][3*n+2].x=(-4*e[3*t][3*n+3].x+6*(e[3*t][3*n+2].x+e[3*t+1][3*n+3].x)+-2*(e[3*t][3*n].x+e[3*t+3][3*n+3].x)+3*(e[3*t+3][3*n+2].x+e[3*t+1][3*n].x)+-1*e[3*t+3][3*n].x)/9,e[3*t+2][3*n+1].x=(-4*e[3*t+3][3*n].x+6*(e[3*t+3][3*n+1].x+e[3*t+2][3*n].x)+-2*(e[3*t+3][3*n+3].x+e[3*t][3*n].x)+3*(e[3*t][3*n+1].x+e[3*t+2][3*n+3].x)+-1*e[3*t][3*n+3].x)/9,e[3*t+2][3*n+2].x=(-4*e[3*t+3][3*n+3].x+6*(e[3*t+3][3*n+2].x+e[3*t+2][3*n+3].x)+-2*(e[3*t+3][3*n].x+e[3*t][3*n+3].x)+3*(e[3*t][3*n+2].x+e[3*t+2][3*n].x)+-1*e[3*t][3*n].x)/9,e[3*t+1][3*n+1].y=(-4*e[3*t][3*n].y+6*(e[3*t][3*n+1].y+e[3*t+1][3*n].y)+-2*(e[3*t][3*n+3].y+e[3*t+3][3*n].y)+3*(e[3*t+3][3*n+1].y+e[3*t+1][3*n+3].y)+-1*e[3*t+3][3*n+3].y)/9,e[3*t+1][3*n+2].y=(-4*e[3*t][3*n+3].y+6*(e[3*t][3*n+2].y+e[3*t+1][3*n+3].y)+-2*(e[3*t][3*n].y+e[3*t+3][3*n+3].y)+3*(e[3*t+3][3*n+2].y+e[3*t+1][3*n].y)+-1*e[3*t+3][3*n].y)/9,e[3*t+2][3*n+1].y=(-4*e[3*t+3][3*n].y+6*(e[3*t+3][3*n+1].y+e[3*t+2][3*n].y)+-2*(e[3*t+3][3*n+3].y+e[3*t][3*n].y)+3*(e[3*t][3*n+1].y+e[3*t+2][3*n+3].y)+-1*e[3*t][3*n+3].y)/9,e[3*t+2][3*n+2].y=(-4*e[3*t+3][3*n+3].y+6*(e[3*t+3][3*n+2].y+e[3*t+2][3*n+3].y)+-2*(e[3*t+3][3*n].y+e[3*t][3*n+3].y)+3*(e[3*t][3*n+2].y+e[3*t+2][3*n].y)+-1*e[3*t][3*n].y)/9}}this.nodes=e,this.colors=s}paintMesh(t,e){let s=(this.nodes.length-1)/3,r=(this.nodes[0].length-1)/3;if(&quot;bilinear&quot;===this.type||s&lt;2||r&lt;2){let n;for(let o=0;o&lt;s;++o)for(let s=0;s&lt;r;++s){let r=[];for(let t=3*o,e=3*o+4;t&lt;e;++t)r.push(this.nodes[t].slice(3*s,3*s+4));let i=[];i.push(this.colors[o].slice(s,s+2)),i.push(this.colors[o+1].slice(s,s+2)),(n=new m(r,i)).paint(t,e)}}else{let n,o,a,h,l,d,u;const x=s,g=r;s++,r++;let w=new Array(s);for(let t=0;t&lt;s;++t){w[t]=new Array(r);for(let e=0;e&lt;r;++e)w[t][e]=[],w[t][e][0]=this.nodes[3*t][3*e],w[t][e][1]=this.colors[t][e]}for(let t=0;t&lt;s;++t)for(let e=0;e&lt;r;++e)0!==t&amp;&amp;t!==x&amp;&amp;(n=i(w[t-1][e][0],w[t][e][0]),o=i(w[t+1][e][0],w[t][e][0]),w[t][e][2]=c(w[t-1][e][1],w[t][e][1],w[t+1][e][1],n,o)),0!==e&amp;&amp;e!==g&amp;&amp;(n=i(w[t][e-1][0],w[t][e][0]),o=i(w[t][e+1][0],w[t][e][0]),w[t][e][3]=c(w[t][e-1][1],w[t][e][1],w[t][e+1][1],n,o));for(let t=0;t&lt;r;++t){w[0][t][2]=[],w[x][t][2]=[];for(let e=0;e&lt;4;++e)n=i(w[1][t][0],w[0][t][0]),o=i(w[x][t][0],w[x-1][t][0]),w[0][t][2][e]=n&gt;0?2*(w[1][t][1][e]-w[0][t][1][e])/n-w[1][t][2][e]:0,w[x][t][2][e]=o&gt;0?2*(w[x][t][1][e]-w[x-1][t][1][e])/o-w[x-1][t][2][e]:0}for(let t=0;t&lt;s;++t){w[t][0][3]=[],w[t][g][3]=[];for(let e=0;e&lt;4;++e)n=i(w[t][1][0],w[t][0][0]),o=i(w[t][g][0],w[t][g-1][0]),w[t][0][3][e]=n&gt;0?2*(w[t][1][1][e]-w[t][0][1][e])/n-w[t][1][3][e]:0,w[t][g][3][e]=o&gt;0?2*(w[t][g][1][e]-w[t][g-1][1][e])/o-w[t][g-1][3][e]:0}for(let s=0;s&lt;x;++s)for(let r=0;r&lt;g;++r){let n=i(w[s][r][0],w[s+1][r][0]),o=i(w[s][r+1][0],w[s+1][r+1][0]),c=i(w[s][r][0],w[s][r+1][0]),x=i(w[s+1][r][0],w[s+1][r+1][0]),g=[[],[],[],[]];for(let t=0;t&lt;4;++t){(d=[])[0]=w[s][r][1][t],d[1]=w[s+1][r][1][t],d[2]=w[s][r+1][1][t],d[3]=w[s+1][r+1][1][t],d[4]=w[s][r][2][t]*n,d[5]=w[s+1][r][2][t]*n,d[6]=w[s][r+1][2][t]*o,d[7]=w[s+1][r+1][2][t]*o,d[8]=w[s][r][3][t]*c,d[9]=w[s+1][r][3][t]*x,d[10]=w[s][r+1][3][t]*c,d[11]=w[s+1][r+1][3][t]*x,d[12]=0,d[13]=0,d[14]=0,d[15]=0,u=f(d);for(let e=0;e&lt;9;++e){g[t][e]=[];for(let s=0;s&lt;9;++s)g[t][e][s]=p(u,e/8,s/8),g[t][e][s]&gt;255?g[t][e][s]=255:g[t][e][s]&lt;0&amp;&amp;(g[t][e][s]=0)}}h=[];for(let t=3*s,e=3*s+4;t&lt;e;++t)h.push(this.nodes[t].slice(3*r,3*r+4));l=y(h);for(let s=0;s&lt;8;++s)for(let r=0;r&lt;8;++r)(a=new m(l[s][r],[[[g[0][s][r],g[1][s][r],g[2][s][r],g[3][s][r]],[g[0][s][r+1],g[1][s][r+1],g[2][s][r+1],g[3][s][r+1]]],[[g[0][s+1][r],g[1][s+1][r],g[2][s+1][r],g[3][s+1][r]],[g[0][s+1][r+1],g[1][s+1][r+1],g[2][s+1][r+1],g[3][s+1][r+1]]]])).paint(t,e)}}}transform(t){if(t instanceof x)for(let e=0,s=this.nodes.length;e&lt;s;++e)for(let s=0,r=this.nodes[0].length;s&lt;r;++s)this.nodes[e][s]=this.nodes[e][s].add(t);else if(t instanceof g)for(let e=0,s=this.nodes.length;e&lt;s;++e)for(let s=0,r=this.nodes[0].length;s&lt;r;++s)this.nodes[e][s]=this.nodes[e][s].transform(t)}scale(t){for(let e=0,s=this.nodes.length;e&lt;s;++e)for(let s=0,r=this.nodes[0].length;s&lt;r;++s)this.nodes[e][s]=this.nodes[e][s].scale(t)}}document.querySelectorAll(&quot;rect,circle,ellipse,path,text&quot;).forEach((r,n)=&gt;{let o=r.getAttribute(&quot;id&quot;);o||(o=&quot;patchjs_shape&quot;+n,r.setAttribute(&quot;id&quot;,o));const i=r.style.fill.match(/^url\(\s*&quot;?\s*#([^\s&quot;]+)&quot;?\s*\)/),a=r.style.stroke.match(/^url\(\s*&quot;?\s*#([^\s&quot;]+)&quot;?\s*\)/);if(i&amp;&amp;i[1]){const a=document.getElementById(i[1]);if(a&amp;&amp;&quot;meshgradient&quot;===a.nodeName){const i=r.getBBox();let l=document.createElementNS(s,&quot;canvas&quot;);d(l,{width:i.width,height:i.height});const c=l.getContext(&quot;2d&quot;);let u=c.createImageData(i.width,i.height);const f=new b(a);&quot;objectBoundingBox&quot;===a.getAttribute(&quot;gradientUnits&quot;)&amp;&amp;f.scale(new x(i.width,i.height));const p=a.getAttribute(&quot;gradientTransform&quot;);null!=p&amp;&amp;f.transform(h(p)),&quot;userSpaceOnUse&quot;===a.getAttribute(&quot;gradientUnits&quot;)&amp;&amp;f.transform(new x(-i.x,-i.y)),f.paintMesh(u.data,l.width),c.putImageData(u,0,0);const y=document.createElementNS(t,&quot;image&quot;);d(y,{width:i.width,height:i.height,x:i.x,y:i.y});let g=l.toDataURL();y.setAttributeNS(e,&quot;xlink:href&quot;,g),r.parentNode.insertBefore(y,r),r.style.fill=&quot;none&quot;;const w=document.createElementNS(t,&quot;use&quot;);w.setAttributeNS(e,&quot;xlink:href&quot;,&quot;#&quot;+o);const m=&quot;patchjs_clip&quot;+n,M=document.createElementNS(t,&quot;clipPath&quot;);M.setAttribute(&quot;id&quot;,m),M.appendChild(w),r.parentElement.insertBefore(M,r),y.setAttribute(&quot;clip-path&quot;,&quot;url(#&quot;+m+&quot;)&quot;),u=null,l=null,g=null}}if(a&amp;&amp;a[1]){const o=document.getElementById(a[1]);if(o&amp;&amp;&quot;meshgradient&quot;===o.nodeName){const i=parseFloat(r.style.strokeWidth.slice(0,-2))*(parseFloat(r.style.strokeMiterlimit)||parseFloat(r.getAttribute(&quot;stroke-miterlimit&quot;))||1),a=r.getBBox(),l=Math.trunc(a.width+i),c=Math.trunc(a.height+i),u=Math.trunc(a.x-i/2),f=Math.trunc(a.y-i/2);let p=document.createElementNS(s,&quot;canvas&quot;);d(p,{width:l,height:c});const y=p.getContext(&quot;2d&quot;);let g=y.createImageData(l,c);const w=new b(o);&quot;objectBoundingBox&quot;===o.getAttribute(&quot;gradientUnits&quot;)&amp;&amp;w.scale(new x(l,c));const m=o.getAttribute(&quot;gradientTransform&quot;);null!=m&amp;&amp;w.transform(h(m)),&quot;userSpaceOnUse&quot;===o.getAttribute(&quot;gradientUnits&quot;)&amp;&amp;w.transform(new x(-u,-f)),w.paintMesh(g.data,p.width),y.putImageData(g,0,0);const M=document.createElementNS(t,&quot;image&quot;);d(M,{width:l,height:c,x:0,y:0});let S=p.toDataURL();M.setAttributeNS(e,&quot;xlink:href&quot;,S);const k=&quot;pattern_clip&quot;+n,A=document.createElementNS(t,&quot;pattern&quot;);d(A,{id:k,patternUnits:&quot;userSpaceOnUse&quot;,width:l,height:c,x:u,y:f}),A.appendChild(M),o.parentNode.appendChild(A),r.style.stroke=&quot;url(#&quot;+k+&quot;)&quot;,g=null,p=null,S=null}}})}();
+</script>
+    <g
+       id="g36797">
+      <path
+         id="path35725"
+         data-name="Union 10"
+         d="M 1912.9179,1080 H 0 L 0.08199754,0 1920,0.07501642 1915.9055,1080 v 0 0 h -2.9856 v 0 0 z M 554.52276,883.90774 c 7.36468,1.78854 14.45764,4.42464 21.11488,7.84734 6.67994,3.43598 12.87843,7.62271 18.45653,12.46633 5.68439,4.93874 10.6952,10.50785 14.9208,16.58321 1.1568,1.87934 2.36582,3.76285 3.59394,5.59962 0.3204,0.54192 0.64272,1.10188 0.95758,1.66045 0.0577,0.005 0.11542,0.008 0.17463,0.0102 0.86767,1.26493 1.75135,2.51952 2.65095,3.76378 15.22188,-27.12947 27.71081,-56.73666 37.24147,-88.32825 12.58861,-41.72458 19.66922,-85.83757 21.04859,-131.11306 h 0.19058 l 1.26903,-334.70652 h -0.0926 c -1.2361,-83.20389 -21.96307,-162.65142 -58.94543,-227.71347 -1.78916,2.55792 -3.50968,5.16058 -5.1615,7.808 -4.29272,6.11507 -9.37178,11.72149 -15.1241,16.69428 -5.6159,4.85061 -11.85112,9.04075 -18.56453,12.47559 -17.59441,8.97869 -37.85469,12.33902 -57.66002,9.56332 C 486.089,186.69293 450.18461,181.70867 414.06309,181.73 208.2109,181.73 40.129032,342.1462 39.381448,539.32278 38.633864,736.49934 205.49933,896.91184 411.35151,896.91184 c 36.12221,0.0223 72.06529,-4.96171 106.6451,-14.78763 12.18818,-1.7064 24.61305,-1.10032 36.52512,1.7817 z M 1239.3566,708.10507 h 0.1911 c 1.9011,83.13957 23.1505,159.84375 57.9769,221.83249 0.618,-0.86879 1.2289,-1.74344 1.8327,-2.62396 l 0.042,-0.005 c 0.017,-0.005 0.032,-0.005 0.047,-0.006 0.1828,-0.31145 0.3706,-0.62939 0.5303,-0.89733 1.2366,-1.82798 2.4559,-3.70223 3.6229,-5.57695 4.2757,-6.07714 9.3329,-11.64764 15.059,-16.58738 5.6216,-4.84604 11.8581,-9.03532 18.57,-12.47419 6.6863,-3.42436 13.8017,-6.06348 21.1824,-7.8566 7.4809,-1.81259 15.1766,-2.73015 22.9006,-2.73039 4.5612,9.2e-4 9.1148,0.31757 13.6231,0.94731 34.5042,9.82491 70.4081,14.80838 106.529,14.78624 205.8522,0 373.9325,-160.41389 374.6801,-357.58907 0.7476,-197.17518 -166.1188,-357.59508 -371.97,-357.59508 -38.7157,-0.0282 -77.209,5.70083 -114.0221,16.97055 -2.0621,0.13282 -4.1673,0.19853 -6.2542,0.19853 -14.2897,0.013 -28.3703,-3.10135 -41.1034,-9.09128 -6.3067,-2.97197 -12.2236,-6.60802 -17.6347,-10.83689 -5.5122,-4.31536 -10.4774,-9.20073 -14.8,-14.56226 -3.129,-5.61359 -6.5726,-11.0698 -10.3168,-16.34626 -5.6639,9.99602 -10.9749,20.35717 -15.8805,30.99876 -8.9228,19.43536 -16.4476,39.39667 -22.5246,59.75167 -12.8371,42.82785 -19.8764,88.11305 -20.9185,134.58991 h -0.094 z"
+         fill="url(#linear-gradient)"
+         style="fill:url(#linearGradient36113);fill-opacity:1;stroke-width:0.479881"
+         sodipodi:nodetypes="ccccccccccccccccccccccccccccccsccccccccccccccccccscccccccccccc" />
+      <path
+         id="path35727"
+         data-name="Path 154"
+         d="m 616.39205,931.76372 54.92115,71.61848 105.7425,-69.30236 z"
+         fill="#895990"
+         sodipodi:nodetypes="cccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35729"
+         data-name="Path 155"
+         d="m 671.2127,1003.3822 198.174,11.9906 -89.9145,-30.74933 -2.4165,-50.54363 z"
+         fill="#865991"
+         sodipodi:nodetypes="ccccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35731"
+         data-name="Path 156"
+         d="m 777.0557,934.07984 -116.418,-118.29035 -14.913,49.99652 v 0 l 25.4865,36.98601 z"
+         fill="#8d5a8f"
+         sodipodi:nodetypes="cccccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35733"
+         data-name="Path 157"
+         d="m 645.7712,865.79458 -12.549,31.27355 18.192,33.41196 125.6415,3.59975 -105.825,-31.33925 z"
+         fill="#8e5a8e"
+         sodipodi:nodetypes="cccccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35735"
+         data-name="Path 158"
+         d="m 633.2222,897.06813 -16.83015,34.69559 35.02215,-1.28363 z"
+         fill="#915a8c"
+         sodipodi:nodetypes="cccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35737"
+         data-name="Path 159"
+         d="m 779.4722,984.62347 47.19075,16.25173 62.71275,-26.0539 -112.32,-40.74146 z"
+         fill="#815893"
+         sodipodi:nodetypes="ccccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35739"
+         data-name="Path 160"
+         d="m 881.32745,971.94035 47.30325,-29.06541 -151.575,-8.7951 z"
+         fill="#7e5894"
+         sodipodi:nodetypes="cccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35741"
+         data-name="Path 161"
+         d="m 660.6377,815.78949 93.5415,-41.42998 50.265,85.14123 -86.09445,15.01881 z"
+         fill="#8d5a8f"
+         sodipodi:nodetypes="ccccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35743"
+         data-name="Path 162"
+         d="m 718.34975,874.51955 58.70595,59.56029 27.3885,-74.5791 z"
+         fill="#875991"
+         sodipodi:nodetypes="cccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35745"
+         data-name="Path 163"
+         d="m 804.4442,859.50074 93.729,42.39562 -2.79705,39.10886 -118.32045,-6.92538 z"
+         fill="#805894"
+         sodipodi:nodetypes="ccccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35747"
+         data-name="Path 164"
+         d="m 754.1792,774.35951 -81.534,-29.72508 -4.614,35.10613 -7.3935,36.04893 z"
+         fill="#925a8c"
+         sodipodi:nodetypes="ccccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35749"
+         data-name="Path 165"
+         d="m 672.3737,745.70007 2.499,-33.37768 v -31.30354 l 58.914,37.11028 z"
+         fill="#945a8b"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35751"
+         data-name="Path 166"
+         d="m 732.5972,718.58052 -59.238,26.28389 34.40475,12.60313 55.29375,-27.78064 z"
+         fill="#915a8c"
+         sodipodi:nodetypes="ccccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35753"
+         data-name="Path 167"
+         d="m 707.76395,757.46754 46.41525,16.89197 8.8785,-44.67261 z"
+         fill="#905a8e"
+         sodipodi:nodetypes="cccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35755"
+         data-name="Path 168"
+         d="m 674.9372,681.38311 0.063,-59.7987 42.372,40.35576 v 27.86664 z"
+         fill="#985b8a"
+         sodipodi:nodetypes="ccccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35757"
+         data-name="Path 169"
+         d="m 717.3722,689.80824 36.801,14.06902 -20.862,14.47757 -58.311,-37.27599 z"
+         fill="#935b8c"
+         sodipodi:nodetypes="ccccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35759"
+         data-name="Path 170"
+         d="m 763.0577,729.6869 33.1875,61.76713 -21.20325,18.42172 -20.86275,-35.51624 z"
+         fill="#8d5a8f"
+         sodipodi:nodetypes="ccccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35761"
+         data-name="Path 171"
+         d="m 675.0002,621.58441 v -41.61854 l 33.6315,16.20744 33.1245,25.4111 z"
+         fill="#9a5b89"
+         sodipodi:nodetypes="ccccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35763"
+         data-name="Path 172"
+         d="m 675.0002,579.96444 -10e-6,-44.09265 32.16751,59.77727 z"
+         fill="#9d5b88"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35765"
+         data-name="Path 173"
+         d="m 741.7562,621.58441 -8.235,40.29148 h -17.019 l -41.502,-40.29148 z"
+         fill="#975b8a"
+         sodipodi:nodetypes="ccccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35767"
+         data-name="Path 174"
+         d="m 717.3722,661.87589 v 28.23376 l 36.828,13.76761 36.051,-27.71665 -56.73,-14.28329 z"
+         fill="#925b8d"
+         sodipodi:nodetypes="cccccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35769"
+         data-name="Path 175"
+         d="m 733.5212,661.87589 56.73,14.28472 -18.849,-45.83538 -29.646,-8.74082 z"
+         fill="#935a8b"
+         sodipodi:nodetypes="ccccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35771"
+         data-name="Path 176"
+         d="m 754.1732,703.87726 -21.57,14.71326 30.4545,11.09638 34.734,-26.28389 z"
+         fill="#905a8e"
+         sodipodi:nodetypes="ccccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35773"
+         data-name="Path 177"
+         d="m 797.7917,703.40301 -7.5405,-27.2424 -36.051,27.71665 z"
+         fill="#905a8d"
+         sodipodi:nodetypes="cccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35775"
+         data-name="Path 178"
+         d="m 790.2512,676.16061 103.1805,50.49078 -86.1225,13.68477 z"
+         fill="#8c5a8f"
+         sodipodi:nodetypes="cccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35777"
+         data-name="Path 179"
+         d="m 807.3092,740.33616 -30.2145,15.40607 -14.037,-26.05533 34.734,-26.28389 z"
+         fill="#8d5a8f"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35779"
+         data-name="Path 180"
+         d="m 777.0557,755.74223 19.1895,35.7118 81.0315,-40.64432 -69.9675,-10.47355 z"
+         fill="#89598f"
+         sodipodi:nodetypes="ccccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35781"
+         data-name="Path 181"
+         d="m 893.4317,726.65139 -86.1225,13.68477 94.3995,15.47321 z"
+         fill="#875991"
+         sodipodi:nodetypes="cccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35783"
+         data-name="Path 182"
+         d="m 796.2452,791.45403 -21.20325,18.42172 29.40225,49.62499 39.426,-52.14924 z"
+         fill="#885991"
+         sodipodi:nodetypes="ccccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35785"
+         data-name="Path 183"
+         d="m 843.8732,807.3515 -47.628,-15.89747 79.791,-40.94715 25.6725,5.30534 -24.432,54.19053 z"
+         fill="#855992"
+         sodipodi:nodetypes="cccccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35787"
+         data-name="Path 184"
+         d="m 877.2767,810.00275 -33.402,-2.65125 -39.4305,52.14924 26.4405,12.34771 z"
+         fill="#845892"
+         sodipodi:nodetypes="ccccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35789"
+         data-name="Path 185"
+         d="m 830.5742,871.85416 67.599,30.0422 -20.8965,-91.89361 z"
+         fill="#805893"
+         sodipodi:nodetypes="cccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35791"
+         data-name="Path 186"
+         d="m 895.37615,941.00522 45.61005,2.71395 -42.813,-41.82281 z"
+         fill="#7a5897"
+         sodipodi:nodetypes="cccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35793"
+         data-name="Path 187"
+         d="m 940.9877,943.71917 -42.8145,-41.82281 81.70005,-62.53822 -1.77255,69.31061 z"
+         fill="#785898"
+         sodipodi:nodetypes="ccccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35795"
+         data-name="Path 188"
+         d="m 898.1732,901.89636 -16.63395,-73.01535 98.334,10.47713 z"
+         fill="#7d5895"
+         sodipodi:nodetypes="cccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35797"
+         data-name="Path 189"
+         d="m 881.53925,828.88101 -4.26255,-18.87826 24.432,-54.19053 53.24235,81.00223 z"
+         fill="#7e5895"
+         sodipodi:nodetypes="ccccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35799"
+         data-name="Path 190"
+         d="m 901.7087,755.81222 -8.6595,-29.75079 53.50965,-16.81783 -20.10765,46.56577 z"
+         fill="#835892"
+         sodipodi:nodetypes="ccccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35801"
+         data-name="Path 191"
+         d="M 946.55885,709.2436 893.4317,726.65139 850.9616,705.86855 Z"
+         fill="#855992"
+         sodipodi:nodetypes="cccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35803"
+         data-name="Path 192"
+         d="m 927.3782,755.80937 h -25.6695 l 53.24235,81.00223 55.93215,-53.61414 z"
+         fill="#7c5895"
+         sodipodi:nodetypes="ccccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35805"
+         data-name="Path 193"
+         d="m 954.95105,836.81445 76.77545,7.87374 -20.8433,-61.49073 z"
+         fill="#795796"
+         sodipodi:nodetypes="cccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35807"
+         data-name="Path 194"
+         d="m 947.2889,937.74202 87.4548,24.23874 -34.6845,-70.98221 -21.4782,-1.70631 -0.4803,19.37651 z"
+         fill="#745799"
+         sodipodi:nodetypes="cccccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35809"
+         data-name="Path 195"
+         d="m 1019.7653,957.82105 53.4084,64.63405 c 0,0 39.5295,-40.08433 37.3335,-40.42573 -2.196,-0.34141 -90.7419,-24.20832 -90.7419,-24.20832 z"
+         fill="#6c569c"
+         sodipodi:nodetypes="ccsc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35811"
+         data-name="Path 196"
+         d="m 1092.9377,1001.3666 87.4755,18.1244 -33.4875,-76.68034 z"
+         fill="#67559e"
+         sodipodi:nodetypes="cccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35813"
+         data-name="Path 197"
+         d="m 1034.7437,961.98076 -34.6845,-70.98221 146.8665,51.81211 -35.8695,39.73581 z"
+         fill="#6d569c"
+         sodipodi:nodetypes="ccccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35815"
+         data-name="Path 198"
+         d="m 1031.7265,844.68819 -51.85325,-5.33005 -1.29225,49.9341 21.4782,1.70631 z"
+         fill="#775798"
+         sodipodi:nodetypes="ccccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35817"
+         data-name="Path 199"
+         d="m 901.7087,707.82413 73.608,2.33269 -17.9385,-33.8705 -53.505,24.15118 z"
+         fill="#825893"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35819"
+         data-name="Path 200"
+         d="m 956.4512,676.16633 30,54.0191 33.093,-44.76832 z"
+         fill="#805995"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35821"
+         data-name="Path 201"
+         d="m 986.1422,729.60262 -34.81695,34.06892 -24.87405,-7.86217 20.10765,-46.56577 29.37585,0.61325 z"
+         fill="#805995"
+         sodipodi:nodetypes="cccccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35823"
+         data-name="Path 202"
+         d="m 951.32525,763.67154 59.55795,19.52592 -24.741,-53.59484 z"
+         fill="#7c5895"
+         sodipodi:nodetypes="cccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35825"
+         data-name="Path 203"
+         d="m 1019.5427,685.41854 -6.0034,105.80108 -27.7076,-62.21125 z"
+         fill="#7c5895"
+         sodipodi:nodetypes="cccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35827"
+         data-name="Path 204"
+         d="m 1013.5393,791.21962 66.9319,3.46705 -9.588,-82.76283 -51.6495,-26.50815 z"
+         fill="#775898"
+         sodipodi:nodetypes="ccccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35829"
+         data-name="Path 205"
+         d="m 1080.4712,794.68667 -66.9319,-3.46705 23.9419,72.68224 z"
+         fill="#765798"
+         sodipodi:nodetypes="cccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35831"
+         data-name="Path 206"
+         d="m 1037.4812,863.90186 -5.7547,-19.21367 -31.6673,46.31036 46.392,17.0831 z"
+         fill="#745799"
+         sodipodi:nodetypes="ccccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35833"
+         data-name="Path 207"
+         d="m 1046.4512,908.08165 100.4745,34.72901 -55.0095,-84.20986 -54.435,5.30106 z"
+         fill="#6d569b"
+         sodipodi:nodetypes="ccccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35835"
+         data-name="Path 208"
+         d="m 1146.9257,942.81066 30.0405,68.64954 101.7525,-40.94003 z"
+         fill="#64559f"
+         sodipodi:nodetypes="cccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35837"
+         data-name="Path 209"
+         d="m 1266.6557,968.16462 -41.7435,-69.50518 -77.9865,44.15122 z"
+         fill="#6456a0"
+         sodipodi:nodetypes="cccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35839"
+         data-name="Path 210"
+         d="m 1224.9122,898.65944 57.5175,-7.95516 19.485,37.11028 -31.3957,40.97187 -3.8633,-0.62181 z"
+         fill="#6155a2"
+         sodipodi:nodetypes="cccccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35841"
+         data-name="Path 211"
+         d="m 1091.9147,858.6008 55.011,84.20986 77.9865,-44.15122 z"
+         fill="#69569e"
+         sodipodi:nodetypes="cccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35843"
+         data-name="Path 212"
+         d="m 1070.8832,711.92384 77.01,55.66757 -67.422,28.27517 z"
+         fill="#745799"
+         sodipodi:nodetypes="cccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35845"
+         data-name="Path 213"
+         d="m 1147.8947,767.59141 -67.7325,27.68522 -42.681,68.62523 54.4335,-5.30106 z"
+         fill="#72579b"
+         sodipodi:nodetypes="ccccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35847"
+         data-name="Path 214"
+         d="m 1091.9162,858.6008 132.996,40.05864 -77.019,-131.06803 z"
+         fill="#6d569c"
+         sodipodi:nodetypes="cccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35849"
+         data-name="Path 215"
+         d="m 1282.7432,890.70428 -12.681,-31.80636 -10.2,-33.8705 -34.95,73.63202 z"
+         fill="#6255a0"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35851"
+         data-name="Path 216"
+         d="m 1259.7542,825.4531 -10.413,-43.42555 -74.2135,31.96578 49.7845,84.66611 z"
+         fill="#68569f"
+         sodipodi:nodetypes="ccccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35853"
+         data-name="Path 217"
+         d="m 1249.3412,782.02755 -6.492,-45.35971 -67.7215,77.32549 z"
+         fill="#69569e"
+         sodipodi:nodetypes="cccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35855"
+         data-name="Path 218"
+         d="m 1242.8492,736.66784 -1.5465,-77.45891 -93.408,108.38248 27.233,46.40192 z"
+         fill="#6c579d"
+         sodipodi:nodetypes="ccccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35857"
+         data-name="Path 219"
+         d="m 1241.3027,659.20893 -87.8355,42.40992 -64.9308,23.12396 59.3583,42.8486 z"
+         fill="#71579b"
+         sodipodi:nodetypes="ccccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35859"
+         data-name="Path 220"
+         d="m 1088.5364,724.74281 64.6218,-54.04896 -55.671,-15.90461 -26.604,57.1346 z"
+         fill="#765798"
+         sodipodi:nodetypes="ccccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35861"
+         data-name="Path 221"
+         d="m 1153.1582,670.69385 -64.6218,54.04896 67.7148,-23.71249 85.0515,-41.82139 z"
+         fill="#73579a"
+         sodipodi:nodetypes="ccccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35863"
+         data-name="Path 222"
+         d="m 1134.2927,665.39279 20.103,-46.24107 56.904,44.17836 -58.1415,7.36377 z"
+         fill="#735799"
+         sodipodi:nodetypes="ccccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35865"
+         data-name="Path 223"
+         d="m 1211.3027,663.92004 30,-4.71111 -86.907,-40.05721 z"
+         fill="#70569b"
+         sodipodi:nodetypes="cccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35867"
+         data-name="Path 224"
+         d="m 1154.3957,619.15172 86.907,-18.26016 v 58.31737 z"
+         fill="#71579b"
+         sodipodi:nodetypes="cccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35869"
+         data-name="Path 225"
+         d="m 1241.3027,600.89013 -0.6616,-64.85707 -73.92,80.54298 z"
+         fill="#72579a"
+         sodipodi:nodetypes="cccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35871"
+         data-name="Path 226"
+         d="m 674.91919,539.71438 45.996,-63.21561 -45.996,-21.4028 z"
+         fill="#a15c86"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35873"
+         data-name="Path 227"
+         d="m 674.91919,455.10168 v -55.96039 l 70.6185,26.80242 -24.7425,50.65934 z"
+         fill="#a05b86"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35875"
+         data-name="Path 228"
+         d="m 674.91919,399.14129 v -37.70024 l 61.0305,19.57435 9.279,44.92545 z"
+         fill="#a25b85"
+         sodipodi:nodetypes="ccccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35877"
+         data-name="Path 229"
+         d="m 674.91919,361.44105 -2.9895,-40.64575 69.99705,-38.00293 z"
+         fill="#a65c84"
+         sodipodi:nodetypes="cccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35879"
+         data-name="Path 230"
+         d="m 671.92969,321.53239 -7.7325,-44.32692 77.72955,5.5869 z"
+         fill="#a75c83"
+         sodipodi:nodetypes="cccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35881"
+         data-name="Path 231"
+         d="m 664.19869,277.2069 -9.279,-36.22748 47.4855,-52.08639 14.3529,92.12489 z"
+         fill="#ab5d82"
+         sodipodi:nodetypes="ccccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35883"
+         data-name="Path 232"
+         d="m 654.91969,241.52509 -10.8735,-33.11341 58.359,-19.51865 z"
+         fill="#ad5d80"
+         sodipodi:nodetypes="cccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35885"
+         data-name="Path 233"
+         d="m 644.04619,208.41168 -15.372,-36.59889 51.6,-49.14658 22.131,66.22682 z"
+         fill="#b05d7f"
+         sodipodi:nodetypes="ccccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35887"
+         data-name="Path 234"
+         d="m 628.67419,171.81279 -22.54485,-41.42426 74.33385,-7.72232 z"
+         fill="#b35e7f"
+         sodipodi:nodetypes="cccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35889"
+         data-name="Path 235"
+         d="m 741.92674,282.79237 -67.00755,78.64868 61.0305,19.57435 42.3465,-42.81988 z"
+         fill="#a25c85"
+         sodipodi:nodetypes="ccccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35891"
+         data-name="Path 236"
+         d="m 778.77169,337.51985 -42.822,43.49555 8.8035,45.5297 49.485,-32.85486 z"
+         fill="#9d5b87"
+         sodipodi:nodetypes="ccccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35893"
+         data-name="Path 237"
+         d="m 794.23669,393.69309 -48.699,32.25062 -24.813,50.45649 43.7745,-18.5787 z"
+         fill="#9d5b87"
+         sodipodi:nodetypes="ccccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35895"
+         data-name="Path 238"
+         d="m 716.67844,281.05777 88.03125,7.29693 -97.86615,-70.64952 z"
+         fill="#a75c84"
+         sodipodi:nodetypes="cccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35897"
+         data-name="Path 239"
+         d="m 706.84354,217.70518 -4.43835,-28.81215 77.5575,-33.75908 -51.858,78.39027 z"
+         fill="#aa5d83"
+         sodipodi:nodetypes="ccccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35899"
+         data-name="Path 240"
+         d="m 702.40519,188.89303 78.2715,-33.75765 -100.4025,-32.46917 z"
+         fill="#ac5d81"
+         sodipodi:nodetypes="cccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35901"
+         data-name="Path 241"
+         d="m 680.46319,122.66621 23.3685,-46.60248 -125.376,57.3203 z"
+         fill="#b25d7f"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35903"
+         data-name="Path 242"
+         d="m 702.97369,76.06373 76.7505,78.84738 -100.161,-32.40204 z"
+         fill="#af5d80"
+         sodipodi:nodetypes="cccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35905"
+         data-name="Path 243"
+         d="m 779.72419,154.91111 17.6115,-102.859998 -94.7085,24.261172 z"
+         fill="#ab5c81"
+         sodipodi:nodetypes="cccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35907"
+         data-name="Path 244"
+         d="m 797.33569,52.051112 59.4765,31.712083 -14.7495,62.078545 -62.3385,9.06937 z"
+         fill="#a75c83"
+         sodipodi:nodetypes="ccccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35909"
+         data-name="Path 245"
+         d="m 842.06119,145.84745 14.751,-62.084255 76.8435,46.905315 z"
+         fill="#a35c86"
+         sodipodi:nodetypes="cccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35911"
+         data-name="Path 246"
+         d="m 933.65569,130.44138 -91.5945,15.40607 53.7675,62.7585 57.555,-43.31699 z"
+         fill="#9d5b88"
+         sodipodi:nodetypes="ccccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35913"
+         data-name="Path 247"
+         d="m 895.82869,208.60595 -53.7675,-62.7585 -76.74045,31.33354 -11.76105,74.69624 z"
+         fill="#a35c85"
+         sodipodi:nodetypes="ccccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35915"
+         data-name="Path 248"
+         d="m 765.32074,177.18099 76.74195,-31.33925 -62.3385,9.06937 z"
+         fill="#a65c84"
+         sodipodi:nodetypes="cccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35917"
+         data-name="Path 249"
+         d="m 728.10469,233.52422 25.455,18.35301 11.76105,-74.69624 z"
+         fill="#a65c84"
+         sodipodi:nodetypes="cccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35919"
+         data-name="Path 250"
+         d="m 753.55969,251.87723 142.269,-43.27128 -91.119,79.74875 z"
+         fill="#9f5b87"
+         sodipodi:nodetypes="cccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35921"
+         data-name="Path 251"
+         d="m 804.70969,288.3547 -62.78295,-5.56233 36.36945,55.40315 28.7955,-30.0622 z"
+         fill="#a05b86"
+         sodipodi:nodetypes="ccccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35923"
+         data-name="Path 252"
+         d="m 807.09019,307.84049 -28.794,30.35503 14.871,52.40779 41.1345,-27.09669 z"
+         fill="#9c5b88"
+         sodipodi:nodetypes="ccccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35925"
+         data-name="Path 253"
+         d="m 834.30619,363.80088 49.485,-2.06128 -76.392,-53.01489 z"
+         fill="#9a5b89"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35927"
+         data-name="Path 254"
+         d="m 836.64094,260.37707 -31.93125,27.97763 1.761,20.07432 77.01,53.31058 z"
+         fill="#995b89"
+         sodipodi:nodetypes="ccccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35929"
+         data-name="Path 255"
+         d="m 883.48219,361.7396 59.691,26.79671 -33.82425,-125.80869 -72.708,-2.35055 z"
+         fill="#955b8b"
+         sodipodi:nodetypes="ccccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35931"
+         data-name="Path 256"
+         d="m 909.34894,262.72762 -73.18725,-2.30813 59.667,-51.81354 z"
+         fill="#9b5b88"
+         sodipodi:nodetypes="cccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35933"
+         data-name="Path 257"
+         d="m 953.38369,165.28896 -57.555,43.31699 26.622,107.19113 63.093,-71.28077 z"
+         fill="#965b8b"
+         sodipodi:nodetypes="ccccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35935"
+         data-name="Path 258"
+         d="m 985.54369,244.51631 -64.02,72.15499 21.6495,71.86501 70.51501,-5.59676 z"
+         fill="#905a8e"
+         sodipodi:nodetypes="ccccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35937"
+         data-name="Path 259"
+         d="m 1010.5952,369.39621 52.2675,-9.42363 -45.7725,-106.3269 -31.54651,-9.12937 z"
+         fill="#8d5a8f"
+         sodipodi:nodetypes="ccccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35939"
+         data-name="Path 260"
+         d="m 1017.0902,253.64568 -31.54651,-9.12937 -32.16,-79.22735 81.19951,-33.56053 c 144.8471,-82.762104 -11.7199,81.07537 -17.493,121.91725 z"
+         fill="#945a8b"
+         sodipodi:nodetypes="ccccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35941"
+         data-name="Path 261"
+         d="m 1034.5832,131.72843 -27.7005,-20.63428 -73.29901,20.91141 19.8,33.2834 z"
+         fill="#985b89"
+         sodipodi:nodetypes="ccccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35943"
+         data-name="Path 262"
+         d="m 1062.8627,359.97258 59.5148,27.18554 -101.5763,-164.43601 -3.711,30.92357 z"
+         fill="#885991"
+         sodipodi:nodetypes="ccccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35945"
+         data-name="Path 263"
+         d="m 1020.8012,222.72211 53.814,90.1266 10.7445,-148.46126 -57.447,13.26922 z"
+         fill="#8e5a8f"
+         sodipodi:nodetypes="ccccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35947"
+         data-name="Path 264"
+         d="m 1085.3597,164.38745 -10.7445,148.46126 84.4335,13.54763 z"
+         fill="#895990"
+         sodipodi:nodetypes="cccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35949"
+         data-name="Path 265"
+         d="m 1074.6152,312.84871 85.6725,13.25194 -25.6725,80.40155 z"
+         fill="#845992"
+         sodipodi:nodetypes="cccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35951"
+         data-name="Path 266"
+         d="m 1159.0487,326.39491 83.193,27.68522 -28.1415,71.27791 -79.485,-18.85584 z"
+         fill="#7d5895"
+         sodipodi:nodetypes="ccccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35953"
+         data-name="Path 267"
+         d="m 1134.6152,406.5022 9.5895,44.47977 68.349,24.15118 1.5465,-49.77511 z"
+         fill="#7c5795"
+         sodipodi:nodetypes="ccccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35955"
+         data-name="Path 268"
+         d="m 1212.5537,475.13315 28.0874,60.89991 0.9856,-79.45576 z"
+         fill="#765798"
+         sodipodi:nodetypes="cccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35957"
+         data-name="Path 269"
+         d="m 1241.6267,456.5773 -29.073,18.55585 1.5465,-49.77511 28.14,-71.28219 z"
+         fill="#795897"
+         sodipodi:nodetypes="ccccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35959"
+         data-name="Path 270"
+         d="m 1242.2417,354.08013 5.2575,-50.65934 h -99.9 l 11.4435,22.97412 z"
+         fill="#805893"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35961"
+         data-name="Path 271"
+         d="m 1147.6022,303.42079 h 99.4935 l -139.5225,-89.54092 z"
+         fill="#815994"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35963"
+         data-name="Path 272"
+         d="m 1107.5732,213.87987 139.917,90.36229 10.8555,-55.519 z"
+         fill="#835993"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35965"
+         data-name="Path 273"
+         d="m 1258.3457,248.72316 17.2965,-49.77368 -183.3435,-18.38301 15.2745,33.3134 z"
+         fill="#855992"
+         sodipodi:nodetypes="ccccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35967"
+         data-name="Path 274"
+         d="m 1275.6422,198.97662 15.681,-36.78459 9.6495,-16.46457 -18.057,-24.80399 -197.556,43.46398 6.939,16.17902 z"
+         fill="#815893"
+         sodipodi:nodetypes="ccccccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35969"
+         data-name="Path 275"
+         d="m 1027.9082,177.35955 6.675,-45.63112 102.294,21.61136 z"
+         fill="#905a8d"
+         sodipodi:nodetypes="cccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35971"
+         data-name="Path 276"
+         d="m 1014.6302,117.26372 22.143,-27.012405 100.104,63.088475 -102.294,-21.61136 z"
+         fill="#915a8d"
+         sodipodi:nodetypes="ccccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35973"
+         data-name="Path 277"
+         d="m 1036.7732,90.251315 100.104,63.088475 101.4233,-22.57672 z"
+         fill="#8c598f"
+         sodipodi:nodetypes="cccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35975"
+         data-name="Path 278"
+         d="m 1043.7287,92.174039 134.1062,26.433591 -57.6092,-68.433531 z"
+         fill="#8e5a8e"
+         sodipodi:nodetypes="cccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35977"
+         data-name="Path 279"
+         d="m 1132.5092,64.768371 45.3257,53.839259 50.3623,-51.537561 z"
+         fill="#8b598f"
+         sodipodi:nodetypes="cccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+      <path
+         id="path35979"
+         data-name="Path 280"
+         d="m 1177.8349,118.60763 60.4656,12.15544 44.6152,-9.8396 -54.7185,-53.853401 z"
+         fill="#855992"
+         sodipodi:nodetypes="ccccc"
+         style="fill-opacity:1;stroke-width:1.4638" />
+    </g>
+    <path
+       id="path35725-3"
+       style="fill:#000000;fill-opacity:0.2453566;stroke-width:0.479883;opacity:1"
+       d="M 0.082031,0 0,1080 h 1912.918 v 0 h 2.9863 L 1920,0.074219 Z M 1300.043,148.06055 c 3.7442,5.27646 7.1874,10.73406 10.3164,16.34765 4.3225,5.36153 9.2885,10.24714 14.8008,14.5625 5.4111,4.22887 11.328,7.86397 17.6347,10.83594 12.7331,5.98993 26.8119,9.10465 41.1016,9.0918 2.0869,0 4.1937,-0.0664 6.2558,-0.19922 36.8131,-11.26972 75.3058,-16.99905 114.0215,-16.9707 205.8512,0 372.7183,160.42054 371.9707,357.5957 -0.7476,197.17519 -168.8294,357.58789 -374.6816,357.58789 -36.1209,0.0222 -72.0251,-4.96024 -106.5293,-14.78516 -4.5083,-0.62982 -9.0619,-0.94636 -13.6231,-0.94726 -7.724,2.2e-4 -15.4194,0.91788 -22.9003,2.73047 -7.3807,1.79312 -14.4954,4.4311 -21.1817,7.85546 -6.7119,3.43885 -12.9487,7.62858 -18.5703,12.47461 -5.7261,4.93973 -10.7829,10.51075 -15.0586,16.58789 -0.9537,1.53201 -1.9565,3.05027 -2.9609,4.55665 l -18.1875,-34.63868 0.2929,-0.041 -12.6816,-31.80664 -10.2012,-33.8711 -0.1386,0.29297 -10.3809,-43.29297 -6.4922,-45.35937 -1.5469,-77.45899 v -58.31836 l -0.6621,-64.85742 -0.6347,0.69141 0.01,-2.04883 0.6269,1.35742 0.9864,-79.45508 0.6132,-102.49218 v -0.006 l 5.1777,-49.88281 0.07,0.0449 9.6895,-49.5586 c 1.1979,-4.55689 2.4885,-9.07538 3.8144,-13.58007 l 14.5176,-41.7793 c 0.081,-0.20093 0.1592,-0.40269 0.2403,-0.60352 l 7.3007,-17.1289 c 0.3797,-0.84023 0.7246,-1.69297 1.1094,-2.53125 4.9056,-10.64159 10.217,-21.00398 15.8809,-31 z m -683.11136,2.17773 10.68945,19.64063 c 0.49241,0.99065 1.00101,1.96853 1.48633,2.96484 l 14.93946,35.56836 10.87304,33.11328 0.10938,-0.12109 9.16992,35.80078 h -0.002 l 7.73242,44.32812 0.0527,-0.0293 2.9375,39.9375 v 37.69921 55.96094 84.61328 l 0.0802,-0.10936 v 40.35937 l 0.3457,0.16797 -0.3457,-0.16601 v 41.61718 l -0.0625,59.47657 -0.0644,-0.041 v 31.30274 l -0.006,0.0762 h -0.18555 c -0.0661,2.16998 -0.2085,4.32377 -0.30078,6.48828 l -2.00781,26.8125 0.14062,-0.0625 -4.48242,34.10351 -7.39453,36.04883 -14.91211,49.9961 0.0312,0.0469 -12.5332,31.23633 -16.83008,34.69531 0.043,-0.002 c -4.3e-4,7.7e-4 -0.002,10e-4 -0.002,0.002 h -0.041 l 0.0234,0.0312 c -0.008,0.0147 -0.0152,0.0302 -0.0234,0.0449 -0.89961,-1.24425 -1.78468,-2.49874 -2.65235,-3.76367 -0.0593,-0.004 -0.116,-0.008 -0.17382,-0.0117 -0.31488,-0.55857 -0.63653,-1.11824 -0.95703,-1.66015 -1.22812,-1.83678 -2.43695,-3.72028 -3.59376,-5.59961 -4.22558,-6.07537 -9.23746,-11.64524 -14.92187,-16.58399 -5.57809,-4.84361 -11.77709,-9.02887 -18.45703,-12.46484 -6.65722,-3.4227 -13.74861,-6.05911 -21.11328,-7.84766 l -0.002,-0.002 c -11.91208,-2.88204 -24.3372,-3.48763 -36.52539,-1.78125 -34.5798,9.82594 -70.5223,14.80979 -106.64453,14.78711 -205.85217,0 -372.718287,-160.41134 -371.970701,-357.58789 0.747763,-197.17657 168.829641,-357.59373 374.681821,-357.59373 36.12151,-0.0213 72.0267,4.96343 106.53125,14.78906 19.80533,2.7757 40.06574,-0.58381 57.66016,-9.5625 6.71338,-3.43484 12.94856,-7.62595 18.56445,-12.47656 5.75233,-4.97279 10.83033,-10.57829 15.12305,-16.69336 1.59684,-2.55933 3.26503,-5.07315 4.99023,-7.54883 z" />
+  </g>
+</svg>

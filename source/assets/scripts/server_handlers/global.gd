@@ -3,6 +3,12 @@ extends Node
 var player_master = null
 var ui = null
 var alive_players = []
+var player
+var line_button
+var sine_button
+var parab_button
+var hyper_button
+var global
 
 var clientPhase = {
 	"0": {

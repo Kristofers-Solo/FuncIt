@@ -5,15 +5,11 @@
 
 [sub_resource type="CapsuleShape2D" id=1]
 
-[node name="player_bullet2" type="Sprite" groups=[
-"Net",
-]]
+[node name="player_bullet2" type="Sprite" groups=["Net"]]
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
 
-[node name="hitbox" type="Area2D" parent="." groups=[
-"Player_damager",
-]]
+[node name="hitbox" type="Area2D" parent="." groups=["Player_damager"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
 rotation = 1.5708
