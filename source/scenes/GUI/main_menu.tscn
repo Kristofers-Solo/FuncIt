@@ -117,8 +117,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-<<<<<<< Updated upstream
-=======
 [node name="fullscreen" type="CheckButton" parent="."]
 margin_left = 1798.91
 margin_top = 989.536
@@ -130,7 +128,3 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
->>>>>>> Stashed changes
-[connection signal="pressed" from="foreground/play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="foreground/LAN_party" to="." method="_on_LAN_party_pressed"]
-[connection signal="pressed" from="foreground/exit" to="." method="_on_exit_pressed"]
