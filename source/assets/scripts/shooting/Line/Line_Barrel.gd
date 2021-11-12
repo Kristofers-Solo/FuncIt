@@ -9,11 +9,12 @@ var a_parameter = 0
 
 
 func _draw():
-	velocity.y = 10 * a_parameter
-	velocity.x = 10
-	dot_position += velocity * speed * 0.06944
-	draw_circle(dot_position, 1, Color(225, 225, 225))
-	time += 0.06944
+	if dot_position.x < 1000:
+		velocity.y = 10 * a_parameter
+		velocity.x = 10
+		dot_position += velocity * speed * 0.06944
+		draw_circle(dot_position, 2, Color(225, 225, 225))
+		time += 0.06944
 
 func _process(delta):
 	update()

@@ -14,6 +14,7 @@ var hp = 100 setget set_hp
 var can_shoot = true
 var is_reloading = false
 
+
 puppet var puppet_hp = 100 setget puppet_hp_set
 puppet var puppet_position = Vector2(0, 0) setget puppet_position_set
 puppet var puppet_velocity = Vector2()
@@ -85,6 +86,9 @@ var particleTexture = ImageTexture.new()
 var particleImage = Image.new()
 
 func _ready():
+	Global.set("player", self)
+	
+	
 	weaponPositionalOffset = Vector2(-$"weaponHolder/Player-character-theme-gun-na3".texture.get_width() * $"weaponHolder/Player-character-theme-gun-na3".scale.x / 2,-$"weaponHolder/Player-character-theme-gun-na3".texture.get_height() * $"weaponHolder/Player-character-theme-gun-na3".scale.y / 2) + Vector2(-$weaponHolder.get_shape().get_radius(), 0)
 	$"weaponHolder/Player-character-theme-gun".position = weaponPositionalOffset
 	
@@ -142,9 +146,9 @@ func process_rotation():
 
 
 func _process(delta: float) -> void:
-	$"weaponHolder/Player-character-theme-gun".play(theme)
-	particleImage.load("res://source/assets/sprites/character/player/theme/" + theme + "/na/Player-character-theme-particle-"+theme+".png")
-	particleTexture.create_from_image(particleImage)
+	#$"weaponHolder/Player-character-theme-gun".play(theme)
+	#particleImage.load("res://source/assets/sprites/character/player/theme/" + theme + "/na/Player-character-theme-particle-"+theme+".png")
+	#particleTexture.create_from_image(particleImage)
 	$Particles2D.texture = particleTexture
 	if username_text_instance != null:
 		username_text_instance.name = "username" + name
@@ -279,16 +283,21 @@ func _physics_process(delta) -> void:
 
 
 func choose_trajectory():
+	Global.get('line_button')
+	Global.get('sine_button')
+	Global.get('parab_button')
+	Global.get('hyper_button')
+	
 	if Input.is_action_just_pressed("line"):
 		trajectory = 'line'
 		trajectory_line = 'line'
-	elif Input.is_action_just_pressed("sine"):
+	if Input.is_action_just_pressed("sine"):
 		trajectory = 'sine'
 		trajectory_line = 'sine'
-	elif Input.is_action_just_pressed("parab"):
+	if Input.is_action_just_pressed("parab"):
 		trajectory = 'parab'
 		trajectory_line = 'parab'
-	elif Input.is_action_just_pressed("hyper"):
+	if Input.is_action_just_pressed("hyper"):
 		trajectory = 'hyper'
 		trajectory_line = 'hyper'
 
