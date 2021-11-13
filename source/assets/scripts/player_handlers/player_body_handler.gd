@@ -6,7 +6,6 @@ var trajectory:String = 'line'
 var trajectory_line = 'line'
 
 var bullet
-var player_bullet = load("res://source/entities/shooting/Line_Trajectory/Line_Bullet.tscn")
 var username_text = load("res://source/scenes/OVERLAY/elements/username_text.tscn")
 var username setget username_set
 var username_text_instance = null
@@ -26,6 +25,7 @@ puppet var puppet_direction = "left"
 puppet var puppet_theme = "01"
 puppet var puppet_character_states = {}
 puppet var puppet_bullet_position = Vector2() setget puppet_bullet_position_set
+puppet var puppet_phase setget puppet_phase_set
 
 onready var tween = $Tween
 onready var sprite = $player_sprite
@@ -85,9 +85,10 @@ var weaponAngle = 0
 var particleTexture = ImageTexture.new()
 var particleImage = Image.new()
 
+var globalActivePhase = null
+var clientPhase = null
+
 func _ready():
-	Global.set("player", self)
-	
 	
 	weaponPositionalOffset = Vector2(-$"weaponHolder/Player-character-theme-gun-na3".texture.get_width() * $"weaponHolder/Player-character-theme-gun-na3".scale.x / 2,-$"weaponHolder/Player-character-theme-gun-na3".texture.get_height() * $"weaponHolder/Player-character-theme-gun-na3".scale.y / 2) + Vector2(-$weaponHolder.get_shape().get_radius(), 0)
 	$"weaponHolder/Player-character-theme-gun".position = weaponPositionalOffset
@@ -146,9 +147,18 @@ func process_rotation():
 
 
 func _process(delta: float) -> void:
-	#$"weaponHolder/Player-character-theme-gun".play(theme)
-	#particleImage.load("res://source/assets/sprites/character/player/theme/" + theme + "/na/Player-character-theme-particle-"+theme+".png")
-	#particleTexture.create_from_image(particleImage)
+	user_input = UIN_preset_pre_processor_instance.update(Global.get_current_phase())
+	if get_tree().is_network_server():
+		Global.phase_update_global()
+		clientPhase = Global.get_current_phase()
+		theme = "03"
+	else:
+		if puppet_phase != null:
+			clientPhase = puppet_phase
+			Global.set_current_phase(clientPhase)
+	$"weaponHolder/Player-character-theme-gun".play(theme)
+	particleImage.load("res://source/assets/sprites/character/player/theme/" + theme + "/na/Player-character-theme-particle-"+theme+".png")
+	particleTexture.create_from_image(particleImage)
 	$Particles2D.texture = particleTexture
 	if username_text_instance != null:
 		username_text_instance.name = "username" + name
@@ -158,7 +168,6 @@ func _process(delta: float) -> void:
 	elif $Particles2D.position.x < 0 and direction != "right":
 		$Particles2D.position = Vector2(-$Particles2D.position.x,$Particles2D.position.y)
 		$Particles2D.scale = -$Particles2D.scale
-	user_input = UIN_preset_pre_processor_instance.update()
 	user_state = get_user_state()
 	dimensions = get_dimensions()
 	VDIR = VDIR_preset_pre_processor_instance.update(user_state, dimensions)
@@ -250,17 +259,14 @@ func _physics_process(delta) -> void:
 				velocityVDIR = Vector2(clamp(velocityVDIR.x, -maxMovementSpeed.x, maxMovementSpeed.x), clamp(velocityVDIR.y, -maxMovementSpeed.y, maxMovementSpeed.y))
 				move_and_slide(velocityVDIR.rotated(rotationalHolder))
 				rotate_weapon()
-				
 				choose_trajectory()
 				enable_trajectory_line(trajectory_line)
-				if Input.is_action_just_released("input_shoot") and can_shoot and not is_reloading:
+				if user_input["shoot"] and can_shoot and not is_reloading:
 					rpc("shoot", trajectory, get_tree().get_network_unique_id())
 					is_reloading = true
 					reload_timer.start()
 		else:
-
 			rotation = lerp_angle(rotation, puppet_rotation, delta * 8)
-			#rotation = puppet_rotation
 			$"weaponHolder/Player-character-theme-gun".position = puppet_weapon_position
 			weaponAngle = puppet_weapon_angle
 			direction = puppet_direction
@@ -327,6 +333,9 @@ func _draw():
 					draw_line(VDIR[v_t][v]["start"] - user_state["global_position"],(VDIR[v_t][v]["ray"]["position"] - user_state["global_position"]).rotated(-rotation),Color(255,255,255,1),1)
 
 
+func puppet_phase_set(new_value) -> void:
+	puppet_phase = new_value
+
 
 func puppet_position_set(new_value) -> void:
 	puppet_position = new_value
@@ -381,6 +390,8 @@ func _on_network_tick_rate_timeout():
 			rset_unreliable("puppet_direction", direction)
 			#rset_unreliable("puppet_character_states", characterStates)
 			rset_unreliable("puppet_bullet_position", bullet)
+			if get_tree().is_network_server():
+				rset_unreliable("puppet_phase", clientPhase)
 
 
 sync func update_position(pos):
@@ -450,6 +461,7 @@ func _exit_tree() -> void:
 		if is_network_master():
 			Global.player_master = null
 
+
 func rotate_weapon():
 	#equip_weapon()
 	weaponPosition = $"weaponHolder/Player-character-theme-gun".position
@@ -472,6 +484,3 @@ func rotate_weapon():
 	$"weaponHolder/Player-character-theme-gun".position = weaponPosition
 	$"weaponHolder/Player-character-theme-gun".rotation_degrees = weaponAngle
 	pass
-
-
-
