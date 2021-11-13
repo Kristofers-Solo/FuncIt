@@ -14,23 +14,21 @@ func _process(delta) -> void:
 		get_tree().change_scene("res://source/scenes/GUI/main_menu.tscn")
 
 
-#func _player_connected(id) -> void:
-#	print("Player " + str(id) + " has connected")
-#
-#
-#func _connected_to_server() -> void:
-#	yield(get_tree().create_timer(0.1), "timeout")
-#
-#
-#func _on_start_game_pressed():
-#	rpc("switch_to_game")
-
-
 func _on_confirm_pressed():
 	if username_text_edit.text != "":
+		Global.alive_players.append(self)
 		Network.current_player_username = username_text_edit.text
 		Network.create_server()
+#		Global.instance_node_at_location(load("res://source/levels/trinity_site/trinity_site_level.tscn"), self, Vector2(960, 540))
+		instance_player(get_tree().get_network_unique_id())
 		rpc("switch_to_game")
+
+
+func instance_player(id) -> void:
+	var player_instance = Global.instance_node_at_location(player, PersistentNodes, Vector2(960, 540))
+	player_instance.name = str(id)
+	player_instance.set_network_master(id)
+	player_instance.username = username_text_edit.text
 
 
 sync func switch_to_game() -> void:
@@ -39,8 +37,6 @@ sync func switch_to_game() -> void:
 			child.update_shoot_mode(true)
 	
 	get_tree().change_scene("res://source/levels/trinity_site/trinity_site_level.tscn")
-
-
 
 
 func _on_return_pressed():

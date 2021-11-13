@@ -41,6 +41,7 @@ var activePhaseTracker = null
 var currentTime = null
 var gameStart = false
 
+
 func phase_update_global():
 	currentTime = OS.get_time()
 	if gameStart:
@@ -58,16 +59,20 @@ func phase_update_global():
 		clientPhase["active"] = clientPhase[str(activePhaseTracker)]
 	pass
 
+
 func start_game():
 	gameStart = true
 	pass
 
+
 func get_current_phase():
 	return clientPhase
+
 
 func set_current_phase(phase):
 	clientPhase = phase
 	pass
+
 
 func instance_node_at_location(node: Object, parent: Object, location: Vector2) -> Object:
 	var node_instance = instance_node(node, parent)
