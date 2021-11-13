@@ -72,6 +72,7 @@ func _player_disconnected(id) -> void:
 		PersistentNodes.get_node(str(id)).username_text_instance.queue_free()
 		PersistentNodes.get_node(str(id)).queue_free()
 
+
 func _on_create_server_pressed():
 	controls.hide()
 	username.show()
