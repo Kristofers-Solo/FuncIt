@@ -9,6 +9,8 @@ var bullet
 var username_text = load("res://source/scenes/OVERLAY/elements/username_text.tscn")
 var username setget username_set
 var username_text_instance = null
+var health_bar_scene = load("res://source/scenes/OVERLAY/elements/HUD.tscn")
+var health_bar_instance = null
 var hp = 100 setget set_hp
 var can_shoot = true
 var is_reloading = false
@@ -96,6 +98,8 @@ func _ready():
 	get_tree().connect("network_peer_connected", self, "_network_peer_connected")
 	username_text_instance = Global.instance_node_at_location(username_text, PersistentNodes, global_position)
 	username_text_instance.player_following = self
+	health_bar_instance = Global.instance_node_at_location(health_bar_scene, PersistentNodes, global_position)
+	health_bar_instance.player_following = self
 	update_shoot_mode(false)
 	Global.alive_players.append(self)
 
@@ -421,14 +425,17 @@ func _on_hitbox_area_entered(area):
 sync func hit_by_damager(damage):
 	hp -= damage
 	modulate = Color(5, 5, 5, 1)
+	health_bar_instance.value = hp
 	hit_timer.start()
 
 
 sync func enable() -> void:
 	hp = 100
+	health_bar_instance.value = 100
 	can_shoot = false
 	update_shoot_mode(false)
 	username_text_instance.visible = true
+	health_bar_instance.visible = true
 	visible = true
 	$player_collider.disabled = false
 	$hitbox/CollisionShape2D.disabled = false
@@ -444,6 +451,7 @@ sync func enable() -> void:
 
 sync func destroy() -> void:
 	username_text_instance.visible = false
+	health_bar_instance.visible = false
 	visible = false
 	$player_collider.disabled = true
 	$hitbox/CollisionShape2D.disabled = true
