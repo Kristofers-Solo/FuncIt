@@ -89,14 +89,14 @@ var globalActivePhase = null
 var clientPhase = null
 
 func _ready():
-	
+	Global.set("player", self)
 	weaponPositionalOffset = Vector2(-$"weaponHolder/Player-character-theme-gun-na3".texture.get_width() * $"weaponHolder/Player-character-theme-gun-na3".scale.x / 2,-$"weaponHolder/Player-character-theme-gun-na3".texture.get_height() * $"weaponHolder/Player-character-theme-gun-na3".scale.y / 2) + Vector2(-$weaponHolder.get_shape().get_radius(), 0)
 	$"weaponHolder/Player-character-theme-gun".position = weaponPositionalOffset
 	
 	get_tree().connect("network_peer_connected", self, "_network_peer_connected")
 	username_text_instance = Global.instance_node_at_location(username_text, PersistentNodes, global_position)
 	username_text_instance.player_following = self
-	update_shoot_mode(true)
+	update_shoot_mode(false)
 	Global.alive_players.append(self)
 
 	yield(get_tree(), "idle_frame")

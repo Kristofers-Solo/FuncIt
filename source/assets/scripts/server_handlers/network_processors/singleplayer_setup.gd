@@ -19,7 +19,6 @@ func _on_confirm_pressed():
 		Global.alive_players.append(self)
 		Network.current_player_username = username_text_edit.text
 		Network.create_server()
-#		Global.instance_node_at_location(load("res://source/levels/trinity_site/trinity_site_level.tscn"), self, Vector2(960, 540))
 		instance_player(get_tree().get_network_unique_id())
 		rpc("switch_to_game")
 
