@@ -17,7 +17,7 @@ func _ready():
 func follow_parabolic_trajectory():
 	if pos.x > 0:
 		velocity.x = 5
-		velocity.y = time*(a_parameter * time + b_parameter)
+		velocity.y = time*(a_parameter * time + b_parameter) 
 	if pos.x < 0:
 		velocity.x = 5
 		velocity.y = -time*(a_parameter * time + b_parameter)
