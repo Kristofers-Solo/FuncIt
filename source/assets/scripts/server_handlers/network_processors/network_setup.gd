@@ -24,6 +24,7 @@ func _ready() -> void:
 	device_ip_address.hide()
 	text.hide()
 	menu_botton.hide()
+	Global.start_game(false)
 	
 	
 	get_tree().connect("network_peer_connected", self, "_player_connected")

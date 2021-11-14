@@ -60,8 +60,8 @@ func phase_update_global():
 	pass
 
 
-func start_game():
-	gameStart = true
+func start_game(value):
+	gameStart = value
 	pass
 
 

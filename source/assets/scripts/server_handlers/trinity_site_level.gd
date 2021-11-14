@@ -10,7 +10,7 @@ func _ready() -> void:
 	get_tree().connect("network_peer_disconnected", self, "_player_disconnected")
 	if get_tree().is_network_server():
 		setup_player_positions()
-	Global.start_game()
+	Global.start_game(true)
 
 func setup_player_positions() -> void:
 	for player in PersistentNodes.get_children():
