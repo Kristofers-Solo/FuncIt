@@ -3,4 +3,5 @@
 [ext_resource path="res://source/assets/scripts/shooting/Line/Line_Barrel.gd" type="Script" id=1]
 
 [node name="Line_Barrel" type="Line2D"]
+points = PoolVector2Array( 0, 0, 10, 0, 100, 0 )
 script = ExtResource( 1 )

@@ -161,8 +161,8 @@ func _process(delta: float) -> void:
 			clientPhase = puppet_phase
 			Global.set_current_phase(clientPhase)
 	$"weaponHolder/Player-character-theme-gun".play(theme)
-	particleImage.load("res://source/assets/sprites/character/player/theme/" + theme + "/na/Player-character-theme-particle-"+theme+".png")
-	particleTexture.create_from_image(particleImage)
+	#particleImage.load("res://source/assets/sprites/character/player/theme/" + theme + "/na/Player-character-theme-particle-"+theme+".png")
+	#particleTexture.create_from_image(particleImage)
 	$Particles2D.texture = particleTexture
 	if username_text_instance != null:
 		username_text_instance.name = "username" + name

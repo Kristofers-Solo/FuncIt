@@ -7,7 +7,7 @@ var dot_position = Vector2(0, 0)
 var time = 0
 var a_parameter = 0
 
-
+"""
 func _draw():
 	if dot_position.x < 1000:
 		velocity.y = 10 * a_parameter
@@ -19,3 +19,6 @@ func _draw():
 func _process(delta):
 	update()
 	
+"""
+func _process(delta):
+	self.update()
