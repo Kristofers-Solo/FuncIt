@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="250" height="75" viewBox="0 0 250 75">
+  <defs>
+    <clipPath id="clip-trinity_site_input_background">
+      <rect width="250" height="75"/>
+    </clipPath>
+  </defs>
+  <g id="trinity_site_input_background" clip-path="url(#clip-trinity_site_input_background)">
+    <g id="Rectangle_140" data-name="Rectangle 140" transform="translate(-5)" fill="#4358aa" stroke="#556ece" stroke-width="4">
+      <path d="M0,0H195a60,60,0,0,1,60,60V79a0,0,0,0,1,0,0H0a0,0,0,0,1,0,0V0A0,0,0,0,1,0,0Z" stroke="none"/>
+      <path d="M4,2H195a58,58,0,0,1,58,58V75a2,2,0,0,1-2,2H4a2,2,0,0,1-2-2V4A2,2,0,0,1,4,2Z" fill="none"/>
+    </g>
+    <text id="WEAPON_FUNCTION_ARSENAL" data-name="WEAPON FUNCTION ARSENAL" transform="translate(3 15)" fill="#fff" font-size="7" font-family="Ramabhadra"><tspan x="0" y="0">WEAPON FUNCTION ARSENAL</tspan></text>
+    <text id="GOVERNMENT_ISSUED_-_V.613.92.1" data-name="GOVERNMENT ISSUED - V.613.92.1" transform="translate(41 20)" fill="#1d348d" font-size="4" font-family="Ramabhadra"><tspan x="0" y="0">GOVERNMENT ISSUED - V.613.92.1</tspan></text>
+  </g>
+</svg>
