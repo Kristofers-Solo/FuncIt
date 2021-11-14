@@ -1,0 +1,214 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://source/assets/sprites/GUI/in_game/trajectories/background.svg" type="Texture" id=1]
+[ext_resource path="res://source/assets/sprites/GUI/in_game/trajectories/line_inactive.svg" type="Texture" id=2]
+[ext_resource path="res://source/assets/sprites/GUI/in_game/trajectories/line_active.svg" type="Texture" id=3]
+[ext_resource path="res://source/assets/sprites/GUI/in_game/trajectories/parabol_active.svg" type="Texture" id=4]
+[ext_resource path="res://source/assets/sprites/GUI/in_game/trajectories/sin_active.svg" type="Texture" id=5]
+[ext_resource path="res://source/assets/sprites/GUI/in_game/trajectories/sin_inactive.svg" type="Texture" id=6]
+[ext_resource path="res://source/assets/sprites/GUI/in_game/trajectories/parabol_inactive.svg" type="Texture" id=7]
+[ext_resource path="res://source/assets/sprites/GUI/in_game/trajectories/hyperbol_inactive.svg" type="Texture" id=8]
+[ext_resource path="res://source/assets/sprites/GUI/in_game/trajectories/hyperbol_active.svg" type="Texture" id=9]
+[ext_resource path="res://source/fonts/oxygen/Oxygen-Regular.ttf" type="DynamicFontData" id=10]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 0, 550, 150 )
+
+[sub_resource type="DynamicFont" id=2]
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 10 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 8
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 10 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 14
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 10 )
+
+[node name="trajectory_control" type="Panel"]
+margin_right = 550.0
+margin_bottom = 150.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 243.0
+margin_bottom = 29.0
+custom_fonts/font = SubResource( 2 )
+text = "Weapon function arssenal"
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 128.0
+margin_top = 24.0
+margin_right = 253.0
+margin_bottom = 35.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.113725, 0.203922, 0.552941, 1 )
+text = "Government issued - v/613.92.1"
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="line" type="TextureButton" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -255.0
+margin_top = -40.0
+margin_right = -155.0
+margin_bottom = 60.0
+focus_mode = 0
+action_mode = 0
+enabled_focus_mode = 0
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 3 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="line"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 11.0
+margin_top = -18.0
+margin_right = -11.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "line"
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="parabol" type="TextureButton" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -125.0
+margin_top = -40.0
+margin_right = -25.0
+margin_bottom = 60.0
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 4 )
+texture_hover = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="parabol"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 11.0
+margin_top = -18.0
+margin_right = -11.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "parabol"
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="hyperbol" type="TextureButton" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 5.23596
+margin_top = -40.0
+margin_right = 105.236
+margin_bottom = 60.0
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 9 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="hyperbol"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 11.0
+margin_top = -18.0
+margin_right = -11.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "hyperbol"
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="sine" type="TextureButton" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 135.0
+margin_top = -40.0
+margin_right = 235.0
+margin_bottom = 60.0
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="sine"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 11.0
+margin_top = -18.0
+margin_right = -11.0
+margin_bottom = 1.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "sin"
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}

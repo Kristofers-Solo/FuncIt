@@ -1,18 +1,19 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://source/assets/sprites/GUI/menu_button.svg" type="Texture" id=1]
-[ext_resource path="res://source/assets/sprites/GUI/menu_button_pressed.svg" type="Texture" id=2]
-[ext_resource path="res://source/assets/sprites/GUI/menu_button_hover.svg" type="Texture" id=3]
+[ext_resource path="res://source/assets/sprites/GUI/in_game/buttons/menu_button_hover.svg" type="Texture" id=1]
+[ext_resource path="res://source/assets/sprites/GUI/in_game/buttons/menu_button.svg" type="Texture" id=2]
+[ext_resource path="res://source/assets/sprites/GUI/in_game/buttons/menu_button_pressed.svg" type="Texture" id=3]
 [ext_resource path="res://source/assets/scripts/ui_element_handlers/menu_button.gd" type="Script" id=4]
 
 [node name="menu_button" type="TextureButton"]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_right = 45.0
+margin_bottom = 45.0
+rect_scale = Vector2( 1.25, 1.25 )
 focus_mode = 0
 enabled_focus_mode = 0
-texture_normal = ExtResource( 1 )
-texture_pressed = ExtResource( 2 )
-texture_hover = ExtResource( 3 )
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 1 )
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false

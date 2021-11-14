@@ -64,8 +64,8 @@ enabled_focus_mode = 2
 [node name="Label" type="Label" parent="panel/return_to_game"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Return to game"
 align = 1
 valign = 1
@@ -85,11 +85,14 @@ enabled_focus_mode = 2
 [node name="Label" type="Label" parent="panel/return_to_main_menu"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 3 )
-text = "Retrun to main menu"
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Return to main menu"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="exit_game" parent="panel" instance=ExtResource( 2 )]
 anchor_left = 0.5
@@ -106,8 +109,8 @@ enabled_focus_mode = 2
 [node name="Label" type="Label" parent="panel/exit_game"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Exit game"
 align = 1
 valign = 1

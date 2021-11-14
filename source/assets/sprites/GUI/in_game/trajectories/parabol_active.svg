@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="100"
+   height="100"
+   viewBox="0 0 26.458333 26.458334"
+   version="1.1"
+   id="svg867"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   sodipodi:docname="parabol_active.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview869"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:document-units="px"
+     showgrid="false"
+     units="px"
+     inkscape:zoom="3.174838"
+     inkscape:cx="54.963434"
+     inkscape:cy="20.945951"
+     inkscape:window-width="1920"
+     inkscape:window-height="1007"
+     inkscape:window-x="1920"
+     inkscape:window-y="44"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs864" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <ellipse
+       style="fill:#3d64fe;fill-opacity:1;stroke:#ffffff;stroke-width:1.41697;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path1152"
+       cx="13.229165"
+       cy="13.229155"
+       rx="12.520679"
+       ry="12.520667" />
+    <path
+       d="M 4.4834125,21.754607 H 23.518282 v 3.292604 a 1.5433677,1.411112 0 0 1 -1.543369,1.411112 H 2.9400453 v -3.292601 a 1.5433677,1.411112 0 0 1 1.5433672,-1.411115 z"
+       fill="#ffffff"
+       id="path453-7-6"
+       style="stroke-width:0.0983833" />
+    <g
+       id="g925">
+      <g
+         id="g870"
+         transform="matrix(0.48421545,0,0,0.51264466,2.3385155,3.5453738)">
+        <path
+           id="Path_329"
+           data-name="Path 329"
+           d="m 1795,904.946 c 0,0 8.215,-43.835 19.96,0"
+           transform="translate(-1782.48,-876)"
+           fill="none"
+           stroke="#ffffff"
+           stroke-width="2"
+           stroke-dasharray="2" />
+      </g>
+    </g>
+  </g>
+</svg>

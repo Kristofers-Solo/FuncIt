@@ -1,11 +1,11 @@
 [gd_scene load_steps=15 format=2]
 
+[ext_resource path="res://source/assets/sprites/GUI/in_game/buttons/server_title.svg" type="Texture" id=1]
 [ext_resource path="res://source/scenes/GUI/server_handlers/server_listener.tscn" type="PackedScene" id=2]
 [ext_resource path="res://source/assets/scripts/server_handlers/server_processors/server_browser.gd" type="Script" id=3]
 [ext_resource path="res://source/scenes/OVERLAY/elements/button.tscn" type="PackedScene" id=4]
 [ext_resource path="res://source/assets/sprites/GUI/background_server.svg" type="Texture" id=5]
-[ext_resource path="res://source/assets/sprites/GUI/server_title.svg" type="Texture" id=6]
-[ext_resource path="res://source/assets/sprites/GUI/button_disabled.svg" type="Texture" id=7]
+[ext_resource path="res://source/assets/sprites/GUI/in_game/button_disabled.svg" type="Texture" id=7]
 [ext_resource path="res://source/fonts/oxygen/Oxygen-Regular.ttf" type="DynamicFontData" id=8]
 
 [sub_resource type="DynamicFont" id=1]
@@ -178,7 +178,7 @@ __meta__ = {
 
 [node name="server_title" type="Sprite" parent="controls/background_panel"]
 position = Vector2( 225, -25 )
-texture = ExtResource( 6 )
+texture = ExtResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -219,7 +219,7 @@ __meta__ = {
 
 [node name="enter_server_ip" type="Sprite" parent="popup_screen"]
 position = Vector2( 960, 465 )
-texture = ExtResource( 6 )
+texture = ExtResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }

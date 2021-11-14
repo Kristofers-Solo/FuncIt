@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="480"
+   height="156"
+   viewBox="0 0 126.99999 41.275001"
+   version="1.1"
+   id="svg881"
+   sodipodi:docname="trinity_site_display_input.svg"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview883"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:document-units="px"
+     showgrid="false"
+     units="px"
+     inkscape:zoom="0.79370951"
+     inkscape:cx="66.145106"
+     inkscape:cy="130.40035"
+     inkscape:window-width="1920"
+     inkscape:window-height="1007"
+     inkscape:window-x="1920"
+     inkscape:window-y="44"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs878">
+    <filter
+       id="Path_330"
+       x="10.5"
+       y="8.5"
+       width="53.812"
+       height="53.812"
+       filterUnits="userSpaceOnUse">
+      <feOffset
+         dy="3"
+         input="SourceAlpha"
+         id="feOffset2" />
+      <feGaussianBlur
+         stdDeviation="3"
+         result="blur"
+         id="feGaussianBlur4" />
+      <feFlood
+         flood-opacity="0.161"
+         id="feFlood6" />
+      <feComposite
+         operator="in"
+         in2="blur"
+         id="feComposite8"
+         result="result1" />
+      <feComposite
+         in="SourceGraphic"
+         in2="result1"
+         id="feComposite10" />
+    </filter>
+    <filter
+       id="Rectangle_142"
+       x="14.5"
+       y="36.5"
+       width="46"
+       height="26"
+       filterUnits="userSpaceOnUse">
+      <feOffset
+         dy="3"
+         input="SourceAlpha"
+         id="feOffset13" />
+      <feGaussianBlur
+         stdDeviation="3"
+         result="blur-2"
+         id="feGaussianBlur15" />
+      <feFlood
+         flood-opacity="0.161"
+         id="feFlood17" />
+      <feComposite
+         operator="in"
+         in2="blur-2"
+         id="feComposite19"
+         result="result1" />
+      <feComposite
+         in="SourceGraphic"
+         in2="result1"
+         id="feComposite21" />
+    </filter>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g920"
+       transform="scale(0.635)">
+      <g
+         id="Rectangle_150"
+         data-name="Rectangle 150"
+         fill="#4358aa"
+         stroke="#556ece"
+         stroke-width="4">
+        <rect
+           width="200"
+           height="65"
+           rx="12.5"
+           stroke="none"
+           id="rect29"
+           x="0"
+           y="0"
+           ry="12.5" />
+        <rect
+           x="2"
+           y="2"
+           width="196"
+           height="61"
+           rx="11.666667"
+           fill="none"
+           id="rect31"
+           ry="11.666667" />
+      </g>
+      <g
+         id="Group_152"
+         data-name="Group 152"
+         transform="translate(19.5,14.5)">
+        <g
+           transform="translate(-19.5,-14.5)"
+           filter="url(#Path_330)"
+           id="g39">
+          <g
+             id="Path_330-2"
+             data-name="Path 330"
+             transform="translate(19.5,14.5)"
+             fill="#3e66ff">
+            <path
+               d="m 17.905884,34.811764 c -4.51573,0 -8.7611706,-1.758518 -11.9542601,-4.95162 -3.1931002,-3.193091 -4.9516201,-7.43853 -4.9516201,-11.95426 0,-4.51573 1.7585199,-8.7611706 4.9516201,-11.9542601 3.1930895,-3.1931002 7.4385301,-4.9516201 11.9542601,-4.9516201 4.51573,0 8.761169,1.7585199 11.95426,4.9516201 3.193102,3.1930895 4.95162,7.4385301 4.95162,11.9542601 0,4.51573 -1.758518,8.761169 -4.95162,11.95426 -3.193091,3.193102 -7.43853,4.95162 -11.95426,4.95162 z"
+               stroke="none"
+               id="path34" />
+            <path
+               d="m 17.905884,2.0000038 c -4.248619,0 -8.2429297,1.6544991 -11.2471602,4.65872 -3.0042209,3.0042305 -4.65872,6.9985412 -4.65872,11.2471602 0,4.248619 1.6544991,8.242931 4.65872,11.24716 3.0042305,3.004221 6.9985412,4.65872 11.2471602,4.65872 4.248619,0 8.242931,-1.654499 11.24716,-4.65872 3.004221,-3.004229 4.65872,-6.998541 4.65872,-11.24716 0,-4.248619 -1.654499,-8.2429297 -4.65872,-11.2471602 -3.004229,-3.0042209 -6.998541,-4.65872 -11.24716,-4.65872 m 0,-1.9999999853027 c 9.889149,0 17.90588,8.0167293853027 17.90588,17.9058801853027 0,9.889149 -8.016731,17.90588 -17.90588,17.90588 C 8.0167332,35.811764 3.8146973e-6,27.795033 3.8146973e-6,17.905884 3.8146973e-6,8.0167332 8.0167332,3.8146973e-6 17.905884,3.8146973e-6 Z"
+               stroke="none"
+               fill="#ffffff"
+               id="path36" />
+          </g>
+        </g>
+        <g
+           transform="translate(-19.5,-14.5)"
+           filter="url(#Rectangle_142)"
+           id="g42">
+          <path
+             id="Rectangle_142-2"
+             data-name="Rectangle 142"
+             d="M 5,0 H 28 V 3 A 5,5 0 0 1 23,8 H 0 V 5 A 5,5 0 0 1 5,0 Z"
+             transform="translate(23.5,42.5)"
+             fill="#ffffff" />
+        </g>
+        <text
+           id="PARABOL"
+           transform="translate(8,33)"
+           font-size="4px"
+           font-family="Ramabhadra"><tspan
+             x="0"
+             y="0"
+             id="tspan44">PARABOL</tspan></text>
+        <path
+           id="Path_329"
+           data-name="Path 329"
+           d="m 1795,900.968 c 0,0 6.537,-34.884 15.885,0"
+           transform="translate(-1785.037,-877.932)"
+           fill="none"
+           stroke="#ffffff"
+           stroke-width="2"
+           stroke-dasharray="2" />
+      </g>
+      <g
+         id="Group_137"
+         data-name="Group 137"
+         transform="translate(-1073.4509,-4.4509423)">
+        <text
+           id="Active_formula"
+           data-name="Active formula"
+           transform="translate(1172,18)"
+           fill="#ffffff"
+           font-size="7px"
+           font-family="ArchivoBlack-Regular, Archivo"><tspan
+             x="0"
+             y="0"
+             id="tspan49">Active formula</tspan></text>
+        <text
+           id="y_x2_x_"
+           data-name="y=   x2+   x+  "
+           transform="translate(1137,33)"
+           fill="#ffffff"
+           font-size="14px"
+           font-family="Consolas-Bold, Consolas"
+           font-weight="700"><tspan
+             x="0"
+             y="0"
+             xml:space="preserve"
+             id="tspan52">y=   x</tspan><tspan
+             y="0"
+             font-size="8.166px"
+             baseline-shift="4.6662px"
+             id="tspan54">2</tspan><tspan
+             y="0"
+             xml:space="preserve"
+             id="tspan56">+   x+  </tspan></text>
+        <rect
+           id="Rectangle_123"
+           data-name="Rectangle 123"
+           width="17"
+           height="17"
+           transform="translate(1155,19)"
+           fill="#556ece"
+           x="0"
+           y="0" />
+        <rect
+           id="Rectangle_124"
+           data-name="Rectangle 124"
+           width="18"
+           height="17"
+           transform="translate(1235,20)"
+           fill="#556ece"
+           x="0"
+           y="0" />
+        <rect
+           id="Rectangle_125"
+           data-name="Rectangle 125"
+           width="18"
+           height="17"
+           fill="#556ece"
+           x="1203.2003"
+           y="19.705645" />
+      </g>
+      <path
+         id="Rectangle_151"
+         data-name="Rectangle 151"
+         d="M 10,0 H 50 V 5 A 10,10 0 0 1 40,15 H 0 V 10 A 10,10 0 0 1 10,0 Z"
+         transform="translate(67,38)"
+         fill="#46bc51" />
+      <path
+         id="Rectangle_152"
+         data-name="Rectangle 152"
+         d="M 10,0 H 50 V 5 A 10,10 0 0 1 40,15 H 0 V 10 A 10,10 0 0 1 10,0 Z"
+         transform="translate(127,38)"
+         fill="#b17474" />
+      <text
+         id="Ready"
+         transform="translate(75,49)"
+         fill="#ffffff"
+         font-size="10px"
+         font-family="ArchivoBlack-Regular, Archivo"><tspan
+           x="0"
+           y="0"
+           id="tspan65">Ready</tspan></text>
+      <text
+         id="Skip"
+         transform="translate(140,49)"
+         fill="#ffffff"
+         font-size="10px"
+         font-family="ArchivoBlack-Regular, Archivo"><tspan
+           x="0"
+           y="0"
+           id="tspan68">Skip</tspan></text>
+    </g>
+  </g>
+</svg>
