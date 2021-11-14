@@ -3,7 +3,7 @@ extends Node2D
 var player_following = null
 var text = "" setget text_set
 
-var distanceToPlayerOffset = -100
+var distanceToPlayerOffset = -150
 
 onready var label = $Label
 

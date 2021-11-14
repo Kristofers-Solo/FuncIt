@@ -10,7 +10,7 @@ onready var health_bar = $health_bar
 
 func _process(delta: float) -> void:
 	if player_following != null:
-		global_position = player_following.global_position + Vector2(0,distanceToPlayerOffset).rotated(player_following.rotation)
+		global_position = player_following.global_position + Vector2(0,distanceToPlayerOffset).rotated(player_following.rotation) + Vector2(0,45)
 
 
 func value_set(new_text) -> void:
