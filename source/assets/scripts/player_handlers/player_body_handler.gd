@@ -163,8 +163,8 @@ func _process(_delta: float) -> void:
 			clientPhase = puppet_phase
 			Global.set_current_phase(clientPhase)
 	$"weaponHolder/Player-character-theme-gun".play(theme)
-	particleImage.load("res://source/assets/sprites/character/player/theme/" + theme + "/na/Player-character-theme-particle-"+theme+".png")
-	particleTexture.create_from_image(particleImage)
+#	particleImage.load("res://source/assets/sprites/character/player/theme/" + theme + "/na/Player-character-theme-particle-" + theme + ".png")
+#	particleTexture.create_from_image(particleImage)
 	$Particles2D.texture = particleTexture
 	if username_text_instance != null:
 		username_text_instance.name = "username" + name
@@ -251,9 +251,9 @@ func _physics_process(delta) -> void:
 				if not user_input["right"] and not user_input["left"]:
 					velocityVDIR.x = move_toward(velocityVDIR.x, 0, deccelerationSpeed)
 				if velocityVDIR.x != 0 and maxMovementSpeed.x == 200:
-					$player_animated_sprite.play("move-speed-"+direction+"-"+theme)
+					$player_animated_sprite.play("move-speed-" + direction + "-" + theme)
 				elif maxMovementSpeed.x > 200 and not characterStates["jumped"]:
-					$player_animated_sprite.play("boost-speed-"+direction+"-"+theme)
+					$player_animated_sprite.play("boost-speed-" + direction + "-" + theme)
 					$Particles2D.set_emitting(true)
 				else:
 					#$player_animated_sprite.play("idle-speed-"+direction+"-"+theme)
@@ -279,12 +279,12 @@ func _physics_process(delta) -> void:
 			direction = puppet_direction
 
 			if velocityVDIR.x != 0 and maxMovementSpeed.x == 200:
-				$player_animated_sprite.play("move-speed-"+direction+"-"+theme)
+				$player_animated_sprite.play("move-speed-" + direction + "-" + theme)
 			elif maxMovementSpeed.x > 200 and not characterStates["jumped"]:
-				$player_animated_sprite.play("boost-speed-"+direction+"-"+theme)
+				$player_animated_sprite.play("boost-speed-" + direction + "-" + theme)
 				$Particles2D.set_emitting(true)
 			else:
-				$player_animated_sprite.play("idle-speed-"+direction+"-"+theme)
+				$player_animated_sprite.play("idle-speed-" + direction + "-" + theme)
 				$Particles2D.set_emitting(false)
 			rotate_weapon()
 
@@ -442,13 +442,13 @@ sync func enable() -> void:
 	$player_collider.disabled = false
 	$hitbox/CollisionShape2D.disabled = false
 	$weaponHolder.disabled = false
-
 	if get_tree().has_network_peer():
 		if is_network_master():
 			Global.player_master = self
-
 	if not Global.alive_players.has(self):
 		Global.alive_players.append(self)
+	weaponPositionalOffset = Vector2(-$"weaponHolder/Player-character-theme-gun-na3".texture.get_width() * $"weaponHolder/Player-character-theme-gun-na3".scale.x / 2,-$"weaponHolder/Player-character-theme-gun-na3".texture.get_height() * $"weaponHolder/Player-character-theme-gun-na3".scale.y / 2) + Vector2(-$weaponHolder.get_shape().get_radius(), 0)
+	$"weaponHolder/Player-character-theme-gun".position = weaponPositionalOffset
 
 
 sync func destroy() -> void:
@@ -459,7 +459,6 @@ sync func destroy() -> void:
 	$hitbox/CollisionShape2D.disabled = true
 	$weaponHolder.disabled = true
 	Global.alive_players.erase(self)
-
 	if get_tree().has_network_peer():
 		if is_network_master():
 			Global.player_master = null
@@ -473,7 +472,6 @@ func _exit_tree() -> void:
 
 
 func rotate_weapon():
-	#equip_weapon()
 	weaponPosition = $"weaponHolder/Player-character-theme-gun".position
 	weaponPosition -= Vector2(weaponPositionalOffset.x,0).rotated(deg2rad(weaponAngle)) + Vector2(0,weaponPositionalOffset.y)
 	if user_input["r_inc"]:

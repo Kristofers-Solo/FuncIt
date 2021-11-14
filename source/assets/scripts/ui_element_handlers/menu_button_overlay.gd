@@ -1,12 +1,6 @@
 extends Control
 
 
-func _process(delta) -> void:
-#	print(str(self))
-	if Input.is_action_just_pressed("esc"):
-		hide()
-
-
 func _on_return_to_game_pressed():
 	hide()
 

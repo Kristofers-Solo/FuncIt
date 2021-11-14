@@ -1,6 +1,6 @@
 extends Control
 
-var player_amount = 0
+var player_amount = 1
 
 var player = load("res://source/entities/player/player_node.tscn")
 
@@ -12,19 +12,20 @@ onready var multiplayer_config_ui = $multiplayer_configure
 onready var username_text_edit = $multiplayer_configure/popup_screen/panel/username_text_edit
 onready var username = $multiplayer_configure/popup_screen
 onready var controls = $multiplayer_configure/controls
-
-onready var device_ip_address = $UI/device_ip_address
-onready var start_game = $UI/start_game
+onready var device_ip_address = $lobby_controls/device_ip_address
+onready var start_game = $lobby_controls/start_game
 onready var background_lobby = $background_lobby
-onready var text = $UI/text
-onready var menu_botton = $UI/menu_button
+onready var text = $lobby_controls/text
+onready var menu_botton = $lobby_controls/menu_button
+onready var loby_controls = $lobby_controls
 
 
 func _ready() -> void:
 	username.hide()
-	background_lobby.hide()
 	device_ip_address.hide()
 	text.hide()
+	
+	
 	Global.start_game(false)
 	
 	
@@ -38,10 +39,11 @@ func _ready() -> void:
 	device_ip_address.text = Network.ip_address
 	
 	if get_tree().network_peer != null:
-		multiplayer_config_ui.hide()
-		background_lobby.show()
+		menu_botton.show()
 		device_ip_address.show()
 		text.show()
+		multiplayer_config_ui.hide()
+		$background.hide()
 		current_spawn_location_instance_number = 1
 # warning-ignore:shadowed_variable
 		for player in PersistentNodes.get_children():
@@ -54,12 +56,15 @@ func _ready() -> void:
 						current_player_for_spawn_location_number = player
 	else:
 		start_game.hide()
+		menu_botton.hide()
 
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("esc") and username.is_visible_in_tree():
 		username.hide()
 		controls.show()
+	elif Input.is_action_just_pressed("esc") and not username.is_visible_in_tree():
+		get_tree().change_scene("res://source/scenes/GUI/main_menu.tscn")
 	
 	if get_tree().network_peer != null:
 		if get_tree().get_network_connected_peers().size() >= player_amount and get_tree().is_network_server():
@@ -138,6 +143,7 @@ func _on_confirm_pressed():
 
 func show_lobby():
 	multiplayer_config_ui.hide()
+	$background.hide()
 	device_ip_address.show()
 	background_lobby.show()
 	text.show()

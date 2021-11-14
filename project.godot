@@ -21,10 +21,6 @@ Global="*res://source/assets/scripts/server_handlers/global.gd"
 PersistentNodes="*res://source/scenes/OVERLAY/elements/persistent_nodes.tscn"
 FullscreenController="*res://source/assets/scripts/system/fullscreen_controller.gd"
 
-[debug]
-
-settings/stdout/print_fps=true
-
 [display]
 
 window/size/width=1920

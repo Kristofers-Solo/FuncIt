@@ -14,6 +14,8 @@ func _process(delta):
 	if Input.is_action_just_pressed("esc") and popup_screen.is_visible_in_tree():
 		popup_screen.hide()
 		$controls.show()
+	elif Input.is_action_just_pressed("esc") and not popup_screen.is_visible_in_tree():\
+		get_tree().change_scene("res://source/scenes/GUI/network_setup.tscn")
 
 
 func _on_server_listener_new_server(serverInfo):
