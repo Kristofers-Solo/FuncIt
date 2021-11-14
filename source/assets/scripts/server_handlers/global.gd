@@ -48,7 +48,7 @@ func phase_update_global():
 		if activePhaseTracker != null:
 			if clientPhase[str(activePhaseTracker)]["start_time"] != null:
 				if currentTime["second"] + currentTime["minute"] * 60 - clientPhase[str(activePhaseTracker)]["start_time"]["second"] - clientPhase[str(activePhaseTracker)]["start_time"]["minute"] * 60 > clientPhase[str(activePhaseTracker)]["length"]:
-					if activePhaseTracker == clientPhase.size() - 2:
+					if activePhaseTracker == clientPhase.size() - 3:
 						clientPhase[str(activePhaseTracker)]["start_time"] = null 
 						activePhaseTracker = 0
 					else: 
@@ -57,12 +57,14 @@ func phase_update_global():
 			else: clientPhase[str(activePhaseTracker)]["start_time"] = currentTime
 		else: activePhaseTracker = 0
 		clientPhase["active"] = clientPhase[str(activePhaseTracker)]
+	else:
+		clientPhase["active"] = null
+		activePhaseTracker = null
 	pass
 
 
 func start_game(value):
 	gameStart = value
-	clientPhase["active"] = "ignore"
 	pass
 
 
