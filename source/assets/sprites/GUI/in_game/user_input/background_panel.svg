@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="480"
+   height="156"
+   viewBox="0 0 127 41.275001"
+   version="1.1"
+   id="svg1366"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   sodipodi:docname="user_input_background_panel.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1368"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     units="px"
+     inkscape:zoom="0.79370951"
+     inkscape:cx="389.94115"
+     inkscape:cy="224.89336"
+     inkscape:window-width="1920"
+     inkscape:window-height="1007"
+     inkscape:window-x="1920"
+     inkscape:window-y="44"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1363">
+    <filter
+       id="Path_330"
+       x="10.5"
+       y="8.5"
+       width="53.812"
+       height="53.812"
+       filterUnits="userSpaceOnUse">
+      <feOffset
+         dy="3"
+         input="SourceAlpha"
+         id="feOffset2" />
+      <feGaussianBlur
+         stdDeviation="3"
+         result="blur"
+         id="feGaussianBlur4" />
+      <feFlood
+         flood-opacity="0.161"
+         id="feFlood6" />
+      <feComposite
+         operator="in"
+         in2="blur"
+         id="feComposite8"
+         result="result1" />
+      <feComposite
+         in="SourceGraphic"
+         in2="result1"
+         id="feComposite10" />
+    </filter>
+    <filter
+       id="Rectangle_142"
+       x="14.5"
+       y="36.5"
+       width="46"
+       height="26"
+       filterUnits="userSpaceOnUse">
+      <feOffset
+         dy="3"
+         input="SourceAlpha"
+         id="feOffset13" />
+      <feGaussianBlur
+         stdDeviation="3"
+         result="blur-2"
+         id="feGaussianBlur15" />
+      <feFlood
+         flood-opacity="0.161"
+         id="feFlood17" />
+      <feComposite
+         operator="in"
+         in2="blur-2"
+         id="feComposite19"
+         result="result1" />
+      <feComposite
+         in="SourceGraphic"
+         in2="result1"
+         id="feComposite21" />
+    </filter>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="Rectangle_150"
+       data-name="Rectangle 150"
+       fill="#4358aa"
+       stroke="#556ece"
+       stroke-width="4"
+       transform="scale(0.635)">
+      <rect
+         width="200"
+         height="65"
+         rx="12.5"
+         stroke="none"
+         id="rect29"
+         x="0"
+         y="0"
+         ry="12.5" />
+      <rect
+         x="2"
+         y="2"
+         width="196"
+         height="61"
+         rx="11.666667"
+         fill="none"
+         id="rect31"
+         ry="11.666667" />
+    </g>
+  </g>
+</svg>

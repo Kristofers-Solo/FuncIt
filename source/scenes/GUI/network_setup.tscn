@@ -6,14 +6,14 @@
 [ext_resource path="res://source/scenes/OVERLAY/elements/menu_button.tscn" type="PackedScene" id=4]
 [ext_resource path="res://source/scenes/GUI/background.tscn" type="PackedScene" id=5]
 [ext_resource path="res://source/scenes/OVERLAY/elements/floor.tscn" type="PackedScene" id=6]
-[ext_resource path="res://source/assets/sprites/GUI/lan_logo.svg" type="Texture" id=7]
+[ext_resource path="res://source/assets/sprites/GUI/in_game/buttons/lan_logo.svg" type="Texture" id=7]
 [ext_resource path="res://source/fonts/oxygen/oxygen_bold.tres" type="DynamicFont" id=8]
 [ext_resource path="res://source/scenes/OVERLAY/elements/button.tscn" type="PackedScene" id=9]
 [ext_resource path="res://source/fonts/oxygen/oxygen_regular.tres" type="DynamicFont" id=10]
 [ext_resource path="res://source/assets/scripts/ui_element_handlers/UI.gd" type="Script" id=11]
 [ext_resource path="res://source/assets/sprites/GUI/background_lobby.svg" type="Texture" id=12]
 [ext_resource path="res://source/scenes/OVERLAY/elements/wall.tscn" type="PackedScene" id=13]
-[ext_resource path="res://source/assets/sprites/GUI/server_title.svg" type="Texture" id=15]
+[ext_resource path="res://source/assets/sprites/GUI/in_game/buttons/server_title.svg" type="Texture" id=14]
 
 [sub_resource type="DynamicFont" id=1]
 size = 36
@@ -166,7 +166,7 @@ __meta__ = {
 
 [node name="enter_server_ip" type="Sprite" parent="multiplayer_configure/popup_screen"]
 position = Vector2( 960, 465 )
-texture = ExtResource( 15 )
+texture = ExtResource( 14 )
 __meta__ = {
 "_edit_lock_": true
 }

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="100"
+   height="100"
+   viewBox="0 0 26.458333 26.458334"
+   version="1.1"
+   id="svg881"
+   sodipodi:docname="hyperbol_active.svg"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview883"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     units="px"
+     inkscape:zoom="4.489899"
+     inkscape:cx="17.038245"
+     inkscape:cy="50.446569"
+     inkscape:window-width="1920"
+     inkscape:window-height="1007"
+     inkscape:window-x="1920"
+     inkscape:window-y="44"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs878" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <ellipse
+       style="fill:#3d64fe;fill-opacity:1;stroke:#ffffff;stroke-width:1.41697;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path1152"
+       cx="13.229167"
+       cy="13.229156"
+       rx="12.520679"
+       ry="12.520667" />
+    <path
+       id="Path_329"
+       data-name="Path 329"
+       d="m 7.5172091,15.851702 c 0,0 -0.9491431,-6.3630049 11.6389379,-4.791936"
+       fill="none"
+       stroke="#ffffff"
+       stroke-width="0.529167"
+       stroke-dasharray="2"
+       style="stroke-width:0.92604167;stroke-miterlimit:0;stroke-dasharray:0.92604167,0.92604167;stroke-dashoffset:0" />
+    <path
+       d="M 4.4834136,21.754609 H 23.518283 v 3.292604 a 1.5433677,1.411112 0 0 1 -1.543368,1.411112 H 2.9400465 v -3.292601 a 1.5433677,1.411112 0 0 1 1.5433671,-1.411115 z"
+       fill="#ffffff"
+       id="path453-7-6"
+       style="stroke-width:0.0983833" />
+  </g>
+</svg>

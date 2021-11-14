@@ -1,5 +1,7 @@
 extends Control
 
+var player_amount = 1
+
 var player = load("res://source/entities/player/player_node.tscn")
 
 var current_spawn_location_instance_number = 1
@@ -57,7 +59,7 @@ func _process(_delta: float) -> void:
 		controls.show()
 	
 	if get_tree().network_peer != null:
-		if get_tree().get_network_connected_peers().size() >= 1 and get_tree().is_network_server():
+		if get_tree().get_network_connected_peers().size() >= player_amount and get_tree().is_network_server():
 			start_game.show()
 		else:
 			start_game.hide()

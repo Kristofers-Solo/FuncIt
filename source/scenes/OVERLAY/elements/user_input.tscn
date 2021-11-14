@@ -1,0 +1,294 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://source/assets/sprites/GUI/in_game/user_input/user_input_background_panel.svg" type="Texture" id=1]
+[ext_resource path="res://source/fonts/oxygen/Oxygen-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://source/assets/sprites/GUI/in_game/trajectories/line_active.svg" type="Texture" id=3]
+[ext_resource path="res://source/assets/sprites/GUI/in_game/trajectories/hyperbol_active.svg" type="Texture" id=4]
+[ext_resource path="res://source/assets/sprites/GUI/in_game/trajectories/parabol_active.svg" type="Texture" id=5]
+[ext_resource path="res://source/assets/sprites/GUI/in_game/trajectories/sin_active.svg" type="Texture" id=6]
+[ext_resource path="res://source/assets/sprites/GUI/in_game/user_input/skip_button/skip_button_pressedsvg.svg" type="Texture" id=7]
+[ext_resource path="res://source/assets/sprites/GUI/in_game/user_input/skip_button/skip_button_hover.svg" type="Texture" id=8]
+[ext_resource path="res://source/assets/sprites/GUI/in_game/user_input/ready_button/ready_button.svg" type="Texture" id=9]
+[ext_resource path="res://source/assets/sprites/GUI/in_game/user_input/ready_button/ready_button_pressed.svg" type="Texture" id=10]
+[ext_resource path="res://source/assets/sprites/GUI/in_game/user_input/ready_button/ready_button_hover.svg" type="Texture" id=11]
+[ext_resource path="res://source/assets/sprites/GUI/in_game/user_input/skip_button/skip_button.svg" type="Texture" id=12]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 0, 480, 156 )
+
+[sub_resource type="StyleBoxTexture" id=7]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 100, 100 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 14
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxTexture" id=8]
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 100, 100 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 14
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxTexture" id=6]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 100, 100 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 14
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxTexture" id=5]
+texture = ExtResource( 6 )
+region_rect = Rect2( 0, 0, 100, 100 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 22
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 22
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 22
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 2 )
+
+[node name="user_input" type="Panel"]
+margin_right = 480.0
+margin_bottom = 156.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="trajectories" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 50.0
+margin_top = 28.0
+margin_right = -330.0
+margin_bottom = -28.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="line" type="Panel" parent="trajectories"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -50.0
+margin_top = -50.0
+margin_right = 50.0
+margin_bottom = 50.0
+custom_styles/panel = SubResource( 7 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="trajectories/line"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -39.0
+margin_top = -19.0
+margin_right = 39.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "line"
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="parabol" type="Panel" parent="trajectories"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -50.0
+margin_top = -50.0
+margin_right = 50.0
+margin_bottom = 50.0
+custom_styles/panel = SubResource( 8 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="trajectories/parabol"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -39.0
+margin_top = -19.0
+margin_right = 39.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "parabol"
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="hyperbol" type="Panel" parent="trajectories"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -50.0
+margin_top = -50.0
+margin_right = 50.0
+margin_bottom = 50.0
+custom_styles/panel = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="trajectories/hyperbol"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -39.0
+margin_top = -19.0
+margin_right = 39.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "hyperbol"
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="sin" type="Panel" parent="trajectories"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -50.0
+margin_top = -50.0
+margin_right = 50.0
+margin_bottom = 50.0
+custom_styles/panel = SubResource( 5 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="trajectories/sin"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -39.0
+margin_top = -19.0
+margin_right = 39.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "sin"
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="controls" type="Control" parent="."]
+margin_left = 165.0
+margin_top = 13.0
+margin_right = 465.0
+margin_bottom = 143.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="controls"]
+anchor_right = 1.0
+margin_bottom = 29.0
+custom_fonts/font = SubResource( 9 )
+text = "Active formula"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ready_button" type="TextureButton" parent="controls"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -36.0
+margin_right = 120.0
+texture_normal = ExtResource( 9 )
+texture_pressed = ExtResource( 10 )
+texture_hover = ExtResource( 11 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="controls/ready_button"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 10 )
+text = "Ready"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="skip_button" type="TextureButton" parent="controls"]
+margin_left = 180.0
+margin_top = 94.0
+margin_right = 300.0
+margin_bottom = 130.0
+texture_normal = ExtResource( 12 )
+texture_pressed = ExtResource( 7 )
+texture_hover = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="controls/skip_button"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 11 )
+text = "Skip"
+align = 1
+valign = 1

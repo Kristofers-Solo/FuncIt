@@ -2,7 +2,7 @@
 
 [ext_resource path="res://source/entities/menu_player/player_node.tscn" type="PackedScene" id=1]
 [ext_resource path="res://source/scenes/GUI/background.tscn" type="PackedScene" id=2]
-[ext_resource path="res://source/assets/sprites/GUI/lan_logo.svg" type="Texture" id=3]
+[ext_resource path="res://source/assets/sprites/GUI/in_game/buttons/lan_logo.svg" type="Texture" id=3]
 [ext_resource path="res://source/assets/sprites/GUI/logo_design/FUNCit_game_logo_dark_transparent.png" type="Texture" id=4]
 [ext_resource path="res://source/fonts/oxygen/oxygen_bold.tres" type="DynamicFont" id=5]
 [ext_resource path="res://source/assets/scripts/ui_element_handlers/main_menu.gd" type="Script" id=6]
