@@ -193,13 +193,8 @@ __meta__ = {
 }
 
 [node name="menu_button" parent="controls" instance=ExtResource( 13 )]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -70.0
-margin_top = 20.0
-margin_right = -20.0
-margin_bottom = 70.0
-focus_mode = 0
+margin_right = 50.0
+margin_bottom = 50.0
 
 [node name="Line" type="Button" parent="controls"]
 anchor_left = 0.018
