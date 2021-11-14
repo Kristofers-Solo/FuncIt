@@ -3,8 +3,8 @@ extends CanvasLayer
 # if 0, then singleplayer will work, if 1, then multiplayer only
 var winner_amount = 1
 
-onready var win_timer = $Control/winner/win_timer
-onready var winner = $Control/winner
+onready var win_timer = $winner/win_timer
+onready var winner = $winner
 
 func _ready() -> void:
 	winner.hide()

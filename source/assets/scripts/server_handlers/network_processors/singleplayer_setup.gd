@@ -24,7 +24,7 @@ func _on_confirm_pressed():
 
 
 func instance_player(id) -> void:
-	var player_instance = Global.instance_node_at_location(player, PersistentNodes, Vector2(960, 540))
+	var player_instance = Global.instance_node_at_location(player, PersistentNodes, Vector2())
 	player_instance.name = str(id)
 	player_instance.set_network_master(id)
 	player_instance.username = username_text_edit.text
