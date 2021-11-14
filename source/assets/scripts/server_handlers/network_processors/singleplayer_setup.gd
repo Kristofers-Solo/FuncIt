@@ -13,7 +13,6 @@ func _process(delta) -> void:
 	if Input.is_action_just_pressed("esc"):
 		get_tree().change_scene("res://source/scenes/GUI/main_menu.tscn")
 
-
 func _on_confirm_pressed():
 	if username_text_edit.text != "":
 		Global.alive_players.append(self)
