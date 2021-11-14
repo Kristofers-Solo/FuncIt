@@ -27,6 +27,7 @@ anchor_bottom = 1.0
 margin_top = 1.49835
 margin_bottom = 1.49829
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -34,6 +35,9 @@ __meta__ = {
 position = Vector2( 980, 333.502 )
 scale = Vector2( 0.462963, 0.462963 )
 texture = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="play" parent="foreground" instance=ExtResource( 7 )]
 margin_left = 810.0
