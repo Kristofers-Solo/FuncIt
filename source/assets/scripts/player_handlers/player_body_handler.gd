@@ -322,9 +322,9 @@ sync func shoot(new_trajectory:String):
 
 
 func enable_trajectory_line(new_trajectory_line:String):
-	var x = bullet_trajectory[new_trajectory_line].instance()
-	get_parent().add_child(x)
-	x.global_position = shoot_point.global_position
+	var x = bullet_trajectory[new_trajectory_line].instance() # <- _ready(delta) -> [trajektorijām -> failiem -> instance]
+	get_parent().get_child(0).add_child(x) # [trajektorijām] // node-trajectories -> [0: line, 1: hyperbola, 2: parabola, 3: sin]
+	x.global_position = shoot_point.global_position # get_parent().get_child(0).global_position = shoot_point.global_position
 	x.global_rotation = shoot_point.global_rotation
 
 
