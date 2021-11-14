@@ -91,7 +91,7 @@ var globalActivePhase = null
 var clientPhase = null
 
 func _ready():
-	Global.set("player", self)
+	
 	weaponPositionalOffset = Vector2(-$"weaponHolder/Player-character-theme-gun-na3".texture.get_width() * $"weaponHolder/Player-character-theme-gun-na3".scale.x / 2,-$"weaponHolder/Player-character-theme-gun-na3".texture.get_height() * $"weaponHolder/Player-character-theme-gun-na3".scale.y / 2) + Vector2(-$weaponHolder.get_shape().get_radius(), 0)
 	$"weaponHolder/Player-character-theme-gun".position = weaponPositionalOffset
 	
@@ -108,6 +108,7 @@ func _ready():
 	if get_tree().has_network_peer():
 		if is_network_master():
 			Global.player_master = self
+			Global.set("player", self)
 	# Allow update process override.
 	set_process(true)
 	
