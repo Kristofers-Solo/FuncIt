@@ -1,0 +1,120 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://source/fonts/oxygen/Oxygen-Bold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://source/scenes/OVERLAY/elements/button.tscn" type="PackedScene" id=2]
+[ext_resource path="res://source/assets/scripts/ui_element_handlers/menu_button_overlay.gd" type="Script" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 0.380392 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 30
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 30
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 1 )
+
+[node name="menu_button_overlay" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 2.1189
+margin_bottom = 2.1189
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="panel" type="Panel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -960.0
+margin_top = -540.0
+margin_right = 960.0
+margin_bottom = 540.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="return_to_game" parent="panel" instance=ExtResource( 2 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -150.0
+margin_top = -180.0
+margin_right = 150.0
+margin_bottom = -108.0
+focus_mode = 2
+enabled_focus_mode = 2
+
+[node name="Label" type="Label" parent="panel/return_to_game"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Return to game"
+align = 1
+valign = 1
+
+[node name="return_to_main_menu" parent="panel" instance=ExtResource( 2 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -150.0
+margin_top = -36.0
+margin_right = 150.0
+margin_bottom = 36.0
+focus_mode = 2
+enabled_focus_mode = 2
+
+[node name="Label" type="Label" parent="panel/return_to_main_menu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Retrun to main menu"
+align = 1
+valign = 1
+
+[node name="exit_game" parent="panel" instance=ExtResource( 2 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -150.0
+margin_top = 108.0
+margin_right = 150.0
+margin_bottom = 180.0
+focus_mode = 2
+enabled_focus_mode = 2
+
+[node name="Label" type="Label" parent="panel/exit_game"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Exit game"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="panel/return_to_game" to="." method="_on_return_to_game_pressed"]
+[connection signal="pressed" from="panel/return_to_main_menu" to="." method="_on_return_to_main_menu_pressed"]
+[connection signal="pressed" from="panel/exit_game" to="." method="_on_exit_game_pressed"]

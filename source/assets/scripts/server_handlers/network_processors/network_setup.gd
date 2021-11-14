@@ -15,6 +15,7 @@ onready var device_ip_address = $UI/device_ip_address
 onready var start_game = $UI/start_game
 onready var background_lobby = $background_lobby
 onready var text = $UI/text
+onready var menu_botton = $UI/menu_button
 
 
 func _ready() -> void:
@@ -22,6 +23,7 @@ func _ready() -> void:
 	background_lobby.hide()
 	device_ip_address.hide()
 	text.hide()
+	menu_botton.hide()
 	
 	
 	get_tree().connect("network_peer_connected", self, "_player_connected")
@@ -70,6 +72,7 @@ func _player_disconnected(id) -> void:
 	
 	if PersistentNodes.has_node(str(id)):
 		PersistentNodes.get_node(str(id)).username_text_instance.queue_free()
+		PersistentNodes.get_node(str(id)).health_bar_instance.queue_free()
 		PersistentNodes.get_node(str(id)).queue_free()
 
 
@@ -89,9 +92,7 @@ func _on_join_server_pressed():
 
 func _connected_to_server() -> void:
 	yield(get_tree().create_timer(0.1), "timeout")
-	device_ip_address.show()
-	background_lobby.show()
-	text.show()
+	show_lobby()
 	instance_player(get_tree().get_network_unique_id())
 
 
@@ -119,16 +120,20 @@ func _on_confirm_pressed():
 	if mode == "create":
 		if username_text_edit.text != "":
 			Network.current_player_username = username_text_edit.text
-			multiplayer_config_ui.hide()
-			device_ip_address.show()
-			background_lobby.show()
-			text.show()
+			show_lobby()
 			Network.create_server()
 			instance_player(get_tree().get_network_unique_id())
 	elif mode == "join":
 		if username_text_edit.text != "":
-			multiplayer_config_ui.hide()
 			Global.instance_node(load("res://source/scenes/GUI/server_handlers/server_browser.tscn"), self)
+
+
+func show_lobby():
+	multiplayer_config_ui.hide()
+	device_ip_address.show()
+	background_lobby.show()
+	text.show()
+	menu_botton.show()
 
 
 func _on_return_pressed():

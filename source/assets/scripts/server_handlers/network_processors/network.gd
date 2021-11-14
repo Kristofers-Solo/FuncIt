@@ -69,6 +69,15 @@ func _server_disconnected() -> void:
 		prompt.set_text("Disconnected from server")
 
 
+func _server_leave() -> void:
+	print("Left the server")
+	
+	for child in PersistentNodes.get_children():
+		if child.is_in_group("Net"):
+			child.queue_free()
+	reset_network_connection()
+
+
 func _client_connection_timeout():
 	if client_connected_to_server == false:
 		print("Client has been timed out")

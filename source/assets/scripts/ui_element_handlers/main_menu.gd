@@ -2,7 +2,7 @@ extends Control
 
 
 func _on_play_pressed():
-	get_tree().change_scene("res://source/scenes/GUI/sinplayer_setup.tscn")
+	get_tree().change_scene("res://source/scenes/GUI/singleplayer_setup.tscn")
 
 
 func _on_LAN_party_pressed():
@@ -11,3 +11,5 @@ func _on_LAN_party_pressed():
 
 func _on_exit_pressed():
 	get_tree().quit()
+
+

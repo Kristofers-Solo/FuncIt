@@ -28,7 +28,7 @@ use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 2 )
 
-[node name="network_setup" type="Control"]
+[node name="network_setup2" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )

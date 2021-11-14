@@ -1,8 +1,9 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://source/assets/scripts/server_handlers/network_processors/network_setup.gd" type="Script" id=1]
 [ext_resource path="res://source/fonts/oxygen/Oxygen-Regular.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://source/fonts/oxygen/Oxygen-Bold.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://source/scenes/OVERLAY/elements/menu_button.tscn" type="PackedScene" id=4]
 [ext_resource path="res://source/scenes/GUI/background.tscn" type="PackedScene" id=5]
 [ext_resource path="res://source/scenes/OVERLAY/elements/floor.tscn" type="PackedScene" id=6]
 [ext_resource path="res://source/assets/sprites/GUI/lan_logo.svg" type="Texture" id=7]
@@ -332,6 +333,15 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="menu_button" parent="UI" instance=ExtResource( 4 )]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -70.0
+margin_top = 20.0
+margin_right = -20.0
+margin_bottom = 70.0
+focus_mode = 0
 
 [node name="spawn_locations" type="Node" parent="."]
 
