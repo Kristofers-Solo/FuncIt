@@ -36,4 +36,3 @@ func _process(delta):
 	globalActivePhase = Global.get_current_phase()
 	if globalActivePhase["active"] != null:
 		phase.text = str(globalActivePhase["active"]["phase_name"])
-		print(time)

@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 # if 0, then singleplayer will work, if 1, then multiplayer only
-var winner_amount = 1
+var winner_amount = 0
 
 onready var win_timer = $winner/win_timer
 onready var winner = $winner

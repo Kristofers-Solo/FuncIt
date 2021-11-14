@@ -1,11 +1,13 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://source/assets/sprites/bullet/bullet.png" type="Texture" id=1]
+[ext_resource path="res://source/assets/sprites/bullet/player_character_bullet.svg" type="Texture" id=1]
 [ext_resource path="res://source/assets/scripts/shooting/Sine/Sine_Bullet.gd" type="Script" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
+radius = 9.85811
+height = 35.0082
 
-[node name="player_bullet2" type="Sprite" groups=[
+[node name="player_character_bullet" type="Sprite" groups=[
 "Net",
 ]]
 texture = ExtResource( 1 )
@@ -16,6 +18,7 @@ script = ExtResource( 2 )
 ]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+position = Vector2( 10.8253, -0.381073 )
 rotation = 1.5708
 shape = SubResource( 1 )
 

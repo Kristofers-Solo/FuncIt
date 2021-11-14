@@ -1,6 +1,6 @@
 extends Control
 
-var player_amount = 1
+var player_amount = 0
 
 var player = load("res://source/entities/player/player_node.tscn")
 
