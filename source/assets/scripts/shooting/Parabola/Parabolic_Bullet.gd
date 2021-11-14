@@ -29,5 +29,5 @@ func _process(delta):
 	position += velocity * speed_parab * delta
 
 
-func _on_hitbox_body_entered(body):
+func _on_hitbox_body_entered(_body):
 	queue_free()

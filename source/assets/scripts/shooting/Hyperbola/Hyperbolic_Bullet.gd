@@ -12,6 +12,7 @@ var pos
 func _ready():
 	pos = Global.get("player").get_node('weaponHolder/Player-character-theme-gun').position 
 
+
 func follow_hyperbolic_trajectory():
 	if pos.x > 0:
 		velocity.x = 5
@@ -20,11 +21,12 @@ func follow_hyperbolic_trajectory():
 		velocity.x = 5
 		velocity.y = -a_parameter/(time*b_parameter)
 
+
 func _process(delta):
 	follow_hyperbolic_trajectory()
 	time += delta
 	position += velocity * speed_hyper * delta
 
 
-func _on_hitbox_body_entered(body):
+func _on_hitbox_body_entered(_body):
 	queue_free()

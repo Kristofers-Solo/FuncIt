@@ -33,7 +33,5 @@ func _draw():
 			time += 0.06944
 			
 
-func _process(delta):
+func _process(_delta):
 	update()
-	pass
-	

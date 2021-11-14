@@ -32,7 +32,7 @@ func _player_disconnected(id) -> void:
 		PersistentNodes.get_node(str(id)).queue_free()
 
 
-func _process(delta):
+func _process(_delta):
 	globalActivePhase = Global.get_current_phase()
 	if globalActivePhase["active"] != null:
 		phase.text = str(globalActivePhase["active"]["phase_name"])

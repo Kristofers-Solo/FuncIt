@@ -5,7 +5,7 @@
 [ext_resource path="res://source/assets/scripts/server_handlers/server_processors/server_browser.gd" type="Script" id=3]
 [ext_resource path="res://source/scenes/OVERLAY/elements/button.tscn" type="PackedScene" id=4]
 [ext_resource path="res://source/assets/sprites/GUI/background_server.svg" type="Texture" id=5]
-[ext_resource path="res://source/assets/sprites/GUI/in_game/button_disabled.svg" type="Texture" id=7]
+[ext_resource path="res://source/assets/sprites/GUI/in_game/buttons/button_disabled.svg" type="Texture" id=7]
 [ext_resource path="res://source/fonts/oxygen/Oxygen-Regular.ttf" type="DynamicFontData" id=8]
 
 [sub_resource type="DynamicFont" id=1]

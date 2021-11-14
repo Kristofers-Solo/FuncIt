@@ -16,7 +16,8 @@ func _draw():
 		draw_circle(dot_position, 2, Color(225, 225, 225))
 		time += 0.06944
 
-func _process(delta):
+
+func _process(_delta):
 	update()
 	
 """
