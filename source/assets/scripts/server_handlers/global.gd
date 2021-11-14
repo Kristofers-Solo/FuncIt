@@ -62,6 +62,7 @@ func phase_update_global():
 
 func start_game(value):
 	gameStart = value
+	clientPhase["active"] = "ignore"
 	pass
 
 
