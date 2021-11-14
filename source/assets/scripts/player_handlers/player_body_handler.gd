@@ -26,7 +26,7 @@ puppet var puppet_weapon_angle = 0
 puppet var puppet_direction = "left"
 puppet var puppet_theme = "01"
 puppet var puppet_character_states = {}
-puppet var puppet_bullet_position = Vector2() setget puppet_bullet_position_set
+puppet var puppet_bullet_position setget puppet_bullet_position_set
 puppet var puppet_phase setget puppet_phase_set
 
 onready var tween = $Tween
@@ -163,8 +163,8 @@ func _process(_delta: float) -> void:
 			clientPhase = puppet_phase
 			Global.set_current_phase(clientPhase)
 	$"weaponHolder/Player-character-theme-gun".play(theme)
-#	particleImage.load("res://source/assets/sprites/character/player/theme/" + theme + "/na/Player-character-theme-particle-" + theme + ".png")
-#	particleTexture.create_from_image(particleImage)
+	particleImage.load("res://source/assets/sprites/character/player/theme/" + theme + "/na/Player-character-theme-particle-" + theme + ".png")
+	particleTexture.create_from_image(particleImage)
 	$Particles2D.texture = particleTexture
 	if username_text_instance != null:
 		username_text_instance.name = "username" + name

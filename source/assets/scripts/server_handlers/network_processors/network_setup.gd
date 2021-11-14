@@ -63,8 +63,6 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("esc") and username.is_visible_in_tree():
 		username.hide()
 		controls.show()
-	elif Input.is_action_just_pressed("esc") and not username.is_visible_in_tree():
-		get_tree().change_scene("res://source/scenes/GUI/main_menu.tscn")
 	
 	if get_tree().network_peer != null:
 		if get_tree().get_network_connected_peers().size() >= player_amount and get_tree().is_network_server():
