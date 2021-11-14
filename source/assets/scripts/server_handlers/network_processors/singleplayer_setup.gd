@@ -35,7 +35,7 @@ sync func switch_to_game() -> void:
 		if child.is_in_group("Player"):
 			child.update_shoot_mode(true)
 	
-	get_tree().change_scene("res://source/levels/trinity_site/trinity_site_level.tscn")
+	get_tree().change_scene("res://source/levels/trinity_site/trinity_site_level_playground.tscn")
 
 
 func _on_return_pressed():
