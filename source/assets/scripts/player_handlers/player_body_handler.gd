@@ -95,6 +95,7 @@ func _ready():
 	weaponPositionalOffset = Vector2(-$"weaponHolder/Player-character-theme-gun-na3".texture.get_width() * $"weaponHolder/Player-character-theme-gun-na3".scale.x / 2,-$"weaponHolder/Player-character-theme-gun-na3".texture.get_height() * $"weaponHolder/Player-character-theme-gun-na3".scale.y / 2) + Vector2(-$weaponHolder.get_shape().get_radius(), 0)
 	$"weaponHolder/Player-character-theme-gun".position = weaponPositionalOffset
 	
+# warning-ignore:return_value_discarded
 	get_tree().connect("network_peer_connected", self, "_network_peer_connected")
 	username_text_instance = Global.instance_node_at_location(username_text, PersistentNodes, global_position)
 	username_text_instance.player_following = self
@@ -115,7 +116,7 @@ func _ready():
 
 func get_user_state():
 	# Create a dictionary of all variables that relate to clients' active state.
-	var user_state = {
+	user_state = {
 		"global_position": global_transform.origin
 	}
 	return user_state
@@ -123,7 +124,7 @@ func get_user_state():
 
 func get_dimensions():
 	# Create a dictionary of all (required) sizes in regards to the client.
-	var dimensions = {
+	dimensions = {
 		"sprite": {
 			"width":$player_sprite.texture.get_width(),
 			"height":$player_sprite.texture.get_height(),
@@ -150,7 +151,7 @@ func process_rotation():
 		rotation_degrees += VDIR_ray_offset / 10
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	user_input = UIN_preset_pre_processor_instance.update(Global.get_current_phase())
 	if get_tree().is_network_server():
 		Global.phase_update_global()
@@ -261,12 +262,13 @@ func _physics_process(delta) -> void:
 				elif characterStates["onGround"] and velocityVDIR.y > 0:
 					velocityVDIR.y -= deccelerationSpeed
 				velocityVDIR = Vector2(clamp(velocityVDIR.x, -maxMovementSpeed.x, maxMovementSpeed.x), clamp(velocityVDIR.y, -maxMovementSpeed.y, maxMovementSpeed.y))
+# warning-ignore:return_value_discarded
 				move_and_slide(velocityVDIR.rotated(rotationalHolder))
 				rotate_weapon()
 				choose_trajectory()
 				enable_trajectory_line(trajectory_line)
 				if user_input["shoot"] and can_shoot and not is_reloading:
-					rpc("shoot", trajectory, get_tree().get_network_unique_id())
+					rpc("shoot", trajectory)
 					is_reloading = true
 					reload_timer.start()
 		else:
@@ -312,16 +314,15 @@ func choose_trajectory():
 		trajectory_line = 'hyper'
 
 
-sync func shoot(trajectory:String, id):
-	bullet = bullet_env[trajectory].instance()
+sync func shoot(new_trajectory:String):
+	bullet = bullet_env[new_trajectory].instance()
 	get_parent().add_child(bullet)
 	bullet.global_position = shoot_point.global_position
 	bullet.global_rotation = shoot_point.global_rotation
-#	bullet.player_owner = id
 
 
-func enable_trajectory_line(trajectory_line:String):
-	var x = bullet_trajectory[trajectory_line].instance()
+func enable_trajectory_line(new_trajectory_line:String):
+	var x = bullet_trajectory[new_trajectory_line].instance()
 	get_parent().add_child(x)
 	x.global_position = shoot_point.global_position
 	x.global_rotation = shoot_point.global_rotation

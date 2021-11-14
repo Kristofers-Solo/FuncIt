@@ -25,12 +25,14 @@ func _ready() -> void:
 	background_lobby.hide()
 	device_ip_address.hide()
 	text.hide()
-	menu_botton.hide()
 	Global.start_game(false)
 	
 	
+# warning-ignore:return_value_discarded
 	get_tree().connect("network_peer_connected", self, "_player_connected")
+# warning-ignore:return_value_discarded
 	get_tree().connect("network_peer_disconnected", self, "_player_disconnected")
+# warning-ignore:return_value_discarded
 	get_tree().connect("connected_to_server", self, "_connected_to_server")
 
 	device_ip_address.text = Network.ip_address
@@ -41,6 +43,7 @@ func _ready() -> void:
 		device_ip_address.show()
 		text.show()
 		current_spawn_location_instance_number = 1
+# warning-ignore:shadowed_variable
 		for player in PersistentNodes.get_children():
 			if player.is_in_group("Player"):
 				for spawn_location in $spawn_locations.get_children():
@@ -116,6 +119,7 @@ sync func switch_to_game() -> void:
 		if child.is_in_group("Player"):
 			child.update_shoot_mode(true)
 	
+# warning-ignore:return_value_discarded
 	get_tree().change_scene("res://source/levels/trinity_site/trinity_site_level.tscn")
 
 
@@ -128,6 +132,7 @@ func _on_confirm_pressed():
 			instance_player(get_tree().get_network_unique_id())
 	elif mode == "join":
 		if username_text_edit.text != "":
+# warning-ignore:return_value_discarded
 			Global.instance_node(load("res://source/scenes/GUI/server_handlers/server_browser.tscn"), self)
 
 
@@ -140,5 +145,6 @@ func show_lobby():
 
 
 func _on_return_pressed():
+# warning-ignore:return_value_discarded
 	get_tree().change_scene("res://source/scenes/GUI/main_menu.tscn")
 

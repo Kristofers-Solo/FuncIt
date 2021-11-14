@@ -5,4 +5,5 @@ extends TextureButton
 #		Global.instance_node(load("res://source/scenes/OVERLAY/elements/menu_button_overlay.tscn"), Global.ui)
 
 func _on_menu_button_pressed():
+# warning-ignore:return_value_discarded
 	Global.instance_node(load("res://source/scenes/OVERLAY/elements/menu_button_overlay.tscn"), Global.ui)

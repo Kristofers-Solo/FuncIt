@@ -8,7 +8,7 @@ var distanceToPlayerOffset = -150
 onready var health_bar = $health_bar
 
 
-func _process(delta: float) -> void:
+func _process(_delta) -> void:
 	if player_following != null:
 		global_position = player_following.global_position + Vector2(0,distanceToPlayerOffset).rotated(player_following.rotation) + Vector2(0,45)
 

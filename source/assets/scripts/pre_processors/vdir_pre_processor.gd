@@ -4,7 +4,7 @@ var VDIR = {}
 
 func update(userState, userDimensions):
 	var bSP = 0
-	var bHO = userDimensions["sprite"]["width"] / 2 * userDimensions["sprite"]["scale"].x
+	var _bHO = userDimensions["sprite"]["width"] / 2 * userDimensions["sprite"]["scale"].x
 	var bVVO = userDimensions["sprite"]["height"] * userDimensions["sprite"]["scale"].y
 	var spHO = userDimensions["collider"]["radius"]
 	VDIR = {

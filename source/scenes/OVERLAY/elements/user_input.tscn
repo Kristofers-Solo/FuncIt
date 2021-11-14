@@ -13,25 +13,25 @@
 [ext_resource path="res://source/assets/sprites/GUI/in_game/user_input/ready_button/ready_button_hover.svg" type="Texture" id=11]
 [ext_resource path="res://source/assets/sprites/GUI/in_game/user_input/skip_button/skip_button.svg" type="Texture" id=12]
 
-[sub_resource type="StyleBoxTexture" id=9]
+[sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 1 )
 region_rect = Rect2( 0, 0, 480, 156 )
 
-[sub_resource type="StyleBoxTexture" id=7]
+[sub_resource type="StyleBoxTexture" id=2]
 texture = ExtResource( 3 )
 region_rect = Rect2( 0, 0, 100, 100 )
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=3]
 size = 14
 use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 2 )
 
-[sub_resource type="StyleBoxTexture" id=8]
+[sub_resource type="StyleBoxTexture" id=4]
 texture = ExtResource( 5 )
 region_rect = Rect2( 0, 0, 100, 100 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=5]
 size = 14
 use_mipmaps = true
 use_filter = true
@@ -41,15 +41,21 @@ font_data = ExtResource( 2 )
 texture = ExtResource( 4 )
 region_rect = Rect2( 0, 0, 100, 100 )
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=7]
 size = 14
 use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 2 )
 
-[sub_resource type="StyleBoxTexture" id=5]
+[sub_resource type="StyleBoxTexture" id=8]
 texture = ExtResource( 6 )
 region_rect = Rect2( 0, 0, 100, 100 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 22
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=10]
 size = 22
@@ -63,16 +69,10 @@ use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=12]
-size = 22
-use_mipmaps = true
-use_filter = true
-font_data = ExtResource( 2 )
-
 [node name="user_input" type="Panel"]
 margin_right = 480.0
 margin_bottom = 156.0
-custom_styles/panel = SubResource( 9 )
+custom_styles/panel = SubResource( 1 )
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
@@ -98,7 +98,7 @@ margin_left = -50.0
 margin_top = -50.0
 margin_right = 50.0
 margin_bottom = 50.0
-custom_styles/panel = SubResource( 7 )
+custom_styles/panel = SubResource( 2 )
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
@@ -112,7 +112,7 @@ anchor_bottom = 1.0
 margin_left = -39.0
 margin_top = -19.0
 margin_right = 39.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "line"
 align = 1
@@ -133,7 +133,7 @@ margin_left = -50.0
 margin_top = -50.0
 margin_right = 50.0
 margin_bottom = 50.0
-custom_styles/panel = SubResource( 8 )
+custom_styles/panel = SubResource( 4 )
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
@@ -147,7 +147,7 @@ anchor_bottom = 1.0
 margin_left = -39.0
 margin_top = -19.0
 margin_right = 39.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "parabol"
 align = 1
@@ -182,7 +182,7 @@ anchor_bottom = 1.0
 margin_left = -39.0
 margin_top = -19.0
 margin_right = 39.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "hyperbol"
 align = 1
@@ -203,7 +203,7 @@ margin_left = -50.0
 margin_top = -50.0
 margin_right = 50.0
 margin_bottom = 50.0
-custom_styles/panel = SubResource( 5 )
+custom_styles/panel = SubResource( 8 )
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
@@ -217,7 +217,7 @@ anchor_bottom = 1.0
 margin_left = -39.0
 margin_top = -19.0
 margin_right = 39.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "sin"
 align = 1
@@ -240,7 +240,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="controls"]
 anchor_right = 1.0
 margin_bottom = 29.0
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 9 )
 text = "Active formula"
 align = 1
 valign = 1
@@ -264,7 +264,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="controls/ready_button"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 10 )
 text = "Ready"
 align = 1
 valign = 1
@@ -288,7 +288,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="controls/skip_button"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 12 )
+custom_fonts/font = SubResource( 11 )
 text = "Skip"
 align = 1
 valign = 1
