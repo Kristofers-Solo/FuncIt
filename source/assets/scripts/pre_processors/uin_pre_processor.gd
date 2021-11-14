@@ -30,7 +30,7 @@ func update(clientPhase):
 		"r_dec": Input.is_action_pressed("rotation_decrease"),
 		"shoot": Input.is_action_pressed("input_shoot")
 	}
-	if clientPhase != null and clientPhase["active"] != null and clientPhase != "ignore":
+	if clientPhase != null and clientPhase["active"] != null:
 		if clientPhase["active"]["phase_id"] == 0:
 			inputState["r_inc"] = false
 			inputState["r_dec"] = false
@@ -61,5 +61,4 @@ func update(clientPhase):
 				"r_dec": false,
 				"shoot": false
 			}
-	elif clientPhase == "ignore": pass
 	return inputState
