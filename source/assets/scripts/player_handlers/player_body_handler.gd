@@ -276,7 +276,7 @@ func _physics_process(delta) -> void:
 # warning-ignore:return_value_discarded
 				move_and_slide(velocityVDIR.rotated(rotationalHolder))
 				rotate_weapon()
-				choose_trajectory()
+				#choose_trajectory()
 				#enable_trajectory_line(trajectory_line)
 				if user_input["shoot"] and can_shoot and not is_reloading:
 					rpc("shoot", trajectory)
@@ -305,20 +305,7 @@ func _physics_process(delta) -> void:
 			rpc("destroy")
 
 
-func choose_trajectory():
-	
-	if Input.is_action_just_pressed("line"):
-		trajectory = 'line'
-		trajectory_line = 'line'
-	if Input.is_action_just_pressed("sine"):
-		trajectory = 'sine'
-		trajectory_line = 'sine'
-	if Input.is_action_just_pressed("parab"):
-		trajectory = 'parab'
-		trajectory_line = 'parab'
-	if Input.is_action_just_pressed("hyper"):
-		trajectory = 'hyper'
-		trajectory_line = 'hyper'
+
 
 
 sync func shoot(new_trajectory:String):
