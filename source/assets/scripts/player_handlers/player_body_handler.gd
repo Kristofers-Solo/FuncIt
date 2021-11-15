@@ -153,7 +153,7 @@ func process_rotation():
 
 
 func _process(_delta: float) -> void:
-	print(Global.get('control'))
+	#print(Global.get('control'))
 #	if Global.get('control')._on_line_pressed():
 #		enable_trajectory('line')
 #	if Global.get('control')._on_sine_pressed():
@@ -329,11 +329,19 @@ sync func shoot(new_trajectory:String):
 
 
 func enable_trajectory_line(new_trajectory_line:String):
+#	var x = bullet_trajectory[new_trajectory_line].instance()
+#	#print(x)
+#	get_parent().add_child(x)
+#	x.global_position = shoot_point.global_position
+#	x.global_rotation = shoot_point.global_rotation
+	#for x in get_children():	#if there is gun remove it
+		#x.queue_free()
+		
 	var x = bullet_trajectory[new_trajectory_line].instance()
-	print(x)
 	get_parent().add_child(x)
 	x.global_position = shoot_point.global_position
 	x.global_rotation = shoot_point.global_rotation
+
 	
 func enable_trajectory(new_trajectory_line:String):
 	for gun in get_children():	#if there is gun remove it

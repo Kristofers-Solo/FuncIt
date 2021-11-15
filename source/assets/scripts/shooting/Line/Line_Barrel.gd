@@ -18,7 +18,6 @@ var a_parameter = 0
 
 
 func trajectory():
-	clear_points()
 	while dot_position.x < 1000:
 		add_point(dot_position)
 		velocity.y = 10 * a_parameter

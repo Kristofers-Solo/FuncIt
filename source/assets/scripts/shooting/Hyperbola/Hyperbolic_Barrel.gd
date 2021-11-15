@@ -34,7 +34,7 @@ func _ready():
 			
 
 func trajectory():
-	clear_points()
+
 	while dot_position.x < 1000:
 		if pos.x > 0:
 			add_point(dot_position)
