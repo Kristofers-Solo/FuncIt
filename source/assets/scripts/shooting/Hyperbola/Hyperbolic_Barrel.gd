@@ -13,6 +13,7 @@ var b_parameter = 1
 var pos
 func _ready():
 	pos = Global.get("player").get_node('weaponHolder/Player-character-theme-gun').position 
+	
 
 
 #func _draw():
