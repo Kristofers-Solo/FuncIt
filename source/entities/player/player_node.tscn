@@ -1,4 +1,4 @@
-[gd_scene load_steps=175 format=2]
+[gd_scene load_steps=176 format=2]
 
 [ext_resource path="res://source/assets/sprites/character/player/theme/01/na/Player-character-theme-01.png" type="Texture" id=1]
 [ext_resource path="res://source/assets/scripts/player_handlers/player_collider_handler.gd" type="Script" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://source/assets/sprites/character/player/theme/01/animation/left_r/Player-character-theme-01_anim-idle – 7.png" type="Texture" id=13]
 [ext_resource path="res://source/assets/sprites/character/player/theme/01/animation/left_r/Player-character-theme-01_anim-idle – 12.png" type="Texture" id=14]
 [ext_resource path="res://source/assets/sprites/character/player/theme/01/animation/left_r/Player-character-theme-01_anim-idle – 10.png" type="Texture" id=15]
+[ext_resource path="res://source/assets/sprites/character/player/player_dead/Player-character-theme-05.svg" type="Texture" id=16]
 [ext_resource path="res://source/assets/sprites/character/player/theme/01/animation/left_r/Player-character-theme-01_anim-idle – 18.png" type="Texture" id=18]
 [ext_resource path="res://source/assets/sprites/character/player/theme/01/animation/right_r/Player-character-theme-01_anim-idle – 34.png" type="Texture" id=19]
 [ext_resource path="res://source/assets/sprites/character/player/theme/01/animation/left_r/Player-character-theme-01_anim-idle – 17.png" type="Texture" id=20]
@@ -175,11 +176,6 @@
 animations = [ {
 "frames": [ ExtResource( 48 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 32 ), ExtResource( 13 ), ExtResource( 40 ), ExtResource( 6 ), ExtResource( 15 ), ExtResource( 22 ), ExtResource( 14 ), ExtResource( 9 ), ExtResource( 37 ), ExtResource( 23 ), ExtResource( 39 ), ExtResource( 20 ), ExtResource( 18 ), ExtResource( 7 ), ExtResource( 34 ) ],
 "loop": true,
-"name": "move-speed-left-01",
-"speed": 35.0
-}, {
-"frames": [ ExtResource( 48 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 32 ), ExtResource( 13 ), ExtResource( 40 ), ExtResource( 6 ), ExtResource( 15 ), ExtResource( 22 ), ExtResource( 14 ), ExtResource( 9 ), ExtResource( 37 ), ExtResource( 23 ), ExtResource( 39 ), ExtResource( 20 ), ExtResource( 18 ), ExtResource( 7 ), ExtResource( 34 ) ],
-"loop": true,
 "name": "boost-speed-left-01",
 "speed": 50.0
 }, {
@@ -267,6 +263,11 @@ animations = [ {
 "loop": true,
 "name": "move-speed-right-02",
 "speed": 35.0
+}, {
+"frames": [ ExtResource( 48 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 32 ), ExtResource( 13 ), ExtResource( 40 ), ExtResource( 6 ), ExtResource( 15 ), ExtResource( 22 ), ExtResource( 14 ), ExtResource( 9 ), ExtResource( 37 ), ExtResource( 23 ), ExtResource( 39 ), ExtResource( 20 ), ExtResource( 18 ), ExtResource( 7 ), ExtResource( 34 ) ],
+"loop": true,
+"name": "move-speed-left-01",
+"speed": 35.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=3]
@@ -297,11 +298,6 @@ radius = 41.5403
 
 [sub_resource type="SpriteFrames" id=6]
 animations = [ {
-"frames": [ ExtResource( 169 ) ],
-"loop": true,
-"name": "04",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 170 ) ],
 "loop": true,
 "name": "02",
@@ -315,6 +311,11 @@ animations = [ {
 "frames": [ ExtResource( 170 ) ],
 "loop": true,
 "name": "03",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 169 ) ],
+"loop": true,
+"name": "04",
 "speed": 5.0
 } ]
 
@@ -384,6 +385,10 @@ animation = "04"
 position = Vector2( -120, 0 )
 rotation = 3.14159
 scale = Vector2( 4, 4 )
+
+[node name="player_sprite_dead" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 16 )
 
 [connection signal="timeout" from="network_tick_rate" to="." method="_on_network_tick_rate_timeout"]
 [connection signal="timeout" from="reload_timer" to="." method="_on_reload_timer_timeout"]

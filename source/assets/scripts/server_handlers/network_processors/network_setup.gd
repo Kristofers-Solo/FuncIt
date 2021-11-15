@@ -60,6 +60,8 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed("esc") and controls.is_visible_in_tree():
+		_on_return_pressed()
 	if Input.is_action_just_pressed("esc") and username.is_visible_in_tree():
 		username.hide()
 		controls.show()

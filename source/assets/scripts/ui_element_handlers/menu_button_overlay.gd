@@ -1,8 +1,13 @@
 extends Control
 
 
+func _process(_delta) -> void:
+	if Input.is_action_just_pressed("esc") and is_visible_in_tree():
+		queue_free()
+
+
 func _on_return_to_game_pressed():
-	hide()
+	queue_free()
 
 
 func _on_return_to_main_menu_pressed():
