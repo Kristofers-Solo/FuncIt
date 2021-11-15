@@ -339,7 +339,7 @@ func enable_trajectory_line(new_trajectory_line:String):
 		x.queue_free()
 		
 	var x = bullet_trajectory[new_trajectory_line].instance()
-	print(x)
+#	print(x)
 	get_node('weaponHolder/Player-character-theme-gun/shoot_point').add_child(x)
 	
 
