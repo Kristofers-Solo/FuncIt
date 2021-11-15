@@ -19,7 +19,6 @@ export var frequency = 5
 #		time += 0.06944
 
 func trajectory():
-	clear_points()
 	while dot_position.x < 1000:
 		add_point(dot_position)
 		velocity.y = amplitude * cos(time * frequency)

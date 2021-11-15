@@ -334,13 +334,13 @@ func enable_trajectory_line(new_trajectory_line:String):
 #	get_parent().add_child(x)
 #	x.global_position = shoot_point.global_position
 #	x.global_rotation = shoot_point.global_rotation
-	#for x in get_children():	#if there is gun remove it
-		#x.queue_free()
+	for x in get_node('weaponHolder/Player-character-theme-gun/shoot_point').get_children():	#if there is gun remove it
+		x.queue_free()
 		
 	var x = bullet_trajectory[new_trajectory_line].instance()
-	get_parent().add_child(x)
-	x.global_position = shoot_point.global_position
-	x.global_rotation = shoot_point.global_rotation
+	print(x)
+	get_node('weaponHolder/Player-character-theme-gun/shoot_point').add_child(x)
+	
 
 	
 func enable_trajectory(new_trajectory_line:String):
