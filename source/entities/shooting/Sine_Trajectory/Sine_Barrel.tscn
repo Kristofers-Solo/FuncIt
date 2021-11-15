@@ -4,5 +4,4 @@
 
 [node name="Sine_Barrel" type="Line2D"]
 show_behind_parent = true
-width = 4.0
 script = ExtResource( 1 )

@@ -9,6 +9,7 @@ var sine_button
 var parab_button
 var hyper_button
 var global
+var control 
 
 var clientPhase = {
 	"0": {

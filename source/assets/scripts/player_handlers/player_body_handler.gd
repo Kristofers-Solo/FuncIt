@@ -154,6 +154,16 @@ func process_rotation():
 
 
 func _process(_delta: float) -> void:
+	#print(Global.get('control'))
+#	if Global.get('control')._on_line_pressed():
+#		enable_trajectory('line')
+#	if Global.get('control')._on_sine_pressed():
+#		enable_trajectory('sine')
+#	if Global.get('control')._on_parab_pressed():
+#		enable_trajectory('parab')
+#	if Global.get('control')._on_hyper_pressed():
+#		enable_trajectory('hyper')
+	
 	user_input = UIN_preset_pre_processor_instance.update(Global.get_current_phase())
 	if get_tree().is_network_server():
 		Global.phase_update_global()
@@ -164,9 +174,9 @@ func _process(_delta: float) -> void:
 			clientPhase = puppet_phase
 			Global.set_current_phase(clientPhase)
 	$"weaponHolder/Player-character-theme-gun".play(theme)
-	particleImage.load("res://source/assets/sprites/character/player/theme/" + theme + "/na/Player-character-theme-particle-" + theme + ".png")
-	particleTexture.create_from_image(particleImage)
-	$Particles2D.texture = particleTexture
+	#particleImage.load("res://source/assets/sprites/character/player/theme/" + theme + "/na/Player-character-theme-particle-"+theme+".png")
+	#particleTexture.create_from_image(particleImage)
+	#$Particles2D.texture = particleTexture
 	if username_text_instance != null:
 		username_text_instance.name = "username" + name
 	if $Particles2D.position.x > 0 and direction != "left":
@@ -268,7 +278,7 @@ func _physics_process(delta) -> void:
 				move_and_slide(velocityVDIR.rotated(rotationalHolder))
 				rotate_weapon()
 				choose_trajectory()
-				enable_trajectory_line(trajectory_line)
+				#enable_trajectory_line(trajectory_line)
 				if user_input["shoot"] and can_shoot and not is_reloading:
 					rpc("shoot", trajectory)
 					is_reloading = true
@@ -297,10 +307,6 @@ func _physics_process(delta) -> void:
 
 
 func choose_trajectory():
-	Global.get('line_button')
-	Global.get('sine_button')
-	Global.get('parab_button')
-	Global.get('hyper_button')
 	
 	if Input.is_action_just_pressed("line"):
 		trajectory = 'line'
@@ -324,10 +330,27 @@ sync func shoot(new_trajectory:String):
 
 
 func enable_trajectory_line(new_trajectory_line:String):
+#	var x = bullet_trajectory[new_trajectory_line].instance()
+#	#print(x)
+#	get_parent().add_child(x)
+#	x.global_position = shoot_point.global_position
+#	x.global_rotation = shoot_point.global_rotation
+	for x in get_node('weaponHolder/Player-character-theme-gun/shoot_point').get_children():	#if there is gun remove it
+		x.queue_free()
+		
 	var x = bullet_trajectory[new_trajectory_line].instance()
-	get_parent().add_child(x)
-	x.global_position = shoot_point.global_position
-	x.global_rotation = shoot_point.global_rotation
+	print(x)
+	get_node('weaponHolder/Player-character-theme-gun/shoot_point').add_child(x)
+	
+
+	
+func enable_trajectory(new_trajectory_line:String):
+	for gun in get_children():	#if there is gun remove it
+		gun.queue_free()
+		
+	var gun = bullet_trajectory[new_trajectory_line].instance()
+	add_child(gun)
+	pass
 
 
 func _draw():
