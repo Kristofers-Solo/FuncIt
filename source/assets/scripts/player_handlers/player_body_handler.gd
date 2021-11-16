@@ -267,8 +267,6 @@ func _physics_process(delta) -> void:
 # warning-ignore:return_value_discarded
 				move_and_slide(velocityVDIR.rotated(rotationalHolder))
 				rotate_weapon()
-				choose_trajectory()
-				enable_trajectory_line(trajectory_line)
 				if user_input["shoot"] and can_shoot and not is_reloading:
 					rpc("shoot", trajectory)
 					is_reloading = true
@@ -296,25 +294,6 @@ func _physics_process(delta) -> void:
 			rpc("destroy")
 
 
-func choose_trajectory():
-	Global.get('line_button')
-	Global.get('sine_button')
-	Global.get('parab_button')
-	Global.get('hyper_button')
-	
-	if Input.is_action_just_pressed("line"):
-		trajectory = 'line'
-		trajectory_line = 'line'
-	if Input.is_action_just_pressed("sine"):
-		trajectory = 'sine'
-		trajectory_line = 'sine'
-	if Input.is_action_just_pressed("parab"):
-		trajectory = 'parab'
-		trajectory_line = 'parab'
-	if Input.is_action_just_pressed("hyper"):
-		trajectory = 'hyper'
-		trajectory_line = 'hyper'
-
 
 sync func shoot(new_trajectory:String):
 	bullet = bullet_env[new_trajectory].instance()
@@ -324,10 +303,13 @@ sync func shoot(new_trajectory:String):
 
 
 func enable_trajectory_line(new_trajectory_line:String):
+	for x in get_node('weaponHolder/Player-character-theme-gun/shoot_point').get_children():	#if there is gun remove it
+		x.queue_free()
+		
 	var x = bullet_trajectory[new_trajectory_line].instance()
-	get_parent().add_child(x)
-	x.global_position = shoot_point.global_position
-	x.global_rotation = shoot_point.global_rotation
+	print(x)
+	get_node('weaponHolder/Player-character-theme-gun/shoot_point').add_child(x)
+	
 
 
 func _draw():

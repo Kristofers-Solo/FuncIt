@@ -6,8 +6,8 @@ var velocity = Vector2()
 var player_owner = 0
 
 var time = 0
-var a_parameter = 1
-var b_parameter = 0
+var a_parameter = -Global.get('user_input').a_param_parab
+var b_parameter = Global.get('user_input').b_param_parab
 
 var pos
 func _ready():
