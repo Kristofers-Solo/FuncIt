@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://source/assets/scripts/server_handlers/network_processors/network_setup.gd" type="Script" id=1]
 [ext_resource path="res://source/fonts/oxygen/Oxygen-Regular.ttf" type="DynamicFontData" id=2]
@@ -14,8 +14,15 @@
 [ext_resource path="res://source/assets/sprites/GUI/background_lobby.svg" type="Texture" id=12]
 [ext_resource path="res://source/scenes/OVERLAY/elements/wall.tscn" type="PackedScene" id=13]
 [ext_resource path="res://source/assets/sprites/GUI/in_game/buttons/server_title.svg" type="Texture" id=14]
+[ext_resource path="res://source/entities/ts_bot/ts_bot.tscn" type="PackedScene" id=15]
 
 [sub_resource type="DynamicFont" id=1]
+size = 36
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
 size = 36
 use_mipmaps = true
 use_filter = true
@@ -24,12 +31,6 @@ font_data = ExtResource( 2 )
 [sub_resource type="StyleBoxEmpty" id=2]
 
 [sub_resource type="StyleBoxEmpty" id=3]
-
-[sub_resource type="DynamicFont" id=4]
-size = 36
-use_mipmaps = true
-use_filter = true
-font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=5]
 size = 36
@@ -94,8 +95,8 @@ margin_left = -150.0
 margin_top = -36.0
 margin_right = 150.0
 margin_bottom = 36.0
-custom_fonts/font = ExtResource( 8 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 8 )
 text = "CREATE SERVER"
 align = 1
 valign = 1
@@ -118,8 +119,8 @@ anchor_bottom = 0.5
 margin_left = -233.0
 margin_top = -36.0
 margin_bottom = 36.0
-custom_fonts/font = ExtResource( 8 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 8 )
 text = "JOIN SERVER"
 align = 1
 valign = 1
@@ -154,8 +155,8 @@ margin_left = -150.0
 margin_top = -36.0
 margin_right = 150.0
 margin_bottom = 36.0
-custom_fonts/font = ExtResource( 8 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 8 )
 text = "RETURN"
 align = 1
 valign = 1
@@ -186,8 +187,8 @@ margin_left = -225.0
 margin_top = -25.0
 margin_right = -225.0
 margin_bottom = -25.0
-custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
 text = "Enter your username"
 align = 1
 valign = 1
@@ -218,10 +219,10 @@ margin_left = -175.0
 margin_top = -28.0
 margin_right = 175.0
 margin_bottom = 28.0
+custom_colors/selection_color = Color( 0.8, 0.8, 0.8, 1 )
+custom_fonts/font = SubResource( 4 )
 custom_styles/focus = SubResource( 2 )
 custom_styles/normal = SubResource( 3 )
-custom_fonts/font = SubResource( 4 )
-custom_colors/selection_color = Color( 0.8, 0.8, 0.8, 1 )
 align = 1
 placeholder_text = "username"
 __meta__ = {
@@ -242,8 +243,8 @@ margin_bottom = 97.0
 [node name="Label" type="Label" parent="multiplayer_configure/popup_screen/panel/confirm"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 5 )
 text = "CONFIRM"
 align = 1
 valign = 1
@@ -304,8 +305,8 @@ margin_left = -74.5
 margin_top = -32.0
 margin_right = 74.5
 margin_bottom = 32.0
-custom_fonts/font = ExtResource( 10 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 10 )
 text = "START"
 align = 1
 valign = 1
@@ -324,8 +325,8 @@ margin_left = 621.0
 margin_top = 464.0
 margin_right = 1259.0
 margin_bottom = 576.0
-custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0.439216, 0.666667, 1, 0.27451 )
+custom_fonts/font = SubResource( 6 )
 align = 1
 valign = 1
 __meta__ = {
@@ -343,8 +344,8 @@ margin_left = 823.5
 margin_top = 580.0
 margin_right = 1056.5
 margin_bottom = 609.0
-custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 0.439216, 0.666667, 1, 0.27451 )
+custom_fonts/font = SubResource( 7 )
 text = "WAITING FOR PLAYERS"
 align = 1
 valign = 1
@@ -370,6 +371,9 @@ position = Vector2( 1152, 860 )
 
 [node name="4" type="Position2D" parent="spawn_locations"]
 position = Vector2( 1536, 860 )
+
+[node name="ts_bot" parent="." instance=ExtResource( 15 )]
+position = Vector2( 825, 257 )
 
 [connection signal="pressed" from="multiplayer_configure/controls/create_server" to="." method="_on_create_server_pressed"]
 [connection signal="pressed" from="multiplayer_configure/controls/join_server" to="." method="_on_join_server_pressed"]
