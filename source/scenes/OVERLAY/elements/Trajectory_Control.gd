@@ -12,23 +12,23 @@ func _ready():
 
 func _on_line_pressed():
 	Global.get('player').enable_trajectory_line('line')
-	#Global.get('player').choose_trajectory('line')
+	Global.get('player').trajectory = 'line'
 	pass # Replace with function body.
 
 
 func _on_parabol_pressed():
 	Global.get('player').enable_trajectory_line('parab')
-	#Global.get('player').choose_trajectory('parab')
+	Global.get('player').trajectory = 'parab'
 	pass # Replace with function body.
 
 
 func _on_hyperbol_pressed():
 	Global.get('player').enable_trajectory_line('hyper')
-	#Global.get('player').trajectory_line = 'hyper'
+	Global.get('player').trajectory = 'hyper'
 	pass # Replace with function body.
 
 
 func _on_sine_pressed():
 	Global.get('player').enable_trajectory_line('sine')
-	#Global.get('player').trajectory_line = 'sine'
+	Global.get('player').trajectory = 'sine'
 	pass # Replace with function body.

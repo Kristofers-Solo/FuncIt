@@ -154,16 +154,6 @@ func process_rotation():
 
 
 func _process(_delta: float) -> void:
-	#print(Global.get('control'))
-#	if Global.get('control')._on_line_pressed():
-#		enable_trajectory('line')
-#	if Global.get('control')._on_sine_pressed():
-#		enable_trajectory('sine')
-#	if Global.get('control')._on_parab_pressed():
-#		enable_trajectory('parab')
-#	if Global.get('control')._on_hyper_pressed():
-#		enable_trajectory('hyper')
-	
 	user_input = UIN_preset_pre_processor_instance.update(Global.get_current_phase())
 	if get_tree().is_network_server():
 		Global.phase_update_global()
@@ -277,8 +267,6 @@ func _physics_process(delta) -> void:
 # warning-ignore:return_value_discarded
 				move_and_slide(velocityVDIR.rotated(rotationalHolder))
 				rotate_weapon()
-				choose_trajectory()
-				#enable_trajectory_line(trajectory_line)
 				if user_input["shoot"] and can_shoot and not is_reloading:
 					rpc("shoot", trajectory)
 					is_reloading = true
@@ -306,21 +294,6 @@ func _physics_process(delta) -> void:
 			rpc("destroy")
 
 
-func choose_trajectory():
-	
-	if Input.is_action_just_pressed("line"):
-		trajectory = 'line'
-		trajectory_line = 'line'
-	if Input.is_action_just_pressed("sine"):
-		trajectory = 'sine'
-		trajectory_line = 'sine'
-	if Input.is_action_just_pressed("parab"):
-		trajectory = 'parab'
-		trajectory_line = 'parab'
-	if Input.is_action_just_pressed("hyper"):
-		trajectory = 'hyper'
-		trajectory_line = 'hyper'
-
 
 sync func shoot(new_trajectory:String):
 	bullet = bullet_env[new_trajectory].instance()
@@ -330,11 +303,6 @@ sync func shoot(new_trajectory:String):
 
 
 func enable_trajectory_line(new_trajectory_line:String):
-#	var x = bullet_trajectory[new_trajectory_line].instance()
-#	#print(x)
-#	get_parent().add_child(x)
-#	x.global_position = shoot_point.global_position
-#	x.global_rotation = shoot_point.global_rotation
 	for x in get_node('weaponHolder/Player-character-theme-gun/shoot_point').get_children():	#if there is gun remove it
 		x.queue_free()
 		
@@ -342,15 +310,6 @@ func enable_trajectory_line(new_trajectory_line:String):
 #	print(x)
 	get_node('weaponHolder/Player-character-theme-gun/shoot_point').add_child(x)
 	
-
-	
-func enable_trajectory(new_trajectory_line:String):
-	for gun in get_children():	#if there is gun remove it
-		gun.queue_free()
-		
-	var gun = bullet_trajectory[new_trajectory_line].instance()
-	add_child(gun)
-	pass
 
 
 func _draw():

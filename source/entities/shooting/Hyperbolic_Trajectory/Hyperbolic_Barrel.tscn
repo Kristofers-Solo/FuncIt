@@ -1,9 +1,6 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://source/assets/scripts/shooting/Hyperbola/Hyperbolic_Barrel.gd" type="Script" id=1]
 
-[sub_resource type="Curve" id=1]
-
 [node name="Hyperbolic_Barrel" type="Line2D"]
-width_curve = SubResource( 1 )
 script = ExtResource( 1 )

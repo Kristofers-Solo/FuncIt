@@ -8,6 +8,8 @@ var time = 0
 var a_parameter = 1
 var b_parameter = 0
 
+var pos_diff = []
+
 var pos
 func _ready():
 	pos = Global.get("player").get_node('weaponHolder/Player-character-theme-gun').position 
@@ -30,6 +32,7 @@ func _ready():
 #
 
 func trajectory():
+	clear_points()
 	while dot_position.x < 1000:
 		if pos.x > 0:
 			add_point(dot_position)
@@ -43,8 +46,18 @@ func trajectory():
 			velocity.x = 5
 			dot_position += velocity * speed_parab * 0.06944
 			time += 0.06944
+			
 
+func is_flipped():
+	while len(pos_diff) < 2:
+		pos_diff.append(pos)
+		
+	if pos_diff[1].x/pos_diff[0].x < 0:
+		return true
+	
 func _process(_delta):
+	#if is_flipped():
+		#clear_points()
 	trajectory()
 	update()
 	

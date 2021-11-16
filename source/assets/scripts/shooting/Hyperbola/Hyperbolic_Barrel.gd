@@ -13,6 +13,7 @@ var b_parameter = 1
 var pos
 func _ready():
 	pos = Global.get("player").get_node('weaponHolder/Player-character-theme-gun').position 
+	
 
 
 #func _draw():
@@ -35,18 +36,18 @@ func _ready():
 
 func trajectory():
 	while dot_position.x < 1000:
-		if true:
+		if pos.x > 0:
 			add_point(dot_position)
 			velocity.x = 10
 			velocity.y = a_parameter/(time*b_parameter) 
 			dot_position += velocity * speed_hyper * 0.06944
 			time += 0.06944
-#		if pos.x < 0:
-#			add_point(dot_position)
-#			velocity.x = 10
-#			velocity.y = -a_parameter/(time*b_parameter) 
-#			dot_position += velocity * speed_hyper * 0.06944
-#			time += 0.06944
+		if pos.x < 0:
+			add_point(dot_position)
+			velocity.x = 10
+			velocity.y = -a_parameter/(time*b_parameter) 
+			dot_position += velocity * speed_hyper * 0.06944
+			time += 0.06944
 
 func _process(_delta):
 	trajectory()
