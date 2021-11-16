@@ -5,7 +5,7 @@ var velocity = Vector2(0, 0)
 var dot_position = Vector2(0, 0)
 
 var time = 0
-var a_parameter = 0
+var a_parameter = -Global.get('user_input').a_param_line
 
 
 #func _draw():

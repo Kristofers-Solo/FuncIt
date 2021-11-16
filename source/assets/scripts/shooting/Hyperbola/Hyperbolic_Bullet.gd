@@ -4,8 +4,10 @@ export(int) var damage = 25
 var velocity = Vector2()
 var speed_hyper = 100
 var time = 0.05
-var a_parameter = 1
-var b_parameter = 1
+
+var a_parameter = Global.get('user_input').a_param_hyper
+var b_parameter = Global.get('user_input').b_param_hyper
+
 var player_owner = 0
 
 var pos

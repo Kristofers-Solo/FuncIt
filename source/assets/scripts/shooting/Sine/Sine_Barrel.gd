@@ -6,8 +6,8 @@ var velocity = Vector2(0, 0)
 var dot_position = Vector2(0, 0)
 
 var time = 0
-export var amplitude = 4
-export var frequency = 5
+var amplitude = Global.get('user_input').amp
+var frequency = Global.get('user_input').freq
 
 
 #func _draw():

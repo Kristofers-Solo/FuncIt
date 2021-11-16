@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://source/assets/sprites/GUI/in_game/user_input/background_panel.svg" type="Texture" id=1]
 [ext_resource path="res://source/fonts/oxygen/Oxygen-Regular.ttf" type="DynamicFontData" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://source/assets/sprites/GUI/in_game/user_input/ready_button/ready_button_hover.svg" type="Texture" id=11]
 [ext_resource path="res://source/assets/sprites/GUI/in_game/user_input/skip_button/skip_button.svg" type="Texture" id=12]
 [ext_resource path="res://source/scenes/OVERLAY/elements/trajectories.gd" type="Script" id=13]
+[ext_resource path="res://icon.png" type="Texture" id=14]
 
 [sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 1 )
@@ -73,6 +74,7 @@ font_data = ExtResource( 2 )
 [node name="user_input" type="Panel"]
 margin_right = 480.0
 margin_bottom = 156.0
+mouse_filter = 1
 custom_styles/panel = SubResource( 1 )
 __meta__ = {
 "_edit_lock_": true,
@@ -86,12 +88,14 @@ margin_left = 50.0
 margin_top = 28.0
 margin_right = -330.0
 margin_bottom = -28.0
+mouse_filter = 1
 script = ExtResource( 13 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="line" type="Panel" parent="trajectories"]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -100,6 +104,7 @@ margin_left = -50.0
 margin_top = -50.0
 margin_right = 50.0
 margin_bottom = 50.0
+mouse_filter = 1
 custom_styles/panel = SubResource( 2 )
 __meta__ = {
 "_edit_lock_": true,
@@ -126,12 +131,13 @@ __meta__ = {
 }
 
 [node name="LineEdit" type="LineEdit" parent="trajectories/line"]
-margin_left = 205.0
-margin_top = 35.0
-margin_right = 263.0
-margin_bottom = 59.0
-max_length = 2
-placeholder_text = "a"
+margin_left = 206.0
+margin_top = 12.0
+margin_right = 288.0
+margin_bottom = 78.0
+focus_mode = 1
+mouse_filter = 1
+max_length = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -155,6 +161,7 @@ margin_left = -50.0
 margin_top = -50.0
 margin_right = 50.0
 margin_bottom = 50.0
+mouse_filter = 1
 custom_styles/panel = SubResource( 4 )
 __meta__ = {
 "_edit_lock_": true,
@@ -179,6 +186,41 @@ __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
 }
+
+[node name="x^2 label" type="Label" parent="trajectories/parabol"]
+margin_left = 256.0
+margin_top = 41.0
+margin_right = 296.0
+margin_bottom = 55.0
+text = "x^2 +"
+
+[node name="a_param_LineEdit" type="LineEdit" parent="trajectories/parabol"]
+margin_left = 193.0
+margin_top = 35.0
+margin_right = 251.0
+margin_bottom = 59.0
+focus_mode = 1
+max_length = 3
+
+[node name="b_param_LineEdit" type="LineEdit" parent="trajectories/parabol"]
+margin_left = 293.0
+margin_top = 36.0
+margin_right = 351.0
+margin_bottom = 60.0
+focus_mode = 1
+max_length = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="x_label" type="Label" parent="trajectories/parabol"]
+margin_left = 340.0
+margin_top = 41.0
+margin_right = 380.0
+margin_bottom = 55.0
+text = "x"
+align = 1
+valign = 1
 
 [node name="hyperbol" type="Panel" parent="trajectories"]
 visible = false
@@ -215,6 +257,35 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="a_param_h_LineEdit" type="LineEdit" parent="trajectories/hyperbol"]
+margin_left = 225.0
+margin_top = 13.0
+margin_right = 283.0
+margin_bottom = 37.0
+focus_mode = 1
+max_length = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="b_param_h_LineEdit" type="LineEdit" parent="trajectories/hyperbol"]
+margin_left = 211.0
+margin_top = 45.0
+margin_right = 269.0
+margin_bottom = 69.0
+focus_mode = 1
+max_length = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="trajectories/hyperbol"]
+modulate = Color( 0, 0, 0, 1 )
+self_modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 254, 41 )
+scale = Vector2( 0.0401042, 0.00260416 )
+texture = ExtResource( 14 )
+
 [node name="sin" type="Panel" parent="trajectories"]
 visible = false
 anchor_left = 0.5
@@ -250,6 +321,46 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="x_label" type="Label" parent="trajectories/sin"]
+margin_left = 341.0
+margin_top = 37.0
+margin_right = 381.0
+margin_bottom = 51.0
+text = "x)"
+align = 1
+valign = 1
+
+[node name="amp" type="LineEdit" parent="trajectories/sin"]
+margin_left = 204.0
+margin_top = 33.0
+margin_right = 262.0
+margin_bottom = 57.0
+focus_mode = 1
+max_length = 3
+
+[node name="freq" type="LineEdit" parent="trajectories/sin"]
+margin_left = 291.0
+margin_top = 33.0
+margin_right = 349.0
+margin_bottom = 57.0
+focus_mode = 1
+max_length = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sin()" type="Label" parent="trajectories/sin"]
+margin_left = 255.0
+margin_top = 37.0
+margin_right = 295.0
+margin_bottom = 51.0
+text = "sin("
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Func_Label" type="Label" parent="trajectories"]
 margin_left = 121.0
 margin_top = 28.0
@@ -267,6 +378,7 @@ margin_left = 165.0
 margin_top = 13.0
 margin_right = 465.0
 margin_bottom = 143.0
+mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -328,3 +440,9 @@ align = 1
 valign = 1
 
 [connection signal="text_entered" from="trajectories/line/LineEdit" to="trajectories" method="_on_LineEdit_text_entered"]
+[connection signal="text_entered" from="trajectories/parabol/a_param_LineEdit" to="trajectories" method="_on_a_param_LineEdit_text_entered"]
+[connection signal="text_entered" from="trajectories/parabol/b_param_LineEdit" to="trajectories" method="_on_b_param_LineEdit_text_entered"]
+[connection signal="text_entered" from="trajectories/hyperbol/a_param_h_LineEdit" to="trajectories" method="_on_a_param_h_LineEdit_text_entered"]
+[connection signal="text_entered" from="trajectories/hyperbol/b_param_h_LineEdit" to="trajectories" method="_on_b_param_h_LineEdit_text_entered"]
+[connection signal="text_entered" from="trajectories/sin/amp" to="trajectories" method="_on_amp_text_entered"]
+[connection signal="text_entered" from="trajectories/sin/freq" to="trajectories" method="_on_freq_text_entered"]
