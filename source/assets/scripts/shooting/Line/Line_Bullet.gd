@@ -6,10 +6,12 @@ var velocity = Vector2()
 var player_owner = 0
 
 var time = 0
-var a_parameter = 0
+var a_parameter =  0
+
 
 
 func follow_line_trajectory():
+	a_parameter = -Global.get('user_input').a_param_line
 	velocity.x = time
 	velocity.y = time*a_parameter
 
