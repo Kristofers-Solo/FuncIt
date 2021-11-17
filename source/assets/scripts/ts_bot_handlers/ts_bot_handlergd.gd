@@ -13,7 +13,6 @@ var coreRay = {}
 var desiredLocation = Vector2(0,0)
 var movementVector = Vector2(0,0)
 var weightVector = Vector2(0,0)
-var interacting = false
 var interactionRays = []
 var degreeTracker
 
@@ -28,6 +27,8 @@ var time = 0
 var rotationAmount = 0
 var rand_generate = RandomNumberGenerator.new()
 
+var timer = 15
+
 export(int, "Passive", "Friendly", "Agressive") var Mode
 
 func _ready():
@@ -36,13 +37,19 @@ func _ready():
 	pass
 
 func _physics_process(delta):
-	time += delta#
+	time += delta
+	timer += delta
 	rand_generate.randomize()
 	get_interaction()
 	if interactionRays[0]["interacted"]: 
 		if liftSpeed > 0: liftSpeed = move_toward(liftSpeed, 0, deccelerationSpeed)
-	elif abs(position.y - desiredLocation.y) > 10 and not interacting: liftSpeed -= accelerationSpeed
-	else: liftSpeed += GRAVITY
+	elif position.y - desiredLocation.y > 1: 
+		liftSpeed -= accelerationSpeed
+	elif position.y - desiredLocation.y  < -1: 
+		liftSpeed += GRAVITY
+	for ray in interactionRays:
+		if ray["interacted"]:
+			liftSpeed += -ray["end"].normalized().y *  maxSpeed
 	liftSpeed = clamp(liftSpeed, -maxSpeed, maxSpeed)
 	move_and_slide(Vector2(0,liftSpeed))
 	if Mode == 0:
@@ -54,6 +61,7 @@ func _physics_process(delta):
 		$TsBotSpriteWeaponOn.hide()
 		$TsBotSpriteWeaponOff.show()
 	elif Mode == 2:
+		if fireRate < 20: fireRate = 5*fireRate
 		$ts_bot_sprite.play("agressive_idle")
 		$TsBotSpriteWeaponOn.show()
 		$TsBotSpriteWeaponOff.hide()
@@ -64,17 +72,16 @@ func _physics_process(delta):
 		time = 0
 
 func get_interaction():
-	print(interacting)
 	degreeTracker = 0
 	interactionRays = []
 	worldSpace2d = get_world_2d().direct_space_state
-	interacting = false
 	while degreeTracker < 360 + degreeStep:
 		interactionRay = worldSpace2d.intersect_ray(startVector, Vector2(0,maxRay).rotated(deg2rad(degreeTracker)) + global_position, [self])
 		var interacted = false
-		if "position" in interactionRay:
+		if "position" in interactionRay and interactionRay["collider"].is_in_group("Player"):
 			interacted = true
-			Mode += 1
-			interacting = true
+			if timer > 15: 
+				Mode += 1
+				timer = 0
 		interactionRays.append({"start": startVector, "end": Vector2(0,maxRay).rotated(deg2rad(degreeTracker)) + global_position, "degrees": degreeTracker,"ray": interactionRay, "interacted": interacted})
 		degreeTracker += degreeStep
