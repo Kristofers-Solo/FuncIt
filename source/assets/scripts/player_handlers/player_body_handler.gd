@@ -164,9 +164,9 @@ func _process(_delta: float) -> void:
 			clientPhase = puppet_phase
 			Global.set_current_phase(clientPhase)
 	$"weaponHolder/Player-character-theme-gun".play(theme)
-	particleImage.load("res://source/assets/sprites/character/player/theme/" + theme + "/na/Player-character-theme-particle-" + theme + ".png")
-	particleTexture.create_from_image(particleImage)
-	$Particles2D.texture = particleTexture
+	#particleImage.load("res://source/assets/sprites/character/player/theme/" + theme + "/na/Player-character-theme-particle-"+theme+".png")
+	#particleTexture.create_from_image(particleImage)
+	#$Particles2D.texture = particleTexture
 	if username_text_instance != null:
 		username_text_instance.name = "username" + name
 	if $Particles2D.position.x > 0 and direction != "left":
@@ -307,7 +307,7 @@ func enable_trajectory_line(new_trajectory_line:String):
 		x.queue_free()
 		
 	var x = bullet_trajectory[new_trajectory_line].instance()
-	print(x)
+#	print(x)
 	get_node('weaponHolder/Player-character-theme-gun/shoot_point').add_child(x)
 	
 
