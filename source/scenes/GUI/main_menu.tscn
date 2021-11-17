@@ -56,9 +56,10 @@ margin_right = 150.0
 margin_bottom = 36.0
 custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "PLAY"
+text = "playground"
 align = 1
 valign = 1
+uppercase = true
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false

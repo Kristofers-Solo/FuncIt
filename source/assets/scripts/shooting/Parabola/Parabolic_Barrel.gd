@@ -15,20 +15,20 @@ func _ready():
 	pos = Global.get("player").get_node('weaponHolder/Player-character-theme-gun').position 
 
 
-func trajectory():
+func trajectory(delta):
 	while dot_position.x < 1000:
 		if pos.x > 0:
 			add_point(dot_position)
 			velocity.y = time*(a_parameter * time + b_parameter)
 			velocity.x = 5
-			dot_position += velocity * speed_parab * 0.06944
-			time += 0.06944
+			dot_position += velocity * speed_parab * delta
+			time += delta
 		if pos.x < 0:
 			add_point(dot_position)
 			velocity.y = -time*(a_parameter * time + b_parameter)
 			velocity.x = 5
-			dot_position += velocity * speed_parab * 0.06944
-			time += 0.06944
+			dot_position += velocity * speed_parab * delta
+			time += delta
 			
 
 func is_flipped():
@@ -38,10 +38,10 @@ func is_flipped():
 	if pos_diff[1].x/pos_diff[0].x < 0:
 		return true
 	
-func _process(_delta):
+func _process(delta):
 	#if is_flipped():
 		#clear_points()
-	trajectory()
+	trajectory(delta)
 	update()
 	
 

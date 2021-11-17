@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="13.222"
+   height="34"
+   viewBox="0 0 3.4983207 8.9958338"
+   version="1.1"
+   id="svg833"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   sodipodi:docname="updown.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview835"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     units="px"
+     inkscape:zoom="12.659037"
+     inkscape:cx="-3.238793"
+     inkscape:cy="14.456076"
+     inkscape:window-width="1920"
+     inkscape:window-height="1007"
+     inkscape:window-x="1920"
+     inkscape:window-y="44"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs830">
+    <clipPath
+       id="clip-trinity_site_input_button_3-a">
+      <rect
+         width="35"
+         height="45"
+         id="rect2"
+         x="0"
+         y="0" />
+    </clipPath>
+    <clipPath
+       id="clip-trinity_site_input_button_3-a-3">
+      <rect
+         width="35"
+         height="45"
+         id="rect2-6"
+         x="0"
+         y="0" />
+    </clipPath>
+    <clipPath
+       id="clip-trinity_site_input_button_3-d">
+      <rect
+         width="35"
+         height="45"
+         id="rect2-5"
+         x="0"
+         y="0" />
+    </clipPath>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g1064"
+       transform="scale(1.3076846)">
+      <g
+         id="trinity_site_input_button_3-d"
+         clip-path="url(#clip-trinity_site_input_button_3-d)"
+         transform="scale(0.07643435)">
+        <rect
+           width="35"
+           height="45"
+           fill="#556ece"
+           id="rect7-6"
+           x="0"
+           y="0" />
+        <path
+           id="Polygon_2-2"
+           data-name="Polygon 2"
+           d="M 12.5,0 25,24 H 0 Z"
+           transform="translate(5,15)"
+           fill="#ffffff" />
+      </g>
+      <g
+         id="g1056"
+         clip-path="url(#clip-trinity_site_input_button_3-d)"
+         transform="matrix(0.07643435,0,0,-0.07643435,0,6.8790916)">
+        <rect
+           width="35"
+           height="45"
+           fill="#556ece"
+           id="rect1052"
+           x="0"
+           y="0" />
+        <path
+           id="path1054"
+           data-name="Polygon 2"
+           d="M 12.5,0 25,24 H 0 Z"
+           transform="translate(5,15)"
+           fill="#ffffff" />
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35" height="45" viewBox="0 0 35 45">
+  <defs>
+    <clipPath id="clip-trinity_site_input_button_3-d">
+      <rect width="35" height="45"/>
+    </clipPath>
+  </defs>
+  <g id="trinity_site_input_button_3-d" clip-path="url(#clip-trinity_site_input_button_3-d)">
+    <rect width="35" height="45" fill="#556ece"/>
+    <path id="Polygon_2" data-name="Polygon 2" d="M12.5,0,25,24H0Z" transform="translate(5 15)" fill="#fff"/>
+  </g>
+</svg>
