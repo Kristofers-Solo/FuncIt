@@ -11,8 +11,10 @@ var b_parameter = Global.get('user_input').b_param_parab
 var pos_diff = []
 
 var pos
+var rot
 func _ready():
 	pos = Global.get("player").get_node('weaponHolder/Player-character-theme-gun').position 
+	rot = Global.get("player").get_node('weaponHolder/Player-character-theme-gun').rotation
 
 
 func trajectory():
@@ -33,7 +35,11 @@ func trajectory():
 
 func is_flipped():
 	while len(pos_diff) < 2:
-		pos_diff.append(pos)
+		pos_diff.append(rot)
+	if cos(pos):
+		pass
+	if pos_diff[0] + pos_diff[1] > pos_diff[1] or  pos_diff[0] + pos_diff[1] > pos_diff[0]:
+		pass
 		
 	if pos_diff[1].x/pos_diff[0].x < 0:
 		return true
@@ -41,6 +47,7 @@ func is_flipped():
 func _process(_delta):
 	#if is_flipped():
 		#clear_points()
+	print(rot)
 	trajectory()
 	update()
 	

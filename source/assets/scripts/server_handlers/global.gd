@@ -7,6 +7,7 @@ var player
 var global
 var control 
 var user_input
+var bot_weapon
 
 var clientPhase = {
 	"0": {

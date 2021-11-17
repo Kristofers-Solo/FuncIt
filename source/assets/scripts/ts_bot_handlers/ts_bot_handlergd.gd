@@ -10,6 +10,8 @@ var maxSpeed = 250
 var worldSpace2d = null
 var coreRay = {}
 
+var bullet = preload("res://source/entities/ts_bot/Bot_Bullet.tscn")
+
 var desiredLocation = Vector2(0,0)
 var movementVector = Vector2(0,0)
 var weightVector = Vector2(0,0)
@@ -37,6 +39,7 @@ func _ready():
 	pass
 
 func _physics_process(delta):
+	Global.set('bot_weapon', self)
 	time += delta
 	timer += delta
 	rand_generate.randomize()
@@ -71,6 +74,7 @@ func _physics_process(delta):
 		$TsBotSpriteWeaponOff.rotation = 360/rotationAmount
 		$TsBotSpriteWeaponOn.rotation = 360/rotationAmount
 		time = 0
+		shoot_bot()
 
 func get_interaction():
 	degreeTracker = 0
@@ -86,3 +90,10 @@ func get_interaction():
 				timer = 0
 		interactionRays.append({"start": startVector, "end": Vector2(0,maxRay).rotated(deg2rad(degreeTracker)) + global_position, "degrees": degreeTracker,"ray": interactionRay, "interacted": interacted})
 		degreeTracker += degreeStep
+
+
+func shoot_bot():
+	var b = bullet.instance()
+	get_parent().add_child(b)
+	b.global_position = self.global_position
+	b.global_rotation = 360/rotationAmount
