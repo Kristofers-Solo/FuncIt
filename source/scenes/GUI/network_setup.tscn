@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://source/assets/scripts/server_handlers/network_processors/network_setup.gd" type="Script" id=1]
 [ext_resource path="res://source/fonts/oxygen/Oxygen-Regular.ttf" type="DynamicFontData" id=2]
@@ -14,7 +14,6 @@
 [ext_resource path="res://source/assets/sprites/GUI/background_lobby.svg" type="Texture" id=12]
 [ext_resource path="res://source/scenes/OVERLAY/elements/wall.tscn" type="PackedScene" id=13]
 [ext_resource path="res://source/assets/sprites/GUI/in_game/buttons/server_title.svg" type="Texture" id=14]
-[ext_resource path="res://source/entities/ts_bot/ts_bot.tscn" type="PackedScene" id=15]
 
 [sub_resource type="DynamicFont" id=1]
 size = 36
@@ -371,9 +370,6 @@ position = Vector2( 1152, 860 )
 
 [node name="4" type="Position2D" parent="spawn_locations"]
 position = Vector2( 1536, 860 )
-
-[node name="ts_bot" parent="." instance=ExtResource( 15 )]
-position = Vector2( 825, 257 )
 
 [connection signal="pressed" from="multiplayer_configure/controls/create_server" to="." method="_on_create_server_pressed"]
 [connection signal="pressed" from="multiplayer_configure/controls/join_server" to="." method="_on_join_server_pressed"]

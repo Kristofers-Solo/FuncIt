@@ -21,14 +21,14 @@ animations = [ {
 "name": "agressive_idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 4 ) ],
-"loop": true,
-"name": "friendly_idle",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 3 ) ],
 "loop": true,
 "name": "passive_idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "friendly_idle",
 "speed": 5.0
 } ]
 
@@ -49,11 +49,12 @@ scale = Vector2( 0.6, 0.6 )
 frames = SubResource( 3 )
 animation = "passive_idle"
 
-[node name="TsBotSpriteWeaponOn" type="Sprite" parent="."]
-scale = Vector2( 0.6, 0.6 )
-texture = ExtResource( 5 )
-
 [node name="TsBotSpriteWeaponOff" type="Sprite" parent="."]
-position = Vector2( 0, 5 )
+position = Vector2( 0, -8 )
 scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 6 )
+
+[node name="TsBotSpriteWeaponOn" type="Sprite" parent="."]
+position = Vector2( 0, -8 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 5 )

@@ -23,6 +23,10 @@ var maxRay = 65
 var interactionRay = null
 
 var degreeStep = 60
+var fireRate = 12
+var time = 0
+var rotationAmount = 0
+var rand_generate = RandomNumberGenerator.new()
 
 export(int, "Passive", "Friendly", "Agressive") var Mode
 
@@ -32,6 +36,8 @@ func _ready():
 	pass
 
 func _physics_process(delta):
+	time += delta#
+	rand_generate.randomize()
 	get_interaction()
 	if interactionRays[0]["interacted"]: 
 		if liftSpeed > 0: liftSpeed = move_toward(liftSpeed, 0, deccelerationSpeed)
@@ -42,7 +48,7 @@ func _physics_process(delta):
 	if Mode == 0:
 		$ts_bot_sprite.play("passive_idle")
 		$TsBotSpriteWeaponOn.hide()
-		$TsBotSpriteWeaponOff.show()
+		$TsBotSpriteWeaponOff.hide()
 	elif Mode == 1:
 		$ts_bot_sprite.play("friendly_idle")
 		$TsBotSpriteWeaponOn.hide()
@@ -51,9 +57,14 @@ func _physics_process(delta):
 		$ts_bot_sprite.play("agressive_idle")
 		$TsBotSpriteWeaponOn.show()
 		$TsBotSpriteWeaponOff.hide()
-	rotate_weapon(90)
+	if time > 60 / fireRate and Mode >= 1:
+		rotationAmount = rand_generate.randi_range(1,36)
+		$TsBotSpriteWeaponOff.rotation = 360/rotationAmount
+		$TsBotSpriteWeaponOn.rotation = 360/rotationAmount
+		time = 0
 
 func get_interaction():
+	print(interacting)
 	degreeTracker = 0
 	interactionRays = []
 	worldSpace2d = get_world_2d().direct_space_state
@@ -61,14 +72,9 @@ func get_interaction():
 	while degreeTracker < 360 + degreeStep:
 		interactionRay = worldSpace2d.intersect_ray(startVector, Vector2(0,maxRay).rotated(deg2rad(degreeTracker)) + global_position, [self])
 		var interacted = false
-		if "position" in interactionRay: 
+		if "position" in interactionRay:
 			interacted = true
+			Mode += 1
 			interacting = true
 		interactionRays.append({"start": startVector, "end": Vector2(0,maxRay).rotated(deg2rad(degreeTracker)) + global_position, "degrees": degreeTracker,"ray": interactionRay, "interacted": interacted})
 		degreeTracker += degreeStep
-
-func rotate_weapon(degrees):
-	degrees = deg2rad(degrees)
-	$TsBotSpriteWeaponOff.position = Vector2(startPosition.rotated(degrees).x,startPosition.y - startPosition.rotated(degrees).y)
-	print($TsBotSpriteWeaponOff.position)
-	$TsBotSpriteWeaponOff.rotation = degrees
