@@ -9,8 +9,10 @@ func _ready() -> void:
 	username_text_edit.call_deferred("grab_focus")
 
 
+# warning-ignore:unused_argument
 func _process(delta) -> void:
 	if Input.is_action_just_pressed("esc"):
+# warning-ignore:return_value_discarded
 		get_tree().change_scene("res://source/scenes/GUI/main_menu.tscn")
 
 func _on_confirm_pressed():
@@ -34,9 +36,11 @@ sync func switch_to_game() -> void:
 		if child.is_in_group("Player"):
 			child.update_shoot_mode(true)
 	
+# warning-ignore:return_value_discarded
 	get_tree().change_scene("res://source/levels/trinity_site/trinity_site_level_playground.tscn")
 
 
 func _on_return_pressed():
+# warning-ignore:return_value_discarded
 	get_tree().change_scene("res://source/scenes/GUI/main_menu.tscn")
 

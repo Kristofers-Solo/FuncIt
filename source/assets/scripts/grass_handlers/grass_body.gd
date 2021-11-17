@@ -6,6 +6,7 @@ var state = false
 var activeAnimation = "idle"
 var playingLoop = true
 
+# warning-ignore:unused_argument
 func _process(delta):
 	if reacted == true:
 		playingLoop = false

@@ -86,12 +86,12 @@ var weaponAngle = 0
 
 var particleTexture = ImageTexture.new()
 var particleImage = Image.new()
+var activeTheme = null
 
 var globalActivePhase = null
 var clientPhase = null
 
 func _ready():
-	
 	weaponPositionalOffset = Vector2(-$"weaponHolder/Player-character-theme-gun-na3".texture.get_width() * $"weaponHolder/Player-character-theme-gun-na3".scale.x / 2,-$"weaponHolder/Player-character-theme-gun-na3".texture.get_height() * $"weaponHolder/Player-character-theme-gun-na3".scale.y / 2) + Vector2(-$weaponHolder.get_shape().get_radius(), 0)
 	$"weaponHolder/Player-character-theme-gun".position = weaponPositionalOffset
 # warning-ignore:return_value_discarded
@@ -162,9 +162,10 @@ func _process(_delta: float) -> void:
 			clientPhase = puppet_phase
 			Global.set_current_phase(clientPhase)
 	$"weaponHolder/Player-character-theme-gun".play(theme)
-	#particleImage.load("res://source/assets/sprites/character/player/theme/" + theme + "/na/Player-character-theme-particle-"+theme+".png")
-	#particleTexture.create_from_image(particleImage)
-	#$Particles2D.texture = particleTexture
+	if theme != activeTheme:
+		particleImage.load("res://source/assets/sprites/character/player/theme/"+ theme +"/na/Player-character-theme-particle-"+ theme +".png")
+		particleTexture.create_from_image(particleImage)
+	$Particles2D.texture = particleTexture
 	if username_text_instance != null:
 		username_text_instance.name = "username" + name
 	if $Particles2D.position.x > 0 and direction != "left":

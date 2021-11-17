@@ -6,6 +6,7 @@ var current_player_location_instance_number = null
 var globalActivePhase = null
 
 func _ready() -> void:
+# warning-ignore:return_value_discarded
 	get_tree().connect("network_peer_disconnected", self, "_player_disconnected")
 	if get_tree().is_network_server():
 		setup_player_positions()

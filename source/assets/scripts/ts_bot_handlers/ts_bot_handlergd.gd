@@ -51,6 +51,7 @@ func _physics_process(delta):
 		if ray["interacted"]:
 			liftSpeed += -ray["end"].normalized().y *  maxSpeed
 	liftSpeed = clamp(liftSpeed, -maxSpeed, maxSpeed)
+# warning-ignore:return_value_discarded
 	move_and_slide(Vector2(0,liftSpeed))
 	if Mode == 0:
 		$ts_bot_sprite.play("passive_idle")
