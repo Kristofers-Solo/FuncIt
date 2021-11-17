@@ -21,14 +21,14 @@ animations = [ {
 "name": "friendly_idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ) ],
-"loop": true,
-"name": "passive_idle",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 1 ) ],
 "loop": true,
 "name": "agressive_idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "passive_idle",
 "speed": 5.0
 } ]
 

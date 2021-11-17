@@ -80,6 +80,7 @@ func get_interaction():
 	degreeTracker = 0
 	interactionRays = []
 	worldSpace2d = get_world_2d().direct_space_state
+	if time > 5 and Mode == 0: Mode = 1
 	while degreeTracker < 360 + degreeStep:
 		interactionRay = worldSpace2d.intersect_ray(startVector, Vector2(0,maxRay).rotated(deg2rad(degreeTracker)) + global_position, [self])
 		var interacted = false
@@ -96,4 +97,4 @@ func shoot_bot():
 	var b = bullet.instance()
 	get_parent().add_child(b)
 	b.global_position = self.global_position
-	b.global_rotation = self.global_rotation#360/rotationAmount
+	b.global_rotation = 360/rotationAmount - 180
