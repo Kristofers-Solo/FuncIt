@@ -96,4 +96,4 @@ func shoot_bot():
 	var b = bullet.instance()
 	get_parent().add_child(b)
 	b.global_position = self.global_position
-	b.global_rotation = 360/rotationAmount
+	b.global_rotation = self.global_rotation#360/rotationAmount

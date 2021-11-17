@@ -17,7 +17,6 @@ func follow_line_trajectory():
 
 
 func _process(delta):
-	print(bot_rotation)
 	follow_line_trajectory()
 	time += delta
 	position += velocity * speed_line * delta

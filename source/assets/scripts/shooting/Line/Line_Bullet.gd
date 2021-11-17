@@ -22,8 +22,9 @@ func _process(delta):
 	position += velocity * speed_line * delta
 
 
-func _on_hitbox_body_entered(_body):
+func _on_hitbox_body_entered(body):
 	queue_free()
 	
-
+	if body.is_in_group('bot'):
+		body.queue_free()
 
