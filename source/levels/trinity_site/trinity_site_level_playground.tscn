@@ -3,6 +3,7 @@
 [ext_resource path="res://source/assets/scripts/server_handlers/trinity_site_level_playground.gd" type="Script" id=1]
 [ext_resource path="res://source/assets/scripts/ui_element_handlers/UI.gd" type="Script" id=2]
 [ext_resource path="res://source/levels/trinity_site/images/trinity_site_level_layout_level_design_z_index_0.svg" type="Texture" id=3]
+[ext_resource path="res://source/entities/ts_bot/ts_bot.tscn" type="PackedScene" id=4]
 [ext_resource path="res://source/levels/trinity_site/images/trinity_site_level_layout_level_design_z_index_4.svg" type="Texture" id=7]
 [ext_resource path="res://source/levels/trinity_site/images/trinity_site_level_layout_level_design_z_index_3.svg" type="Texture" id=8]
 [ext_resource path="res://source/entities/grass/grass_node.tscn" type="PackedScene" id=9]
