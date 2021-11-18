@@ -3,10 +3,12 @@ extends Node2D
 var time = 0
 var first_transitioned = false
 var transitioned = false
+var skipTutorial = true
 
 func _ready():
 	$FunCitGameLogoDarkTransparent.modulate[3] = 0
 	$Fb_Geo_Game.modulate[3] = 0
+	if skipTutorial: get_tree().change_scene("res://source/scenes/GUI/main_menu.tscn")
 	pass
 
 func _process(delta):

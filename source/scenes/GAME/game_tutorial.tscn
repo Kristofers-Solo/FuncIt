@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://source/assets/scripts/server_handlers/trinity_site_level_tutorial.gd" type="Script" id=1]
 [ext_resource path="res://source/assets/scripts/ui_element_handlers/UI.gd" type="Script" id=2]
@@ -6,11 +6,12 @@
 [ext_resource path="res://source/levels/tutorial/elements/simpleTargetZone.tscn" type="PackedScene" id=4]
 [ext_resource path="res://source/assets/sprites/GUI/tutorial/trinity_site_level_layout_level_design_z_index_4.svg" type="Texture" id=5]
 [ext_resource path="res://source/fonts/oxygen/oxygen_bold.tres" type="DynamicFont" id=6]
+[ext_resource path="res://source/scenes/OVERLAY/elements/win_lose_screen.tscn" type="PackedScene" id=7]
 [ext_resource path="res://source/scenes/OVERLAY/elements/user_input.tscn" type="PackedScene" id=15]
 [ext_resource path="res://source/scenes/OVERLAY/elements/timer.tscn" type="PackedScene" id=17]
 [ext_resource path="res://source/scenes/OVERLAY/elements/trajectory_control.tscn" type="PackedScene" id=18]
 
-[node name="trinity-site-playground" type="Node2D"]
+[node name="trinity-site-playground" type="Node2D" groups=["bot_listener"]]
 script = ExtResource( 1 )
 
 [node name="simpleTargetZone_basic" parent="." instance=ExtResource( 4 )]
@@ -156,6 +157,9 @@ position = Vector2( 1584, 600 )
 
 [node name="6" type="Position2D" parent="bot_spawn_locations"]
 position = Vector2( 1762, 600 )
+
+[node name="win_lose_screen" parent="." instance=ExtResource( 7 )]
+position = Vector2( 0, 350 )
 
 [connection signal="zone_entered" from="simpleTargetZone_basic" to="." method="_on_simpleTargetZone_basic_zone_entered"]
 [connection signal="zone_entered" from="simpleTargetZone_jump" to="." method="_on_simpleTargetZone_jump_zone_entered"]

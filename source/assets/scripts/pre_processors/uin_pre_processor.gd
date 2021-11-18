@@ -17,7 +17,7 @@ func _init() -> void:
 	}
 	pass
 
-func update(clientPhase):
+func update(clientPhase, player):
 	inputState = {
 		"right": Input.is_action_pressed("input_right"),
 		"left": Input.is_action_pressed("input_left"),
@@ -50,6 +50,19 @@ func update(clientPhase):
 			inputState["r_dec"] = false
 		else:
 			inputState  = {
+				"right": false,
+				"left": false,
+				"up": false,
+				"down": false,
+				"debug": false,
+				"boost": false,
+				"enter": false,
+				"r_inc": false,
+				"r_dec": false,
+				"shoot": false
+			}
+	if player in Global.get("killed_players"):
+		inputState  = {
 				"right": false,
 				"left": false,
 				"up": false,

@@ -8,6 +8,7 @@ var global
 var control 
 var user_input
 var bot_weapon
+var killed_players = []
 
 var clientPhase = {
 	"0": {

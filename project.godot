@@ -10,8 +10,9 @@ config_version=4
 
 [application]
 
-config/name="FUNCit"
-run/main_scene="res://source/scenes/GUI/main_menu.tscn"
+config/name="FuncIt"
+config/description="Modern, yet simplistic 2D platform-shooter developed as an entertaining game and an educational tool."
+run/main_scene="res://source/scenes/GUI/game_loading_screen.tscn"
 config/icon="res://icon.png"
 
 [autoload]
