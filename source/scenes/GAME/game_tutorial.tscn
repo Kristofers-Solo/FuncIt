@@ -1,0 +1,160 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://source/assets/scripts/server_handlers/trinity_site_level_playground.gd" type="Script" id=1]
+[ext_resource path="res://source/assets/scripts/ui_element_handlers/UI.gd" type="Script" id=2]
+[ext_resource path="res://source/assets/sprites/GUI/background_server.svg" type="Texture" id=3]
+[ext_resource path="res://source/levels/tutorial/elements/simpleTargetZone.tscn" type="PackedScene" id=4]
+[ext_resource path="res://source/assets/sprites/GUI/tutorial/trinity_site_level_layout_level_design_z_index_4.svg" type="Texture" id=5]
+[ext_resource path="res://source/fonts/oxygen/oxygen_bold.tres" type="DynamicFont" id=6]
+[ext_resource path="res://source/scenes/OVERLAY/elements/user_input.tscn" type="PackedScene" id=15]
+[ext_resource path="res://source/scenes/OVERLAY/elements/timer.tscn" type="PackedScene" id=17]
+[ext_resource path="res://source/scenes/OVERLAY/elements/trajectory_control.tscn" type="PackedScene" id=18]
+
+[node name="trinity-site-playground" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="simpleTargetZone_basic" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1513, 847 )
+
+[node name="Instruction" type="Label" parent="simpleTargetZone_basic"]
+margin_left = -148.0
+margin_top = -311.0
+margin_right = 148.0
+margin_bottom = -144.0
+custom_fonts/font = ExtResource( 6 )
+text = "Use A and D keys
+to move to this
+location"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="simpleTargetZone_jump" parent="." instance=ExtResource( 4 )]
+position = Vector2( 655, 455 )
+rotation = -0.87441
+
+[node name="Instruction" type="Label" parent="simpleTargetZone_jump"]
+margin_left = -300.021
+margin_top = -329.201
+margin_right = -4.02124
+margin_bottom = -162.201
+rect_rotation = 50.0
+custom_fonts/font = ExtResource( 6 )
+text = "Use W or SPACE
+to jump to different
+parts of the world"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="trinity_site_body" type="StaticBody2D" parent="."]
+
+[node name="scene" type="Node2D" parent="trinity_site_body"]
+
+[node name="BackgroundServer" type="Sprite" parent="trinity_site_body/scene"]
+position = Vector2( 960, 540 )
+z_index = -1
+texture = ExtResource( 3 )
+
+[node name="TrinitySiteLevelLayoutLevelDesignZIndex4" type="Sprite" parent="trinity_site_body/scene"]
+position = Vector2( 960, 540 )
+texture = ExtResource( 5 )
+
+[node name="trinity_site_outer_collider" type="CollisionPolygon2D" parent="trinity_site_body"]
+visible = false
+position = Vector2( 0, 0.14032 )
+polygon = PoolVector2Array( 0, 0, 0, 1080, 1920, 1080, 1920, 0, 0, 0, 227.078, 251.576, 250.057, 238.716, 274.405, 228.228, 292.384, 221.673, 313.897, 214.862, 334.753, 209.523, 358.132, 205.22, 382.827, 202.383, 409.277, 201.827, 435.42, 202.456, 465.186, 205.134, 493.926, 211.01, 519.048, 216.658, 534.656, 217.699, 557.412, 214.502, 582.58, 205.383, 602.026, 191.948, 615.454, 177.563, 628.683, 158.034, 647.539, 136.814, 667.164, 120.844, 690.21, 106.973, 712.235, 97.6472, 739.877, 90.668, 774.309, 88.0035, 804.16, 91.7876, 825.603, 96.6227, 846.416, 105.873, 866.743, 117.762, 887.712, 132.54, 899.419, 144.445, 920.353, 155.553, 946.942, 160.91, 974.92, 160.116, 1001.62, 151.816, 1011.91, 146.1, 1023.42, 134.592, 1043.79, 118.38, 1064.82, 105.971, 1088.65, 97.0615, 1113.15, 90.6025, 1134.81, 88.6608, 1160.57, 88.7524, 1192.41, 95.4948, 1218.78, 104.626, 1240.46, 117.742, 1259.67, 131.601, 1273.25, 144.75, 1284, 158.25, 1294.66, 173.873, 1303.5, 185.717, 1320.12, 200.053, 1343.84, 213.26, 1365.36, 218.265, 1391.56, 217.932, 1436.77, 207.086, 1464.18, 204.258, 1502.71, 201.459, 1539.23, 203.145, 1575.17, 208.763, 1609.44, 217.689, 1634.97, 226.532, 1674.83, 244.225, 1706.76, 263.983, 1736, 285.5, 1769.65, 317.592, 1796.35, 349.235, 1819.5, 384.5, 1835.5, 418.75, 1846.58, 446.657, 1853.6, 472.193, 1858.91, 500.958, 1860.77, 518.439, 1862.09, 540.158, 1862.09, 558.963, 1862.36, 576.445, 1860.53, 595.002, 1854.65, 635.897, 1845.85, 657.551, 1836.92, 680.766, 1830.37, 696.243, 1818.07, 721.84, 1797.17, 754.487, 1786.45, 769.567, 1777.13, 779.886, 1758.26, 800.093, 1745.56, 811.404, 1725.92, 827.476, 1713.25, 837.083, 1693.02, 849.631, 1672.61, 861.618, 1651.86, 872.958, 1632.81, 880.045, 1612.65, 886.659, 1587.29, 892.644, 1568.24, 896.266, 1548.39, 899.574, 1530.2, 902.181, 1508.72, 903.243, 1474.45, 902.68, 1445.16, 899.112, 1421.53, 894.141, 1400.82, 889.241, 1380.66, 888.016, 1361.28, 889.401, 1343.34, 895.006, 1328.91, 901.071, 1316.43, 909.98, 1304.18, 921.339, 1291.71, 937.153, 1276.96, 955.422, 1264.45, 969.58, 1249.82, 982.087, 1234.01, 992.322, 1218.89, 1000.2, 1200.15, 1007.13, 1182.51, 1012.8, 1168.81, 1015, 1139.22, 1016.53, 1112.02, 1014.45, 1091.32, 1010.08, 1074.81, 1004.08, 1056.28, 994.399, 1037.71, 983.423, 1020.66, 968.772, 1004.11, 955.01, 984.736, 946.821, 965.364, 944.301, 946.151, 945.561, 926.307, 949.498, 907.881, 957.688, 891.807, 969.002, 877.355, 981.209, 862.389, 991.066, 841.483, 1001.59, 820.377, 1009.63, 792.8, 1015.11, 767.512, 1016.78, 741.76, 1014.44, 714.375, 1008.23, 691.281, 998.825, 671.627, 987.94, 651.136, 971.904, 631.759, 951.636, 617.581, 931.188, 603.101, 914.217, 587.667, 903.508, 572.112, 894.849, 553.875, 888.86, 531.25, 886.985, 509.375, 889.485, 489.059, 896.071, 456.023, 900.437, 433.017, 902.207, 402.577, 902.443, 375.486, 901.444, 348.586, 897.668, 328.41, 893.775, 297.764, 885.242, 271.305, 876.58, 245.017, 863.922, 222.901, 851.209, 199.99, 837.303, 181.052, 822.603, 161.095, 804.764, 145, 789.75, 131.137, 773.614, 117.121, 756.261, 104.107, 737.073, 90.4884, 714.948, 84.1245, 701.866, 73.5203, 676.34, 63.475, 647.957, 56.358, 621.362, 53.0765, 598.652, 50.7458, 574.176, 49.9822, 548.534, 51.3171, 524.21, 54.05, 502.347, 57.9652, 478.935, 65.729, 450.104, 76.5, 420, 88.5, 396.75, 103.93, 368.416, 117.419, 349.542, 134.172, 328.541, 160.954, 299.989, 184.571, 279.643, 208.144, 262.427, 227.215, 251.568 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="trinity_site_body"]
+visible = false
+position = Vector2( -1.85065, 22.7908 )
+polygon = PoolVector2Array( 760.896, 422.258, 762.577, 414.269, 767.623, 399.658, 774.514, 386.775, 784.517, 372.838, 798.407, 359.742, 817.059, 347.043, 838.092, 338.312, 861.109, 334.74, 888.889, 337.518, 914.684, 348.63, 937.305, 363.313, 961.512, 365.298, 984.133, 360.139, 1003.63, 347.195, 1027.73, 339.249, 1058.31, 337.005, 1088.48, 342.802, 1115.8, 357.525, 1138.46, 380.527, 1150.2, 402.84, 1155.88, 421.129, 1162.89, 427.644, 1170.24, 431.208, 1183.63, 435.004, 1198.04, 442.287, 1217.63, 456.124, 1236.61, 477.787, 1247.94, 503.98, 1251.58, 531.439, 1247.27, 560.377, 1236.9, 581.816, 1221.39, 602.006, 1202.93, 616.65, 1181.61, 627.594, 1163.99, 633.782, 1153.75, 645.954, 1148.28, 662.772, 1131.87, 687.151, 1112.67, 703.706, 1093.6, 714.433, 1074.78, 721.041, 1047.87, 722.676, 1024.54, 719.406, 993.617, 706.473, 975.851, 695.834, 950.726, 694.334, 931.915, 699.78, 915.891, 710.242, 891.721, 719.934, 863.18, 723.205, 836.314, 719.202, 809.383, 708.02, 793.034, 696.052, 779.284, 679.917, 765.05, 653.596, 760.437, 636.991, 748.001, 630.533, 736.819, 627.856, 723.905, 622.186, 711.306, 614.942, 699.132, 603.782, 686.894, 590.671, 677.378, 575.068, 671.161, 559.912, 667.578, 543.664, 666.437, 527.932, 668.914, 512.928, 672.193, 497.533, 677.554, 485.97, 685.668, 472.034, 695.6, 460.909, 709.599, 448.526, 723.91, 439.687, 736.397, 434.355, 752.372, 429.587 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="spawn_locations" type="Node" parent="."]
+
+[node name="1" type="Position2D" parent="spawn_locations"]
+position = Vector2( 960, 850 )
+z_index = 1
+
+[node name="UI" type="CanvasLayer" parent="."]
+script = ExtResource( 2 )
+
+[node name="controls" type="Control" parent="."]
+margin_left = -2.1189
+margin_right = 1917.88
+margin_bottom = 1080.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="user_input" parent="controls" instance=ExtResource( 15 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -240.0
+margin_top = -65.0
+margin_right = 240.0
+margin_bottom = 91.0
+
+[node name="trajectory_control" parent="controls" instance=ExtResource( 18 )]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -150.0
+margin_bottom = 0.0
+
+[node name="timer" parent="controls" instance=ExtResource( 17 )]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -225.0
+margin_right = 225.0
+
+[node name="weaponInstruction" type="Label" parent="."]
+visible = false
+margin_left = 1266.0
+margin_top = 457.0
+margin_right = 1790.0
+margin_bottom = 650.0
+custom_fonts/font = ExtResource( 6 )
+text = "Use the functions (Bottom left)
+to change the trajectory and
+Left Mouse Click to fire bullets
+at the flying TS-Bots"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bot_spawn_locations" type="Node2D" parent="."]
+
+[node name="1" type="Position2D" parent="bot_spawn_locations"]
+position = Vector2( 147, 600 )
+
+[node name="2" type="Position2D" parent="bot_spawn_locations"]
+position = Vector2( 364, 600 )
+
+[node name="3" type="Position2D" parent="bot_spawn_locations"]
+position = Vector2( 554, 600 )
+
+[node name="4" type="Position2D" parent="bot_spawn_locations"]
+position = Vector2( 1394, 600 )
+
+[node name="5" type="Position2D" parent="bot_spawn_locations"]
+position = Vector2( 1584, 600 )
+
+[node name="6" type="Position2D" parent="bot_spawn_locations"]
+position = Vector2( 1762, 600 )
+
+[connection signal="zone_entered" from="simpleTargetZone_basic" to="." method="_on_simpleTargetZone_basic_zone_entered"]
+[connection signal="zone_entered" from="simpleTargetZone_jump" to="." method="_on_simpleTargetZone_jump_zone_entered"]

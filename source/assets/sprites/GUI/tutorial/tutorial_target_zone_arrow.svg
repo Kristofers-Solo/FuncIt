@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="250" viewBox="0 0 200 250">
+  <defs>
+    <clipPath id="clip-tutorial_target_zone_arrow">
+      <rect width="200" height="250"/>
+    </clipPath>
+  </defs>
+  <g id="tutorial_target_zone_arrow" clip-path="url(#clip-tutorial_target_zone_arrow)">
+    <rect id="Rectangle_159" data-name="Rectangle 159" width="80" height="172" transform="translate(60 15)" fill="#5df36c"/>
+    <path id="Polygon_3" data-name="Polygon 3" d="M82.5,0,165,120H0Z" transform="translate(183 245) rotate(180)" fill="#5df36c"/>
+  </g>
+</svg>
