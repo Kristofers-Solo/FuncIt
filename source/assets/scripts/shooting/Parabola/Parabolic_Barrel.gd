@@ -32,21 +32,8 @@ func trajectory(delta):
 			dot_position += velocity * speed_parab * delta
 			time += delta
 			
-
-func is_flipped():
-	while len(pos_diff) < 2:
-		pos_diff.append(rot)
-	if cos(pos):
-		pass
-	if pos_diff[0] + pos_diff[1] > pos_diff[1] or  pos_diff[0] + pos_diff[1] > pos_diff[0]:
-		pass
-		
-	if pos_diff[1].x/pos_diff[0].x < 0:
-		return true
 	
 func _process(delta):
-	#if is_flipped():
-		#clear_points()
 	trajectory(delta)
 	update()
 	
