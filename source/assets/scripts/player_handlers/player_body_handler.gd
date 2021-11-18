@@ -153,7 +153,7 @@ func process_rotation():
 
 
 func _process(_delta: float) -> void:
-	user_input = UIN_preset_pre_processor_instance.update(Global.get_current_phase())
+	user_input = UIN_preset_pre_processor_instance.update(Global.get_current_phase(), self)
 	if get_tree().is_network_server():
 		Global.phase_update_global()
 		clientPhase = Global.get_current_phase()
@@ -292,6 +292,7 @@ func _physics_process(delta) -> void:
 	if hp <= 0:
 		if get_tree().is_network_server():
 			rpc("destroy")
+			Global.get("killed_players").append(self)
 
 
 
