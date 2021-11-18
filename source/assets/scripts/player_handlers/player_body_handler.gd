@@ -271,7 +271,8 @@ func _physics_process(delta) -> void:
 # warning-ignore:return_value_discarded
 				move_and_slide(velocityVDIR.rotated(rotationalHolder))
 				rotate_weapon()
-				if user_input["shoot"] and can_shoot and not is_reloading:
+				
+				if user_input["shoot"] and can_shoot and not is_reloading and Global.mode == 1:
 					rpc("shoot", trajectory)
 					is_reloading = true
 					reload_timer.start()

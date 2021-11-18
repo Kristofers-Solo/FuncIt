@@ -596,3 +596,5 @@ valign = 1
 [connection signal="value_changed" from="controls/hyperbol/b_param_h_SpinBox" to="controls" method="_on_b_param_h_SpinBox_value_changed"]
 [connection signal="value_changed" from="controls/sin/amp_SpinBox" to="controls" method="_on_amp_SpinBox_value_changed"]
 [connection signal="value_changed" from="controls/sin/freq_SpinBox" to="controls" method="_on_freq_SpinBox_value_changed"]
+[connection signal="pressed" from="controls/ready_button" to="controls" method="_on_ready_button_pressed"]
+[connection signal="pressed" from="controls/skip_button" to="controls" method="_on_skip_button_pressed"]

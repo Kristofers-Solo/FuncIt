@@ -10,6 +10,7 @@ var global
 var control 
 var user_input
 var bot_weapon
+var mode = 1
 
 var clientPhase = {
 	"0": {

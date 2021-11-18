@@ -14,7 +14,14 @@ var amp = 5
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Global.set("user_input", self)
-	
+
+
+func _on_ready_button_pressed():
+	pass # Replace with function body.
+
+
+func _on_skip_button_pressed():
+	pass # Replace with function body.
 
 
 func _on_line_SpinBox_value_changed(value):
@@ -41,7 +48,6 @@ func _on_b_param_h_SpinBox_value_changed(value):
 	if b_param_hyper != 0:
 		Global.get("player").enable_trajectory_line("hyper")
 		Global.get("player").trajectory = "hyper"
-	
 
 
 func _on_a_param_h_SpinBox_value_changed(value):
@@ -60,6 +66,5 @@ func _on_freq_SpinBox_value_changed(value):
 	freq = value
 	Global.get("player").enable_trajectory_line("sine")
 	Global.get("player").trajectory = "sine"
-	
 
 
