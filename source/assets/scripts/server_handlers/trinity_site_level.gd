@@ -10,6 +10,7 @@ var overlay = Global.instance_node(load("res://source/scenes/OVERLAY/elements/me
 var globalActivePhase = null
 
 func _ready() -> void:
+	Global.mode = 2
 # warning-ignore:return_value_discarded
 	get_tree().connect("network_peer_disconnected", self, "_player_disconnected")
 	if get_tree().is_network_server():
@@ -36,10 +37,10 @@ func _player_disconnected(id) -> void:
 
 func _process(_delta):
 	if Global.get_current_phase()["active"] != null and Global.get_current_phase()["active"]["start_time"] != null: 
-		if Global.get_current_phase()["active"]["length"] - abs(OS.get_time()["second"] - Global.get_current_phase()["active"]["start_time"]["second"]) < 10:
-			$controls/timer/time.text = "00:0"+str(Global.get_current_phase()["active"]["length"] - abs(OS.get_time()["second"] - Global.get_current_phase()["active"]["start_time"]["second"]))
+		if Global.get_current_phase()["active"]["length"] - abs(OS.get_time()["second"] + OS.get_time()["minute"] * 60 - Global.get_current_phase()["active"]["start_time"]["second"] - Global.get_current_phase()["active"]["start_time"]["minute"] * 60) < 10:
+			$controls/timer/time.text = "00:0"+str(Global.get_current_phase()["active"]["length"] - abs(OS.get_time()["second"] + OS.get_time()["minute"] * 60 - Global.get_current_phase()["active"]["start_time"]["second"] - Global.get_current_phase()["active"]["start_time"]["minute"] * 60))
 		else:
-			$controls/timer/time.text = "00:"+str(Global.get_current_phase()["active"]["length"] - abs(OS.get_time()["second"] - Global.get_current_phase()["active"]["start_time"]["second"]))
+			$controls/timer/time.text = "00:"+str(Global.get_current_phase()["active"]["length"] - abs(OS.get_time()["second"] + OS.get_time()["minute"] * 60 - Global.get_current_phase()["active"]["start_time"]["second"] - Global.get_current_phase()["active"]["start_time"]["minute"] * 60))
 	globalActivePhase = Global.get_current_phase()
 	if globalActivePhase["active"] != null:
 		phase.text = str(globalActivePhase["active"]["phase_name"])

@@ -16,13 +16,13 @@ var clientPhase = {
 	"0": {
 		"phase_id": 0,
 		"phase_name": "Movement phase",
-		"length": 15,
+		"length": 10,
 		"start_time": null
 	},
 	"1": {
 		"phase_id": 1,
 		"phase_name": "Weapon adjustment phase",
-		"length": 20,
+		"length": 15,
 		"start_time": null
 	},
 	"2": {

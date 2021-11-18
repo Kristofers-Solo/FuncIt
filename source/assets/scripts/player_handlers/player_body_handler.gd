@@ -91,6 +91,7 @@ var activeTheme = null
 
 var globalActivePhase = null
 var clientPhase = null
+var hasShot = false
 
 func _ready():
 	dead_player.hide()
@@ -276,6 +277,13 @@ func _physics_process(delta) -> void:
 					rpc("shoot", trajectory)
 					is_reloading = true
 					reload_timer.start()
+				if Global.get("clientPhase")["active"] != null and hasShot == false and Global.get("clientPhase")["active"]["phase_id"] == 2:
+					rpc("shoot", trajectory)
+					is_reloading = true
+					reload_timer.start()
+					hasShot = true
+				elif Global.get("clientPhase")["active"] != null and Global.get("clientPhase")["active"]["phase_id"] != 2: 
+					hasShot = false
 		else:
 			rotation = lerp_angle(rotation, puppet_rotation, delta * 8)
 			$"weaponHolder/Player-character-theme-gun".position = puppet_weapon_position

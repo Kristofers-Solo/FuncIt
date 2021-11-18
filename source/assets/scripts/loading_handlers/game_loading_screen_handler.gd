@@ -3,7 +3,7 @@ extends Node2D
 var time = 0
 var first_transitioned = false
 var transitioned = false
-var skipTutorial = true
+var skipTutorial = false
 
 func _ready():
 	$FunCitGameLogoDarkTransparent.modulate[3] = 0
