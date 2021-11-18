@@ -114,6 +114,7 @@ margin_top = -150.0
 margin_bottom = 0.0
 
 [node name="timer" parent="controls" instance=ExtResource( 17 )]
+visible = false
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -225.0

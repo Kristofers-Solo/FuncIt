@@ -414,6 +414,7 @@ sync func hit_by_damager(damage):
 	health_bar_instance.value = hp
 	hit_timer.start()
 
+
 sync func enable() -> void:
 	hp = 100
 	health_bar_instance.value = 100
@@ -422,39 +423,17 @@ sync func enable() -> void:
 	$player_animated_sprite.show()
 	dead_player.hide()
 	$"weaponHolder/Player-character-theme-gun".show()
-	
-#	$player_animated_sprite.show()
-#	$"Player-character-theme-gun".show()
-#	username_text_instance.visible = true
-#	health_bar_instance.visible = true
-#	visible = true
-#	$player_collider.disabled = false
-#	$hitbox/CollisionShape2D.disabled = false
-#	$weaponHolder.disabled = false
 	if get_tree().has_network_peer():
 		if is_network_master():
 			Global.player_master = self
 	if not Global.alive_players.has(self):
 		Global.alive_players.append(self)
-#	direction = "left"
-#	weaponPositionalOffset = Vector2(-$"weaponHolder/Player-character-theme-gun-na3".texture.get_width() * $"weaponHolder/Player-character-theme-gun-na3".scale.x / 2,-$"weaponHolder/Player-character-theme-gun-na3".texture.get_height() * $"weaponHolder/Player-character-theme-gun-na3".scale.y / 2) + Vector2(-$weaponHolder.get_shape().get_radius(), 0)
-#	$"weaponHolder/Player-character-theme-gun".position = weaponPositionalOffset
 
 
 sync func destroy() -> void:
 	$player_animated_sprite.hide()
 	dead_player.show()
 	$"weaponHolder/Player-character-theme-gun".hide()
-#	$player_animated_sprite.hide()
-	
-#	$"Player-character-theme-gun".hide()
-#	username_text_instance.visible = false
-#	health_bar_instance.visible = false
-#	visible = false
-#	$player_collider.disabled = true
-#	$hitbox/CollisionShape2D.disabled = true
-#	$weaponHolder.disabled = true
-	
 	Global.alive_players.erase(self)
 	if get_tree().has_network_peer():
 		if is_network_master():
