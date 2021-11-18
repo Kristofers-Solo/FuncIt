@@ -19,18 +19,18 @@ func _ready():
 
 func trajectory(delta):
 	while dot_position.x < 2000:
-		if pos.x > 0:
-			add_point(dot_position)
-			velocity.y = time*(a_parameter * time + b_parameter)
-			velocity.x = 5
-			dot_position += velocity * speed_parab * delta
-			time += delta
-		if pos.x < 0:
-			add_point(dot_position)
-			velocity.y = -time*(a_parameter * time + b_parameter)
-			velocity.x = 5
-			dot_position += velocity * speed_parab * delta
-			time += delta
+#		if pos.x > 0:
+		add_point(dot_position)
+		velocity.y = time*(a_parameter * time + b_parameter)
+		velocity.x = 5
+		dot_position += velocity * speed_parab * delta
+		time += delta
+#		if pos.x < 0:
+#			add_point(dot_position)
+#			velocity.y = -time*(a_parameter * time + b_parameter)
+#			velocity.x = 5
+#			dot_position += velocity * speed_parab * delta
+#			time += delta
 			
 	
 func _process(delta):

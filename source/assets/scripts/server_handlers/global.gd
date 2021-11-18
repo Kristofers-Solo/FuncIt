@@ -3,12 +3,13 @@ extends Node
 var player_master = null
 var ui = null
 var alive_players = []
+var killed_players = []
+
 var player
 var global
 var control 
 var user_input
 var bot_weapon
-var killed_players = []
 
 var clientPhase = {
 	"0": {
