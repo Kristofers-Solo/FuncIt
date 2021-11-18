@@ -3,6 +3,8 @@
 [ext_resource path="res://source/assets/scripts/shooting/Line/Line_Barrel.gd" type="Script" id=1]
 
 [node name="Line_Barrel" type="Line2D"]
+width = 7.0
+default_color = Color( 0.4, 0.501961, 1, 0.529412 )
 script = ExtResource( 1 )
 
 [node name="Timer" type="Timer" parent="."]

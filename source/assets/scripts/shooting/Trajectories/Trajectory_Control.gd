@@ -3,6 +3,7 @@ extends Control
 
 func _ready():
 	Global.set('control', self)
+	
 
 
 func _on_line_pressed() -> void:
