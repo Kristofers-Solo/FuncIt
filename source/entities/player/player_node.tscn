@@ -328,6 +328,11 @@ animations = [ {
 "name": "02",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 169 ) ],
+"loop": true,
+"name": "04",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 27 ) ],
 "loop": true,
 "name": "01",
@@ -337,14 +342,12 @@ animations = [ {
 "loop": true,
 "name": "03",
 "speed": 5.0
-}, {
-"frames": [ ExtResource( 169 ) ],
-"loop": true,
-"name": "04",
-"speed": 5.0
 } ]
 
-[node name="player" type="KinematicBody2D" groups=["Net", "Player"]]
+[node name="player" type="KinematicBody2D" groups=[
+"Net",
+"Player",
+]]
 script = ExtResource( 11 )
 
 [node name="trajectories" type="Node2D" parent="."]
