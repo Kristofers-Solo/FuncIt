@@ -7,11 +7,15 @@
 radius = 9.85811
 height = 35.0082
 
-[node name="player_character_bullet" type="Sprite" groups=["Net"]]
+[node name="player_character_bullet" type="Sprite" groups=[
+"Net",
+]]
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
 
-[node name="hitbox" type="Area2D" parent="." groups=["Player_damager"]]
+[node name="hitbox" type="Area2D" parent="." groups=[
+"Player_damager",
+]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
 position = Vector2( 10.8253, -0.381073 )

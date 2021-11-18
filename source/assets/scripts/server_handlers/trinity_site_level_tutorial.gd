@@ -18,6 +18,7 @@ var ts_bot = preload("res://source/entities/ts_bot/ts_bot.tscn")
 
 func _ready() -> void:
 	for player in PersistentNodes.get_children():
+		if player.is_in_group("Player"):
 			Global.get("killed_players").append(player)
 	$controls/user_input/controls/ready_button.hide()
 	$controls/user_input/controls/skip_button.hide()
@@ -27,10 +28,10 @@ func _ready() -> void:
 	get_tree().connect("network_peer_disconnected", self, "_player_disconnected")
 	if get_tree().is_network_server():
 		setup_player_positions()
-	$win_lose_screen.show()
-	$win_lose_screen/Panel/Label.text = "Tutorial"
-	$win_lose_screen/Panel/Label2.show()
-	$win_lose_screen/Panel/Label2.text = "Press ENTER to begin or ESC to skip"
+	$game_UI/win_lose_screen.show()
+	$game_UI/win_lose_screen/Panel/Label.text = "Tutorial"
+	$game_UI/win_lose_screen/Panel/Label2.show()
+	$game_UI/win_lose_screen/Panel/Label2.text = "Press ENTER to begin or ESC to skip"
 
 func setup_player_positions() -> void:
 	for player in PersistentNodes.get_children():
@@ -55,7 +56,7 @@ func _process(delta):
 		Network._server_leave()
 		get_tree().change_scene("res://source/scenes/GUI/main_menu.tscn")
 	if Input.is_action_pressed("enter") and not begunTutorial:
-		$win_lose_screen.modulate[3] = 0
+		$game_UI/win_lose_screen.modulate[3] = 0
 		begunTutorial = true
 		Global.get("killed_players").clear()
 	if Input.is_action_pressed("enter") and finishedAiming:
@@ -85,13 +86,14 @@ func begin_tutorial():
 	if botsActivated and botCount == 0:
 		finishedAiming = true
 		for player in PersistentNodes.get_children():
-			Global.get("killed_players").append(player)
+			if player.is_in_group("Player"):
+				Global.get("killed_players").append(player)
 	if finishedAiming:
 		if $controls.modulate[3] > 0: $controls.modulate[3] -= 0.1
-		$win_lose_screen/Panel/Label.text = "Complete"
-		$win_lose_screen/Panel/Label2.show()
-		$win_lose_screen/Panel/Label2.text = "Press ENTER to continue"
-		if $win_lose_screen.modulate[3] < 1: $win_lose_screen.modulate[3] += 0.1
+		$game_UI/win_lose_screen/Panel/Label.text = "Complete"
+		$game_UI/win_lose_screen/Panel/Label2.show()
+		$game_UI/win_lose_screen/Panel/Label2.text = "Press ENTER to continue"
+		if $game_UI/win_lose_screen.modulate[3] < 1: $game_UI/win_lose_screen.modulate[3] += 0.1
 	if finishedTutorial: 
 		Global.get("killed_players").clear()
 		Network._server_leave()

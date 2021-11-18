@@ -9,9 +9,8 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
-	if Global.killed_players.size() >= 1:
+	if Global.killed_players.size() >= 1 and not $win_lose_screen.is_visible_in_tree():
 		lose_screen.show()
 	else:
 		lose_screen.hide()
-	
 	
