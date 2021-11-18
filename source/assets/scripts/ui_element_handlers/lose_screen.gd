@@ -2,7 +2,6 @@ extends Node2D
 
 
 func _on_respawn_pressed():
-#	self.hide()
 	for player in PersistentNodes.get_children():
 		if player.is_in_group("Player"):
 			player.rpc("enable_playground")
