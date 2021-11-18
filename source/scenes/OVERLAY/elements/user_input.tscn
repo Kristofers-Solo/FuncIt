@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://source/assets/sprites/GUI/in_game/user_input/background_panel.svg" type="Texture" id=1]
 [ext_resource path="res://source/fonts/oxygen/Oxygen-Regular.ttf" type="DynamicFontData" id=2]
@@ -11,7 +11,6 @@
 [ext_resource path="res://source/assets/sprites/GUI/in_game/user_input/ready_button/ready_button_hover.svg" type="Texture" id=11]
 [ext_resource path="res://source/assets/sprites/GUI/in_game/user_input/skip_button/skip_button.svg" type="Texture" id=12]
 [ext_resource path="res://source/assets/scripts/shooting/Trajectories/trajectories.gd" type="Script" id=13]
-[ext_resource path="res://source/fonts/oxygen/Oxygen-Bold.ttf" type="DynamicFontData" id=15]
 [ext_resource path="res://source/assets/sprites/GUI/in_game/buttons/SpinBox/updown.svg" type="Texture" id=16]
 [ext_resource path="res://source/fonts/oxygen/oxygen_bold_formula.tres" type="DynamicFont" id=17]
 
@@ -19,26 +18,73 @@
 texture = ExtResource( 1 )
 region_rect = Rect2( 0, 0, 480, 156 )
 
-[sub_resource type="StyleBoxFlat" id=4]
-bg_color = Color( 0.333333, 0.431373, 0.807843, 1 )
-border_color = Color( 1, 1, 1, 0 )
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 100, 100 )
 
-[sub_resource type="StyleBoxTexture" id=8]
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.333333, 0.431373, 0.807843, 1 )
+
+[sub_resource type="Theme" id=4]
+default_font = ExtResource( 17 )
+LineEdit/colors/clear_button_color = Color( 0.88, 0.88, 0.88, 1 )
+LineEdit/colors/clear_button_color_pressed = Color( 1, 1, 1, 1 )
+LineEdit/colors/cursor_color = Color( 0.94, 0.94, 0.94, 1 )
+LineEdit/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
+LineEdit/colors/font_color_selected = Color( 0, 0, 0, 1 )
+LineEdit/colors/font_color_uneditable = Color( 0.88, 0.88, 0.88, 0.5 )
+LineEdit/colors/selection_color = Color( 0.49, 0.49, 0.49, 1 )
+LineEdit/constants/minimum_spaces = 12
+LineEdit/fonts/font = null
+LineEdit/icons/clear = null
+LineEdit/styles/focus = null
+LineEdit/styles/normal = SubResource( 3 )
+LineEdit/styles/read_only = null
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.333333, 0.431373, 0.807843, 1 )
+
+[sub_resource type="Theme" id=6]
+default_font = ExtResource( 17 )
+LineEdit/colors/clear_button_color = Color( 0.88, 0.88, 0.88, 1 )
+LineEdit/colors/clear_button_color_pressed = Color( 1, 1, 1, 1 )
+LineEdit/colors/cursor_color = Color( 0.94, 0.94, 0.94, 1 )
+LineEdit/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
+LineEdit/colors/font_color_selected = Color( 0, 0, 0, 1 )
+LineEdit/colors/font_color_uneditable = Color( 0.88, 0.88, 0.88, 0.5 )
+LineEdit/colors/selection_color = Color( 0.49, 0.49, 0.49, 1 )
+LineEdit/constants/minimum_spaces = 12
+LineEdit/fonts/font = null
+LineEdit/icons/clear = null
+LineEdit/styles/focus = null
+LineEdit/styles/normal = SubResource( 5 )
+LineEdit/styles/read_only = null
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.333333, 0.431373, 0.807843, 1 )
+
+[sub_resource type="Theme" id=8]
+default_font = ExtResource( 17 )
+LineEdit/colors/clear_button_color = Color( 0.88, 0.88, 0.88, 1 )
+LineEdit/colors/clear_button_color_pressed = Color( 1, 1, 1, 1 )
+LineEdit/colors/cursor_color = Color( 0.94, 0.94, 0.94, 1 )
+LineEdit/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
+LineEdit/colors/font_color_selected = Color( 0, 0, 0, 1 )
+LineEdit/colors/font_color_uneditable = Color( 0.88, 0.88, 0.88, 0.5 )
+LineEdit/colors/selection_color = Color( 0.49, 0.49, 0.49, 1 )
+LineEdit/constants/minimum_spaces = 12
+LineEdit/fonts/font = null
+LineEdit/icons/clear = null
+LineEdit/styles/focus = null
+LineEdit/styles/normal = SubResource( 7 )
+LineEdit/styles/read_only = null
+
+[sub_resource type="StyleBoxTexture" id=9]
 texture = ExtResource( 4 )
 region_rect = Rect2( 0, 0, 100, 100 )
 
-[sub_resource type="DynamicFont" id=9]
+[sub_resource type="DynamicFont" id=10]
 size = 14
-use_mipmaps = true
-use_filter = true
-font_data = ExtResource( 2 )
-
-[sub_resource type="StyleBoxTexture" id=10]
-texture = ExtResource( 6 )
-region_rect = Rect2( 0, 0, 100, 100 )
-
-[sub_resource type="DynamicFont" id=11]
-size = 32
 use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 15 )
@@ -48,23 +94,103 @@ use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 15 )
 
-[sub_resource type="StyleBoxTexture" id=17]
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0.333333, 0.431373, 0.807843, 1 )
+
+[sub_resource type="Theme" id=12]
+default_font = ExtResource( 17 )
+LineEdit/colors/clear_button_color = Color( 0.88, 0.88, 0.88, 1 )
+LineEdit/colors/clear_button_color_pressed = Color( 1, 1, 1, 1 )
+LineEdit/colors/cursor_color = Color( 0.94, 0.94, 0.94, 1 )
+LineEdit/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
+LineEdit/colors/font_color_selected = Color( 0, 0, 0, 1 )
+LineEdit/colors/font_color_uneditable = Color( 0.88, 0.88, 0.88, 0.5 )
+LineEdit/colors/selection_color = Color( 0.49, 0.49, 0.49, 1 )
+LineEdit/constants/minimum_spaces = 12
+LineEdit/fonts/font = null
+LineEdit/icons/clear = null
+LineEdit/styles/focus = null
+LineEdit/styles/normal = SubResource( 11 )
+LineEdit/styles/read_only = null
+
+[sub_resource type="StyleBoxFlat" id=13]
+bg_color = Color( 0.333333, 0.431373, 0.807843, 1 )
+
+[sub_resource type="Theme" id=14]
+default_font = ExtResource( 17 )
+LineEdit/colors/clear_button_color = Color( 0.88, 0.88, 0.88, 1 )
+LineEdit/colors/clear_button_color_pressed = Color( 1, 1, 1, 1 )
+LineEdit/colors/cursor_color = Color( 0.94, 0.94, 0.94, 1 )
+LineEdit/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
+LineEdit/colors/font_color_selected = Color( 0, 0, 0, 1 )
+LineEdit/colors/font_color_uneditable = Color( 0.88, 0.88, 0.88, 0.5 )
+LineEdit/colors/selection_color = Color( 0.49, 0.49, 0.49, 1 )
+LineEdit/constants/minimum_spaces = 12
+LineEdit/fonts/font = null
+LineEdit/icons/clear = null
+LineEdit/styles/focus = null
+LineEdit/styles/normal = SubResource( 13 )
+LineEdit/styles/read_only = null
+
+[sub_resource type="StyleBoxTexture" id=15]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 100, 100 )
+
+[sub_resource type="StyleBoxTexture" id=16]
 texture = ExtResource( 6 )
 region_rect = Rect2( 0, 0, 100, 100 )
 
-[sub_resource type="DynamicFont" id=13]
+[sub_resource type="StyleBoxFlat" id=17]
+bg_color = Color( 0.333333, 0.431373, 0.807843, 1 )
+
+[sub_resource type="Theme" id=18]
+default_font = ExtResource( 17 )
+LineEdit/colors/clear_button_color = Color( 0.88, 0.88, 0.88, 1 )
+LineEdit/colors/clear_button_color_pressed = Color( 1, 1, 1, 1 )
+LineEdit/colors/cursor_color = Color( 0.94, 0.94, 0.94, 1 )
+LineEdit/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
+LineEdit/colors/font_color_selected = Color( 0, 0, 0, 1 )
+LineEdit/colors/font_color_uneditable = Color( 0.88, 0.88, 0.88, 0.5 )
+LineEdit/colors/selection_color = Color( 0.49, 0.49, 0.49, 1 )
+LineEdit/constants/minimum_spaces = 12
+LineEdit/fonts/font = null
+LineEdit/icons/clear = null
+LineEdit/styles/focus = null
+LineEdit/styles/normal = SubResource( 17 )
+LineEdit/styles/read_only = null
+
+[sub_resource type="StyleBoxFlat" id=19]
+bg_color = Color( 0.333333, 0.431373, 0.807843, 1 )
+
+[sub_resource type="Theme" id=20]
+default_font = ExtResource( 17 )
+LineEdit/colors/clear_button_color = Color( 0.88, 0.88, 0.88, 1 )
+LineEdit/colors/clear_button_color_pressed = Color( 1, 1, 1, 1 )
+LineEdit/colors/cursor_color = Color( 0.94, 0.94, 0.94, 1 )
+LineEdit/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
+LineEdit/colors/font_color_selected = Color( 0, 0, 0, 1 )
+LineEdit/colors/font_color_uneditable = Color( 0.88, 0.88, 0.88, 0.5 )
+LineEdit/colors/selection_color = Color( 0.49, 0.49, 0.49, 1 )
+LineEdit/constants/minimum_spaces = 12
+LineEdit/fonts/font = null
+LineEdit/icons/clear = null
+LineEdit/styles/focus = null
+LineEdit/styles/normal = SubResource( 19 )
+LineEdit/styles/read_only = null
+
+[sub_resource type="DynamicFont" id=21]
 size = 22
 use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=14]
+[sub_resource type="DynamicFont" id=22]
 size = 22
 use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=15]
+[sub_resource type="DynamicFont" id=23]
 size = 22
 use_mipmaps = true
 use_filter = true
@@ -93,10 +219,10 @@ __meta__ = {
 }
 
 [node name="line" type="Control" parent="controls"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -110,7 +236,7 @@ margin_top = -50.0
 margin_right = -165.0
 margin_bottom = 50.0
 mouse_filter = 1
-custom_styles/panel = SubResource( 4 )
+custom_styles/panel = SubResource( 2 )
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
@@ -122,32 +248,13 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 margin_left = -39.0
-margin_top = -19.0
+margin_top = -18.0
 margin_right = 39.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "line"
 align = 1
 valign = 1
 uppercase = true
-__meta__ = {
-"_edit_lock_": true,
-"_edit_use_anchors_": false
-}
-
-[node name="fx" type="Label" parent="controls/line"]
-visible = false
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -75.0
-margin_top = -17.0
-margin_right = -5.0
-margin_bottom = 17.0
-custom_fonts/font = ExtResource( 17 )
-text = "f(x) = "
-align = 1
-valign = 1
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
@@ -163,6 +270,7 @@ margin_left = -75.0
 margin_top = -17.0
 margin_right = 75.0
 margin_bottom = 17.0
+theme = SubResource( 4 )
 custom_icons/updown = ExtResource( 16 )
 min_value = -15.0
 max_value = 15.0
@@ -180,6 +288,7 @@ visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -190,6 +299,7 @@ anchor_bottom = 0.5
 margin_top = -17.0
 margin_right = 160.0
 margin_bottom = 17.0
+theme = SubResource( 6 )
 custom_icons/updown = ExtResource( 16 )
 min_value = -15.0
 max_value = 15.0
@@ -211,6 +321,7 @@ anchor_bottom = 0.5
 margin_left = -140.0
 margin_top = -17.0
 margin_bottom = 17.0
+theme = SubResource( 8 )
 custom_icons/updown = ExtResource( 16 )
 min_value = -15.0
 max_value = 15.0
@@ -233,7 +344,7 @@ margin_top = -50.0
 margin_right = -165.0
 margin_bottom = 50.0
 mouse_filter = 1
-custom_styles/panel = SubResource( 8 )
+custom_styles/panel = SubResource( 9 )
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
@@ -247,9 +358,9 @@ anchor_bottom = 1.0
 margin_left = -39.0
 margin_top = -19.0
 margin_right = 39.0
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 10 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "parabol"
+text = "parabola"
 align = 1
 valign = 1
 uppercase = true
@@ -263,6 +374,7 @@ visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -273,6 +385,7 @@ anchor_bottom = 0.5
 margin_top = -17.0
 margin_right = 150.0
 margin_bottom = 17.0
+theme = SubResource( 12 )
 custom_icons/updown = ExtResource( 16 )
 min_value = -15.0
 max_value = 15.0
@@ -293,6 +406,7 @@ anchor_bottom = 0.5
 margin_left = -150.0
 margin_top = -17.0
 margin_bottom = 17.0
+theme = SubResource( 14 )
 custom_icons/updown = ExtResource( 16 )
 min_value = -15.0
 max_value = 15.0
@@ -314,7 +428,7 @@ margin_left = -265.0
 margin_top = -50.0
 margin_right = -165.0
 margin_bottom = 50.0
-custom_styles/panel = SubResource( 10 )
+custom_styles/panel = SubResource( 15 )
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
@@ -328,9 +442,9 @@ anchor_bottom = 1.0
 margin_left = -39.0
 margin_top = -19.0
 margin_right = 39.0
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 10 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "hyperbol"
+text = "hyperbola"
 align = 1
 valign = 1
 uppercase = true
@@ -375,7 +489,7 @@ margin_left = -265.0
 margin_top = -50.0
 margin_right = -165.0
 margin_bottom = 50.0
-custom_styles/panel = SubResource( 17 )
+custom_styles/panel = SubResource( 16 )
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
@@ -389,8 +503,7 @@ anchor_bottom = 1.0
 margin_left = -39.0
 margin_top = -19.7071
 margin_right = 39.0
-margin_bottom = 1.29288
-custom_fonts/font = SubResource( 16 )
+custom_fonts/font = SubResource( 10 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "sine"
 align = 1
@@ -408,6 +521,7 @@ anchor_bottom = 0.5
 margin_top = -17.0
 margin_right = 150.0
 margin_bottom = 17.0
+theme = SubResource( 18 )
 custom_icons/updown = ExtResource( 16 )
 min_value = -15.0
 max_value = 15.0
@@ -428,6 +542,7 @@ anchor_bottom = 0.5
 margin_left = -150.0
 margin_top = -17.0
 margin_bottom = 17.0
+theme = SubResource( 20 )
 custom_icons/updown = ExtResource( 16 )
 min_value = -15.0
 max_value = 15.0
@@ -443,7 +558,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="controls"]
 anchor_right = 1.0
 margin_bottom = 41.0
-custom_fonts/font = SubResource( 13 )
+custom_fonts/font = SubResource( 21 )
 text = "Active formula"
 align = 1
 valign = 1
@@ -467,7 +582,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="controls/ready_button"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 22 )
 text = "Ready"
 align = 1
 valign = 1
@@ -491,7 +606,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="controls/skip_button"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 15 )
+custom_fonts/font = SubResource( 23 )
 text = "Skip"
 align = 1
 valign = 1

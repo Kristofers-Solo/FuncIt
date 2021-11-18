@@ -144,7 +144,7 @@ script = ExtResource( 2 )
 script = ExtResource( 6 )
 
 [node name="win_lose_screen" parent="game_UI" instance=ExtResource( 12 )]
-position = Vector2( 496.709, 925.167 )
+position = Vector2( 0, 360 )
 
 [node name="win_timer" type="Timer" parent="game_UI/win_lose_screen"]
 wait_time = 4.0
