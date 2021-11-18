@@ -17,6 +17,8 @@ var finishedTutorial = false
 var ts_bot = preload("res://source/entities/ts_bot/ts_bot.tscn")
 
 func _ready() -> void:
+	for player in PersistentNodes.get_children():
+			Global.get("killed_players").append(player)
 	$controls/user_input/controls/ready_button.hide()
 	$controls/user_input/controls/skip_button.hide()
 	$controls/timer/phase.text = "Tutorial"
@@ -55,6 +57,7 @@ func _process(delta):
 	if Input.is_action_pressed("enter") and not begunTutorial:
 		$win_lose_screen.modulate[3] = 0
 		begunTutorial = true
+		Global.get("killed_players").clear()
 	if Input.is_action_pressed("enter") and finishedAiming:
 		finishedTutorial = true
 
@@ -81,6 +84,8 @@ func begin_tutorial():
 			botsActivated = true
 	if botsActivated and botCount == 0:
 		finishedAiming = true
+		for player in PersistentNodes.get_children():
+			Global.get("killed_players").append(player)
 	if finishedAiming:
 		if $controls.modulate[3] > 0: $controls.modulate[3] -= 0.1
 		$win_lose_screen/Panel/Label.text = "Complete"
@@ -88,6 +93,7 @@ func begin_tutorial():
 		$win_lose_screen/Panel/Label2.text = "Press ENTER to continue"
 		if $win_lose_screen.modulate[3] < 1: $win_lose_screen.modulate[3] += 0.1
 	if finishedTutorial: 
+		Global.get("killed_players").clear()
 		Network._server_leave()
 		get_tree().change_scene("res://source/scenes/GUI/main_menu.tscn")
 
