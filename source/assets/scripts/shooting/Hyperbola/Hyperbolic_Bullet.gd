@@ -34,4 +34,4 @@ func _on_hitbox_body_entered(body):
 	queue_free()
 	
 	if body.is_in_group('bot'):
-		body.queue_free()
+		body.hit_by_damager(damage, get_parent().global_rotation, velocity)

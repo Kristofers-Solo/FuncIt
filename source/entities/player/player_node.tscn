@@ -199,7 +199,7 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 5 ), ExtResource( 42 ), ExtResource( 35 ), ExtResource( 24 ), ExtResource( 8 ), ExtResource( 31 ), ExtResource( 30 ), ExtResource( 38 ), ExtResource( 10 ), ExtResource( 43 ), ExtResource( 41 ), ExtResource( 33 ), ExtResource( 44 ), ExtResource( 19 ), ExtResource( 29 ), ExtResource( 25 ), ExtResource( 36 ), ExtResource( 12 ), ExtResource( 45 ), ExtResource( 21 ) ],
 "loop": true,
-"name": "move-speed-right-01",
+"name": "move-speed-left-02",
 "speed": 35.0
 }, {
 "frames": [ ExtResource( 70 ), ExtResource( 49 ), ExtResource( 74 ), ExtResource( 75 ), ExtResource( 28 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 55 ), ExtResource( 150 ), ExtResource( 156 ), ExtResource( 138 ), ExtResource( 161 ), ExtResource( 145 ), ExtResource( 148 ), ExtResource( 147 ), ExtResource( 133 ), ExtResource( 164 ), ExtResource( 134 ), ExtResource( 152 ), ExtResource( 160 ) ],
@@ -226,6 +226,21 @@ animations = [ {
 "loop": true,
 "name": "idle-speed-right-01",
 "speed": 25.0
+}, {
+"frames": [ ExtResource( 167 ), ExtResource( 157 ), ExtResource( 158 ), ExtResource( 126 ), ExtResource( 90 ), ExtResource( 89 ), ExtResource( 97 ), ExtResource( 88 ), ExtResource( 98 ), ExtResource( 91 ), ExtResource( 125 ), ExtResource( 105 ), ExtResource( 82 ), ExtResource( 84 ), ExtResource( 92 ), ExtResource( 103 ), ExtResource( 122 ), ExtResource( 130 ), ExtResource( 104 ), ExtResource( 116 ) ],
+"loop": true,
+"name": "boost-speed-right-02",
+"speed": 55.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 42 ), ExtResource( 35 ), ExtResource( 24 ), ExtResource( 8 ), ExtResource( 31 ), ExtResource( 30 ), ExtResource( 38 ), ExtResource( 10 ), ExtResource( 43 ), ExtResource( 41 ), ExtResource( 33 ), ExtResource( 44 ), ExtResource( 19 ), ExtResource( 29 ), ExtResource( 25 ), ExtResource( 36 ), ExtResource( 12 ), ExtResource( 45 ), ExtResource( 21 ) ],
+"loop": true,
+"name": "move-speed-right-01",
+"speed": 35.0
+}, {
+"frames": [ ExtResource( 73 ), ExtResource( 57 ), ExtResource( 65 ), ExtResource( 64 ), ExtResource( 54 ), ExtResource( 71 ), ExtResource( 58 ), ExtResource( 66 ), ExtResource( 62 ), ExtResource( 59 ), ExtResource( 56 ), ExtResource( 60 ), ExtResource( 63 ), ExtResource( 50 ), ExtResource( 61 ), ExtResource( 67 ), ExtResource( 72 ), ExtResource( 51 ), ExtResource( 68 ), ExtResource( 69 ) ],
+"loop": true,
+"name": "boost-speed-left-02",
+"speed": 55.0
 }, {
 "frames": [ ExtResource( 70 ), ExtResource( 49 ), ExtResource( 74 ), ExtResource( 75 ), ExtResource( 28 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 55 ), ExtResource( 150 ), ExtResource( 156 ), ExtResource( 138 ), ExtResource( 161 ), ExtResource( 145 ), ExtResource( 148 ), ExtResource( 147 ), ExtResource( 133 ), ExtResource( 164 ), ExtResource( 134 ), ExtResource( 152 ), ExtResource( 160 ) ],
 "loop": true,
@@ -284,13 +299,13 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 167 ), ExtResource( 157 ), ExtResource( 158 ), ExtResource( 126 ), ExtResource( 90 ), ExtResource( 89 ), ExtResource( 97 ), ExtResource( 88 ), ExtResource( 98 ), ExtResource( 91 ), ExtResource( 125 ), ExtResource( 105 ), ExtResource( 82 ), ExtResource( 84 ), ExtResource( 92 ), ExtResource( 103 ), ExtResource( 122 ), ExtResource( 130 ), ExtResource( 104 ), ExtResource( 116 ) ],
 "loop": true,
-"name": "idle-speed-right-02",
+"name": "idle-speed-left-03",
 "speed": 25.0
 }, {
-"frames": [ ExtResource( 73 ), ExtResource( 57 ), ExtResource( 65 ), ExtResource( 64 ), ExtResource( 54 ), ExtResource( 71 ), ExtResource( 58 ), ExtResource( 66 ), ExtResource( 62 ), ExtResource( 59 ), ExtResource( 56 ), ExtResource( 60 ), ExtResource( 63 ), ExtResource( 50 ), ExtResource( 61 ), ExtResource( 67 ), ExtResource( 72 ), ExtResource( 51 ), ExtResource( 68 ), ExtResource( 69 ) ],
+"frames": [ ExtResource( 167 ), ExtResource( 157 ), ExtResource( 158 ), ExtResource( 126 ), ExtResource( 90 ), ExtResource( 89 ), ExtResource( 97 ), ExtResource( 88 ), ExtResource( 98 ), ExtResource( 91 ), ExtResource( 125 ), ExtResource( 105 ), ExtResource( 82 ), ExtResource( 84 ), ExtResource( 92 ), ExtResource( 103 ), ExtResource( 122 ), ExtResource( 130 ), ExtResource( 104 ), ExtResource( 116 ) ],
 "loop": true,
-"name": "idle-speed-left-02",
-"speed": 25.0
+"name": "move-speed-right-02",
+"speed": 35.0
 } ]
 
 [sub_resource type="CircleShape2D" id=2]
