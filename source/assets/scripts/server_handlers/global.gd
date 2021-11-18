@@ -86,8 +86,3 @@ func instance_node(node: Object, parent: Object) -> Object:
 	parent.add_child(node_instance)
 	return node_instance
 
-
-func _process(delta):
-	if alive_players.size() > 1:
-		pass
-	print(alive_players)

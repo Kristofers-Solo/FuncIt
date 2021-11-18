@@ -11,6 +11,7 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 #	print(Global.alive_players.size())
-	if Global.alive_players.size() <= 1 and get_tree().has_network_peer():
-		if Global.alive_players[1].name == str(get_tree().get_network_unique_id()):
-			lose_screen.show()
+	if Global.killed_players.size() >= 1:
+		lose_screen.show()
+	else:
+		lose_screen.hide()

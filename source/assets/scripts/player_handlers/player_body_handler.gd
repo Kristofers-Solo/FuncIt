@@ -294,7 +294,6 @@ func _physics_process(delta) -> void:
 	if hp <= 0:
 		if get_tree().is_network_server():
 			rpc("destroy")
-			Global.get("killed_players").append(self)
 
 
 
@@ -417,6 +416,22 @@ sync func hit_by_damager(damage):
 	hit_timer.start()
 
 
+sync func enable_playground() -> void:
+	hp = 100
+	health_bar_instance.value = 100
+	can_shoot = true
+	update_shoot_mode(true)
+	$player_animated_sprite.show()
+	dead_player.hide()
+	$"weaponHolder/Player-character-theme-gun".show()
+	Global.killed_players.erase(self)
+	if get_tree().has_network_peer():
+		if is_network_master():
+			Global.player_master = self
+	if not Global.alive_players.has(self):
+		Global.alive_players.append(self)
+
+
 sync func enable() -> void:
 	hp = 100
 	health_bar_instance.value = 100
@@ -437,6 +452,8 @@ sync func destroy() -> void:
 	dead_player.show()
 	$"weaponHolder/Player-character-theme-gun".hide()
 	Global.alive_players.erase(self)
+	if not Global.killed_players.has(self):
+		Global.killed_players.append(self)
 	if get_tree().has_network_peer():
 		if is_network_master():
 			Global.player_master = null
