@@ -1,4 +1,4 @@
-extends Label
+extends Node2D
 
 sync func return_to_lobby():
 	get_tree().change_scene("res://source/scenes/GUI/network_setup.tscn")

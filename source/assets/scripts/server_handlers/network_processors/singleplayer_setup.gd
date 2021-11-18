@@ -9,11 +9,12 @@ func _ready() -> void:
 	username_text_edit.call_deferred("grab_focus")
 
 
-# warning-ignore:unused_argument
-func _process(delta) -> void:
+func _process(_delta) -> void:
 	if Input.is_action_just_pressed("esc"):
 # warning-ignore:return_value_discarded
 		get_tree().change_scene("res://source/scenes/GUI/main_menu.tscn")
+	if Input.is_action_just_pressed("enter") and username_text_edit.is_visible_in_tree():
+		_on_confirm_pressed()
 
 func _on_confirm_pressed():
 	if username_text_edit.text != "":

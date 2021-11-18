@@ -12,15 +12,15 @@ use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 2 )
 
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
 [sub_resource type="DynamicFont" id=4]
 size = 36
 use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 2 )
-
-[sub_resource type="StyleBoxEmpty" id=2]
-
-[sub_resource type="StyleBoxEmpty" id=3]
 
 [sub_resource type="DynamicFont" id=5]
 size = 36
@@ -28,7 +28,7 @@ use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 2 )
 
-[node name="network_setup2" type="Control"]
+[node name="singleplayer_setup" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
@@ -47,22 +47,22 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="enter_server_ip" type="Sprite" parent="popup_screen"]
+[node name="enter_username" type="Sprite" parent="popup_screen"]
 position = Vector2( 960, 465 )
 texture = ExtResource( 3 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Label" type="Label" parent="popup_screen/enter_server_ip"]
+[node name="Label" type="Label" parent="popup_screen/enter_username"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -225.0
 margin_top = -25.0
 margin_right = -225.0
 margin_bottom = -25.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Enter your username"
 align = 1
 valign = 1
@@ -93,10 +93,10 @@ margin_left = -175.0
 margin_top = -28.0
 margin_right = 175.0
 margin_bottom = 28.0
-custom_colors/selection_color = Color( 0.8, 0.8, 0.8, 1 )
-custom_fonts/font = SubResource( 4 )
 custom_styles/focus = SubResource( 2 )
 custom_styles/normal = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
+custom_colors/selection_color = Color( 0.8, 0.8, 0.8, 1 )
 align = 1
 placeholder_text = "username"
 __meta__ = {
@@ -117,8 +117,8 @@ margin_bottom = 97.0
 [node name="Label" type="Label" parent="popup_screen/panel/confirm"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "CONFIRM"
 align = 1
 valign = 1

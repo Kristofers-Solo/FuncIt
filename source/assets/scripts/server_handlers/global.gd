@@ -62,18 +62,16 @@ func phase_update_global():
 	pass
 
 
-func start_game(value):
+func start_game(value) -> void:
 	gameStart = value
-	pass
 
 
 func get_current_phase():
 	return clientPhase
 
 
-func set_current_phase(phase):
+func set_current_phase(phase) -> void:
 	clientPhase = phase
-	pass
 
 
 func instance_node_at_location(node: Object, parent: Object, location: Vector2) -> Object:

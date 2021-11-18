@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://source/assets/sprites/GUI/in_game/user_input/background_panel.svg" type="Texture" id=1]
 [ext_resource path="res://source/fonts/oxygen/Oxygen-Regular.ttf" type="DynamicFontData" id=2]
@@ -12,25 +12,17 @@
 [ext_resource path="res://source/assets/sprites/GUI/in_game/user_input/ready_button/ready_button_pressed.svg" type="Texture" id=10]
 [ext_resource path="res://source/assets/sprites/GUI/in_game/user_input/ready_button/ready_button_hover.svg" type="Texture" id=11]
 [ext_resource path="res://source/assets/sprites/GUI/in_game/user_input/skip_button/skip_button.svg" type="Texture" id=12]
-[ext_resource path="res://source/scenes/OVERLAY/elements/trajectories.gd" type="Script" id=13]
-[ext_resource path="res://icon.png" type="Texture" id=14]
+[ext_resource path="res://source/assets/scripts/shooting/Trajectories/trajectories.gd" type="Script" id=13]
+[ext_resource path="res://source/fonts/oxygen/Oxygen-Bold.ttf" type="DynamicFontData" id=15]
+[ext_resource path="res://source/assets/sprites/GUI/in_game/buttons/SpinBox/updown.svg" type="Texture" id=16]
+[ext_resource path="res://source/fonts/oxygen/oxygen_bold_formula.tres" type="DynamicFont" id=17]
 
 [sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 1 )
 region_rect = Rect2( 0, 0, 480, 156 )
 
-[sub_resource type="StyleBoxTexture" id=2]
-texture = ExtResource( 3 )
-region_rect = Rect2( 0, 0, 100, 100 )
-
-[sub_resource type="DynamicFont" id=3]
-size = 14
-use_mipmaps = true
-use_filter = true
-font_data = ExtResource( 2 )
-
 [sub_resource type="StyleBoxTexture" id=4]
-texture = ExtResource( 5 )
+texture = ExtResource( 3 )
 region_rect = Rect2( 0, 0, 100, 100 )
 
 [sub_resource type="DynamicFont" id=5]
@@ -39,33 +31,63 @@ use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 2 )
 
-[sub_resource type="StyleBoxTexture" id=6]
-texture = ExtResource( 4 )
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.333333, 0.431373, 0.807843, 1 )
+border_color = Color( 1, 1, 1, 0 )
+
+[sub_resource type="Theme" id=7]
+default_font = ExtResource( 17 )
+LineEdit/colors/clear_button_color = Color( 0.88, 0.88, 0.88, 1 )
+LineEdit/colors/clear_button_color_pressed = Color( 1, 1, 1, 1 )
+LineEdit/colors/cursor_color = Color( 0.94, 0.94, 0.94, 1 )
+LineEdit/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
+LineEdit/colors/font_color_selected = Color( 0, 0, 0, 1 )
+LineEdit/colors/font_color_uneditable = Color( 0.88, 0.88, 0.88, 0.5 )
+LineEdit/colors/selection_color = Color( 0.49, 0.49, 0.49, 1 )
+LineEdit/constants/minimum_spaces = 12
+LineEdit/fonts/font = null
+LineEdit/icons/clear = null
+LineEdit/styles/focus = null
+LineEdit/styles/normal = SubResource( 6 )
+LineEdit/styles/read_only = null
+
+[sub_resource type="StyleBoxTexture" id=8]
+texture = ExtResource( 5 )
 region_rect = Rect2( 0, 0, 100, 100 )
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=9]
 size = 14
 use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 2 )
 
-[sub_resource type="StyleBoxTexture" id=8]
+[sub_resource type="StyleBoxTexture" id=10]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 100, 100 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 14
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxTexture" id=12]
 texture = ExtResource( 6 )
 region_rect = Rect2( 0, 0, 100, 100 )
 
-[sub_resource type="DynamicFont" id=9]
+[sub_resource type="DynamicFont" id=13]
+size = 32
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 15 )
+
+[sub_resource type="DynamicFont" id=2]
 size = 22
 use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=10]
-size = 22
-use_mipmaps = true
-use_filter = true
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=11]
+[sub_resource type="DynamicFont" id=3]
 size = 22
 use_mipmaps = true
 use_filter = true
@@ -81,37 +103,43 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="trajectories" type="Control" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 50.0
-margin_top = 28.0
-margin_right = -330.0
-margin_bottom = -28.0
-mouse_filter = 1
+[node name="controls" type="Control" parent="."]
+margin_left = 165.0
+margin_top = 13.0
+margin_right = 465.0
+margin_bottom = 143.0
+mouse_filter = 2
 script = ExtResource( 13 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="line" type="Panel" parent="trajectories"]
-visible = false
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -50.0
-margin_top = -50.0
-margin_right = 50.0
-margin_bottom = 50.0
-mouse_filter = 1
-custom_styles/panel = SubResource( 2 )
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="trajectories/line"]
+[node name="line" type="Control" parent="controls"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="line_panel" type="Panel" parent="controls/line"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -265.0
+margin_top = -50.0
+margin_right = -165.0
+margin_bottom = 50.0
+mouse_filter = 1
+custom_styles/panel = SubResource( 4 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="controls/line/line_panel"]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -119,8 +147,8 @@ anchor_bottom = 1.0
 margin_left = -39.0
 margin_top = -19.0
 margin_right = 39.0
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 3 )
 text = "line"
 align = 1
 valign = 1
@@ -130,45 +158,115 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="LineEdit" type="LineEdit" parent="trajectories/line"]
-margin_left = 206.0
-margin_top = 12.0
-margin_right = 288.0
-margin_bottom = 78.0
-focus_mode = 1
-mouse_filter = 1
-max_length = 3
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="x_label" type="Label" parent="trajectories/line"]
-margin_left = 277.0
-margin_top = 44.0
-margin_right = 317.0
-margin_bottom = 58.0
-text = "x"
-align = 1
-valign = 1
-
-[node name="parabol" type="Panel" parent="trajectories"]
+[node name="fx" type="Label" parent="controls/line"]
 visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -50.0
-margin_top = -50.0
-margin_right = 50.0
-margin_bottom = 50.0
-mouse_filter = 1
-custom_styles/panel = SubResource( 4 )
+margin_left = -75.0
+margin_top = -17.0
+margin_right = -5.0
+margin_bottom = 17.0
+custom_fonts/font = ExtResource( 17 )
+text = "f(x) = "
+align = 1
+valign = 1
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="trajectories/parabol"]
+[node name="line_SpinBox" type="SpinBox" parent="controls/line"]
+use_parent_material = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -75.0
+margin_top = -17.0
+margin_right = 75.0
+margin_bottom = 17.0
+theme = SubResource( 7 )
+custom_icons/updown = ExtResource( 16 )
+min_value = -15.0
+max_value = 15.0
+step = 0.5
+align = 1
+prefix = "f(x) ="
+suffix = "x"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="parabol" type="Control" parent="controls"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="a_param_SpinBox" type="SpinBox" parent="controls/parabol"]
+use_parent_material = true
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -17.0
+margin_right = 160.0
+margin_bottom = 17.0
+theme = SubResource( 7 )
+custom_icons/updown = ExtResource( 16 )
+min_value = -15.0
+max_value = 15.0
+step = 0.5
+align = 1
+prefix = "f(x) ="
+suffix = "x²"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="b_param_SpinBox" type="SpinBox" parent="controls/parabol"]
+use_parent_material = true
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -140.0
+margin_top = -17.0
+margin_bottom = 17.0
+theme = SubResource( 7 )
+custom_icons/updown = ExtResource( 16 )
+min_value = -15.0
+max_value = 15.0
+step = 0.5
+align = 1
+prefix = "+"
+suffix = "x + c"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="parabol_panel" type="Panel" parent="controls/parabol"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -265.0
+margin_top = -50.0
+margin_right = -165.0
+margin_bottom = 50.0
+mouse_filter = 1
+custom_styles/panel = SubResource( 8 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="controls/parabol/parabol_panel"]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -176,8 +274,8 @@ anchor_bottom = 1.0
 margin_left = -39.0
 margin_top = -19.0
 margin_right = 39.0
+custom_fonts/font = SubResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 5 )
 text = "parabol"
 align = 1
 valign = 1
@@ -187,58 +285,71 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="x^2 label" type="Label" parent="trajectories/parabol"]
-margin_left = 256.0
-margin_top = 41.0
-margin_right = 296.0
-margin_bottom = 55.0
-text = "x^2 +"
-
-[node name="a_param_LineEdit" type="LineEdit" parent="trajectories/parabol"]
-margin_left = 193.0
-margin_top = 35.0
-margin_right = 251.0
-margin_bottom = 59.0
-focus_mode = 1
-max_length = 3
-
-[node name="b_param_LineEdit" type="LineEdit" parent="trajectories/parabol"]
-margin_left = 293.0
-margin_top = 36.0
-margin_right = 351.0
-margin_bottom = 60.0
-focus_mode = 1
-max_length = 3
+[node name="hyperbol" type="Control" parent="controls"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="x_label" type="Label" parent="trajectories/parabol"]
-margin_left = 340.0
-margin_top = 41.0
-margin_right = 380.0
-margin_bottom = 55.0
-text = "x"
-align = 1
-valign = 1
-
-[node name="hyperbol" type="Panel" parent="trajectories"]
-visible = false
-anchor_left = 0.5
+[node name="a_param_h_SpinBox" type="SpinBox" parent="controls/hyperbol"]
+use_parent_material = true
 anchor_top = 0.5
-anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -50.0
-margin_top = -50.0
-margin_right = 50.0
-margin_bottom = 50.0
-custom_styles/panel = SubResource( 6 )
+margin_top = -17.0
+margin_right = 150.0
+margin_bottom = 17.0
+theme = SubResource( 7 )
+custom_icons/updown = ExtResource( 16 )
+min_value = -15.0
+max_value = 15.0
+step = 0.5
+align = 1
+prefix = "f(x) ="
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="trajectories/hyperbol"]
+[node name="b_param_h_SpinBox" type="SpinBox" parent="controls/hyperbol"]
+use_parent_material = true
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -150.0
+margin_top = -17.0
+margin_bottom = 17.0
+theme = SubResource( 7 )
+custom_icons/updown = ExtResource( 16 )
+min_value = -15.0
+max_value = 15.0
+step = 0.5
+align = 1
+prefix = "/"
+suffix = "x"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="hyperbol_panel" type="Panel" parent="controls/hyperbol"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -265.0
+margin_top = -50.0
+margin_right = -165.0
+margin_bottom = 50.0
+custom_styles/panel = SubResource( 10 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="controls/hyperbol/hyperbol_panel"]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -246,8 +357,8 @@ anchor_bottom = 1.0
 margin_left = -39.0
 margin_top = -19.0
 margin_right = 39.0
+custom_fonts/font = SubResource( 11 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 7 )
 text = "hyperbol"
 align = 1
 valign = 1
@@ -257,52 +368,31 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="a_param_h_LineEdit" type="LineEdit" parent="trajectories/hyperbol"]
-margin_left = 225.0
-margin_top = 13.0
-margin_right = 283.0
-margin_bottom = 37.0
-focus_mode = 1
-max_length = 3
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="b_param_h_LineEdit" type="LineEdit" parent="trajectories/hyperbol"]
-margin_left = 211.0
-margin_top = 45.0
-margin_right = 269.0
-margin_bottom = 69.0
-focus_mode = 1
-max_length = 3
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Sprite" type="Sprite" parent="trajectories/hyperbol"]
-modulate = Color( 0, 0, 0, 1 )
-self_modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 254, 41 )
-scale = Vector2( 0.0401042, 0.00260416 )
-texture = ExtResource( 14 )
-
-[node name="sin" type="Panel" parent="trajectories"]
+[node name="sin" type="Control" parent="controls"]
 visible = false
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -50.0
-margin_top = -50.0
-margin_right = 50.0
-margin_bottom = 50.0
-custom_styles/panel = SubResource( 8 )
+anchor_right = 1.0
+anchor_bottom = 1.0
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="trajectories/sin"]
+[node name="sine_panel" type="Panel" parent="controls/sin"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -265.0
+margin_top = -50.0
+margin_right = -165.0
+margin_bottom = 50.0
+custom_styles/panel = SubResource( 12 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="controls/sin/sine_panel"]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -310,9 +400,9 @@ anchor_bottom = 1.0
 margin_left = -39.0
 margin_top = -19.0
 margin_right = 39.0
+custom_fonts/font = SubResource( 11 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 7 )
-text = "sin"
+text = "sine"
 align = 1
 valign = 1
 uppercase = true
@@ -321,72 +411,51 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="x_label" type="Label" parent="trajectories/sin"]
-margin_left = 341.0
-margin_top = 37.0
-margin_right = 381.0
-margin_bottom = 51.0
-text = "x)"
+[node name="amp_SpinBox" type="SpinBox" parent="controls/sin"]
+use_parent_material = true
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -17.0
+margin_right = 150.0
+margin_bottom = 17.0
+theme = SubResource( 7 )
+custom_icons/updown = ExtResource( 16 )
+min_value = -15.0
+max_value = 15.0
+step = 0.5
 align = 1
-valign = 1
-
-[node name="amp" type="LineEdit" parent="trajectories/sin"]
-margin_left = 204.0
-margin_top = 33.0
-margin_right = 262.0
-margin_bottom = 57.0
-focus_mode = 1
-max_length = 3
-
-[node name="freq" type="LineEdit" parent="trajectories/sin"]
-margin_left = 291.0
-margin_top = 33.0
-margin_right = 349.0
-margin_bottom = 57.0
-focus_mode = 1
-max_length = 3
+prefix = "f(x) ="
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="sin()" type="Label" parent="trajectories/sin"]
-margin_left = 255.0
-margin_top = 37.0
-margin_right = 295.0
-margin_bottom = 51.0
-text = "sin("
+[node name="freq_SpinBox" type="SpinBox" parent="controls/sin"]
+use_parent_material = true
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -150.0
+margin_top = -17.0
+margin_bottom = 17.0
+theme = SubResource( 7 )
+custom_icons/updown = ExtResource( 16 )
+min_value = -15.0
+max_value = 15.0
+step = 0.5
 align = 1
-valign = 1
+prefix = "sin("
+suffix = "x)"
 __meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Func_Label" type="Label" parent="trajectories"]
-margin_left = 121.0
-margin_top = 28.0
-margin_right = 237.0
-margin_bottom = 65.0
-text = "f(x) = "
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="controls" type="Control" parent="."]
-margin_left = 165.0
-margin_top = 13.0
-margin_right = 465.0
-margin_bottom = 143.0
-mouse_filter = 2
-__meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="controls"]
 anchor_right = 1.0
-margin_bottom = 29.0
-custom_fonts/font = SubResource( 9 )
+margin_bottom = 41.0
+custom_fonts/font = SubResource( 13 )
 text = "Active formula"
 align = 1
 valign = 1
@@ -410,7 +479,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="controls/ready_button"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 2 )
 text = "Ready"
 align = 1
 valign = 1
@@ -434,15 +503,15 @@ __meta__ = {
 [node name="Label" type="Label" parent="controls/skip_button"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 3 )
 text = "Skip"
 align = 1
 valign = 1
 
-[connection signal="text_entered" from="trajectories/line/LineEdit" to="trajectories" method="_on_LineEdit_text_entered"]
-[connection signal="text_entered" from="trajectories/parabol/a_param_LineEdit" to="trajectories" method="_on_a_param_LineEdit_text_entered"]
-[connection signal="text_entered" from="trajectories/parabol/b_param_LineEdit" to="trajectories" method="_on_b_param_LineEdit_text_entered"]
-[connection signal="text_entered" from="trajectories/hyperbol/a_param_h_LineEdit" to="trajectories" method="_on_a_param_h_LineEdit_text_entered"]
-[connection signal="text_entered" from="trajectories/hyperbol/b_param_h_LineEdit" to="trajectories" method="_on_b_param_h_LineEdit_text_entered"]
-[connection signal="text_entered" from="trajectories/sin/amp" to="trajectories" method="_on_amp_text_entered"]
-[connection signal="text_entered" from="trajectories/sin/freq" to="trajectories" method="_on_freq_text_entered"]
+[connection signal="value_changed" from="controls/line/line_SpinBox" to="controls" method="_on_line_SpinBox_value_changed"]
+[connection signal="value_changed" from="controls/parabol/a_param_SpinBox" to="controls" method="_on_a_param_SpinBox_value_changed"]
+[connection signal="value_changed" from="controls/parabol/b_param_SpinBox" to="controls" method="_on_b_param_SpinBox_value_changed"]
+[connection signal="value_changed" from="controls/hyperbol/a_param_h_SpinBox" to="controls" method="_on_a_param_h_SpinBox_value_changed"]
+[connection signal="value_changed" from="controls/hyperbol/b_param_h_SpinBox" to="controls" method="_on_b_param_h_SpinBox_value_changed"]
+[connection signal="value_changed" from="controls/sin/amp_SpinBox" to="controls" method="_on_amp_SpinBox_value_changed"]
+[connection signal="value_changed" from="controls/sin/freq_SpinBox" to="controls" method="_on_freq_SpinBox_value_changed"]
