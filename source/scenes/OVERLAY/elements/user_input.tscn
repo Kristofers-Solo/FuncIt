@@ -545,6 +545,7 @@ __meta__ = {
 }
 
 [node name="ready_button" type="TextureButton" parent="controls"]
+visible = false
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_top = -36.0
@@ -569,6 +570,7 @@ __meta__ = {
 }
 
 [node name="skip_button" type="TextureButton" parent="controls"]
+visible = false
 margin_left = 180.0
 margin_top = 94.0
 margin_right = 300.0

@@ -449,6 +449,7 @@ sync func enable() -> void:
 	$player_animated_sprite.show()
 	dead_player.hide()
 	$"weaponHolder/Player-character-theme-gun".show()
+	Global.killed_players.erase(self)
 	if get_tree().has_network_peer():
 		if is_network_master():
 			Global.player_master = self

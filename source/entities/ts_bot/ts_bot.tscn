@@ -17,6 +17,11 @@ height = 46.0
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "passive_idle",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 4 ) ],
 "loop": true,
 "name": "friendly_idle",
@@ -26,14 +31,11 @@ animations = [ {
 "loop": true,
 "name": "agressive_idle",
 "speed": 5.0
-}, {
-"frames": [ ExtResource( 3 ) ],
-"loop": true,
-"name": "passive_idle",
-"speed": 5.0
 } ]
 
-[node name="ts_bot" type="KinematicBody2D" groups=["bot"]]
+[node name="ts_bot" type="KinematicBody2D" groups=[
+"bot",
+]]
 script = ExtResource( 2 )
 
 [node name="main_bot_collider" type="CollisionShape2D" parent="."]

@@ -15,6 +15,7 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
+	print(Global.alive_players.size())
 	if Global.alive_players.size() <= winner_amount and get_tree().has_network_peer():
 		if Global.alive_players[0].name == str(get_tree().get_network_unique_id()):
 			label.text = "You won!"
