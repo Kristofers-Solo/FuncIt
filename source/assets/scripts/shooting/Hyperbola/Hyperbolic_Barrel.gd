@@ -17,7 +17,7 @@ func _ready():
 
 
 func trajectory():
-	while dot_position.x < 1000:
+	while dot_position.x < 2000:
 		if pos.x > 0:
 			add_point(dot_position)
 			velocity.x = 10

@@ -18,7 +18,7 @@ func _ready():
 
 
 func trajectory(delta):
-	while dot_position.x < 1000:
+	while dot_position.x < 2000:
 		if pos.x > 0:
 			add_point(dot_position)
 			velocity.y = time*(a_parameter * time + b_parameter)

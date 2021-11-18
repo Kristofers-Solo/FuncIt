@@ -19,7 +19,7 @@ var frequency = Global.get('user_input').freq
 #		time += 0.06944
 
 func trajectory(delta):
-	while dot_position.x < 1000:
+	while dot_position.x < 2000:
 		add_point(dot_position)
 		velocity.y = amplitude * cos(time * frequency)
 		velocity.x = 5

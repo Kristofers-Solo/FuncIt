@@ -7,6 +7,8 @@ var accelerationSpeed = 2
 var deccelerationSpeed = 20
 var maxSpeed = 250
 
+signal bot_died
+
 var worldSpace2d = null
 var coreRay = {}
 
@@ -30,6 +32,9 @@ var rotationAmount = 0
 var rand_generate = RandomNumberGenerator.new()
 
 var timer = 15
+var hp = 50
+
+var activeHitBoost = Vector2(0,0)
 
 export(int, "Passive", "Friendly", "Agressive") var Mode
 
@@ -75,6 +80,8 @@ func _physics_process(delta):
 		$TsBotSpriteWeaponOn.rotation = 360/rotationAmount
 		time = 0
 		shoot_bot()
+	move_and_slide(activeHitBoost)
+	activeHitBoost = Vector2(move_toward(activeHitBoost.x, 0, 2), move_toward(activeHitBoost.y, 0, 2))
 
 func get_interaction():
 	degreeTracker = 0
@@ -92,9 +99,17 @@ func get_interaction():
 		interactionRays.append({"start": startVector, "end": Vector2(0,maxRay).rotated(deg2rad(degreeTracker)) + global_position, "degrees": degreeTracker,"ray": interactionRay, "interacted": interacted})
 		degreeTracker += degreeStep
 
-
 func shoot_bot():
 	var b = bullet.instance()
 	get_parent().add_child(b)
 	b.global_position = self.global_position
 	b.global_rotation = 360/rotationAmount - 180
+
+func hit_by_damager(damage, b_rotation, b_velocity):
+	hp -= damage
+	$HUD/health_bar.value = hp
+	activeHitBoost = b_velocity.rotated(b_rotation)*250
+	Mode = 2
+	if hp <= 0:
+		queue_free()
+		emit_signal("bot_died")

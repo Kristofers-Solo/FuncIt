@@ -4,9 +4,7 @@
 [ext_resource path="res://source/assets/sprites/GUI/in_game/health_bar/trinity_site_health_bar_positive.svg" type="Texture" id=2]
 [ext_resource path="res://source/assets/scripts/ui_element_handlers/HUD.gd" type="Script" id=3]
 
-[node name="HUD" type="Node2D" groups=[
-"Net",
-]]
+[node name="HUD" type="Node2D" groups=["Net"]]
 script = ExtResource( 3 )
 
 [node name="health_bar" type="TextureProgress" parent="."]

@@ -114,6 +114,7 @@ func _ready():
 	set_process(true)
 	
 	$player_animated_sprite.play("idle")
+	enable_trajectory_line('line')
 
 
 func get_user_state():

@@ -18,7 +18,7 @@ var a_parameter = -Global.get('user_input').a_param_line
 
 
 func trajectory():
-	while dot_position.x < 1000:
+	while dot_position.x < 2000:
 		add_point(dot_position)
 		velocity.y = 10 * a_parameter
 		velocity.x = 10
