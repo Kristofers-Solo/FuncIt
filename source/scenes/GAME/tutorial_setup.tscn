@@ -1,0 +1,135 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://source/assets/scripts/server_handlers/network_processors/singleplayer_setup.gd" type="Script" id=1]
+[ext_resource path="res://source/fonts/oxygen/Oxygen-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://source/assets/sprites/GUI/in_game/buttons/server_title.svg" type="Texture" id=3]
+[ext_resource path="res://source/scenes/GUI/background.tscn" type="PackedScene" id=5]
+[ext_resource path="res://source/scenes/OVERLAY/elements/button.tscn" type="PackedScene" id=9]
+
+[sub_resource type="DynamicFont" id=1]
+size = 36
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 36
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="DynamicFont" id=5]
+size = 36
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 2 )
+
+[node name="network_setup2" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="background" parent="." instance=ExtResource( 5 )]
+
+[node name="popup_screen" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.5199
+margin_right = 2.5199
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="enter_server_ip" type="Sprite" parent="popup_screen"]
+visible = false
+position = Vector2( 960, 465 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Label" type="Label" parent="popup_screen/enter_server_ip"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -225.0
+margin_top = -25.0
+margin_right = -225.0
+margin_bottom = -25.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Enter your username"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="panel" type="Panel" parent="popup_screen"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -200.0
+margin_top = -50.0
+margin_right = 200.0
+margin_bottom = 50.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="username_text_edit" type="LineEdit" parent="popup_screen/panel"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -175.0
+margin_top = -28.0
+margin_right = 175.0
+margin_bottom = 28.0
+custom_colors/selection_color = Color( 0.8, 0.8, 0.8, 1 )
+custom_fonts/font = SubResource( 4 )
+custom_styles/focus = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+align = 1
+placeholder_text = "username"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="confirm" parent="popup_screen/panel" instance=ExtResource( 9 )]
+visible = false
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -150.0
+margin_top = 25.0
+margin_right = 150.0
+margin_bottom = 97.0
+
+[node name="Label" type="Label" parent="popup_screen/panel/confirm"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "CONFIRM"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[connection signal="pressed" from="popup_screen/panel/confirm" to="." method="_on_confirm_pressed"]

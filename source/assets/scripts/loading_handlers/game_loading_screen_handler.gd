@@ -30,5 +30,5 @@ func _process(delta):
 		$FunCitGameLogoDarkTransparent.modulate[3] -= 0.01
 		time = 0
 	if transitioned and $FunCitGameLogoDarkTransparent.modulate[3] <= 0:
-		#change scene to menu
+		get_tree().change_scene("res://source/scenes/GAME/tutorial_setup.tscn")
 		pass
