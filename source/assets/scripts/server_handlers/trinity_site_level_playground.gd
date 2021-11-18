@@ -6,6 +6,7 @@ var current_player_location_instance_number = null
 var globalActivePhase = null
 
 func _ready() -> void:
+	Global.mode = 1
 	$controls/user_input/controls/ready_button.hide()
 	$controls/user_input/controls/skip_button.hide()
 # warning-ignore:return_value_discarded

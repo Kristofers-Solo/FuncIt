@@ -15,6 +15,7 @@ func _ready() -> void:
 	if get_tree().is_network_server():
 		setup_player_positions()
 	Global.start_game(true)
+	Global.mode = 2
 
 
 func setup_player_positions() -> void:

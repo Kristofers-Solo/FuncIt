@@ -1,7 +1,6 @@
 extends Control
 
 
-
 func _ready():
 	
 	Global.set('line_button', self)

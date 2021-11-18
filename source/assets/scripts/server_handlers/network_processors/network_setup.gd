@@ -25,7 +25,9 @@ func _ready() -> void:
 	device_ip_address.hide()
 	text.hide()
 	
-	
+#	if get_tree().has_network_peer():
+#		if is_network_master():
+	Global.set("user_input", null)
 	Global.start_game(false)
 	
 	

@@ -1,10 +1,9 @@
 extends Line2D
 
-export var speed_hyper = 100
+export var speed_hyper = 130
 var velocity = Vector2(0, 0)
 var dot_position = Vector2(0, 0)
 
-var x = 10
 
 var time = 0.05
 var a_parameter = Global.get('user_input').a_param_hyper
@@ -16,21 +15,21 @@ func _ready():
 	
 
 
-func trajectory():
+func trajectory(delta):
 	while dot_position.x < 2000:
-		if pos.x > 0:
-			add_point(dot_position)
-			velocity.x = 10
-			velocity.y = a_parameter/(time*b_parameter) 
-			dot_position += velocity * speed_hyper * 0.06944
-			time += 0.06944
-		if pos.x < 0:
-			add_point(dot_position)
-			velocity.x = 10
-			velocity.y = -a_parameter/(time*b_parameter) 
-			dot_position += velocity * speed_hyper * 0.06944
-			time += 0.06944
+#		if pos.x > 0:
+		add_point(dot_position)
+		velocity.x = 10
+		velocity.y = a_parameter/(time*b_parameter) 
+		dot_position += velocity * speed_hyper * delta
+		time += delta
+#		if pos.x < 0:
+#			add_point(dot_position)
+#			velocity.x = 10
+#			velocity.y = -a_parameter/(time*b_parameter) 
+#			dot_position += velocity * speed_hyper * delta
+#			time += delta
 
-func _process(_delta):
-	trajectory()
+func _process(delta):
+	trajectory(delta)
 	update()

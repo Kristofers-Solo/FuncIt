@@ -110,11 +110,13 @@ func _ready():
 		if is_network_master():
 			Global.player_master = self
 			Global.set("player", self)
+			enable_trajectory_line("line")
 	# Allow update process override.
 	set_process(true)
 	
 	$player_animated_sprite.play("idle")
-#	enable_trajectory_line('line')
+	
+	
 
 
 func get_user_state():
@@ -269,7 +271,8 @@ func _physics_process(delta) -> void:
 # warning-ignore:return_value_discarded
 				move_and_slide(velocityVDIR.rotated(rotationalHolder))
 				rotate_weapon()
-				if user_input["shoot"] and can_shoot and not is_reloading:
+				
+				if user_input["shoot"] and can_shoot and not is_reloading and Global.mode == 1:
 					rpc("shoot", trajectory)
 					is_reloading = true
 					reload_timer.start()
@@ -309,7 +312,6 @@ func enable_trajectory_line(new_trajectory_line:String):
 		x.queue_free()
 		
 	var x = bullet_trajectory[new_trajectory_line].instance()
-#	print(x)
 	get_node('weaponHolder/Player-character-theme-gun/shoot_point').add_child(x)
 	
 
@@ -379,7 +381,6 @@ func _on_network_tick_rate_timeout():
 			rset_unreliable("puppet_weapon_position", weaponPosition)
 			rset_unreliable("puppet_weapon_angle", weaponAngle)
 			rset_unreliable("puppet_direction", direction)
-			#rset_unreliable("puppet_character_states", characterStates)
 			rset_unreliable("puppet_bullet_position", bullet)
 			if get_tree().is_network_server():
 				rset_unreliable("puppet_phase", clientPhase)

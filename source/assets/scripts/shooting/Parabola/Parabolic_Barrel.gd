@@ -19,34 +19,21 @@ func _ready():
 
 func trajectory(delta):
 	while dot_position.x < 2000:
-		if pos.x > 0:
-			add_point(dot_position)
-			velocity.y = time*(a_parameter * time + b_parameter)
-			velocity.x = 5
-			dot_position += velocity * speed_parab * delta
-			time += delta
-		if pos.x < 0:
-			add_point(dot_position)
-			velocity.y = -time*(a_parameter * time + b_parameter)
-			velocity.x = 5
-			dot_position += velocity * speed_parab * delta
-			time += delta
+#		if pos.x > 0:
+		add_point(dot_position)
+		velocity.y = time*(a_parameter * time + b_parameter)
+		velocity.x = 5
+		dot_position += velocity * speed_parab * delta
+		time += delta
+#		if pos.x < 0:
+#			add_point(dot_position)
+#			velocity.y = -time*(a_parameter * time + b_parameter)
+#			velocity.x = 5
+#			dot_position += velocity * speed_parab * delta
+#			time += delta
 			
-
-func is_flipped():
-	while len(pos_diff) < 2:
-		pos_diff.append(rot)
-	if cos(pos):
-		pass
-	if pos_diff[0] + pos_diff[1] > pos_diff[1] or  pos_diff[0] + pos_diff[1] > pos_diff[0]:
-		pass
-		
-	if pos_diff[1].x/pos_diff[0].x < 0:
-		return true
 	
 func _process(delta):
-	#if is_flipped():
-		#clear_points()
 	trajectory(delta)
 	update()
 	
