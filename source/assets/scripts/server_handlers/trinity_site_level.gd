@@ -35,9 +35,6 @@ func _player_disconnected(id) -> void:
 
 
 func _process(_delta):
-#	if Input.is_action_just_pressed("esc"):
-#		Global.instance_node(load("res://source/scenes/OVERLAY/elements/menu_button_overlay.tscn"), Global.ui)
-		
 	globalActivePhase = Global.get_current_phase()
 	if globalActivePhase["active"] != null:
 		phase.text = str(globalActivePhase["active"]["phase_name"])

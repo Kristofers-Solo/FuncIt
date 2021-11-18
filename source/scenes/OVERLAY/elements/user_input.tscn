@@ -1,9 +1,10 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://source/assets/sprites/GUI/in_game/user_input/background_panel.svg" type="Texture" id=1]
 [ext_resource path="res://source/fonts/oxygen/Oxygen-Regular.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://source/assets/sprites/GUI/in_game/trajectories/line_active.svg" type="Texture" id=3]
 [ext_resource path="res://source/assets/sprites/GUI/in_game/trajectories/hyperbol_active.svg" type="Texture" id=4]
+[ext_resource path="res://source/assets/sprites/GUI/in_game/trajectories/parabol_active.svg" type="Texture" id=5]
 [ext_resource path="res://source/assets/sprites/GUI/in_game/trajectories/sin_active.svg" type="Texture" id=6]
 [ext_resource path="res://source/assets/sprites/GUI/in_game/user_input/skip_button/skip_button_pressedsvg.svg" type="Texture" id=7]
 [ext_resource path="res://source/assets/sprites/GUI/in_game/user_input/skip_button/skip_button_hover.svg" type="Texture" id=8]
@@ -81,7 +82,7 @@ LineEdit/styles/normal = SubResource( 7 )
 LineEdit/styles/read_only = null
 
 [sub_resource type="StyleBoxTexture" id=9]
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 region_rect = Rect2( 0, 0, 100, 100 )
 
 [sub_resource type="DynamicFont" id=10]
@@ -356,7 +357,7 @@ margin_top = -19.0
 margin_right = 39.0
 custom_fonts/font = SubResource( 10 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "parabola"
+text = "parabol"
 align = 1
 valign = 1
 uppercase = true
@@ -437,15 +438,14 @@ anchor_right = 0.5
 anchor_bottom = 1.0
 margin_left = -39.0
 margin_top = -19.0
-margin_right = 39.0
+margin_right = 40.0
 custom_fonts/font = SubResource( 10 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "hyperbola"
+text = "hyperbol"
 align = 1
 valign = 1
 uppercase = true
 __meta__ = {
-"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
