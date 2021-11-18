@@ -1,4 +1,4 @@
-[gd_scene load_steps=176 format=2]
+[gd_scene load_steps=175 format=2]
 
 [ext_resource path="res://source/assets/sprites/character/player/theme/01/na/Player-character-theme-01.png" type="Texture" id=1]
 [ext_resource path="res://source/assets/scripts/player_handlers/player_collider_handler.gd" type="Script" id=2]
@@ -15,7 +15,7 @@
 [ext_resource path="res://source/assets/sprites/character/player/theme/01/animation/left_r/Player-character-theme-01_anim-idle – 7.png" type="Texture" id=13]
 [ext_resource path="res://source/assets/sprites/character/player/theme/01/animation/left_r/Player-character-theme-01_anim-idle – 12.png" type="Texture" id=14]
 [ext_resource path="res://source/assets/sprites/character/player/theme/01/animation/left_r/Player-character-theme-01_anim-idle – 10.png" type="Texture" id=15]
-[ext_resource path="res://source/assets/sprites/character/player/theme/03/na/Player-character-theme-gun-03.png" type="Texture" id=16]
+[ext_resource path="res://source/assets/sprites/character/player/player_dead/player_character_theme_dead.svg" type="Texture" id=17]
 [ext_resource path="res://source/assets/sprites/character/player/theme/01/animation/left_r/Player-character-theme-01_anim-idle – 18.png" type="Texture" id=18]
 [ext_resource path="res://source/assets/sprites/character/player/theme/01/animation/right_r/Player-character-theme-01_anim-idle – 34.png" type="Texture" id=19]
 [ext_resource path="res://source/assets/sprites/character/player/theme/01/animation/left_r/Player-character-theme-01_anim-idle – 17.png" type="Texture" id=20]
@@ -25,7 +25,6 @@
 [ext_resource path="res://source/assets/sprites/character/player/theme/01/animation/right_r/Player-character-theme-01_anim-idle – 24.png" type="Texture" id=24]
 [ext_resource path="res://source/assets/sprites/character/player/theme/01/animation/right_r/Player-character-theme-01_anim-idle – 36.png" type="Texture" id=25]
 [ext_resource path="res://source/assets/sprites/character/player/theme/01/na/Player-character-theme-particle-01.svg" type="Texture" id=26]
-[ext_resource path="res://source/assets/sprites/character/player/theme/01/na/Player-character-theme-gun-01.png" type="Texture" id=27]
 [ext_resource path="res://source/assets/sprites/character/player/theme/03/animation/left_r/Player-character-theme-01_anim-idle – 64.png" type="Texture" id=28]
 [ext_resource path="res://source/assets/sprites/character/player/theme/01/animation/right_r/Player-character-theme-01_anim-idle – 35.png" type="Texture" id=29]
 [ext_resource path="res://source/assets/sprites/character/player/theme/01/animation/right_r/Player-character-theme-01_anim-idle – 27.png" type="Texture" id=30]
@@ -197,9 +196,9 @@ animations = [ {
 "name": "boost-speed-right-03",
 "speed": 55.0
 }, {
-"frames": [ ExtResource( 5 ), ExtResource( 42 ), ExtResource( 35 ), ExtResource( 24 ), ExtResource( 8 ), ExtResource( 31 ), ExtResource( 30 ), ExtResource( 38 ), ExtResource( 10 ), ExtResource( 43 ), ExtResource( 41 ), ExtResource( 33 ), ExtResource( 44 ), ExtResource( 19 ), ExtResource( 29 ), ExtResource( 25 ), ExtResource( 36 ), ExtResource( 12 ), ExtResource( 45 ), ExtResource( 21 ) ],
+"frames": [ ExtResource( 99 ), ExtResource( 83 ), ExtResource( 109 ), ExtResource( 111 ), ExtResource( 101 ), ExtResource( 96 ), ExtResource( 79 ), ExtResource( 132 ), ExtResource( 119 ), ExtResource( 80 ), ExtResource( 85 ), ExtResource( 86 ), ExtResource( 87 ), ExtResource( 106 ), ExtResource( 121 ), ExtResource( 129 ), ExtResource( 100 ), ExtResource( 108 ), ExtResource( 110 ), ExtResource( 120 ) ],
 "loop": true,
-"name": "move-speed-right-01",
+"name": "move-speed-right-04",
 "speed": 35.0
 }, {
 "frames": [ ExtResource( 70 ), ExtResource( 49 ), ExtResource( 74 ), ExtResource( 75 ), ExtResource( 28 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 55 ), ExtResource( 150 ), ExtResource( 156 ), ExtResource( 138 ), ExtResource( 161 ), ExtResource( 145 ), ExtResource( 148 ), ExtResource( 147 ), ExtResource( 133 ), ExtResource( 164 ), ExtResource( 134 ), ExtResource( 152 ), ExtResource( 160 ) ],
@@ -217,7 +216,7 @@ animations = [ {
 "name": "boost-speed-left-01",
 "speed": 55.0
 }, {
-"frames": [ ExtResource( 5 ), ExtResource( 42 ), ExtResource( 35 ), ExtResource( 24 ), ExtResource( 8 ), ExtResource( 31 ), ExtResource( 30 ), ExtResource( 38 ), ExtResource( 10 ), ExtResource( 43 ), ExtResource( 41 ), ExtResource( 33 ), ExtResource( 44 ), ExtResource( 19 ), ExtResource( 29 ), ExtResource( 25 ), ExtResource( 36 ), ExtResource( 12 ), ExtResource( 45 ), ExtResource( 21 ) ],
+"frames": [ ExtResource( 99 ), ExtResource( 83 ), ExtResource( 109 ), ExtResource( 111 ), ExtResource( 101 ), ExtResource( 96 ), ExtResource( 79 ), ExtResource( 132 ), ExtResource( 119 ), ExtResource( 80 ), ExtResource( 85 ), ExtResource( 86 ), ExtResource( 87 ), ExtResource( 106 ), ExtResource( 121 ), ExtResource( 129 ), ExtResource( 100 ), ExtResource( 108 ), ExtResource( 110 ), ExtResource( 120 ) ],
 "loop": true,
 "name": "boost-speed-right-01",
 "speed": 55.0
@@ -365,7 +364,7 @@ wait_time = 0.03
 autostart = true
 
 [node name="reload_timer" type="Timer" parent="."]
-wait_time = 0.15
+wait_time = 0.7
 one_shot = true
 
 [node name="hit_timer" type="Timer" parent="."]
@@ -390,7 +389,7 @@ texture = ExtResource( 26 )
 shape = SubResource( 5 )
 
 [node name="Player-character-theme-gun-na3" type="Sprite" parent="weaponHolder"]
-scale = Vector2( 0.3, 0.25 )
+scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 171 )
 
 [node name="Player-character-theme-gun" type="AnimatedSprite" parent="weaponHolder"]
@@ -402,6 +401,9 @@ animation = "04"
 position = Vector2( -120, 0 )
 rotation = 3.14159
 scale = Vector2( 4, 4 )
+
+[node name="player_character_theme_dead" type="Sprite" parent="."]
+texture = ExtResource( 17 )
 
 [connection signal="timeout" from="network_tick_rate" to="." method="_on_network_tick_rate_timeout"]
 [connection signal="timeout" from="reload_timer" to="." method="_on_reload_timer_timeout"]

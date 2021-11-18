@@ -1,9 +1,11 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://source/assets/scripts/server_handlers/trinity_site_level_playground.gd" type="Script" id=1]
 [ext_resource path="res://source/assets/scripts/ui_element_handlers/UI.gd" type="Script" id=2]
 [ext_resource path="res://source/levels/trinity_site/images/trinity_site_level_layout_level_design_z_index_0.svg" type="Texture" id=3]
 [ext_resource path="res://source/entities/ts_bot/ts_bot.tscn" type="PackedScene" id=4]
+[ext_resource path="res://source/scenes/OVERLAY/elements/lose_screen.tscn" type="PackedScene" id=5]
+[ext_resource path="res://source/assets/scripts/ui_element_handlers/game_UI_playground.gd" type="Script" id=6]
 [ext_resource path="res://source/levels/trinity_site/images/trinity_site_level_layout_level_design_z_index_4.svg" type="Texture" id=7]
 [ext_resource path="res://source/levels/trinity_site/images/trinity_site_level_layout_level_design_z_index_3.svg" type="Texture" id=8]
 [ext_resource path="res://source/entities/grass/grass_node.tscn" type="PackedScene" id=9]
@@ -168,6 +170,7 @@ margin_top = -150.0
 margin_bottom = 0.0
 
 [node name="timer" parent="controls" instance=ExtResource( 17 )]
+visible = false
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -225.0
@@ -178,3 +181,8 @@ position = Vector2( 383, 564 )
 
 [node name="ts_bot2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1538, 581 )
+
+[node name="game_UI" type="CanvasLayer" parent="."]
+script = ExtResource( 6 )
+
+[node name="lose_screen" parent="game_UI" instance=ExtResource( 5 )]
