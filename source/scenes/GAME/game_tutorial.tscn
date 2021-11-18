@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://source/assets/scripts/server_handlers/trinity_site_level_playground.gd" type="Script" id=1]
+[ext_resource path="res://source/assets/scripts/server_handlers/trinity_site_level_tutorial.gd" type="Script" id=1]
 [ext_resource path="res://source/assets/scripts/ui_element_handlers/UI.gd" type="Script" id=2]
 [ext_resource path="res://source/assets/sprites/GUI/background_server.svg" type="Texture" id=3]
 [ext_resource path="res://source/levels/tutorial/elements/simpleTargetZone.tscn" type="PackedScene" id=4]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://source/assets/scripts/server_handlers/network_processors/singleplayer_setup.gd" type="Script" id=1]
+[ext_resource path="res://source/assets/scripts/server_handlers/network_processors/singleplayer_setup_tutorial.gd" type="Script" id=1]
 [ext_resource path="res://source/fonts/oxygen/Oxygen-Regular.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://source/assets/sprites/GUI/in_game/buttons/server_title.svg" type="Texture" id=3]
 [ext_resource path="res://source/scenes/GUI/background.tscn" type="PackedScene" id=5]
