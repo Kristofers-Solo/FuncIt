@@ -10,7 +10,7 @@
 [ext_resource path="res://source/assets/sprites/GUI/in_game/trajectories/hyperbol_inactive.svg" type="Texture" id=8]
 [ext_resource path="res://source/assets/sprites/GUI/in_game/trajectories/hyperbol_active.svg" type="Texture" id=9]
 [ext_resource path="res://source/fonts/oxygen/Oxygen-Regular.ttf" type="DynamicFontData" id=10]
-[ext_resource path="res://source/scenes/OVERLAY/elements/Trajectory_Control.gd" type="Script" id=11]
+[ext_resource path="res://source/assets/scripts/shooting/Trajectories/Trajectory_Control.gd" type="Script" id=11]
 
 [sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 1 )

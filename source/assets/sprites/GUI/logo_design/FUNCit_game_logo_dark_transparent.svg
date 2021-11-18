@@ -1,35 +1,154 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="1080" viewBox="0 0 1920 1080">
-  <defs>
-    <clipPath id="clip-path">
-      <rect id="Rectangle_1" data-name="Rectangle 1" width="208" height="150" transform="translate(-0.128 -0.444)" fill="#fff"/>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="1528.965"
+   height="601.633"
+   viewBox="0 0 1528.965 601.633"
+   version="1.1"
+   id="svg31"
+   sodipodi:docname="FUNCit_game_logo_dark_transparent.svg"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview33"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     showgrid="false"
+     inkscape:zoom="0.4111695"
+     inkscape:cx="693.1448"
+     inkscape:cy="481.55323"
+     inkscape:window-width="1920"
+     inkscape:window-height="1007"
+     inkscape:window-x="1920"
+     inkscape:window-y="44"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg31" />
+  <defs
+     id="defs9">
+    <clipPath
+       id="clip-path">
+      <rect
+         id="Rectangle_1"
+         data-name="Rectangle 1"
+         width="208"
+         height="150"
+         transform="translate(-0.128,-0.444)"
+         fill="#ffffff"
+         x="0"
+         y="0" />
     </clipPath>
-    <clipPath id="clip-path-2">
-      <rect id="Rectangle_2" data-name="Rectangle 2" width="208" height="149.648" fill="#fff"/>
+    <clipPath
+       id="clip-path-2">
+      <rect
+         id="Rectangle_2"
+         data-name="Rectangle 2"
+         width="208"
+         height="149.64799"
+         fill="#ffffff"
+         x="0"
+         y="0" />
     </clipPath>
-    <clipPath id="clip-FUNCit_game_logo_dark_transparent">
-      <rect width="1920" height="1080"/>
+    <clipPath
+       id="clip-FUNCit_game_logo_dark_transparent">
+      <rect
+         width="1920"
+         height="1080"
+         id="rect6"
+         x="0"
+         y="0" />
     </clipPath>
   </defs>
-  <g id="FUNCit_game_logo_dark_transparent" clip-path="url(#clip-FUNCit_game_logo_dark_transparent)">
-    <g id="Group_1" data-name="Group 1" transform="translate(7)">
-      <text id="FUNCit" transform="translate(202 713)" fill="#fff" font-size="456" font-family="Ramabhadra"><tspan x="0" y="0">FUNC</tspan><tspan y="0" font-size="332" font-family="Sarala-Bold, Sarala" font-weight="700">it</tspan></text>
-      <g id="Player-character-1" transform="matrix(0.966, 0.259, -0.259, 0.966, 1287.964, 249.1)" clip-path="url(#clip-path)">
-        <g id="Tank" transform="translate(25.045 19.558)">
-          <path id="Union_1" data-name="Union 1" d="M-3644.888,262.015a20.927,20.927,0,0,1-20.927-20.927v-3.069H-3670V218.487h15.56l15.258-27.6h9.362V183.33a38.784,38.784,0,0,1,38.784-38.784h5.58c.095.246,49.309-.123,49.108,0h6.976v36.273l6.642,6.974h14.563v25.392l9.766,5.3h4.186v19.532h-4.186v3.069a20.927,20.927,0,0,1-20.927,20.927Z" transform="translate(3670 -134.222)" fill="#fff"/>
+  <g
+     id="FUNCit_game_logo_dark_transparent"
+     clip-path="url(#clip-FUNCit_game_logo_dark_transparent)"
+     transform="translate(-253.75391,-261.43833)">
+    <g
+       id="Group_1"
+       data-name="Group 1"
+       transform="translate(7)">
+      <text
+         id="FUNCit"
+         transform="translate(202,713)"
+         fill="#ffffff"
+         font-size="456px"
+         font-family="Ramabhadra"><tspan
+           x="0"
+           y="0"
+           id="tspan11">FUNC</tspan><tspan
+           y="0"
+           font-size="332px"
+           font-family="Sarala-Bold, Sarala"
+           font-weight="700"
+           id="tspan13">it</tspan></text>
+      <g
+         id="Player-character-1"
+         transform="matrix(0.966,0.259,-0.259,0.966,1287.964,249.1)"
+         clip-path="url(#clip-path)">
+        <g
+           id="Tank"
+           transform="translate(25.045,19.558)">
+          <path
+             id="Union_1"
+             data-name="Union 1"
+             d="m -3644.888,262.015 a 20.927,20.927 0 0 1 -20.927,-20.927 v -3.069 H -3670 v -19.532 h 15.56 l 15.258,-27.6 h 9.362 v -7.557 a 38.784,38.784 0 0 1 38.784,-38.784 h 5.58 c 0.095,0.246 49.309,-0.123 49.108,0 h 6.976 v 36.273 l 6.642,6.974 h 14.563 v 25.392 l 9.766,5.3 h 4.186 v 19.532 h -4.186 v 3.069 a 20.927,20.927 0 0 1 -20.927,20.927 z"
+             transform="translate(3670,-134.222)"
+             fill="#ffffff" />
         </g>
-        <g id="Gun" transform="translate(14.013 5.275)">
-          <path id="Union_2" data-name="Union 2" d="M52.456,27.9V22.6H16.183v5.3H0V0H16.183V4.185H68.64V27.9Z" transform="translate(13.951 0) rotate(30)" fill="#fff"/>
+        <g
+           id="Gun"
+           transform="translate(14.013,5.275)">
+          <path
+             id="Union_2"
+             data-name="Union 2"
+             d="M 52.456,27.9 V 22.6 H 16.183 v 5.3 H 0 V 0 H 16.183 V 4.185 H 68.64 V 27.9 Z"
+             transform="rotate(30,6.9755,26.03292)"
+             fill="#ffffff" />
         </g>
       </g>
-      <g id="Player-character-2" transform="translate(589.379 854.012) rotate(-146)" clip-path="url(#clip-path-2)">
-        <g id="Tank-2" data-name="Tank" transform="translate(25.061 19.57)">
-          <path id="Union_1-2" data-name="Union 1" d="M-3644.873,262.093a20.94,20.94,0,0,1-20.939-20.94v-3.071H-3670V218.539h15.569l15.267-27.615h9.368V183.36a38.808,38.808,0,0,1,38.808-38.808c.125-.158,61.361-.114,61.7,0v36.3l6.646,6.978h14.572v25.408l9.772,5.3h4.188v19.544h-4.188v3.071a20.939,20.939,0,0,1-20.939,20.94Z" transform="translate(3670 -134.222)" fill="#fff"/>
+      <g
+         id="Player-character-2"
+         transform="rotate(-146,425.23834,336.91038)"
+         clip-path="url(#clip-path-2)">
+        <g
+           id="Tank-2"
+           data-name="Tank"
+           transform="translate(25.061,19.57)">
+          <path
+             id="Union_1-2"
+             data-name="Union 1"
+             d="m -3644.873,262.093 a 20.94,20.94 0 0 1 -20.939,-20.94 v -3.071 H -3670 v -19.543 h 15.569 l 15.267,-27.615 h 9.368 v -7.564 a 38.808,38.808 0 0 1 38.808,-38.808 c 0.125,-0.158 61.361,-0.114 61.7,0 v 36.3 l 6.646,6.978 h 14.572 v 25.408 l 9.772,5.3 h 4.188 v 19.544 h -4.188 v 3.071 a 20.939,20.939 0 0 1 -20.939,20.94 z"
+             transform="translate(3670,-134.222)"
+             fill="#ffffff" />
         </g>
-        <g id="Gun-2" data-name="Gun" transform="translate(-5.139 44.161) rotate(-25.976)">
-          <path id="Union_2-2" data-name="Union 2" d="M52.489,27.919v-5.3h-36.3v5.3H0V0H16.193V4.188H68.682V27.919Z" transform="translate(13.96 0) rotate(30)" fill="#fff"/>
+        <g
+           id="Gun-2"
+           data-name="Gun"
+           transform="rotate(-25.976,93.163125,33.220872)">
+          <path
+             id="Union_2-2"
+             data-name="Union 2"
+             d="m 52.489,27.919 v -5.3 h -36.3 v 5.3 H 0 V 0 h 16.193 v 4.188 h 52.489 v 23.731 z"
+             transform="rotate(30,6.98,26.049715)"
+             fill="#ffffff" />
         </g>
       </g>
-      <text id="Prototype" transform="translate(1225 843)" fill="#418df2" font-size="93" font-family="Sarala-Bold, Sarala" font-weight="700" letter-spacing="0.046em"><tspan x="0" y="0">Prototype</tspan></text>
+      <text
+         id="Prototype"
+         transform="translate(1225,843)"
+         fill="#0f9ff5"
+         font-size="93px"
+         font-family="Sarala-Bold, Sarala"
+         font-weight="700"
+         letter-spacing="0.046em"><tspan
+           x="0"
+           y="0"
+           id="tspan26">Prototype</tspan></text>
     </g>
   </g>
 </svg>

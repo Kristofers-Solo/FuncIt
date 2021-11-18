@@ -5,7 +5,7 @@
 [sub_resource type="CircleShape2D" id=1]
 radius = 76.0267
 
-[node name="player" type="KinematicBody2D"]
+[node name="player2" type="KinematicBody2D"]
 
 [node name="player_collider" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
