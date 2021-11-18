@@ -7,8 +7,6 @@ var accelerationSpeed = 2
 var deccelerationSpeed = 20
 var maxSpeed = 250
 
-signal bot_died
-
 var worldSpace2d = null
 var coreRay = {}
 
@@ -112,4 +110,4 @@ func hit_by_damager(damage, b_rotation, b_velocity):
 	Mode = 2
 	if hp <= 0:
 		queue_free()
-		emit_signal("bot_died")
+		get_tree().call_group("bot_listener", "bot_died")
