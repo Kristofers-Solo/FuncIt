@@ -10,7 +10,7 @@ config_version=4
 
 [application]
 
-config/name="Game"
+config/name="FUNCit"
 run/main_scene="res://source/scenes/GUI/main_menu.tscn"
 config/icon="res://icon.png"
 
