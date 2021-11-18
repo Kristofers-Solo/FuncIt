@@ -15,7 +15,6 @@ func _ready() -> void:
 	if get_tree().is_network_server():
 		setup_player_positions()
 	Global.start_game(true)
-	Global.mode = 2
 
 
 func setup_player_positions() -> void:
@@ -36,6 +35,11 @@ func _player_disconnected(id) -> void:
 
 
 func _process(_delta):
+	if Global.get_current_phase()["active"] != null and Global.get_current_phase()["active"]["start_time"] != null: 
+		if Global.get_current_phase()["active"]["length"] - abs(OS.get_time()["second"] - Global.get_current_phase()["active"]["start_time"]["second"]) < 10:
+			$controls/timer/time.text = "00:0"+str(Global.get_current_phase()["active"]["length"] - abs(OS.get_time()["second"] - Global.get_current_phase()["active"]["start_time"]["second"]))
+		else:
+			$controls/timer/time.text = "00:"+str(Global.get_current_phase()["active"]["length"] - abs(OS.get_time()["second"] - Global.get_current_phase()["active"]["start_time"]["second"]))
 	globalActivePhase = Global.get_current_phase()
 	if globalActivePhase["active"] != null:
 		phase.text = str(globalActivePhase["active"]["phase_name"])
