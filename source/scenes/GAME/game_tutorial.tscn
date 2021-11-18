@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://source/assets/scripts/server_handlers/trinity_site_level_playground.gd" type="Script" id=1]
 [ext_resource path="res://source/assets/scripts/ui_element_handlers/UI.gd" type="Script" id=2]
 [ext_resource path="res://source/assets/sprites/GUI/background_server.svg" type="Texture" id=3]
 [ext_resource path="res://source/levels/tutorial/elements/simpleTargetZone.tscn" type="PackedScene" id=4]
-[ext_resource path="res://source/levels/trinity_site/images/trinity_site_level_layout_level_design_z_index_4.svg" type="Texture" id=7]
+[ext_resource path="res://source/assets/sprites/GUI/tutorial/trinity_site_level_layout_level_design_z_index_4.svg" type="Texture" id=5]
+[ext_resource path="res://source/fonts/oxygen/oxygen_bold.tres" type="DynamicFont" id=6]
 [ext_resource path="res://source/scenes/OVERLAY/elements/user_input.tscn" type="PackedScene" id=15]
 [ext_resource path="res://source/scenes/OVERLAY/elements/timer.tscn" type="PackedScene" id=17]
 [ext_resource path="res://source/scenes/OVERLAY/elements/trajectory_control.tscn" type="PackedScene" id=18]
@@ -15,22 +16,53 @@ script = ExtResource( 1 )
 [node name="simpleTargetZone_basic" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1513, 847 )
 
+[node name="Instruction" type="Label" parent="simpleTargetZone_basic"]
+margin_left = -148.0
+margin_top = -311.0
+margin_right = 148.0
+margin_bottom = -144.0
+custom_fonts/font = ExtResource( 6 )
+text = "Use A and D keys
+to move to this
+location"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="simpleTargetZone_jump" parent="." instance=ExtResource( 4 )]
 position = Vector2( 655, 455 )
 rotation = -0.87441
+
+[node name="Instruction" type="Label" parent="simpleTargetZone_jump"]
+margin_left = -300.021
+margin_top = -329.201
+margin_right = -4.02124
+margin_bottom = -162.201
+rect_rotation = 50.0
+custom_fonts/font = ExtResource( 6 )
+text = "Use W or SPACE
+to jump to different
+parts of the world"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="trinity_site_body" type="StaticBody2D" parent="."]
 
 [node name="scene" type="Node2D" parent="trinity_site_body"]
 
-[node name="trinity_site_level_layout_level_design_z_index_4" type="Sprite" parent="trinity_site_body/scene"]
-position = Vector2( 960, 540 )
-texture = ExtResource( 7 )
-
 [node name="BackgroundServer" type="Sprite" parent="trinity_site_body/scene"]
 position = Vector2( 960, 540 )
 z_index = -1
 texture = ExtResource( 3 )
+
+[node name="TrinitySiteLevelLayoutLevelDesignZIndex4" type="Sprite" parent="trinity_site_body/scene"]
+position = Vector2( 960, 540 )
+texture = ExtResource( 5 )
 
 [node name="trinity_site_outer_collider" type="CollisionPolygon2D" parent="trinity_site_body"]
 visible = false
@@ -86,6 +118,43 @@ anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -225.0
 margin_right = 225.0
+
+[node name="weaponInstruction" type="Label" parent="."]
+visible = false
+margin_left = 1266.0
+margin_top = 457.0
+margin_right = 1790.0
+margin_bottom = 650.0
+custom_fonts/font = ExtResource( 6 )
+text = "Use the functions (Bottom left)
+to change the trajectory and
+Left Mouse Click to fire bullets
+at the flying TS-Bots"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bot_spawn_locations" type="Node2D" parent="."]
+
+[node name="1" type="Position2D" parent="bot_spawn_locations"]
+position = Vector2( 147, 600 )
+
+[node name="2" type="Position2D" parent="bot_spawn_locations"]
+position = Vector2( 364, 600 )
+
+[node name="3" type="Position2D" parent="bot_spawn_locations"]
+position = Vector2( 554, 600 )
+
+[node name="4" type="Position2D" parent="bot_spawn_locations"]
+position = Vector2( 1394, 600 )
+
+[node name="5" type="Position2D" parent="bot_spawn_locations"]
+position = Vector2( 1584, 600 )
+
+[node name="6" type="Position2D" parent="bot_spawn_locations"]
+position = Vector2( 1762, 600 )
 
 [connection signal="zone_entered" from="simpleTargetZone_basic" to="." method="_on_simpleTargetZone_basic_zone_entered"]
 [connection signal="zone_entered" from="simpleTargetZone_jump" to="." method="_on_simpleTargetZone_jump_zone_entered"]

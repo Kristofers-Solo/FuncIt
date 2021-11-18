@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://source/assets/sprites/GUI/logo_design/FUNCit_game_logo_dark_transparent.png" type="Texture" id=1]
-[ext_resource path="res://source/assets/sprites/GUI/background_lobby.svg" type="Texture" id=2]
+[ext_resource path="res://source/assets/sprites/GUI/tutorial/background_lobby.svg" type="Texture" id=2]
 [ext_resource path="res://source/assets/scripts/loading_handlers/game_loading_screen_handler.gd" type="Script" id=3]
 [ext_resource path="res://source/assets/sprites/GUI/logo_design/FB-GEO-GAME.png" type="Texture" id=4]
 
