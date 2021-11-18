@@ -172,14 +172,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="enter_server_ip" type="Sprite" parent="multiplayer_configure/popup_screen"]
+[node name="enter_username" type="Sprite" parent="multiplayer_configure/popup_screen"]
 position = Vector2( 960, 465 )
 texture = ExtResource( 14 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Label" type="Label" parent="multiplayer_configure/popup_screen/enter_server_ip"]
+[node name="Label" type="Label" parent="multiplayer_configure/popup_screen/enter_username"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -225.0

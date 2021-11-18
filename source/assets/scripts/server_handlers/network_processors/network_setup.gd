@@ -65,6 +65,8 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("esc") and username.is_visible_in_tree():
 		username.hide()
 		controls.show()
+	if Input.is_action_just_pressed("enter") and username.is_visible_in_tree():
+		_on_confirm_pressed()
 	
 	if get_tree().network_peer != null:
 		if get_tree().get_network_connected_peers().size() >= player_amount and get_tree().is_network_server():
