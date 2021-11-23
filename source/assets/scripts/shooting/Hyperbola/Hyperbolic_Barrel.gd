@@ -1,6 +1,6 @@
 extends Line2D
 
-export var speed_hyper = 130
+export var speed_hyper = 100
 var velocity = Vector2(0, 0)
 var dot_position = Vector2(0, 0)
 
